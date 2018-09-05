@@ -1,0 +1,1615 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<episode>
+		<ep_id>ep209</ep_id>
+		<ep_title>보물 상자를 찾아서!</ep_title>
+		<ep_headline>해적 앵무새와 함께 보물 상자를 찾으러 신나는 모험을 떠나요!</ep_headline>
+		<ep_objective1>숫자 1부터 3까지 써 보며 숫자의 이름과 모양을 익힐 수 있어요.</ep_objective1>
+		<ep_objective1_intell>1</ep_objective1_intell>
+		<ep_objective2>숫자 4부터 6까지 써 보며 숫자의 이름과 모양을 익힐 수 있어요.</ep_objective2>
+		<ep_objective2_intell>1</ep_objective2_intell>
+		<ep_objective3>숫자 7부터 10까지 써 보며 숫자의 이름과 모양을 익힐 수 있어요.</ep_objective3>
+		<ep_objective3_intell>1</ep_objective3_intell>
+		<mom_talk>종이에 숫자를 쓰고, 그 숫자만큼 손뼉을 치는 놀이를 해 보세요. 종이에 4를 쓰고, 아이가 2번 손뼉을 쳤을 때는 엄마가 2번 더 쳐서 4번의 손뼉을 완성해 주세요.</mom_talk>
+		<mom_talk_intell>1</mom_talk_intell>
+		<mom_talk_title>숫자만큼 손뼉치기</mom_talk_title>
+		<tag_stuff>숫자,동물농장,피라미드,가시나무</tag_stuff>
+		<tag_activity>숫자쓰기,동물분류</tag_activity>
+		<tag_game>길찾기,숫자쓰기</tag_game>
+		<tag_intell>1,8</tag_intell>
+		<tag_song>　</tag_song>
+		<pt_intell_0>1</pt_intell_0>
+		<pt_intell_1>8</pt_intell_1>
+		<pt_intell_2>0</pt_intell_2>
+		<pt_intell_3>0</pt_intell_3>
+		<pt_intell_4>3</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>0</pt_intell_6>
+		<pt_intell_7>0</pt_intell_7>
+		<pt_intell_8>7</pt_intell_8>
+		<pt_intell_all>22</pt_intell_all>
+		<no_voca>861</no_voca>
+		<no_sentence>270</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep238</ep_id>
+		<ep_title>이상한 나라의 도라</ep_title>
+		<ep_headline>도라의 강아지가 이상한 나라로 들어가버렸어요. 우리 같이 강아지를 찾으러 이상한 나라로 떠나 볼까요?</ep_headline>
+		<ep_objective1>AB 수 규칙 패턴과 ABB 원형 패턴을 경험해 볼 수 있어요.</ep_objective1>
+		<ep_objective1_intell>1</ep_objective1_intell>
+		<ep_objective2>AB 소리 패턴과 AAB 소리 패턴을 경험해 볼 수 있어요.</ep_objective2>
+		<ep_objective2_intell>1,7</ep_objective2_intell>
+		<ep_objective3>AB 색깔 패턴을 경험해 볼 수 있어요.</ep_objective3>
+		<ep_objective3_intell>1</ep_objective3_intell>
+		<mom_talk>규칙을 정해 규칙대로 악기를 연주하는 놀이를 해 보세요. 반복되는 소리를 들어보며, 규칙의 의미에 대해 이해할 수 있어요.</mom_talk>
+		<mom_talk_intell>1</mom_talk_intell>
+		<mom_talk_title>규칙대로 악기 연주하기</mom_talk_title>
+		<tag_stuff>앨리스,이상한나라,모자,장미,마라카스,트라이앵글,탬버린,북</tag_stuff>
+		<tag_activity>AB수패턴,ABB원형패턴, AB소리패턴,AB색깔패턴</tag_activity>
+		<tag_game>규칙게임,연주게임,색칠하기</tag_game>
+		<tag_intell>0,1,7</tag_intell>
+		<tag_song>　</tag_song>
+		<pt_intell_0>3</pt_intell_0>
+		<pt_intell_1>10</pt_intell_1>
+		<pt_intell_2>0</pt_intell_2>
+		<pt_intell_3>0</pt_intell_3>
+		<pt_intell_4>3</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>0</pt_intell_6>
+		<pt_intell_7>2</pt_intell_7>
+		<pt_intell_8>1</pt_intell_8>
+		<pt_intell_all>22</pt_intell_all>
+		<no_voca>1289</no_voca>
+		<no_sentence>325</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>eps203</ep_id>
+		<ep_title>초콜릿나무</ep_title>
+		<ep_headline>초콜릿나무가 준 열매를 할머니 집 앞에 심자, 놀라운 일이 벌어졌어요!</ep_headline>
+		<ep_objective1>1부터 10까지의 숫자를 영어로 셀 수 있어요.</ep_objective1>
+		<ep_objective1_intell>0,1</ep_objective1_intell>
+		<ep_objective2>긴 네모, 긴 세모를 같은 모양끼리 구별할 수 있어요.</ep_objective2>
+		<ep_objective2_intell>1,3</ep_objective2_intell>
+		<ep_objective3>식물의 성장 과정을 경험할 수 있어요.</ep_objective3>
+		<ep_objective3_intell>2</ep_objective3_intell>
+		<mom_talk>주변에서 다양한 세모와 네모를 찾아보는 놀이를 해 보세요. 정삼각형, 정사각형이 아니더라도 같은 세모와 네모 모양이란 것을 자연스럽게 알 수 있어요.</mom_talk>
+		<mom_talk_intell>1</mom_talk_intell>
+		<mom_talk_title>생활 속 모양 찾기</mom_talk_title>
+		<tag_stuff>초콜릿,나무,할머니,물뿌리개,삽,긴네모,긴세모</tag_stuff>
+		<tag_activity>영어숫자,모양변별,식물성장과정</tag_activity>
+		<tag_game>열매받기,쿠키담기</tag_game>
+		<tag_intell>0,1,2,3</tag_intell>
+		<tag_song>초콜릿 나무 노래</tag_song>
+		<pt_intell_0>4</pt_intell_0>
+		<pt_intell_1>8</pt_intell_1>
+		<pt_intell_2>5</pt_intell_2>
+		<pt_intell_3>1</pt_intell_3>
+		<pt_intell_4>2</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>1</pt_intell_6>
+		<pt_intell_7>0</pt_intell_7>
+		<pt_intell_8>1</pt_intell_8>
+		<pt_intell_all>25</pt_intell_all>
+		<no_voca>1074</no_voca>
+		<no_sentence>382</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep206</ep_id>
+		<ep_title>별주머니를 찾아서</ep_title>
+		<ep_headline>도둑여우가 별주머니를 멀리 던져 버렸어요! 탐험가별들과 함께 별주머니를 찾으러 가요!</ep_headline>
+		<ep_objective1>1부터 5까지 차례대로 별을 이으며, 별자리를 만들 수 있어요.</ep_objective1>
+		<ep_objective1_intell>1</ep_objective1_intell>
+		<ep_objective2>배를 만들면서, 부분과 전체에 대해 알 수 있어요.</ep_objective2>
+		<ep_objective2_intell>1,3</ep_objective2_intell>
+		<ep_objective3>직업의 특성에 맞는 도구를 찾을 수 있어요. </ep_objective3>
+		<ep_objective3_intell>2</ep_objective3_intell>
+		<mom_talk>주차장에서 자동차의 번호판을 보고 숫자 찾기 놀이를 해 보세요. 숫자를 찾으며 숫자 모양과 이름을 익힐 수 있어요.</mom_talk>
+		<mom_talk_intell>1</mom_talk_intell>
+		<mom_talk_title>생활 속 숫자 찾기</mom_talk_title>
+		<tag_stuff>별,별주머니,별잡이,별자리,요리사,주걱,후라이팬,청진기,주사기,의사,야구선수,글로브,야구배트</tag_stuff>
+		<tag_activity>수차례,새로운별자리,밤풍경탐색,도구찾기</tag_activity>
+		<tag_game>별자리만들기,배조립,이동게임</tag_game>
+		<tag_intell>1,2,3,6</tag_intell>
+		<tag_song>　</tag_song>
+		<pt_intell_0>5</pt_intell_0>
+		<pt_intell_1>6</pt_intell_1>
+		<pt_intell_2>5</pt_intell_2>
+		<pt_intell_3>2</pt_intell_3>
+		<pt_intell_4>2</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>2</pt_intell_6>
+		<pt_intell_7>0</pt_intell_7>
+		<pt_intell_8>2</pt_intell_8>
+		<pt_intell_all>27</pt_intell_all>
+		<no_voca>973</no_voca>
+		<no_sentence>259</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep232</ep_id>
+		<ep_title>치즈별을 향한 우주 여행</ep_title>
+		<ep_headline>베니가 우주에 있는 치즈별에 갇혀 있어요! 도라와 부츠와 함께 베니를 구하러 우주로 떠나요!</ep_headline>
+		<ep_objective1>별자리를 1부터 10까지 순서대로 연결하면서, 숫자의 차례를 알 수 있어요.</ep_objective1>
+		<ep_objective1_intell>1</ep_objective1_intell>
+		<ep_objective2>블랙홀과 운석을 피하는 활동을 통해, 공간 감각을 익힐 수 있어요.</ep_objective2>
+		<ep_objective2_intell>3</ep_objective2_intell>
+		<ep_objective3>건전지를 모으며, 2345 모으기를 해 볼 수 있어요.</ep_objective3>
+		<ep_objective3_intell>1</ep_objective3_intell>
+		<mom_talk>아이의 접시에 간식을 옮기면서 모으기를 하고, 함께 수를 세는 활동을 해 보세요. 아이가 자신의 접시에 직접 과자를 옮겨 담으면서, 자연스레 모으기에 대해 배울 수 있어요.</mom_talk>
+		<mom_talk_intell>1</mom_talk_intell>
+		<mom_talk_title>접시에 과자 담기</mom_talk_title>
+		<tag_stuff>우주,치즈별,건전지,로켓,우주복,별자리,혜성,은하수,블랙홀,운석</tag_stuff>
+		<tag_activity>숫자연결</tag_activity>
+		<tag_game>별자리만들기,이동게임,건전지모으기 </tag_game>
+		<tag_intell>1,2,3</tag_intell>
+		<tag_song>　</tag_song>
+		<pt_intell_0>1</pt_intell_0>
+		<pt_intell_1>8</pt_intell_1>
+		<pt_intell_2>3</pt_intell_2>
+		<pt_intell_3>4</pt_intell_3>
+		<pt_intell_4>1</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>0</pt_intell_6>
+		<pt_intell_7>0</pt_intell_7>
+		<pt_intell_8>1</pt_intell_8>
+		<pt_intell_all>21</pt_intell_all>
+		<no_voca>993</no_voca>
+		<no_sentence>294</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep202</ep_id>
+		<ep_title>동물들의 친구 디에고</ep_title>
+		<ep_headline>동물들과 대화할 수 있는 디에고와 함께 위험에 빠진 동물 친구들을 구하러 가요.</ep_headline>
+		<ep_objective1>미로찾기를 하면서, 문제해결력을 기를 수 있어요.</ep_objective1>
+		<ep_objective1_intell>1</ep_objective1_intell>
+		<ep_objective2>크기와 양을 비교하고, 차례대로 순서 지을 수 있어요.</ep_objective2>
+		<ep_objective2_intell>1</ep_objective2_intell>
+		<ep_objective3>장애물을 피하며 공간 감각과 문제해결력을 기를 수 있어요.</ep_objective3>
+		<ep_objective3_intell>3</ep_objective3_intell>
+		<mom_talk>가족들이 모여 손바닥, 발바닥을 서로 대보며 신체 크기를 비교하는 놀이를 해 보세요. 또, 크기 순서대로 손바닥, 발바닥을 종이에 그리며 크기에 대해 이야기해 보세요.</mom_talk>
+		<mom_talk_intell>1</mom_talk_intell>
+		<mom_talk_title>생활 속 크기 비교</mom_talk_title>
+		<tag_stuff>재규어,동물구조센터,필드저널</tag_stuff>
+		<tag_activity>크기와양비교,공간감각,문제해결력기르기</tag_activity>
+		<tag_game>미로찾기,먹이주기,이동게임</tag_game>
+		<tag_intell>1,2,3,4</tag_intell>
+		<tag_song>　</tag_song>
+		<pt_intell_0>4</pt_intell_0>
+		<pt_intell_1>8</pt_intell_1>
+		<pt_intell_2>1</pt_intell_2>
+		<pt_intell_3>5</pt_intell_3>
+		<pt_intell_4>3</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>0</pt_intell_6>
+		<pt_intell_7>0</pt_intell_7>
+		<pt_intell_8>1</pt_intell_8>
+		<pt_intell_all>25</pt_intell_all>
+		<no_voca>917</no_voca>
+		<no_sentence>229</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep208</ep_id>
+		<ep_title>뚝딱뚝딱 만능 수리 기계</ep_title>
+		<ep_headline>부츠의 장화가 고장 났어요! 만능수리기계로 고장 난 물건들을 고치러 가요!</ep_headline>
+		<ep_objective1>크기가 다른 5가지 사물을 크기가 큰 차례로 나열할 수 있어요.</ep_objective1>
+		<ep_objective1_intell>1,3</ep_objective1_intell>
+		<ep_objective2>하나부터 열까지 영어로 수를 셀 수 있어요.</ep_objective2>
+		<ep_objective2_intell>0,1</ep_objective2_intell>
+		<ep_objective3>다양한 물건을 보며, 2가지 이상의 다른 곳을 찾을 수 있어요.</ep_objective3>
+		<ep_objective3_intell>3</ep_objective3_intell>
+		<mom_talk>계단을 오르내리며 하나부터 열까지 수를 세 보는 놀이를 해 보세요. 신체 활동을 하며 수 개념의 기초를 다져 줄 수 있어요.</mom_talk>
+		<mom_talk_intell>1</mom_talk_intell>
+		<mom_talk_title>생활 속 수 세기</mom_talk_title>
+		<tag_stuff>기차,기차역,휘슬,만능수리기계,고장난물건,기차칸</tag_stuff>
+		<tag_activity>크기나열,수세기,복합비교인지</tag_activity>
+		<tag_game>기차칸게임,도둑여우잡기,틀린그림찾기</tag_game>
+		<tag_intell>1,3</tag_intell>
+		<tag_song>　</tag_song>
+		<pt_intell_0>3</pt_intell_0>
+		<pt_intell_1>9</pt_intell_1>
+		<pt_intell_2>0</pt_intell_2>
+		<pt_intell_3>4</pt_intell_3>
+		<pt_intell_4>3</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>0</pt_intell_6>
+		<pt_intell_7>0</pt_intell_7>
+		<pt_intell_8>1</pt_intell_8>
+		<pt_intell_all>23</pt_intell_all>
+		<no_voca>851</no_voca>
+		<no_sentence>222</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep218</ep_id>
+		<ep_title>캠핑을 떠나요!</ep_title>
+		<ep_headline>오늘은 신나는 캠핑 가는 날! 도라랑 부츠와 함께 캠핑장으로 디에고와 아기재규어를 만나러 가요!</ep_headline>
+		<ep_objective1>2가지 이상의 조건을 만족하는 물건을 찾아 분류할 수 있어요.</ep_objective1>
+		<ep_objective1_intell>1</ep_objective1_intell>
+		<ep_objective2>장애물을 피해 이동하면서, 공간 감각을 기를 수 있어요.</ep_objective2>
+		<ep_objective2_intell>3</ep_objective2_intell>
+		<ep_objective3>꼬치를 만들며 AAB, ABB 패턴을 알 수 있어요.</ep_objective3>
+		<ep_objective3_intell>1,6</ep_objective3_intell>
+		<mom_talk>바둑알이나 블록 등 아이의 장난감을 가지고 규칙을 세워 줄 세우기 놀이를 해 보세요. 놀이를 하면서, 아이가 자연스럽게 규칙에 대해 이해할 수 있어요.</mom_talk>
+		<mom_talk_intell>1</mom_talk_intell>
+		<mom_talk_title>생활 속 규칙 놀이</mom_talk_title>
+		<tag_stuff>캠핑,간지럼산,꼬치,재규어</tag_stuff>
+		<tag_activity>복합분류,재규어특징,ABB/AAB패턴</tag_activity>
+		<tag_game>점프게임,만들기</tag_game>
+		<tag_intell>1,2,3,6</tag_intell>
+		<tag_song>꼬치 노래</tag_song>
+		<pt_intell_0>2</pt_intell_0>
+		<pt_intell_1>8</pt_intell_1>
+		<pt_intell_2>2</pt_intell_2>
+		<pt_intell_3>4</pt_intell_3>
+		<pt_intell_4>3</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>2</pt_intell_6>
+		<pt_intell_7>1</pt_intell_7>
+		<pt_intell_8>1</pt_intell_8>
+		<pt_intell_all>26</pt_intell_all>
+		<no_voca>1005</no_voca>
+		<no_sentence>252</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep229</ep_id>
+		<ep_title>도깨비 아저씨의 결혼식</ep_title>
+		<ep_headline>도깨비 아저씨가 결혼식을 해야 하는데 아직 반지와 꽃다발을 준비하지 못했대요! 과연 도깨비 아저씨는 결혼을 할 수 있을까요?</ep_headline>
+		<ep_objective1>결혼식 꽃다발을 만들며, 예술적 감각을 키울 수 있어요.</ep_objective1>
+		<ep_objective1_intell>6</ep_objective1_intell>
+		<ep_objective2>결혼식 반지를 찾으며, 넓이, 두께, 높이 비교를 할 수 있어요.</ep_objective2>
+		<ep_objective2_intell>1,3</ep_objective2_intell>
+		<ep_objective3>결혼식 노래에 맞춰 종을 울리며 리듬감을 키울 수 있어요.</ep_objective3>
+		<ep_objective3_intell>7</ep_objective3_intell>
+		<mom_talk>아이와 함께 플라스틱 칼로 식빵 자르기 놀이를 해 보세요. 두껍고, 얇게 식빵을 자르며 두께를 비교해 볼 수 있어요.</mom_talk>
+		<mom_talk_intell>1</mom_talk_intell>
+		<mom_talk_title>생활 속 두께 비교</mom_talk_title>
+		<tag_stuff>결혼식,반지,꽃,신랑,신부,입장,건망증</tag_stuff>
+		<tag_activity>넓이/두께/높이비교,식물성장요소</tag_activity>
+		<tag_game>꾸미기,반지찾기</tag_game>
+		<tag_intell>1,3,6,7</tag_intell>
+		<tag_song>　</tag_song>
+		<pt_intell_0>2</pt_intell_0>
+		<pt_intell_1>4</pt_intell_1>
+		<pt_intell_2>1</pt_intell_2>
+		<pt_intell_3>0</pt_intell_3>
+		<pt_intell_4>3</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>4</pt_intell_6>
+		<pt_intell_7>4</pt_intell_7>
+		<pt_intell_8>1</pt_intell_8>
+		<pt_intell_all>22</pt_intell_all>
+		<no_voca>1301</no_voca>
+		<no_sentence>311</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep201</ep_id>
+		<ep_title>긴급 출동! 불자동차 로호</ep_title>
+		<ep_headline>빨간 불자동차 로호의 첫 번째 출동 이야기! 로호는 과연 고양이를 무사히 구할 수 있을까요?</ep_headline>
+		<ep_objective1>소방차의 구조와 그 역할에 대해 알 수 있어요.</ep_objective1>
+		<ep_objective1_intell>0</ep_objective1_intell>
+		<ep_objective2>하나에서 열까지 수를 셀 수 있어요.</ep_objective2>
+		<ep_objective2_intell>1</ep_objective2_intell>
+		<ep_objective3>부분의 모습을 보고 전체를 파악할 수 있어요.</ep_objective3>
+		<ep_objective3_intell>3</ep_objective3_intell>
+		<mom_talk>종이에 동그란 구멍을 뚫고 나서, 종이로 동물 그림을 가려 보세요. 부분의 모습만 보고, 어떤 동물인지 알아맞혀 보는 놀이를 해 보세요.</mom_talk>
+		<mom_talk_intell>3</mom_talk_intell>
+		<mom_talk_title>동물 이름 알아맞히기</mom_talk_title>
+		<tag_stuff>소방차,불자동차,싸이렌,호스,와이퍼,사다리,긴급출동,펌프,해바라기</tag_stuff>
+		<tag_activity>소방차기능,수세기,펌프쓰임,식물성장필수요소</tag_activity>
+		<tag_game>창닦기,물주기,공기넣기,사다리조각맞추기</tag_game>
+		<tag_intell>1,2,3</tag_intell>
+		<tag_song>　</tag_song>
+		<pt_intell_0>6</pt_intell_0>
+		<pt_intell_1>5</pt_intell_1>
+		<pt_intell_2>1</pt_intell_2>
+		<pt_intell_3>7</pt_intell_3>
+		<pt_intell_4>2</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>0</pt_intell_6>
+		<pt_intell_7>0</pt_intell_7>
+		<pt_intell_8>1</pt_intell_8>
+		<pt_intell_all>25</pt_intell_all>
+		<no_voca>1419</no_voca>
+		<no_sentence>381</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep236</ep_id>
+		<ep_title>청소차가 나가신다!</ep_title>
+		<ep_headline>악당문어가 초록산을 쓰레기산으로 만들고 있어요! 청소차와 함께 악당문어를 물리치러 떠나요!</ep_headline>
+		<ep_objective1>청소차의 역할과 재활용하는 방법에 대해 알 수 있어요.</ep_objective1>
+		<ep_objective1_intell>2</ep_objective1_intell>
+		<ep_objective2>쓰레기가 있는 곳을 찾아 쓰레기를 치우면서 공간 감각을 기를 수 있어요.</ep_objective2>
+		<ep_objective2_intell>3</ep_objective2_intell>
+		<ep_objective3>토양이 오염되었을 때 자연에 미치는 영향을 경험해 볼 수 있어요.</ep_objective3>
+		<ep_objective3_intell>2</ep_objective3_intell>
+		<mom_talk>다 먹은 과자상자나 페트병을 재활용해서 다양한 물건을 만들어 보세요. 재미있게 만들기를 하며, 물건을 소중히 아끼는 마음까지 길러 줄 수 있습니다.</mom_talk>
+		<mom_talk_intell>9</mom_talk_intell>
+		<mom_talk_title>재활용하기</mom_talk_title>
+		<tag_stuff>청소차,쓰레기,탈것,청소</tag_stuff>
+		<tag_activity>청소차기능,재활용이점,long/up/down영단어</tag_activity>
+		<tag_game>쓰레기치우기,이동게임,청소기게임</tag_game>
+		<tag_intell>0,2,3,7</tag_intell>
+		<tag_song>퐁당퐁당 노래, 청소차 노래</tag_song>
+		<pt_intell_0>2</pt_intell_0>
+		<pt_intell_1>0</pt_intell_1>
+		<pt_intell_2>7</pt_intell_2>
+		<pt_intell_3>6</pt_intell_3>
+		<pt_intell_4>3</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>0</pt_intell_6>
+		<pt_intell_7>1</pt_intell_7>
+		<pt_intell_8>1</pt_intell_8>
+		<pt_intell_all>23</pt_intell_all>
+		<no_voca>1105</no_voca>
+		<no_sentence>323</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep237</ep_id>
+		<ep_title>기차 달리기 시합</ep_title>
+		<ep_headline>기차 달리기 시합에서 우승하면 황금휘슬을 준대요! 아즐은 과연 황금 휘슬을 받을 수 있을까요?</ep_headline>
+		<ep_objective1>가깝다, 멀다의 개념을 알고 거리를 비교할 수 있어요.</ep_objective1>
+		<ep_objective1_intell>1</ep_objective1_intell>
+		<ep_objective2>기찻길의 모양을 인식하여 바르게 연결할 수 있어요.</ep_objective2>
+		<ep_objective2_intell>3</ep_objective2_intell>
+		<ep_objective3>리듬에 맞춰 다양한 악기를 연주해 볼 수 있어요.</ep_objective3>
+		<ep_objective3_intell>7</ep_objective3_intell>
+		<mom_talk>아이와 함께 기차놀이를 해 보세요. '가까이 있는 방으로 갈지, 멀리 있는 방으로 갈지 이야기를 하며 거리를 비교할 수 있어요.</mom_talk>
+		<mom_talk_intell>1</mom_talk_intell>
+		<mom_talk_title>기차놀이</mom_talk_title>
+		<tag_stuff>기차,기차역,휘슬,시합,경주</tag_stuff>
+		<tag_activity>거리개념</tag_activity>
+		<tag_game>터널이동게임,퍼즐,응원리듬게임</tag_game>
+		<tag_intell>1,3,7</tag_intell>
+		<tag_song>　</tag_song>
+		<pt_intell_0>2</pt_intell_0>
+		<pt_intell_1>4</pt_intell_1>
+		<pt_intell_2>1</pt_intell_2>
+		<pt_intell_3>4</pt_intell_3>
+		<pt_intell_4>1</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>0</pt_intell_6>
+		<pt_intell_7>4</pt_intell_7>
+		<pt_intell_8>1</pt_intell_8>
+		<pt_intell_all>20</pt_intell_all>
+		<no_voca>1311</no_voca>
+		<no_sentence>351</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep242</ep_id>
+		<ep_title>아기돼지 삼형제를 도와줘!</ep_title>
+		<ep_headline>늑대가 아기돼지 삼형제를 잡아먹으려고 해요! 아기돼지 삼형제가 늑대를 막을 수 있게 집 짓는 걸 도와주러 가요!</ep_headline>
+		<ep_objective1>종이 집을 꾸미며, 종이의 성질과 도구의 쓰임새에 대해 알 수 있어요.</ep_objective1>
+		<ep_objective1_intell>2,6</ep_objective1_intell>
+		<ep_objective2>평면도형의 모양을 변별할 수 있어요.</ep_objective2>
+		<ep_objective2_intell>1,3</ep_objective2_intell>
+		<ep_objective3>그림을 보고 똑같은 모양으로 구성할 수 있어요.</ep_objective3>
+		<ep_objective3_intell>3</ep_objective3_intell>
+		<mom_talk>종이를 잘게 자르거나, 찢어 모자이크를 해 보세요. 종이의 성질을 탐색하며, 아이의 창의력을 길러 줄 수 있어요.</mom_talk>
+		<mom_talk_intell>2</mom_talk_intell>
+		<mom_talk_title>종이 탐색하기</mom_talk_title>
+		<tag_stuff>아기돼지,삼형제,가위,풀,망치,못,드라이버,나사,늑대,동화</tag_stuff>
+		<tag_activity>jump영단어,종이/나무/돌성질,평면도형구별</tag_activity>
+		<tag_game>꾸미기,나무집짓기,못박기,사다리만들기,퍼즐</tag_game>
+		<tag_intell>2,3,6</tag_intell>
+		<tag_song>　</tag_song>
+		<pt_intell_0>1</pt_intell_0>
+		<pt_intell_1>2</pt_intell_1>
+		<pt_intell_2>6</pt_intell_2>
+		<pt_intell_3>6</pt_intell_3>
+		<pt_intell_4>3</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>2</pt_intell_6>
+		<pt_intell_7>3</pt_intell_7>
+		<pt_intell_8>1</pt_intell_8>
+		<pt_intell_all>27</pt_intell_all>
+		<no_voca>1458</no_voca>
+		<no_sentence>360</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep204</ep_id>
+		<ep_title>내 친구 백팩</ep_title>
+		<ep_headline>필요한 건 뭐든지 다 갖고 있는 신기한 친구 백팩! 도라랑 백팩은 언제 처음 만났을까요?</ep_headline>
+		<ep_objective1>채소로 얼굴 표정을 만들며 미술 활동을 경험해 봐요.</ep_objective1>
+		<ep_objective1_intell>6</ep_objective1_intell>
+		<ep_objective2>개미집을 관찰하며 개미의 생김새와 먹이, 종류에 대해 배워요.</ep_objective2>
+		<ep_objective2_intell>2,3</ep_objective2_intell>
+		<ep_objective3>AB 패턴을 찾고, 이후의 패턴을 예측할 수 있어요.</ep_objective3>
+		<ep_objective3_intell>1</ep_objective3_intell>
+		<mom_talk>아이와 함께 숲 속을 거닐며 숲 속 동식물을 관찰해 보세요. 자연 속을 뛰놀며 건강해지고, 작은 생물에도 관심을 가질 수 있어요.</mom_talk>
+		<mom_talk_intell>2</mom_talk_intell>
+		<mom_talk_title>동식물 관찰하기</mom_talk_title>
+		<tag_stuff>도서관,개미,개미집</tag_stuff>
+		<tag_activity>수세기,개미집관찰,패턴예측,open영단어</tag_activity>
+		<tag_game>꾸미기,책장정리</tag_game>
+		<tag_intell>1,2,6</tag_intell>
+		<tag_song>　</tag_song>
+		<pt_intell_0>2</pt_intell_0>
+		<pt_intell_1>7</pt_intell_1>
+		<pt_intell_2>2</pt_intell_2>
+		<pt_intell_3>2</pt_intell_3>
+		<pt_intell_4>3</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>4</pt_intell_6>
+		<pt_intell_7>0</pt_intell_7>
+		<pt_intell_8>1</pt_intell_8>
+		<pt_intell_all>24</pt_intell_all>
+		<no_voca>1532</no_voca>
+		<no_sentence>404</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep221</ep_id>
+		<ep_title>오늘은 병원 가는 날!</ep_title>
+		<ep_headline>오늘은 도라가 병원 가는 날! 친구들도 아파서 병원에 가야 한대요! 의사선생님을 만나러 병원으로 함께 가요!</ep_headline>
+		<ep_objective1>1부터 7까지 숫자의 차례를 알 수 있어요.</ep_objective1>
+		<ep_objective1_intell>1</ep_objective1_intell>
+		<ep_objective2>수풀과 연못에 숨어 있는 아기오리들을 찾아낼 수 있어요.</ep_objective2>
+		<ep_objective2_intell>3</ep_objective2_intell>
+		<ep_objective3>의사선생님이 하는 일과 치료 도구들의 쓰임새에 대해서 알 수 있어요.</ep_objective3>
+		<ep_objective3_intell>2</ep_objective3_intell>
+		<mom_talk>병원놀이를 하며 엄마와 아이가 번갈아 의사와 환자 역할을 해 보세요. 아이는 병원놀이를 하면서 의사선생님이 하는 일을 잘 알 수 있어요.</mom_talk>
+		<mom_talk_intell>2</mom_talk_intell>
+		<mom_talk_title>병원놀이</mom_talk_title>
+		<tag_stuff>병원,배탈,주사,청진기,스티커,치료,의사</tag_stuff>
+		<tag_activity>숫자차례,병원치료도구,의사역할</tag_activity>
+		<tag_game>줄서기게임,아기오리찾기,치료게임</tag_game>
+		<tag_intell>1,2,3</tag_intell>
+		<tag_song>　</tag_song>
+		<pt_intell_0>2</pt_intell_0>
+		<pt_intell_1>5</pt_intell_1>
+		<pt_intell_2>4</pt_intell_2>
+		<pt_intell_3>5</pt_intell_3>
+		<pt_intell_4>3</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>0</pt_intell_6>
+		<pt_intell_7>0</pt_intell_7>
+		<pt_intell_8>1</pt_intell_8>
+		<pt_intell_all>23</pt_intell_all>
+		<no_voca>1199</no_voca>
+		<no_sentence>290</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep223</ep_id>
+		<ep_title>베니는 커서 뭐가 될까?</ep_title>
+		<ep_headline>베니는 하고 싶은 일이 정말 많대요! 우리 같이 베니가 진짜로 하고 싶은 일이 뭔지 찾으러 가요!</ep_headline>
+		<ep_objective1>약속한 규칙에 따라 음식을 만들어 볼 수 있어요.</ep_objective1>
+		<ep_objective1_intell>1</ep_objective1_intell>
+		<ep_objective2>1부터 15까지 영어로 수 세기를 경험해 볼 수 있어요.</ep_objective2>
+		<ep_objective2_intell>0,1</ep_objective2_intell>
+		<ep_objective3>우주 환경을 경험해 볼 수 있어요.</ep_objective3>
+		<ep_objective3_intell>2</ep_objective3_intell>
+		<mom_talk>아이가 우주에 관심을 보이면, 우주에 대한 책이나 천문대 등에 가 보세요. 우주와 달, 행성 등에 대해 알아가면서 아이의 관심 영역이 더 확대될 수 있어요.</mom_talk>
+		<mom_talk_intell>2</mom_talk_intell>
+		<mom_talk_title>우주에 대해 알려 주기</mom_talk_title>
+		<tag_stuff>요리사,농구선수,우주비행사,우주복</tag_stuff>
+		<tag_activity>요리사역할,농구선수역할,우주환경경험</tag_activity>
+		<tag_game>요리하기,농구게임,우주이동게임</tag_game>
+		<tag_intell>0,1,2,3</tag_intell>
+		<tag_song>　</tag_song>
+		<pt_intell_0>3</pt_intell_0>
+		<pt_intell_1>10</pt_intell_1>
+		<pt_intell_2>2</pt_intell_2>
+		<pt_intell_3>3</pt_intell_3>
+		<pt_intell_4>2</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>0</pt_intell_6>
+		<pt_intell_7>0</pt_intell_7>
+		<pt_intell_8>1</pt_intell_8>
+		<pt_intell_all>24</pt_intell_all>
+		<no_voca>1248</no_voca>
+		<no_sentence>330</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep226</ep_id>
+		<ep_title>부츠의 소포가 바뀌었어요!</ep_title>
+		<ep_headline>부츠의 소포가 잘못 배달되었어요! 우리 함께 부츠의 소포를 찾아 주러 우체국으로 떠나요!</ep_headline>
+		<ep_objective1>작은꼬꼬의 생일 파티 초대장을 꾸미면서, 예술적 감각을 키울 수 있어요.</ep_objective1>
+		<ep_objective1_intell>6</ep_objective1_intell>
+		<ep_objective2>두 가지 사물 중에서 더 무겁고, 더 가벼운 물건을 알 수 있어요.</ep_objective2>
+		<ep_objective2_intell>1</ep_objective2_intell>
+		<ep_objective3>쓰러지지 않게 상자를 쌓으면서, 공간 감각을 익힐 수 있어요.</ep_objective3>
+		<ep_objective3_intell>3</ep_objective3_intell>
+		<mom_talk>아이와 함께 놀이터에 가서 함께 시소를 타 보세요. 시소가 어느 쪽으로 기울어지는지 보면서, 무거운 것과 가벼운 것을 비교해 볼 수 있어요.</mom_talk>
+		<mom_talk_intell>1</mom_talk_intell>
+		<mom_talk_title>생활 속 무게 비교</mom_talk_title>
+		<tag_stuff>우체국,소포,저울,생일카드,우체통</tag_stuff>
+		<tag_activity>무게비교,우체국역할</tag_activity>
+		<tag_game>꾸미기,다리건너기,타이밍게임</tag_game>
+		<tag_intell>1,3,6</tag_intell>
+		<tag_song>　</tag_song>
+		<pt_intell_0>2</pt_intell_0>
+		<pt_intell_1>4</pt_intell_1>
+		<pt_intell_2>0</pt_intell_2>
+		<pt_intell_3>5</pt_intell_3>
+		<pt_intell_4>3</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>4</pt_intell_6>
+		<pt_intell_7>0</pt_intell_7>
+		<pt_intell_8>1</pt_intell_8>
+		<pt_intell_all>22</pt_intell_all>
+		<no_voca>1194</no_voca>
+		<no_sentence>291</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep227</ep_id>
+		<ep_title>개구리가 된 부츠를 구해 줘!</ep_title>
+		<ep_headline>부츠가 개구리로 변해 버렸어요! 개구리 부츠가 예전 모습을 되찾을 수 있게 도와주러 가요!</ep_headline>
+		<ep_objective1>왼쪽, 오른쪽으로 움직이며 방향에 관련된 영어 어휘를 경험해 볼 수 있어요.</ep_objective1>
+		<ep_objective1_intell>0,3</ep_objective1_intell>
+		<ep_objective2>위, 아래로 움직이며 공간과 관련된 영어 어휘를 경험해 볼 수 있어요.</ep_objective2>
+		<ep_objective2_intell>0,3</ep_objective2_intell>
+		<ep_objective3>노래를 따라 부르며 리듬감을 익힐 수 있어요.</ep_objective3>
+		<ep_objective3_intell>7</ep_objective3_intell>
+		<mom_talk>아이와 함께 샌드위치를 만들어 보세요. '빵 위에 치즈', '치즈 아래 빵' 등 ' '위, 아래'를 사용해서 이야기를 나누면 아이의 공간 개념을 길러 줄 수 있어요.</mom_talk>
+		<mom_talk_intell>9</mom_talk_intell>
+		<mom_talk_title>샌드위치 만들기</mom_talk_title>
+		<tag_stuff>사막,용,호수,동화,마술피리</tag_stuff>
+		<tag_activity>left/right,up/down,넓이비교,공간감각</tag_activity>
+		<tag_game>이동게임</tag_game>
+		<tag_intell>0,1,3,7</tag_intell>
+		<tag_song>양탄자 노래, 소중한 친구 노래</tag_song>
+		<pt_intell_0>4</pt_intell_0>
+		<pt_intell_1>4</pt_intell_1>
+		<pt_intell_2>0</pt_intell_2>
+		<pt_intell_3>5</pt_intell_3>
+		<pt_intell_4>1</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>0</pt_intell_6>
+		<pt_intell_7>4</pt_intell_7>
+		<pt_intell_8>1</pt_intell_8>
+		<pt_intell_all>22</pt_intell_all>
+		<no_voca>1226</no_voca>
+		<no_sentence>301</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>eps205</ep_id>
+		<ep_title>아주 특별한 달걀 찾기</ep_title>
+		<ep_headline>도둑여우가 부츠의 달걀 바구니를 멀리 던져 버렸어요! 부츠는 무사히 달걀 바구니를 찾아 도라에게 선물할 수 있을까요?</ep_headline>
+		<ep_objective1>1부터 5까지 수 읽는 법을 배워요.</ep_objective1>
+		<ep_objective1_intell>1</ep_objective1_intell>
+		<ep_objective2>달걀에 색을 칠하는 미술 활동을 경험해 봐요.</ep_objective2>
+		<ep_objective2_intell>6</ep_objective2_intell>
+		<ep_objective3>리듬에 맞춰 실로폰을 연주할 수 있어요.</ep_objective3>
+		<ep_objective3_intell>7</ep_objective3_intell>
+		<mom_talk>아이가 색칠한 것을 보고 아이와 많은 이야기를 나누어 주세요. 아이의 생각을 묻고 들어주며, 아이가 생각하는 힘을 기를 수 있게 도와주세요.</mom_talk>
+		<mom_talk_intell>6</mom_talk_intell>
+		<mom_talk_title>생각하는 힘 길러 주기</mom_talk_title>
+		<tag_stuff>부활절,달걀,실로폰,꽃</tag_stuff>
+		<tag_activity>부분과전체,left/right,수읽기,박수치기</tag_activity>
+		<tag_game>타이밍게임,색칠하기,연주게임</tag_game>
+		<tag_intell>0,1,6,7,8</tag_intell>
+		<tag_song>반짝반짝 작은 별 노래</tag_song>
+		<pt_intell_0>5</pt_intell_0>
+		<pt_intell_1>4</pt_intell_1>
+		<pt_intell_2>0</pt_intell_2>
+		<pt_intell_3>0</pt_intell_3>
+		<pt_intell_4>1</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>4</pt_intell_6>
+		<pt_intell_7>4</pt_intell_7>
+		<pt_intell_8>2</pt_intell_8>
+		<pt_intell_all>23</pt_intell_all>
+		<no_voca>1093</no_voca>
+		<no_sentence>287</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep215</ep_id>
+		<ep_title>편지 왔어요!</ep_title>
+		<ep_headline>우체부 아저씨의 안경이 부러졌어요! 아저씨를 대신해서 친구들에게 편지를 배달하러 가요.</ep_headline>
+		<ep_objective1>베니의 인형을 꾸미면서 미술 활동을 할 수 있어요.</ep_objective1>
+		<ep_objective1_intell>6</ep_objective1_intell>
+		<ep_objective2>세 가지의 사물 중에서 위, 아래, 가운데를 알 수 있어요.</ep_objective2>
+		<ep_objective2_intell>1</ep_objective2_intell>
+		<ep_objective3>음악에 맞춰 춤을 추며, 리듬감을 발달시킬 수 있어요.</ep_objective3>
+		<ep_objective3_intell>7</ep_objective3_intell>
+		<mom_talk>위, 아래, 가운데'를 말하면서 책장이나 서랍장에 물건을 넣는 놀이를 해 보세요. 수학적인 언어를 자주 사용하면, 아이의 수학적인 감각이 발달할 수 있어요.</mom_talk>
+		<mom_talk_intell>1</mom_talk_intell>
+		<mom_talk_title>생활 속 공간 개념 익히기</mom_talk_title>
+		<tag_stuff>편지,편지배달,카드,우체통,우체국,소포</tag_stuff>
+		<tag_activity>위/아래/가운데개념</tag_activity>
+		<tag_game>꾸미기,편지배달게임,댄스리듬게임</tag_game>
+		<tag_intell>1,3,6,7</tag_intell>
+		<tag_song>　</tag_song>
+		<pt_intell_0>1</pt_intell_0>
+		<pt_intell_1>4</pt_intell_1>
+		<pt_intell_2>0</pt_intell_2>
+		<pt_intell_3>3</pt_intell_3>
+		<pt_intell_4>3</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>4</pt_intell_6>
+		<pt_intell_7>4</pt_intell_7>
+		<pt_intell_8>2</pt_intell_8>
+		<pt_intell_all>24</pt_intell_all>
+		<no_voca>929</no_voca>
+		<no_sentence>240</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep230</ep_id>
+		<ep_title>숲 속의 장기자랑</ep_title>
+		<ep_headline>숲 속 무대에서 장기자랑을 한대요! 도라는 멋진 노래를, 부츠는 신나는 춤을 추기로 했어요. 우리 장기자랑을 보러 함께 가요!</ep_headline>
+		<ep_objective1>피아노를 치며, 도라와 함께 노래 연습을 할 수 있어요.</ep_objective1>
+		<ep_objective1_intell>7</ep_objective1_intell>
+		<ep_objective2>음악에 맞춰, 춤을 추며 리듬감을 발달시킬 수 있어요.</ep_objective2>
+		<ep_objective2_intell>7,8</ep_objective2_intell>
+		<ep_objective3>친구들에게 풍선을 나누어 주면서 2, 3 ,4, 5 가르기를 해 볼 수 있어요.</ep_objective3>
+		<ep_objective3_intell>1</ep_objective3_intell>
+		<mom_talk>아이와 함께 리듬에 맞춰 춤을 추다가 '머리', '손', '발' 등의 신체 부위를 말하면, 춤추는 걸 멈추고, 말한 신체 부위를 서로 맞닿게 해 보세요.</mom_talk>
+		<mom_talk_intell>8</mom_talk_intell>
+		<mom_talk_title>춤추기 놀이</mom_talk_title>
+		<tag_stuff>장기자랑,노래,춤,무대,풍선,악보</tag_stuff>
+		<tag_activity>수가르기,피아노연주</tag_activity>
+		<tag_game>음표잡기,연주게임,리듬게임</tag_game>
+		<tag_intell>1,3,7</tag_intell>
+		<tag_song>　</tag_song>
+		<pt_intell_0>1</pt_intell_0>
+		<pt_intell_1>4</pt_intell_1>
+		<pt_intell_2>0</pt_intell_2>
+		<pt_intell_3>2</pt_intell_3>
+		<pt_intell_4>3</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>0</pt_intell_6>
+		<pt_intell_7>6</pt_intell_7>
+		<pt_intell_8>3</pt_intell_8>
+		<pt_intell_all>22</pt_intell_all>
+		<no_voca>1267</no_voca>
+		<no_sentence>329</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep203</ep_id>
+		<ep_title>구조대장 부츠</ep_title>
+		<ep_headline>도라가 악보를 안 가지고 학교에 갔어요! 부츠는 도라의 악보를 무사히 학교까지 가지고 갈 수 있을까요?</ep_headline>
+		<ep_objective1>윗옷, 아래옷, 모자를 분류해서 옷을 정리할 수 있어요.</ep_objective1>
+		<ep_objective1_intell>1</ep_objective1_intell>
+		<ep_objective2>소리가 나는 악기를 찾고, 소리를 들어볼 수 있어요.</ep_objective2>
+		<ep_objective2_intell>3,7</ep_objective2_intell>
+		<ep_objective3>도라가 만든 노래에 맞춰 다양한 악기를 연주할 수 있어요.</ep_objective3>
+		<ep_objective3_intell>7</ep_objective3_intell>
+		<mom_talk>아이 주변의 사물을 같은 색깔이나 종류끼리 모아서 정리하는 놀이를 해 보세요. 물건을 정리하는 놀이를 통해 분류 개념을 길러 줄 수 있습니다.</mom_talk>
+		<mom_talk_intell>1</mom_talk_intell>
+		<mom_talk_title>생활 속 분류 개념 익히기</mom_talk_title>
+		<tag_stuff>악보,악기,옷,학교</tag_stuff>
+		<tag_activity>속성분류,영어숫자,사물인지,악기어휘</tag_activity>
+		<tag_game>리듬게임</tag_game>
+		<tag_intell>0,1,3,7</tag_intell>
+		<tag_song>노래는 즐거워 노래</tag_song>
+		<pt_intell_0>5</pt_intell_0>
+		<pt_intell_1>5</pt_intell_1>
+		<pt_intell_2>0</pt_intell_2>
+		<pt_intell_3>4</pt_intell_3>
+		<pt_intell_4>3</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>0</pt_intell_6>
+		<pt_intell_7>5</pt_intell_7>
+		<pt_intell_8>1</pt_intell_8>
+		<pt_intell_all>26</pt_intell_all>
+		<no_voca>1014</no_voca>
+		<no_sentence>276</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep214</ep_id>
+		<ep_title>피자 만들기 대회!</ep_title>
+		<ep_headline>피자 만들기 대회가 열린대요! 베니를 도와서 맛있는 피자를 만들어 볼까요?</ep_headline>
+		<ep_objective1>세 가지의 사물 중에서 앞, 뒤, 가운데를 알 수 있어요.</ep_objective1>
+		<ep_objective1_intell>1</ep_objective1_intell>
+		<ep_objective2>주방 도구의 기능과 쓰임새에 대해 알 수 있어요.</ep_objective2>
+		<ep_objective2_intell>2</ep_objective2_intell>
+		<ep_objective3>피자를 자유롭게 꾸미면서 창의적인 예술 활동을 경험해요.</ep_objective3>
+		<ep_objective3_intell>6</ep_objective3_intell>
+		<mom_talk>커다란 동그라미를 그린 다음, 면봉이나 붓, 빨대 등으로 물감을 찍어서 피자 재료를 그려 보게 하세요. 다양한 표현 기법을 경험하는 동안 아이의 창의력이 발달할 수 있어요.</mom_talk>
+		<mom_talk_intell>6</mom_talk_intell>
+		<mom_talk_title>다양한 재료로 그림 그리기</mom_talk_title>
+		<tag_stuff>피자,대회,시장,농부,주방도구,요리</tag_stuff>
+		<tag_activity>앞/뒤/가운데인지,주방도구기능</tag_activity>
+		<tag_game>타이쿤게임,요리게임</tag_game>
+		<tag_intell>1,2,4,6</tag_intell>
+		<tag_song>　</tag_song>
+		<pt_intell_0>3</pt_intell_0>
+		<pt_intell_1>4</pt_intell_1>
+		<pt_intell_2>2</pt_intell_2>
+		<pt_intell_3>2</pt_intell_3>
+		<pt_intell_4>3</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>4</pt_intell_6>
+		<pt_intell_7>3</pt_intell_7>
+		<pt_intell_8>1</pt_intell_8>
+		<pt_intell_all>25</pt_intell_all>
+		<no_voca>1125</no_voca>
+		<no_sentence>278</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep220</ep_id>
+		<ep_title>아이, 좋아! 아이스크림!</ep_title>
+		<ep_headline>아이스크림의 재료가 다 떨어졌어요! 도라랑 부츠와 함께 아이스크림 재료를 구하러 가요!</ep_headline>
+		<ep_objective1>젖소에게서 우유를 얻을 수 있다는 것을 알 수 있어요.</ep_objective1>
+		<ep_objective1_intell>2</ep_objective1_intell>
+		<ep_objective2>달걀의 개수를 세면서 1부터 15까지 배울 수 있어요.</ep_objective2>
+		<ep_objective2_intell>1</ep_objective2_intell>
+		<ep_objective3>다양한 재료로 아이스크림을 꾸미며, 창의성을 기를 수 있어요.</ep_objective3>
+		<ep_objective3_intell>6</ep_objective3_intell>
+		<mom_talk>달걀 껍질에 인형 얼굴을 만드는 놀이를 해 보세요. 여러 재료를 사용해서 인형 얼굴을 꾸미는 동안, 아이의 창의성과 예술적 감각이 발달될 수 있어요.</mom_talk>
+		<mom_talk_intell>6</mom_talk_intell>
+		<mom_talk_title>달걀 인형 만들기</mom_talk_title>
+		<tag_stuff>아이스크림,트럭,우유,달걀,닭,소,나무,열매</tag_stuff>
+		<tag_activity>영어숫자,1~15수세기</tag_activity>
+		<tag_game>소젖짜기,달걀얻기게임,이동게임,꾸미기</tag_game>
+		<tag_intell>1,2,5,6</tag_intell>
+		<tag_song>　</tag_song>
+		<pt_intell_0>2</pt_intell_0>
+		<pt_intell_1>5</pt_intell_1>
+		<pt_intell_2>7</pt_intell_2>
+		<pt_intell_3>1</pt_intell_3>
+		<pt_intell_4>1</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>4</pt_intell_6>
+		<pt_intell_7>0</pt_intell_7>
+		<pt_intell_8>1</pt_intell_8>
+		<pt_intell_all>24</pt_intell_all>
+		<no_voca>1118</no_voca>
+		<no_sentence>316</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep224</ep_id>
+		<ep_title>꼬마맵</ep_title>
+		<ep_headline>꼬마맵은 삼촌처럼 멋진 맵이 되고 싶대요! 꼬마맵이 지도를 잘 그릴 수 있도록 함께 도와요!</ep_headline>
+		<ep_objective1>리듬에 맞춰 실로폰을 연주해 볼 수 있어요.</ep_objective1>
+		<ep_objective1_intell>7</ep_objective1_intell>
+		<ep_objective2>동물들이 사는 집에 대해 배울 수 있어요.</ep_objective2>
+		<ep_objective2_intell>2</ep_objective2_intell>
+		<ep_objective3>여러 가지 평면도형을 경험할 수 있어요.</ep_objective3>
+		<ep_objective3_intell>1</ep_objective3_intell>
+		<mom_talk>물의 양이 조금씩 많아지도록, 유리컵 여러 개에 물을 담아 막대기로 두드려 보세요. 유리컵 실로폰을 연주하며, 물의 높낮이에 따라 소리가 달라진다는 것을 알 수 있어요.</mom_talk>
+		<mom_talk_intell>7</mom_talk_intell>
+		<mom_talk_title>물컵 실로폰 연주하기</mom_talk_title>
+		<tag_stuff>지도,피라미드,실로폰,세모,네모,동그라미,모양열쇠</tag_stuff>
+		<tag_activity>다른점구별,자연학습,공간감각성장</tag_activity>
+		<tag_game>리듬게임,집찾기,이동게임,틀린그림찾기</tag_game>
+		<tag_intell>1,2,3,7</tag_intell>
+		<tag_song>꼬마맵 노래</tag_song>
+		<pt_intell_0>2</pt_intell_0>
+		<pt_intell_1>1</pt_intell_1>
+		<pt_intell_2>4</pt_intell_2>
+		<pt_intell_3>8</pt_intell_3>
+		<pt_intell_4>2</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>0</pt_intell_6>
+		<pt_intell_7>5</pt_intell_7>
+		<pt_intell_8>1</pt_intell_8>
+		<pt_intell_all>26</pt_intell_all>
+		<no_voca>1509</no_voca>
+		<no_sentence>325</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep222</ep_id>
+		<ep_title>곤충들의 무도회에 가요!</ep_title>
+		<ep_headline>애벌레가 곤충 무도회에 초대를 받았어요! 그런데 애벌레는 곤충이 아니래요. 누가 애벌레를 곤충 무도회에 초대했을까요?</ep_headline>
+		<ep_objective1>1.  1부터 13까지의 숫자를 영어로 셀 수 있어요.</ep_objective1>
+		<ep_objective1_intell>0,1</ep_objective1_intell>
+		<ep_objective2>두 그림을 비교하여 다른 부분을 찾아낼 수 있어요.</ep_objective2>
+		<ep_objective2_intell>3</ep_objective2_intell>
+		<ep_objective3>애벌레, 번데기, 나비로 변하는 나비의 성장 과정을 경험해 볼 수 있어요.</ep_objective3>
+		<ep_objective3_intell>2</ep_objective3_intell>
+		<mom_talk>식탁에서 가족의 수대로 수를 세며, 숟가락과 젓가락을 놓아 보게 해 보세요. 아이가 생활 속에서 친근하게 수학적 감각을 몸에 익힐 수 있어요.</mom_talk>
+		<mom_talk_intell>1</mom_talk_intell>
+		<mom_talk_title>생활 속 수 세기</mom_talk_title>
+		<tag_stuff>댄스파티,무도회,개미,애벌레,꿀벌,나비,거미,무당벌레,거미줄,꽃</tag_stuff>
+		<tag_activity>곤충특성,그림비교,영어숫자,나비변태과정</tag_activity>
+		<tag_game>틀린그림찾기,그리기,이동게임,리듬게임</tag_game>
+		<tag_intell>0,2,3,7</tag_intell>
+		<tag_song>곤충 무도회 노래</tag_song>
+		<pt_intell_0>3</pt_intell_0>
+		<pt_intell_1>1</pt_intell_1>
+		<pt_intell_2>3</pt_intell_2>
+		<pt_intell_3>8</pt_intell_3>
+		<pt_intell_4>3</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>0</pt_intell_6>
+		<pt_intell_7>4</pt_intell_7>
+		<pt_intell_8>3</pt_intell_8>
+		<pt_intell_all>28</pt_intell_all>
+		<no_voca>1127</no_voca>
+		<no_sentence>277</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>eps206</ep_id>
+		<ep_title>채소 수프를 만들어요!</ep_title>
+		<ep_headline>부츠가 아파요! 식물 박사 잇사와 함께 부츠에게 줄 채소 수프를 만들러 떠나요!</ep_headline>
+		<ep_objective1>식물의 잎 부분과 잎채소의 종류에 대해 배워요.</ep_objective1>
+		<ep_objective1_intell>2</ep_objective1_intell>
+		<ep_objective2>식물의 뿌리 부분과 뿌리채소의 종류에 대해 배워요.</ep_objective2>
+		<ep_objective2_intell>2</ep_objective2_intell>
+		<ep_objective3>식물의 열매 부분과 열매채소의 종류에 대해 배워요.</ep_objective3>
+		<ep_objective3_intell>2</ep_objective3_intell>
+		<mom_talk>아이와 함께 나뭇잎을 주워서 종이 아래 대고 크레파스로 문질러 보세요. 나뭇잎 모양이 그대로 찍혀 나와 잎의 모양을 더 자세히 관찰해 볼 수 있어요.</mom_talk>
+		<mom_talk_intell>2</mom_talk_intell>
+		<mom_talk_title>나뭇잎 관찰하기</mom_talk_title>
+		<tag_stuff>채소,병문안,토끼,농부,채소밭,구름,비,양배추,양상추,시금치,당근,무,고구마,오이,토마토,가지</tag_stuff>
+		<tag_activity>자연학습,식물뿌리학습,열매채소학습,수읽기</tag_activity>
+		<tag_game>채소수확하기,채소뽑기,이동게임</tag_game>
+		<tag_intell>1,2,8</tag_intell>
+		<tag_song>　</tag_song>
+		<pt_intell_0>1</pt_intell_0>
+		<pt_intell_1>3</pt_intell_1>
+		<pt_intell_2>12</pt_intell_2>
+		<pt_intell_3>0</pt_intell_3>
+		<pt_intell_4>3</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>0</pt_intell_6>
+		<pt_intell_7>0</pt_intell_7>
+		<pt_intell_8>2</pt_intell_8>
+		<pt_intell_all>24</pt_intell_all>
+		<no_voca>992</no_voca>
+		<no_sentence>306</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep205</ep_id>
+		<ep_title>새 친구가 생겼어요!</ep_title>
+		<ep_headline>도라네 집에 새 친구가 온대요! 그 친구는 누구일까요? 우리 함께 새 친구 만나러 가요!</ep_headline>
+		<ep_objective1>AAB 패턴을 찾고, 이후의 패턴을 예측할 수 있어요.</ep_objective1>
+		<ep_objective1_intell>1</ep_objective1_intell>
+		<ep_objective2>연못에서 사는 생물들에 대해 알 수 있어요.</ep_objective2>
+		<ep_objective2_intell>2,3</ep_objective2_intell>
+		<ep_objective3>강아지랑 놀아 주며, 동물을 아끼고 사랑하는 마음을 기를 수 있어요.</ep_objective3>
+		<ep_objective3_intell>2</ep_objective3_intell>
+		<mom_talk>강아지의 동작과 울음소리를 관찰하고, 아이와 함께 흉내 내어 보세요. 아이의 표현력과 관찰력을 길러 줄 수 있어요.</mom_talk>
+		<mom_talk_intell>7</mom_talk_intell>
+		<mom_talk_title>강아지 흉내 내기</mom_talk_title>
+		<tag_stuff>강아지,선물,낚시,다리</tag_stuff>
+		<tag_activity>패턴예측,연못생물습득,공간감각,fast영단어</tag_activity>
+		<tag_game>구름만들기,낚시게임,이동게임</tag_game>
+		<tag_intell>0,1,2,3</tag_intell>
+		<tag_song>　</tag_song>
+		<pt_intell_0>2</pt_intell_0>
+		<pt_intell_1>5</pt_intell_1>
+		<pt_intell_2>6</pt_intell_2>
+		<pt_intell_3>2</pt_intell_3>
+		<pt_intell_4>1</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>0</pt_intell_6>
+		<pt_intell_7>0</pt_intell_7>
+		<pt_intell_8>1</pt_intell_8>
+		<pt_intell_all>20</pt_intell_all>
+		<no_voca>970</no_voca>
+		<no_sentence>258</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep228</ep_id>
+		<ep_title>우린 슈퍼 스파이</ep_title>
+		<ep_headline>누가 베니의 케이크를 훔쳐 가려고 해요! 스파이 도라와 함께 케이크를 훔치는 범인을 찾아봐요!</ep_headline>
+		<ep_objective1>스파이 물건들을 찾으며, 깊이 비교를 할 수 있어요.</ep_objective1>
+		<ep_objective1_intell>1</ep_objective1_intell>
+		<ep_objective2>스파이 물건을 사용해서 숨어 있는 범인의 단서를 찾을 수 있어요.</ep_objective2>
+		<ep_objective2_intell>3</ep_objective2_intell>
+		<ep_objective3>닭, 오리, 여우, 돼지의 털과 발자국 모양을 관찰할 수 있어요.</ep_objective3>
+		<ep_objective3_intell>2</ep_objective3_intell>
+		<mom_talk>동물의 발자국을 그려 놓고, 그 발자국을 밟으면서 동물을 흉내 내어 걸어 보세요. 동물의 특징을 알고, 신체의 균형 감각도 길러 줄 수 있어요.</mom_talk>
+		<mom_talk_intell>2</mom_talk_intell>
+		<mom_talk_title>동물 흉내 내기 놀이</mom_talk_title>
+		<tag_stuff>스파이,비밀,범인,케이크파티,초대,단서,스파이편지,스파이펜</tag_stuff>
+		<tag_activity>깊이비교,돋보기쓰임,동물발자국,동물털</tag_activity>
+		<tag_game>스파이게임,이동게임</tag_game>
+		<tag_intell>1,2,3,7</tag_intell>
+		<tag_song>스파이 노래</tag_song>
+		<pt_intell_0>1</pt_intell_0>
+		<pt_intell_1>4</pt_intell_1>
+		<pt_intell_2>5</pt_intell_2>
+		<pt_intell_3>6</pt_intell_3>
+		<pt_intell_4>2</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>0</pt_intell_6>
+		<pt_intell_7>1</pt_intell_7>
+		<pt_intell_8>2</pt_intell_8>
+		<pt_intell_all>24</pt_intell_all>
+		<no_voca>1189</no_voca>
+		<no_sentence>306</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep239</ep_id>
+		<ep_title>나도 꼬리가 있었으면 좋겠어!</ep_title>
+		<ep_headline>아기 고릴라가 멋진 꼬리가 있었으면 좋겠대요! 도라랑 부츠랑 함께 멋진 꼬리를 찾아보러 갈까요?</ep_headline>
+		<ep_objective1>비버 꼬리의 역할에 대해서 알 수 있어요.</ep_objective1>
+		<ep_objective1_intell>2</ep_objective1_intell>
+		<ep_objective2>코끼리, 기린 꼬리의 역할에 대해서 알 수 있어요.</ep_objective2>
+		<ep_objective2_intell>2</ep_objective2_intell>
+		<ep_objective3>공작 꼬리의 역할에 대해 알고, 공작 꼬리를 꾸며 볼 수 있어요.</ep_objective3>
+		<ep_objective3_intell>2,6</ep_objective3_intell>
+		<mom_talk>아이와 함께 다양한 동물의 꼬리를 만들어 보세요. 동물 꼬리를 만드는 과정에서 동물의 특징과 생김새를 익힐 수 있어요.</mom_talk>
+		<mom_talk_intell>6</mom_talk_intell>
+		<mom_talk_title>동물 꼬리 만들기</mom_talk_title>
+		<tag_stuff>비버,코끼리,기린,공작,초원</tag_stuff>
+		<tag_activity>동물꼬리역할</tag_activity>
+		<tag_game>호수이동게임,파리와모기쫓기게임,꾸미기 </tag_game>
+		<tag_intell>2,3,6</tag_intell>
+		<tag_song>　</tag_song>
+		<pt_intell_0>1</pt_intell_0>
+		<pt_intell_1>0</pt_intell_1>
+		<pt_intell_2>5</pt_intell_2>
+		<pt_intell_3>4</pt_intell_3>
+		<pt_intell_4>3</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>4</pt_intell_6>
+		<pt_intell_7>0</pt_intell_7>
+		<pt_intell_8>1</pt_intell_8>
+		<pt_intell_all>21</pt_intell_all>
+		<no_voca>1063</no_voca>
+		<no_sentence>255</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep235</ep_id>
+		<ep_title>남극으로 떠나요!</ep_title>
+		<ep_headline>아기펭귄이 집으로 가는 길을 잃었어요. 모두 함께 아기펭귄을 집이 있는 남극으로 데려다 주어요.</ep_headline>
+		<ep_objective1>남극의 기후와 특징, 남극에서 사는 동물에 대해 알 수 있어요.</ep_objective1>
+		<ep_objective1_intell>2</ep_objective1_intell>
+		<ep_objective2>입체도형의 모양을 변별하고, 성질을 경험해 볼 수 있어요.</ep_objective2>
+		<ep_objective2_intell>1</ep_objective2_intell>
+		<ep_objective3>펭귄 노래를 부르며, 펭귄의 움직임을 흉내 낼 수 있어요.</ep_objective3>
+		<ep_objective3_intell>7,8</ep_objective3_intell>
+		<mom_talk>뚜껑이 있는 다양한 모양의 그릇을 준비해서 뚜껑을 찾는 놀이를 해 보세요. 뚜껑을 찾으면서 자연스레 입체도형 단면의 모양을 변별해 볼 수 있어요.</mom_talk>
+		<mom_talk_intell>1</mom_talk_intell>
+		<mom_talk_title>뚜껑 찾기 놀이</mom_talk_title>
+		<tag_stuff>남극,얼음,갈매기,스노우모빌,펭귄,황제펭귄,흰긴수염고래,흰수염고래,배,남극탐험</tag_stuff>
+		<tag_activity>입체도형인지,단면경험,남극동물,펭귄몸짓흉내,수세기</tag_activity>
+		<tag_game>열쇠찾기,바다이동게임,타이밍게임,아기펭귄구하기</tag_game>
+		<tag_intell>1,2,3,7,8</tag_intell>
+		<tag_song>펭귄 노래</tag_song>
+		<pt_intell_0>1</pt_intell_0>
+		<pt_intell_1>6</pt_intell_1>
+		<pt_intell_2>3</pt_intell_2>
+		<pt_intell_3>11</pt_intell_3>
+		<pt_intell_4>2</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>0</pt_intell_6>
+		<pt_intell_7>1</pt_intell_7>
+		<pt_intell_8>2</pt_intell_8>
+		<pt_intell_all>29</pt_intell_all>
+		<no_voca>1395</no_voca>
+		<no_sentence>364</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep211</ep_id>
+		<ep_title>누가 바구니를 가져갔을까?</ep_title>
+		<ep_headline>도라와 부츠가 싼 도시락 바구니가 없어졌어요! 누가 바구니를 가져갔는지 찾으러 가 볼까요?</ep_headline>
+		<ep_objective1>새의 먹이와 똥에 대해서 알 수 있어요.</ep_objective1>
+		<ep_objective1_intell>2</ep_objective1_intell>
+		<ep_objective2>노래에 맞춰 북을 치고 춤을 추는 활동을 경험해 볼 수 있어요.</ep_objective2>
+		<ep_objective2_intell>7,8</ep_objective2_intell>
+		<ep_objective3>초식동물의 먹이와 똥에 대해서 알 수 있어요.</ep_objective3>
+		<ep_objective3_intell>2</ep_objective3_intell>
+		<mom_talk>동물의 움직임을 흉내 내는 놀이를 해 보세요. 새의 날개처럼 양팔을 움직여 보고, 코끼리처럼 쿵쾅쿵쾅 걷는 동안 아이의 대근육과 소근육이 발달할 수 있어요.</mom_talk>
+		<mom_talk_intell>8</mom_talk_intell>
+		<mom_talk_title>동물 흉내 내기</mom_talk_title>
+		<tag_stuff>정글,초원,앵무새,사자,코끼리</tag_stuff>
+		<tag_activity>동물먹이,동물똥,리듬감익히기,영어숫자</tag_activity>
+		<tag_game>열매깨기,똥누기게임,리듬게임,바나나담기게임</tag_game>
+		<tag_intell>0,1,2,7,8</tag_intell>
+		<tag_song>체조 노래</tag_song>
+		<pt_intell_0>3</pt_intell_0>
+		<pt_intell_1>2</pt_intell_1>
+		<pt_intell_2>4</pt_intell_2>
+		<pt_intell_3>2</pt_intell_3>
+		<pt_intell_4>3</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>0</pt_intell_6>
+		<pt_intell_7>2</pt_intell_7>
+		<pt_intell_8>3</pt_intell_8>
+		<pt_intell_all>22</pt_intell_all>
+		<no_voca>1096</no_voca>
+		<no_sentence>279</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep217</ep_id>
+		<ep_title>길 잃은 아기 물고기</ep_title>
+		<ep_headline>아기물고기가 길을 잃었어요! 도라랑 부츠랑 함께 아기물고기를 집에 데려다 주어요!</ep_headline>
+		<ep_objective1>ABB 패턴을 찾고, 이후의 패턴을 예측할 수 있어요.</ep_objective1>
+		<ep_objective1_intell>1</ep_objective1_intell>
+		<ep_objective2>바닷속에 사는 생물의 이름과 특징을 알 수 있어요.</ep_objective2>
+		<ep_objective2_intell>2</ep_objective2_intell>
+		<ep_objective3>그림을 보고, 같은 특징을 가지고 있는 물고기를 찾을 수 있어요.</ep_objective3>
+		<ep_objective3_intell>3</ep_objective3_intell>
+		<mom_talk>수족관에 가서 다양한 물고기들을 보고 특징과 이름에 대해 이야기를 나누어 보세요. 집에 돌아와서 물고기의 특징을 말해 주고, '누구일까요?'하고 묻는 놀이를 해 보세요.</mom_talk>
+		<mom_talk_intell>2</mom_talk_intell>
+		<mom_talk_title>물고기 퀴즈 놀이</mom_talk_title>
+		<tag_stuff>물고기,바닷가,잠수함,바닷속탐험,해마,바다거북,가오리,오징어,돌고래</tag_stuff>
+		<tag_activity>패턴예측,바다생물탐색,영어숫자</tag_activity>
+		<tag_game>물고기찾기,바닷속이동게임</tag_game>
+		<tag_intell>1,2,3</tag_intell>
+		<tag_song>　</tag_song>
+		<pt_intell_0>3</pt_intell_0>
+		<pt_intell_1>4</pt_intell_1>
+		<pt_intell_2>2</pt_intell_2>
+		<pt_intell_3>6</pt_intell_3>
+		<pt_intell_4>1</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>0</pt_intell_6>
+		<pt_intell_7>0</pt_intell_7>
+		<pt_intell_8>1</pt_intell_8>
+		<pt_intell_all>20</pt_intell_all>
+		<no_voca>992</no_voca>
+		<no_sentence>279</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep225</ep_id>
+		<ep_title>사진 전시회가 열렸어요!</ep_title>
+		<ep_headline>도라와 부츠는 사진 전시회에 사진을 낼 거래요! 우리 함께 전시회에 낼 사진을 찍으러 떠나 볼까요?</ep_headline>
+		<ep_objective1>정글에 사는 동물들에 대해 알 수 있어요.</ep_objective1>
+		<ep_objective1_intell>2</ep_objective1_intell>
+		<ep_objective2>다른 동작을 하고 있는 친구를 찾을 수 있어요.</ep_objective2>
+		<ep_objective2_intell>3</ep_objective2_intell>
+		<ep_objective3>시간의 선후 관계에 대해 알 수 있어요.</ep_objective3>
+		<ep_objective3_intell>1</ep_objective3_intell>
+		<mom_talk>시간은 추상적인 개념이기 때문에, 아직 아이들이 이해하기에는 어렵습니다. 시간의 흐름을 알 수 있는 아이의 사진을 2장씩 준비해서, 먼저 일어난 일과 나중에 일어난 일을 말해 보게 해 주세요.</mom_talk>
+		<mom_talk_intell>1</mom_talk_intell>
+		<mom_talk_title>퀴즈 놀이</mom_talk_title>
+		<tag_stuff>정글,사진기,사진관,사진전시회,카메라,앵무새,재규어,거미,나비</tag_stuff>
+		<tag_activity>정글동물,click영단어,시간의선후관계,리듬감익히기</tag_activity>
+		<tag_game>사진찍기게임,다른동작찾기,꾸미기 </tag_game>
+		<tag_intell>0,1,2,3,7</tag_intell>
+		<tag_song>사진 찍기 노래</tag_song>
+		<pt_intell_0>2</pt_intell_0>
+		<pt_intell_1>4</pt_intell_1>
+		<pt_intell_2>2</pt_intell_2>
+		<pt_intell_3>6</pt_intell_3>
+		<pt_intell_4>2</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>2</pt_intell_6>
+		<pt_intell_7>2</pt_intell_7>
+		<pt_intell_8>1</pt_intell_8>
+		<pt_intell_all>24</pt_intell_all>
+		<no_voca>1074</no_voca>
+		<no_sentence>231</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep231</ep_id>
+		<ep_title>하늘에서 떨어진 아기별 오형제</ep_title>
+		<ep_headline>아기별 오형제가 밤하늘에서 떨어졌어요! 도라랑 부츠랑 함께 아기별 오형제를 찾으러 떠나요!</ep_headline>
+		<ep_objective1>야행성 동물의 이름과 특징에 대해 알 수 있어요.</ep_objective1>
+		<ep_objective1_intell>2</ep_objective1_intell>
+		<ep_objective2>1부터 10까지 수의 차례에 대해 알 수 있어요.</ep_objective2>
+		<ep_objective2_intell>1</ep_objective2_intell>
+		<ep_objective3>장애물을 피해 움직이며 공간 감각을 기를 수 있어요.</ep_objective3>
+		<ep_objective3_intell>3</ep_objective3_intell>
+		<mom_talk>아이와 함께 야행성 동물 스무고개를 해 보세요. 스무고개의 답을 맞히며, 야행성 동물의 이름과 특징에 대해 알 수 있어요.</mom_talk>
+		<mom_talk_intell>2</mom_talk_intell>
+		<mom_talk_title>스무고개 놀이</mom_talk_title>
+		<tag_stuff>개구리,연못,밤하늘,별,별자리</tag_stuff>
+		<tag_activity>어휘경험,수차례,음악연주,공간감각,개구리특성</tag_activity>
+		<tag_game>동물찾기,리듬게임,이동게임 </tag_game>
+		<tag_intell>1,2,3,7</tag_intell>
+		<tag_song>반짝반짝 작은 별 노래 </tag_song>
+		<pt_intell_0>2</pt_intell_0>
+		<pt_intell_1>5</pt_intell_1>
+		<pt_intell_2>3</pt_intell_2>
+		<pt_intell_3>6</pt_intell_3>
+		<pt_intell_4>3</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>0</pt_intell_6>
+		<pt_intell_7>2</pt_intell_7>
+		<pt_intell_8>1</pt_intell_8>
+		<pt_intell_all>25</pt_intell_all>
+		<no_voca>1531</no_voca>
+		<no_sentence>381</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>eps204</ep_id>
+		<ep_title>아기눈사람은 겨울을 좋아해!</ep_title>
+		<ep_headline>아기눈사람의 몸이 더운 곳에서 녹고 있어요! 아기눈사람과 꽁꽁 추운 겨울로 함께 가요!</ep_headline>
+		<ep_objective1>1부터 6까지 숫자를 읽을 수 있어요.</ep_objective1>
+		<ep_objective1_intell>1</ep_objective1_intell>
+		<ep_objective2>겨울잠을 자는 동물에 대해 알 수 있어요.</ep_objective2>
+		<ep_objective2_intell>2</ep_objective2_intell>
+		<ep_objective3>눈사람을 꾸미는 겨울 놀이를 하며 예술적 활동을 경험해 봐요.</ep_objective3>
+		<ep_objective3_intell>2,6</ep_objective3_intell>
+		<mom_talk>눈 오는 날, 아이와 함께 밖에 나가 눈으로 다양한 모양을 만들어 보세요. 동그라미나 세모, 여러 동물 모양 등을 만들며 이야기를 나누어 보세요.</mom_talk>
+		<mom_talk_intell>6</mom_talk_intell>
+		<mom_talk_title>눈으로 모양 만들기</mom_talk_title>
+		<tag_stuff>눈사람,겨울,겨울잠,곰,달팽이,개구리,무당벌레,고슴도치,뱀,다람쥐</tag_stuff>
+		<tag_activity>수읽기,영단어학습</tag_activity>
+		<tag_game>이동게임,아기곰도와주기,꾸미기</tag_game>
+		<tag_intell>1,2,3,6</tag_intell>
+		<tag_song>　</tag_song>
+		<pt_intell_0>2</pt_intell_0>
+		<pt_intell_1>5</pt_intell_1>
+		<pt_intell_2>5</pt_intell_2>
+		<pt_intell_3>5</pt_intell_3>
+		<pt_intell_4>3</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>4</pt_intell_6>
+		<pt_intell_7>0</pt_intell_7>
+		<pt_intell_8>1</pt_intell_8>
+		<pt_intell_all>28</pt_intell_all>
+		<no_voca>1138</no_voca>
+		<no_sentence>273</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>eps209</ep_id>
+		<ep_title>여름휴가를 떠나요!</ep_title>
+		<ep_headline>베니가 도라와 부츠에게 여름휴가를 같이 보내자는 초대장을 보냈어요. 과연 도라랑 부츠는 베니와 함께 신나는 여름휴가를 보낼 수 있을까요?</ep_headline>
+		<ep_objective1>물속에 들어가기 전에 준비운동을 하며 대근육을 발달시킬 수 있어요.</ep_objective1>
+		<ep_objective1_intell>8</ep_objective1_intell>
+		<ep_objective2>정해진 약속을 알고, 그 약속에 따라 사물에 적용해 볼 수 있어요.</ep_objective2>
+		<ep_objective2_intell>1</ep_objective2_intell>
+		<ep_objective3>다양한 방향에서 굴러오는 물건을 통에 담으면서 공간 감각을 길러요.</ep_objective3>
+		<ep_objective3_intell>3</ep_objective3_intell>
+		<mom_talk>놀이터에 가서 아이가 맘껏 뛰고 구르며 몸놀이를 할 수 있게 해 주세요. 정글짐을 오르고, 미끄럼틀을 거꾸로 올라가면서 아이의 동작이 점점 능숙해진답니다.</mom_talk>
+		<mom_talk_intell>8</mom_talk_intell>
+		<mom_talk_title>놀이터에서 놀기</mom_talk_title>
+		<tag_stuff>휴가,여름,인어,섬,코코넛,주스,바닷가,해변</tag_stuff>
+		<tag_activity>준비운동,다양한규칙,리듬감기르기,영어수세기</tag_activity>
+		<tag_game>서핑보드이동게임,리듬게임,코코넛담기게임</tag_game>
+		<tag_intell>1,3,6,7</tag_intell>
+		<tag_song>준비운동 노래, 인어 노래, 떴다떳다 비행기 노래</tag_song>
+		<pt_intell_0>4</pt_intell_0>
+		<pt_intell_1>2</pt_intell_1>
+		<pt_intell_2>0</pt_intell_2>
+		<pt_intell_3>6</pt_intell_3>
+		<pt_intell_4>1</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>0</pt_intell_6>
+		<pt_intell_7>5</pt_intell_7>
+		<pt_intell_8>2</pt_intell_8>
+		<pt_intell_all>23</pt_intell_all>
+		<no_voca>1132</no_voca>
+		<no_sentence>310</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep219</ep_id>
+		<ep_title>엉망진창이 된 날씨</ep_title>
+		<ep_headline>날씨 그림책 속의 날씨들이 엉망진창이 됐어요! 도라랑 부츠랑 같이 책 속의 날씨들을 돌려놓으러 떠나요!</ep_headline>
+		<ep_objective1>바람개비를 돌려보며 바람의 힘을 이해해 볼 수 있어요.</ep_objective1>
+		<ep_objective1_intell>2</ep_objective1_intell>
+		<ep_objective2>움직이는 물체들 중에서 눈송이를 변별하여 찾을 수 있어요.</ep_objective2>
+		<ep_objective2_intell>3</ep_objective2_intell>
+		<ep_objective3>비를 좋아하는 습성을 가진 생물에 대해 배울 수 있어요.</ep_objective3>
+		<ep_objective3_intell>2</ep_objective3_intell>
+		<mom_talk>연이나 바람개비를 들고 바람을 느낄 수 있는 놀이를 해 보세요. 바람은 나무나 꽃처럼 눈에 보이지는 않지만, 자연의 일부라는 걸 알려 줄 수 있어요.</mom_talk>
+		<mom_talk_intell>2</mom_talk_intell>
+		<mom_talk_title>바람 느끼끼 놀이</mom_talk_title>
+		<tag_stuff>바람개비,바람,눈,비,풀밭,눈사람</tag_stuff>
+		<tag_activity>바람의힘이해,혼합색경험,jump영단어,영어수세기,날씨경험</tag_activity>
+		<tag_game>바람개비게임,눈송이찾기,눈송이수세기,수증기모으기게임</tag_game>
+		<tag_intell>0,1,2,3,6</tag_intell>
+		<tag_song>　</tag_song>
+		<pt_intell_0>3</pt_intell_0>
+		<pt_intell_1>1</pt_intell_1>
+		<pt_intell_2>8</pt_intell_2>
+		<pt_intell_3>2</pt_intell_3>
+		<pt_intell_4>3</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>2</pt_intell_6>
+		<pt_intell_7>0</pt_intell_7>
+		<pt_intell_8>2</pt_intell_8>
+		<pt_intell_all>24</pt_intell_all>
+		<no_voca>1119</no_voca>
+		<no_sentence>269</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep207</ep_id>
+		<ep_title>동생이 태어났어요!</ep_title>
+		<ep_headline>도라네 가족에게 새 식구가 생겼어요! 도라의 동생을 만나러 떠나 볼까요?</ep_headline>
+		<ep_objective1>동생을 아끼고 사랑하는 마음을 배울 수 있어요.</ep_objective1>
+		<ep_objective1_intell>4</ep_objective1_intell>
+		<ep_objective2>미로를 빠져 나오며 논리사고력과 공간지각력을 기를 수 있어요.</ep_objective2>
+		<ep_objective2_intell>1,3</ep_objective2_intell>
+		<ep_objective3>다양한 악기로 클래식 음악을 연주해 보는 경험을 해 볼 수 있어요.</ep_objective3>
+		<ep_objective3_intell>7</ep_objective3_intell>
+		<mom_talk>냄비와 주전자 등 우리 주변의 사물들을 두드리는 놀이를 해 보세요. 여러 물건들을 두드려 보면서, 다양한 소리를 경험해 볼 수 있어요.</mom_talk>
+		<mom_talk_intell>2</mom_talk_intell>
+		<mom_talk_title>다양한 소리 탐색하기</mom_talk_title>
+		<tag_stuff>동생,쌍둥이,가족,화목,아기</tag_stuff>
+		<tag_activity>fast영단어,교통안전규칙,영어수세기,음악요소탐색,예술감상</tag_activity>
+		<tag_game>호수이동게임,고카트조립,미로게임,교통규칙게임,자장가연주</tag_game>
+		<tag_intell>0,1,4,7</tag_intell>
+		<tag_song>클래식 경험 </tag_song>
+		<pt_intell_0>6</pt_intell_0>
+		<pt_intell_1>1</pt_intell_1>
+		<pt_intell_2>0</pt_intell_2>
+		<pt_intell_3>6</pt_intell_3>
+		<pt_intell_4>3</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>0</pt_intell_6>
+		<pt_intell_7>5</pt_intell_7>
+		<pt_intell_8>1</pt_intell_8>
+		<pt_intell_all>25</pt_intell_all>
+		<no_voca>1378</no_voca>
+		<no_sentence>348</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>eps208</ep_id>
+		<ep_title>엄마, 사랑해요!</ep_title>
+		<ep_headline>도라가 엄마를 위해 깜짝 파티를 준비하기로 했어요! 엄마를 기쁘게 해드릴 선물들을 같이 준비해요!</ep_headline>
+		<ep_objective1>ABB 색깔 패턴을 이해하고, 다음에 올 패턴을 예측할 수 있어요.</ep_objective1>
+		<ep_objective1_intell>1</ep_objective1_intell>
+		<ep_objective2>케이크를 만들면서 노래를 부르며 리듬감을 익힐 수 있어요.</ep_objective2>
+		<ep_objective2_intell>7</ep_objective2_intell>
+		<ep_objective3>식탁을 직접 꾸미면서 창의적인 예술 활동을 경험해요.</ep_objective3>
+		<ep_objective3_intell>6</ep_objective3_intell>
+		<mom_talk>아이와 함께 바다에서 조개껍데기를 모아 목걸이를 만들어 보세요. 다양한 모양과 색깔을 가진 조개껍데기로 자유롭게 꾸미며 창의적인 능력을 기를 수 있어요.</mom_talk>
+		<mom_talk_intell>6</mom_talk_intell>
+		<mom_talk_title>목걸이 만들기</mom_talk_title>
+		<tag_stuff>엄마의날,어버이날,엄마,목걸이,케이크,파티</tag_stuff>
+		<tag_activity>패턴예측,예술활동경험,음악지능향상</tag_activity>
+		<tag_game>조개목걸이만들기,요리게임,꾸미기</tag_game>
+		<tag_intell>1,6,7</tag_intell>
+		<tag_song>베니의 케이크 노래</tag_song>
+		<pt_intell_0>2</pt_intell_0>
+		<pt_intell_1>6</pt_intell_1>
+		<pt_intell_2>0</pt_intell_2>
+		<pt_intell_3>1</pt_intell_3>
+		<pt_intell_4>3</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>6</pt_intell_6>
+		<pt_intell_7>2</pt_intell_7>
+		<pt_intell_8>1</pt_intell_8>
+		<pt_intell_all>24</pt_intell_all>
+		<no_voca>969</no_voca>
+		<no_sentence>274</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep212</ep_id>
+		<ep_title>우리는 하나</ep_title>
+		<ep_headline>오늘은 경주 대회가 열리는 날! 모두 힘을 합쳐, 끝까지 갈 수 있게 노력해 볼까요?</ep_headline>
+		<ep_objective1>스프링의 성질을 경험해 볼 수 있어요.</ep_objective1>
+		<ep_objective1_intell>2</ep_objective1_intell>
+		<ep_objective2>색깔에 관련된 영어 어휘를 경험해 볼 수 있어요.</ep_objective2>
+		<ep_objective2_intell>0,3</ep_objective2_intell>
+		<ep_objective3>세 가지의 사물 중 가장 높은 것과 가장 낮은 것을 찾을 수 있어요.</ep_objective3>
+		<ep_objective3_intell>1</ep_objective3_intell>
+		<mom_talk>손가락에 색깔 물감을 묻혀 도화지에 찍어 그림을 그려 보게 해 보세요. 아이의 표현력도 기를 수 있고, 색깔에 대한 인지력도 발달할 수 있어요.</mom_talk>
+		<mom_talk_intell>3</mom_talk_intell>
+		<mom_talk_title>색깔 물감 놀이</mom_talk_title>
+		<tag_stuff>협동,대회,응원,스프링,화산</tag_stuff>
+		<tag_activity>스프링성질,영어어휘경험,높이비교</tag_activity>
+		<tag_game>다리건너기게임,색깔공담기게임,이동게임</tag_game>
+		<tag_intell>0,1,2,3,4</tag_intell>
+		<tag_song>응원 노래</tag_song>
+		<pt_intell_0>6</pt_intell_0>
+		<pt_intell_1>4</pt_intell_1>
+		<pt_intell_2>5</pt_intell_2>
+		<pt_intell_3>2</pt_intell_3>
+		<pt_intell_4>3</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>0</pt_intell_6>
+		<pt_intell_7>3</pt_intell_7>
+		<pt_intell_8>3</pt_intell_8>
+		<pt_intell_all>29</pt_intell_all>
+		<no_voca>1074</no_voca>
+		<no_sentence>286</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep213</ep_id>
+		<ep_title>단짝 친구의 날</ep_title>
+		<ep_headline>오늘은 단짝 친구의 날! 단짝 친구를 만나러 무지개 언덕으로 함께 떠나요!</ep_headline>
+		<ep_objective1>도구의 이름을 알고, 짝이 되는 물건끼리 연결할 수 있어요.</ep_objective1>
+		<ep_objective1_intell>2</ep_objective1_intell>
+		<ep_objective2>악어와 악어새가 서로 돕는 것을 보고, 공생 관계에 대해 알 수 있어요.</ep_objective2>
+		<ep_objective2_intell>2</ep_objective2_intell>
+		<ep_objective3>무지개 길을 좌우로 이동하며 공간 감각을 기를 수 있어요.</ep_objective3>
+		<ep_objective3_intell>3</ep_objective3_intell>
+		<mom_talk>주변을 둘러보고, 열쇠와 자물쇠처럼 짝이 되는 물건들을 찾아보세요. 그리고 찾은 물건들이 각각 어떤 일을 하는지 이야기를 나누어 보세요.</mom_talk>
+		<mom_talk_intell>2</mom_talk_intell>
+		<mom_talk_title>짝이 되는 물건 찾기</mom_talk_title>
+		<tag_stuff>단짝친구,악어,악어새,실,바늘,치약,칫솔</tag_stuff>
+		<tag_activity>도구연결,영어수세기,공생관계,좌-우이동</tag_activity>
+		<tag_game>딸기따기게임,악어이청소,이동게임</tag_game>
+		<tag_intell>0,1,2,3</tag_intell>
+		<tag_song>단짝 친구 노래</tag_song>
+		<pt_intell_0>2</pt_intell_0>
+		<pt_intell_1>2</pt_intell_1>
+		<pt_intell_2>8</pt_intell_2>
+		<pt_intell_3>2</pt_intell_3>
+		<pt_intell_4>3</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>0</pt_intell_6>
+		<pt_intell_7>3</pt_intell_7>
+		<pt_intell_8>1</pt_intell_8>
+		<pt_intell_all>24</pt_intell_all>
+		<no_voca>923</no_voca>
+		<no_sentence>249</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep241</ep_id>
+		<ep_title>오리 아저씨의 소풍</ep_title>
+		<ep_headline>오리 아저씨가 아기 오리들을 위해 소풍 준비를 한대요. 오리 아저씨의 소풍 준비를 함께 도와주러 가 볼까요?</ep_headline>
+		<ep_objective1>스카프를 분류하며, 기준에 따라 다르게 분류할 수 있다는 것을 경험해요.</ep_objective1>
+		<ep_objective1_intell>1</ep_objective1_intell>
+		<ep_objective2>물컵 실로폰을 연주하며 리듬감을 기를 수 있어요.</ep_objective2>
+		<ep_objective2_intell>7</ep_objective2_intell>
+		<ep_objective3>1부터 5까지 수세기를 할 수 있어요.</ep_objective3>
+		<ep_objective3_intell>1</ep_objective3_intell>
+		<mom_talk>그림책의 그림을 보며 수세기 놀이를 해 보세요. 그림 속에 있는 동물이 몇 마리나 있는지 물어보고 아이와 함께 세어 보세요.</mom_talk>
+		<mom_talk_intell>1</mom_talk_intell>
+		<mom_talk_title>생활 속 수 세기</mom_talk_title>
+		<tag_stuff>소풍,오리,스카프,물컵실로폰,보물</tag_stuff>
+		<tag_activity>무늬분류,물컵실로폰연주</tag_activity>
+		<tag_game>빨래게임,리듬게임,보물숨기기게임</tag_game>
+		<tag_intell>1,3,7</tag_intell>
+		<tag_song>물컵 실로폰 노래</tag_song>
+		<pt_intell_0>1</pt_intell_0>
+		<pt_intell_1>7</pt_intell_1>
+		<pt_intell_2>1</pt_intell_2>
+		<pt_intell_3>2</pt_intell_3>
+		<pt_intell_4>2</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>0</pt_intell_6>
+		<pt_intell_7>4</pt_intell_7>
+		<pt_intell_8>1</pt_intell_8>
+		<pt_intell_all>21</pt_intell_all>
+		<no_voca>1338</no_voca>
+		<no_sentence>358</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep216</ep_id>
+		<ep_title>인어왕국을 구하라!</ep_title>
+		<ep_headline>아름다운 인어왕국이 쓰레기 더미에 뒤덮였어요! 인어왕국을 구하러 함께 떠나요!</ep_headline>
+		<ep_objective1>1부터 6까지 숫자를 차례대로 읽을 수 있어요.</ep_objective1>
+		<ep_objective1_intell>1</ep_objective1_intell>
+		<ep_objective2>쓰레기를 치우면서, 공간 감각을 기를 수 있어요.</ep_objective2>
+		<ep_objective2_intell>3</ep_objective2_intell>
+		<ep_objective3>바다를 청소하면서 물건을 속성에 따라 분류할 수 있어요.</ep_objective3>
+		<ep_objective3_intell>1</ep_objective3_intell>
+		<mom_talk>방 안에서 '종이로 된 물건'이나 '나무로 된 물건' 등을 찾는 놀이를 해 보세요. 놀이를 하면서 자연스레 물건을 속성에 따라 분류할 수 있어요.</mom_talk>
+		<mom_talk_intell>1</mom_talk_intell>
+		<mom_talk_title>생활 속 속성 분류하기</mom_talk_title>
+		<tag_stuff>인어,조개다리,쓰레기,환경보호,분리수거,청소,악당문어,복어,해마,바다가재,해초,불가사리</tag_stuff>
+		<tag_activity>수의순서,공간감각,바다생물경험,속성분류</tag_activity>
+		<tag_game>다리건너기게임,이동게임,분리수거게임</tag_game>
+		<tag_intell>1,2,3</tag_intell>
+		<tag_song>　</tag_song>
+		<pt_intell_0>3</pt_intell_0>
+		<pt_intell_1>8</pt_intell_1>
+		<pt_intell_2>1</pt_intell_2>
+		<pt_intell_3>4</pt_intell_3>
+		<pt_intell_4>2</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>0</pt_intell_6>
+		<pt_intell_7>0</pt_intell_7>
+		<pt_intell_8>1</pt_intell_8>
+		<pt_intell_all>22</pt_intell_all>
+		<no_voca>1109</no_voca>
+		<no_sentence>291</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep233</ep_id>
+		<ep_title>도라와 콩나무</ep_title>
+		<ep_headline>도라와 부츠가 그림책을 읽는데 잭의 집에만 비가 쏟아지고 있어요! 책 속으로 들어가 무슨 일인지 알아봐요!</ep_headline>
+		<ep_objective1>움직이는 사물 중에서 필요한 사물을 변별할 수 있어요.</ep_objective1>
+		<ep_objective1_intell>3</ep_objective1_intell>
+		<ep_objective2>세 가지 사물 중에서 가장 큰 것을 찾을 수 있어요.</ep_objective2>
+		<ep_objective2_intell>1</ep_objective2_intell>
+		<ep_objective3>꽃과 나무로 구름을 예쁘게 꾸미는 활동을 해 볼 수 있어요.</ep_objective3>
+		<ep_objective3_intell>6</ep_objective3_intell>
+		<mom_talk>스케치북에 구름 모양을 그리고 꽃잎과 나뭇잎을 모아 붙여 보세요. 여러 가지 종류의 꽃잎과 나뭇잎으로 그림을 꾸미며 창의력을 발달시킬 수 있어요.</mom_talk>
+		<mom_talk_intell>6</mom_talk_intell>
+		<mom_talk_title>자연물로 그림 그리기</mom_talk_title>
+		<tag_stuff>동화,마법사,마법콩,콩나무,씨앗,거인,비,구름</tag_stuff>
+		<tag_activity>수세기,리듬감익히기,크기비교</tag_activity>
+		<tag_game>재료모으기,이동게임,구름꾸미기</tag_game>
+		<tag_intell>1,3,6,7</tag_intell>
+		<tag_song>무럭무럭 자라라 노래</tag_song>
+		<pt_intell_0>1</pt_intell_0>
+		<pt_intell_1>6</pt_intell_1>
+		<pt_intell_2>0</pt_intell_2>
+		<pt_intell_3>2</pt_intell_3>
+		<pt_intell_4>3</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>4</pt_intell_6>
+		<pt_intell_7>3</pt_intell_7>
+		<pt_intell_8>1</pt_intell_8>
+		<pt_intell_all>23</pt_intell_all>
+		<no_voca>1270</no_voca>
+		<no_sentence>311</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep234</ep_id>
+		<ep_title>얼음공주를 구해 줘!</ep_title>
+		<ep_headline>나쁜 마녀가 얼음공주를 탑에 가뒀어요! 우리 같이 얼음공주를 구하러 떠나요!</ep_headline>
+		<ep_objective1>물이 차가워지면 얼음이 되는 것을 배워요.</ep_objective1>
+		<ep_objective1_intell>2</ep_objective1_intell>
+		<ep_objective2>얼음이 따뜻해지면 물이 되는 것을 배워요.</ep_objective2>
+		<ep_objective2_intell>2</ep_objective2_intell>
+		<ep_objective3>좌우로 움직이는 물체를 맞추며 공간 감각을 기를 수 있어요.</ep_objective3>
+		<ep_objective3_intell>3</ep_objective3_intell>
+		<mom_talk>집에 있는 얼음으로 탑을 쌓는 놀이를 해 보세요. 차갑고 미끄러운 얼음을 만지며 얼음의 성질에 대해 탐색해 볼 수 있어요.</mom_talk>
+		<mom_talk_intell>2</mom_talk_intell>
+		<mom_talk_title>얼음 탐색하기</mom_talk_title>
+		<tag_stuff>얼음,눈,마녀,물,헤어드라이어</tag_stuff>
+		<tag_activity>물질상태변화,계단그리기</tag_activity>
+		<tag_game>바다이동게임,동굴이동게임,눈던지기,공주구하기게임</tag_game>
+		<tag_intell>2,3,6,8</tag_intell>
+		<tag_song>　</tag_song>
+		<pt_intell_0>1</pt_intell_0>
+		<pt_intell_1>0</pt_intell_1>
+		<pt_intell_2>4</pt_intell_2>
+		<pt_intell_3>12</pt_intell_3>
+		<pt_intell_4>1</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>0</pt_intell_6>
+		<pt_intell_7>0</pt_intell_7>
+		<pt_intell_8>2</pt_intell_8>
+		<pt_intell_all>23</pt_intell_all>
+		<no_voca>1155</no_voca>
+		<no_sentence>312</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep240</ep_id>
+		<ep_title>에메랄드 성의 마법사</ep_title>
+		<ep_headline>도라가 부츠를 만나려면 마법사를 만나야 해요! 도라와 함께 에메랄드 성에 사는 마법사를 만나러 떠나요!</ep_headline>
+		<ep_objective1>자석에 붙는 물건과 붙지 않는 물건들을 알 수 있어요.</ep_objective1>
+		<ep_objective1_intell>2</ep_objective1_intell>
+		<ep_objective2>심벌즈와 트라이앵글을 연주하며 리듬감을 익힐 수 있어요.</ep_objective2>
+		<ep_objective2_intell>7</ep_objective2_intell>
+		<ep_objective3>장애물을 피해 이동하며 공간감각을 익힐 수 있어요.</ep_objective3>
+		<ep_objective3_intell>3</ep_objective3_intell>
+		<mom_talk>물고기 그림의 뒷면에 쇠로 된 물건을 붙이고 자석으로 낚시 놀이를 해 보세요. 쇠로 된 물건이 자석에 붙는다는 것을 배울 수 있어요.</mom_talk>
+		<mom_talk_intell>2</mom_talk_intell>
+		<mom_talk_title>자석 낚시 놀이</mom_talk_title>
+		<tag_stuff>마법사,에메랄드성,허수아비,양철로봇,빨간신발,사자,심벌즈,트라이앵글</tag_stuff>
+		<tag_activity>자석의성질,공간감각,음악적감각</tag_activity>
+		<tag_game>리듬게임,이동게임</tag_game>
+		<tag_intell>2,3,7</tag_intell>
+		<tag_song>자석 노래, 아기새를 위한 스마일 노래</tag_song>
+		<pt_intell_0>2</pt_intell_0>
+		<pt_intell_1>0</pt_intell_1>
+		<pt_intell_2>4</pt_intell_2>
+		<pt_intell_3>5</pt_intell_3>
+		<pt_intell_4>3</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>0</pt_intell_6>
+		<pt_intell_7>5</pt_intell_7>
+		<pt_intell_8>1</pt_intell_8>
+		<pt_intell_all>23</pt_intell_all>
+		<no_voca>1407</no_voca>
+		<no_sentence>360</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>ep210</ep_id>
+		<ep_title>데이지 언니의 생일 파티</ep_title>
+		<ep_headline>오늘은 도라의 사촌언니 데이지의 15번째 생일. 디에고 오빠와 함께 선물을 가지고 가서, 데이지 언니의 생일을 함께 축하해 주어요.</ep_headline>
+		<ep_objective1>같은 모양의 신발을 찾아서 신발장에 신발을 정리할 수 있어요.</ep_objective1>
+		<ep_objective1_intell>3</ep_objective1_intell>
+		<ep_objective2>1부터 10까지 수의 이름을 알고, 그에 해당하는 숫자를 찾을 수 있어요.</ep_objective2>
+		<ep_objective2_intell>1</ep_objective2_intell>
+		<ep_objective3>데이지 언니의 드레스를 예쁘게 꾸미는 활동을 해 볼 수 있어요.</ep_objective3>
+		<ep_objective3_intell>6</ep_objective3_intell>
+		<mom_talk>아이와 함께 신발장에 있는 신발들을 정리해 보세요. 크기와 색깔이 같은 신발의 짝을 찾아보면서 관찰력을 기를 수 있어요.</mom_talk>
+		<mom_talk_intell>3</mom_talk_intell>
+		<mom_talk_title>짝지어서 신발 정리하기 </mom_talk_title>
+		<tag_stuff>성인식,생일,구두,왕관,드레스,엘리베이터,여왕</tag_stuff>
+		<tag_activity>신발정리,숫자찾기</tag_activity>
+		<tag_game>신발정리,이동게임,드레스꾸미기 </tag_game>
+		<tag_intell>1,3,6</tag_intell>
+		<tag_song>　</tag_song>
+		<pt_intell_0>2</pt_intell_0>
+		<pt_intell_1>4</pt_intell_1>
+		<pt_intell_2>0</pt_intell_2>
+		<pt_intell_3>4</pt_intell_3>
+		<pt_intell_4>4</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>4</pt_intell_6>
+		<pt_intell_7>0</pt_intell_7>
+		<pt_intell_8>2</pt_intell_8>
+		<pt_intell_all>23</pt_intell_all>
+		<no_voca>1112</no_voca>
+		<no_sentence>265</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>eps201</ep_id>
+		<ep_title>산타할아버지를 위한 선물</ep_title>
+		<ep_headline>매년 선물을 주시기만 하는 산타할아버지! 산타할아버지께도 선물을 드리고 싶어요!</ep_headline>
+		<ep_objective1>3가지 사물의 크기를 비교하고, 순서 지을 수 있어요.</ep_objective1>
+		<ep_objective1_intell>1</ep_objective1_intell>
+		<ep_objective2>AB 패턴을 찾고, 이후의 패턴을 예측할 수 있어요.</ep_objective2>
+		<ep_objective2_intell>1</ep_objective2_intell>
+		<ep_objective3>리듬에 맞춰 크리스마스 캐롤을 연주할 수 있어요.</ep_objective3>
+		<ep_objective3_intell>7</ep_objective3_intell>
+		<mom_talk>인형, 자동차, 동물 장난감 몇 개를 골라, 크기 순서대로 세우는 놀이를 해 보세요. 작은 순서대로, 큰 순서대로 세우며 사물의 크기 차이를 알 수 있어요.</mom_talk>
+		<mom_talk_intell>1</mom_talk_intell>
+		<mom_talk_title>생활 속 크기 비교</mom_talk_title>
+		<tag_stuff>산타할아버지,선물,크리스마스,눈,겨울,캐롤</tag_stuff>
+		<tag_activity>크기비교,AB패턴,타악기연주</tag_activity>
+		<tag_game>선물포장게임,선물찾기,이동게임,리듬게임</tag_game>
+		<tag_intell>1,3,7</tag_intell>
+		<tag_song>　</tag_song>
+		<pt_intell_0>1</pt_intell_0>
+		<pt_intell_1>8</pt_intell_1>
+		<pt_intell_2>1</pt_intell_2>
+		<pt_intell_3>1</pt_intell_3>
+		<pt_intell_4>3</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>0</pt_intell_6>
+		<pt_intell_7>6</pt_intell_7>
+		<pt_intell_8>1</pt_intell_8>
+		<pt_intell_all>24</pt_intell_all>
+		<no_voca>1181</no_voca>
+		<no_sentence>345</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>eps202</ep_id>
+		<ep_title>Happy new year!</ep_title>
+		<ep_headline>새해 아침, 감기 걸린 수탉을 대신해서 쿨쿨 자고 있는 해님을 깨우러 떠나요!</ep_headline>
+		<ep_objective1>속성에 따른 분류를 할 수 있어요.</ep_objective1>
+		<ep_objective1_intell>1</ep_objective1_intell>
+		<ep_objective2>소리를 내는 물건을 찾고, 그 소리를 경험할 수 있어요.</ep_objective2>
+		<ep_objective2_intell>3,7</ep_objective2_intell>
+		<ep_objective3>사물의 소리를 나타내는 의성어를 알 수 있어요.</ep_objective3>
+		<ep_objective3_intell>0</ep_objective3_intell>
+		<mom_talk>빈 페트병에 쌀이나 콩, 클립 등 다양한 재료를 넣어 흔들어 보세요. 넣은 재료에 따라 소리가 달라지는 것을 경험해 보게 해 주세요.</mom_talk>
+		<mom_talk_intell>7</mom_talk_intell>
+		<mom_talk_title>생활 속 소리 탐색</mom_talk_title>
+		<tag_stuff>새해,해님,수탉,감기,소리,청소,확성기</tag_stuff>
+		<tag_activity>속성분류,사물인지,수세기,의성어</tag_activity>
+		<tag_game>청소게임,물건찾기,해님깨우기게임</tag_game>
+		<tag_intell>0,1,3,8</tag_intell>
+		<tag_song>　</tag_song>
+		<pt_intell_0>6</pt_intell_0>
+		<pt_intell_1>5</pt_intell_1>
+		<pt_intell_2>0</pt_intell_2>
+		<pt_intell_3>2</pt_intell_3>
+		<pt_intell_4>2</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>0</pt_intell_6>
+		<pt_intell_7>5</pt_intell_7>
+		<pt_intell_8>1</pt_intell_8>
+		<pt_intell_all>24</pt_intell_all>
+		<no_voca>1255</no_voca>
+		<no_sentence>310</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>eps207</ep_id>
+		<ep_title>신나는 축제</ep_title>
+		<ep_headline>신나는 축제가 열렸어요! 황금티켓을 모아서, 선물이 가득 들어 있는 황금피냐타를 열어 봐요!</ep_headline>
+		<ep_objective1>가면을 만들면서 창의적인 예술 활동을 경험할 수 있어요.</ep_objective1>
+		<ep_objective1_intell>6</ep_objective1_intell>
+		<ep_objective2>숫자 8, 9, 10의 이름을 알고, 양적인 개념을 학습할 수 있어요.</ep_objective2>
+		<ep_objective2_intell>1</ep_objective2_intell>
+		<ep_objective3>리듬에 맞추어 폭죽을 터뜨리며 리듬감을 익힐 수 있어요.</ep_objective3>
+		<ep_objective3_intell>7</ep_objective3_intell>
+		<mom_talk>칭찬티켓을 만들어서 아이와 칭찬하기 놀이를 해 보세요. 아이가 10장의 칭찬티켓을 모으면, 티켓의 수를 세면서 수세기를 할 수 있어요.</mom_talk>
+		<mom_talk_intell>9</mom_talk_intell>
+		<mom_talk_title>칭찬 티켓 만들기</mom_talk_title>
+		<tag_stuff>축제,티켓,놀이공원,풍선,폭죽,가면,피냐타</tag_stuff>
+		<tag_activity>예술활동경험,수개념,리듬맞추기</tag_activity>
+		<tag_game>만들기,풍선터트리기,폭죽터트리기</tag_game>
+		<tag_intell>1,6,7</tag_intell>
+		<tag_song>　</tag_song>
+		<pt_intell_0>4</pt_intell_0>
+		<pt_intell_1>4</pt_intell_1>
+		<pt_intell_2>0</pt_intell_2>
+		<pt_intell_3>0</pt_intell_3>
+		<pt_intell_4>2</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>4</pt_intell_6>
+		<pt_intell_7>4</pt_intell_7>
+		<pt_intell_8>1</pt_intell_8>
+		<pt_intell_all>22</pt_intell_all>
+		<no_voca>878</no_voca>
+		<no_sentence>268</no_sentence>
+	</episode>
+	<episode>
+		<ep_id>eps210</ep_id>
+		<ep_title>Happy Halloween Party!</ep_title>
+		<ep_headline>꼬마 유령네 집에서 할로윈 파티가 열리는데, 아직 파티 준비물을 다 구하지 못했대요. 우리 함께 꼬마 유령을 도와주러 떠나 볼까요?</ep_headline>
+		<ep_objective1>멀다, 가깝다의 개념을 알고 거리를 비교할 수 있어요.</ep_objective1>
+		<ep_objective1_intell>1</ep_objective1_intell>
+		<ep_objective2>장애물을 피해 움직이며 공간 감각을 기를 수 있어요.</ep_objective2>
+		<ep_objective2_intell>3</ep_objective2_intell>
+		<ep_objective3>음악을 연주하며 리듬감을 익힐 수 있어요.</ep_objective3>
+		<ep_objective3_intell>7</ep_objective3_intell>
+		<mom_talk>아이와 함께 종이비행기를 접어 날려 보세요. 비행기가 날아간 거리를 보고 '멀다', '가깝다'와 같은 수학적인 언어를 사용해서 대화를 나누며 공간 개념을 길러 주세요.</mom_talk>
+		<mom_talk_intell>1</mom_talk_intell>
+		<mom_talk_title>종이비행기 날리기</mom_talk_title>
+		<tag_stuff>할로윈,유령,마녀,사탕,호박등</tag_stuff>
+		<tag_activity>거리비교,영어수세기,open/close</tag_activity>
+		<tag_game>호박찾기,호박등꾸미기,이동게임,리듬게임</tag_game>
+		<tag_intell>1,3,6,7</tag_intell>
+		<tag_song>할러윈 노래</tag_song>
+		<pt_intell_0>5</pt_intell_0>
+		<pt_intell_1>4</pt_intell_1>
+		<pt_intell_2>0</pt_intell_2>
+		<pt_intell_3>8</pt_intell_3>
+		<pt_intell_4>2</pt_intell_4>
+		<pt_intell_5>3</pt_intell_5>
+		<pt_intell_6>2</pt_intell_6>
+		<pt_intell_7>6</pt_intell_7>
+		<pt_intell_8>1</pt_intell_8>
+		<pt_intell_all>31</pt_intell_all>
+		<no_voca>1749</no_voca>
+		<no_sentence>439</no_sentence>
+	</episode>
+</root>

@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+<head>
+    <title>Socket.IO chat</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font: 13px Helvetica, Arial; }
+        form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
+        form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
+        form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+        #messages { list-style-type: none; margin: 0; padding: 0; }
+        #messages li { padding: 5px 10px; }
+        #messages li:nth-child(odd) { background: #eee; }
+
+        #messages span.nickName { font-weight: bold; font-size: 120%; display: inline-block; width: 100px; }
+
+
+        div.userList { text-align: center; width: 200px; min-height: 200px; border: 1px solid #999;}
+        #userList { list-style-type: none; margin: 0; padding: 0; }
+        #userList li { }
+
+        #before { text-align: center; font-weight: bold; margin-top: 50%; }
+        #after { display: none; }
+        .noti1 { text-align: center; color: blue; }
+        .noti2 { text-align: center; color: red; }
+        .noti3 { text-align: center; color: black; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<section id="before">
+    <p>닉네임을 입력하세요</p>
+    <input id="nickName"><button id="joinBtn">들어가기</button>
+</section>
+
+
+<section id="after">
+    <div class="userList">
+        <h2>현재 접속 List</h2>
+        <ul id="userList"></ul>
+    </div>
+
+
+    <hr>
+    <ul id="messages"></ul>
+    <form>
+        <input id="m" autocomplete="off" /><button>Send</button>
+    </form>
+</section>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<script>
+
+    var nickName;
+    var socket = io.connect('http://35.229.128.13:4400');
+    var count;
+
+    // 이벤트: join 클릭
+    $('#joinBtn').click(function(e){
+        fnNickname(e);
+    });
+
+    // 이벤트: nickName 엔터키
+    $('#nickName').keypress(function(e) {
+        if (e.which == 13) {
+            fnNickname(e);
+        }
+    });
+
+    // 송신: 닉네임
+    function fnNickname(e) {
+        if ($('#nickName').val().trim() == '') {
+            alert('Input your nickname!');
+            return false;
+        }
+        nickName = $('#nickName').val().trim();
+        socket.emit('join', nickName);  // 접속 이벤트
+    }
+
+
+
+    // 수신: 환영인사
+    socket.on('welcome', function(data){
+        // 유저리스트 업데이트
+        fnUpdateUserList(data.userList);
+
+        $('#before').hide();
+        $('#after').show();
+        $('#messages').append($('<li class="noti3">').text(nickName + '님 환영합니다.'));
+    });
+
+
+    // 유저리스트 업데이트
+    function fnUpdateUserList(userList) {
+        $('#userList').text('');
+        count = userList.length;
+        for (var i = 0; i < count; i++) {
+            $('#userList').append($('<li>').text(userList[i]));
+        };
+
+    }
+
+    // 수신: 신규자 접속
+    socket.on('join', function(data){
+        // 입장 알림
+        $('#messages').append($('<li class="noti1">').text(data.nickName + '님이 입장하셨습니다'));
+
+        // 유저리스트 업데이트
+        fnUpdateUserList(data.userList);
+        $('#messages').append($('<li class="noti3">').text('현재 접속자'+count+'명'));
+    });
+
+    // 수신: 퇴장
+    socket.on('left', function(data){
+        // 종료 알림
+        $('#messages').append($('<li class="noti2">').text(data.nickName + '님이 퇴장하셨습니다'));
+
+        // 유저리스트 업데이트
+        fnUpdateUserList(data.userList);
+        $('#messages').append($('<li class="noti3">').text('현재 접속자'+count+'명'));
+    });
+
+
+    // 송신: 메시지
+    $('form').submit(function(){
+        socket.emit('msg', $('#m').val());
+        $('#m').val('');
+        return false;
+    });
+
+
+    // 수신: 메시지
+    socket.on('msg', function(data){
+        var span = $('<span class="nickName">').text(data.nickName);
+        var li = $('<li>').append(span).append(data.msg);
+        $('#messages').append(li);
+    });
+
+</script>
+
+</body>
+</html>
+

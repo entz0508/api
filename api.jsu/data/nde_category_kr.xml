@@ -1,0 +1,762 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<category>
+		<category_id>101_story_a</category_id>
+		<category_type>story</category_type>
+		<category_color>255,152,0</category_color>
+		<category_img>101_08</category_img>
+		<category_level>1</category_level>
+		<category_theme>Numbers_A</category_theme>
+		<category_title>One, Two, Three!</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>101_story_b</category_id>
+		<category_type>story</category_type>
+		<category_color>0,188,212</category_color>
+		<category_img>101_08</category_img>
+		<category_level>1</category_level>
+		<category_theme>Numbers_B</category_theme>
+		<category_title>Yummy Ice Cream</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>101_quiz</category_id>
+		<category_type>quiz</category_type>
+		<category_color>null</category_color>
+		<category_img>null</category_img>
+		<category_level>null</category_level>
+		<category_theme>null</category_theme>
+		<category_title>null</category_title>
+		<category_voca>null</category_voca>
+		<category_sentence>null</category_sentence>
+	</category>
+	<category>
+		<category_id>102_story_a</category_id>
+		<category_type>story</category_type>
+		<category_color>255,152,0</category_color>
+		<category_img>101_08</category_img>
+		<category_level>1</category_level>
+		<category_theme>Run &amp; Jump_A</category_theme>
+		<category_title>Go, Go, Little Chicks!</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>102_story_b</category_id>
+		<category_type>story</category_type>
+		<category_color>0,188,212</category_color>
+		<category_img>101_08</category_img>
+		<category_level>1</category_level>
+		<category_theme>Run &amp; Jump_B</category_theme>
+		<category_title>Watch Out!</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>102_quiz</category_id>
+		<category_type>quiz</category_type>
+		<category_color>null</category_color>
+		<category_img>null</category_img>
+		<category_level>null</category_level>
+		<category_theme>null</category_theme>
+		<category_title>null</category_title>
+		<category_voca>null</category_voca>
+		<category_sentence>null</category_sentence>
+	</category>
+	<category>
+		<category_id>103_story_a</category_id>
+		<category_type>story</category_type>
+		<category_color>255,152,0</category_color>
+		<category_img>101_08</category_img>
+		<category_level>1</category_level>
+		<category_theme>Big &amp; Small_A</category_theme>
+		<category_title>The Big Big Beanstalk</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>103_story_b</category_id>
+		<category_type>story</category_type>
+		<category_color>0,188,212</category_color>
+		<category_img>101_08</category_img>
+		<category_level>1</category_level>
+		<category_theme>Big &amp; Small_B</category_theme>
+		<category_title>Big Sheep and Small Sheep</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>103_quiz</category_id>
+		<category_type>quiz</category_type>
+		<category_color>null</category_color>
+		<category_img>null</category_img>
+		<category_level>null</category_level>
+		<category_theme>null</category_theme>
+		<category_title>null</category_title>
+		<category_voca>null</category_voca>
+		<category_sentence>null</category_sentence>
+	</category>
+	<category>
+		<category_id>104_story_a</category_id>
+		<category_type>story</category_type>
+		<category_color>255,152,0</category_color>
+		<category_img>101_08</category_img>
+		<category_level>1</category_level>
+		<category_theme>Toys_A</category_theme>
+		<category_title>Gingerbread's Magic Cards</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>104_story_b</category_id>
+		<category_type>story</category_type>
+		<category_color>0,188,212</category_color>
+		<category_img>101_08</category_img>
+		<category_level>1</category_level>
+		<category_theme>Toys_B</category_theme>
+		<category_title>Let's Make a Wish</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>104_quiz</category_id>
+		<category_type>quiz</category_type>
+		<category_color>null</category_color>
+		<category_img>null</category_img>
+		<category_level>null</category_level>
+		<category_theme>null</category_theme>
+		<category_title>null</category_title>
+		<category_voca>null</category_voca>
+		<category_sentence>null</category_sentence>
+	</category>
+	<category>
+		<category_id>105_story_a</category_id>
+		<category_type>story</category_type>
+		<category_color>255,152,0</category_color>
+		<category_img>101_08</category_img>
+		<category_level>1</category_level>
+		<category_theme>Fruits_A</category_theme>
+		<category_title>A Cake for Boots</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>105_story_b</category_id>
+		<category_type>story</category_type>
+		<category_color>0,188,212</category_color>
+		<category_img>101_08</category_img>
+		<category_level>1</category_level>
+		<category_theme>Fruits_B</category_theme>
+		<category_title>Welcome to Troll Land</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>105_quiz</category_id>
+		<category_type>quiz</category_type>
+		<category_color>null</category_color>
+		<category_img>null</category_img>
+		<category_level>null</category_level>
+		<category_theme>null</category_theme>
+		<category_title>null</category_title>
+		<category_voca>null</category_voca>
+		<category_sentence>null</category_sentence>
+	</category>
+	<category>
+		<category_id>106_story_a</category_id>
+		<category_type>story</category_type>
+		<category_color>255,152,0</category_color>
+		<category_img>101_08</category_img>
+		<category_level>1</category_level>
+		<category_theme>Colors_A</category_theme>
+		<category_title>Clean Up! Clean Up!</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>106_story_b</category_id>
+		<category_type>story</category_type>
+		<category_color>0,188,212</category_color>
+		<category_img>101_08</category_img>
+		<category_level>1</category_level>
+		<category_theme>Colors_B</category_theme>
+		<category_title>Quack Quack</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>106_quiz</category_id>
+		<category_type>quiz</category_type>
+		<category_color>null</category_color>
+		<category_img>null</category_img>
+		<category_level>null</category_level>
+		<category_theme>null</category_theme>
+		<category_title>null</category_title>
+		<category_voca>null</category_voca>
+		<category_sentence>null</category_sentence>
+	</category>
+	<category>
+		<category_id>201_story_a</category_id>
+		<category_type>story</category_type>
+		<category_color>255,152,0</category_color>
+		<category_img>101_08</category_img>
+		<category_level>2</category_level>
+		<category_theme>Numbers_A</category_theme>
+		<category_title>Go, Go, Big Red Chicken!</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>201_story_b</category_id>
+		<category_type>story</category_type>
+		<category_color>0,188,212</category_color>
+		<category_img>101_08</category_img>
+		<category_level>2</category_level>
+		<category_theme>Numbers_B</category_theme>
+		<category_title>What Happened to Swiper?</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>201_quiz</category_id>
+		<category_type>quiz</category_type>
+		<category_color>null</category_color>
+		<category_img>null</category_img>
+		<category_level>null</category_level>
+		<category_theme>null</category_theme>
+		<category_title>null</category_title>
+		<category_voca>null</category_voca>
+		<category_sentence>null</category_sentence>
+	</category>
+	<category>
+		<category_id>202_story_a</category_id>
+		<category_type>story</category_type>
+		<category_color>255,152,0</category_color>
+		<category_img>101_08</category_img>
+		<category_level>2</category_level>
+		<category_theme>Up &amp; Down_A</category_theme>
+		<category_title>Ring Ring Hello? </category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>202_story_b</category_id>
+		<category_type>story</category_type>
+		<category_color>0,188,212</category_color>
+		<category_img>101_08</category_img>
+		<category_level>2</category_level>
+		<category_theme>Up &amp; Down_B</category_theme>
+		<category_title>Yay, Guess Who Won!</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>202_quiz</category_id>
+		<category_type>quiz</category_type>
+		<category_color>null</category_color>
+		<category_img>null</category_img>
+		<category_level>null</category_level>
+		<category_theme>null</category_theme>
+		<category_title>null</category_title>
+		<category_voca>null</category_voca>
+		<category_sentence>null</category_sentence>
+	</category>
+	<category>
+		<category_id>203_story_a</category_id>
+		<category_type>story</category_type>
+		<category_color>255,152,0</category_color>
+		<category_img>101_08</category_img>
+		<category_level>2</category_level>
+		<category_theme>Food_A</category_theme>
+		<category_title>Let's Go Visit Benny!</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>203_story_b</category_id>
+		<category_type>story</category_type>
+		<category_color>0,188,212</category_color>
+		<category_img>101_08</category_img>
+		<category_level>2</category_level>
+		<category_theme>Food_B</category_theme>
+		<category_title>What Happened at the Festival?</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>203_quiz</category_id>
+		<category_type>quiz</category_type>
+		<category_color>null</category_color>
+		<category_img>null</category_img>
+		<category_level>null</category_level>
+		<category_theme>null</category_theme>
+		<category_title>null</category_title>
+		<category_voca>null</category_voca>
+		<category_sentence>null</category_sentence>
+	</category>
+	<category>
+		<category_id>204_story_a</category_id>
+		<category_type>story</category_type>
+		<category_color>255,152,0</category_color>
+		<category_img>101_08</category_img>
+		<category_level>2</category_level>
+		<category_theme>Pets_A</category_theme>
+		<category_title>New Friends</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>204_story_b</category_id>
+		<category_type>story</category_type>
+		<category_color>0,188,212</category_color>
+		<category_img>101_08</category_img>
+		<category_level>2</category_level>
+		<category_theme>Pets_B</category_theme>
+		<category_title>Pajama Party</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>204_quiz</category_id>
+		<category_type>quiz</category_type>
+		<category_color>null</category_color>
+		<category_img>null</category_img>
+		<category_level>null</category_level>
+		<category_theme>null</category_theme>
+		<category_title>null</category_title>
+		<category_voca>null</category_voca>
+		<category_sentence>null</category_sentence>
+	</category>
+	<category>
+		<category_id>205_story_a</category_id>
+		<category_type>story</category_type>
+		<category_color>255,152,0</category_color>
+		<category_img>101_08</category_img>
+		<category_level>2</category_level>
+		<category_theme>Face_A</category_theme>
+		<category_title>Yummy Face-Shaped Cookies </category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>205_story_b</category_id>
+		<category_type>story</category_type>
+		<category_color>0,188,212</category_color>
+		<category_img>101_08</category_img>
+		<category_level>2</category_level>
+		<category_theme>Face_B</category_theme>
+		<category_title>Trick or Treat!</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>205_quiz</category_id>
+		<category_type>quiz</category_type>
+		<category_color>null</category_color>
+		<category_img>null</category_img>
+		<category_level>null</category_level>
+		<category_theme>null</category_theme>
+		<category_title>null</category_title>
+		<category_voca>null</category_voca>
+		<category_sentence>null</category_sentence>
+	</category>
+	<category>
+		<category_id>206_story_a</category_id>
+		<category_type>story</category_type>
+		<category_color>255,152,0</category_color>
+		<category_img>101_08</category_img>
+		<category_level>2</category_level>
+		<category_theme>Open &amp; Close_A</category_theme>
+		<category_title>What Happened to Big Red Chicken?</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>206_story_b</category_id>
+		<category_type>story</category_type>
+		<category_color>0,188,212</category_color>
+		<category_img>101_08</category_img>
+		<category_level>2</category_level>
+		<category_theme>Open &amp; Close_B</category_theme>
+		<category_title>The Robot House</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>206_quiz</category_id>
+		<category_type>quiz</category_type>
+		<category_color>null</category_color>
+		<category_img>null</category_img>
+		<category_level>null</category_level>
+		<category_theme>null</category_theme>
+		<category_title>null</category_title>
+		<category_voca>null</category_voca>
+		<category_sentence>null</category_sentence>
+	</category>
+	<category>
+		<category_id>301_story_a</category_id>
+		<category_type>story</category_type>
+		<category_color>255,152,0</category_color>
+		<category_img>101_08</category_img>
+		<category_level>3</category_level>
+		<category_theme>Numbers_A</category_theme>
+		<category_title>Don't Worry, Tico!</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>301_story_b</category_id>
+		<category_type>story</category_type>
+		<category_color>0,188,212</category_color>
+		<category_img>101_08</category_img>
+		<category_level>3</category_level>
+		<category_theme>Numbers_B</category_theme>
+		<category_title>I Love Blueberries</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>301_quiz</category_id>
+		<category_type>quiz</category_type>
+		<category_color>null</category_color>
+		<category_img>null</category_img>
+		<category_level>null</category_level>
+		<category_theme>null</category_theme>
+		<category_title>null</category_title>
+		<category_voca>null</category_voca>
+		<category_sentence>null</category_sentence>
+	</category>
+	<category>
+		<category_id>302_story_a</category_id>
+		<category_type>story</category_type>
+		<category_color>255,152,0</category_color>
+		<category_img>101_08</category_img>
+		<category_level>3</category_level>
+		<category_theme>Farm Animals_A</category_theme>
+		<category_title>Benny's Puzzles</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>302_story_b</category_id>
+		<category_type>story</category_type>
+		<category_color>0,188,212</category_color>
+		<category_img>101_08</category_img>
+		<category_level>3</category_level>
+		<category_theme>Farm Animals_B</category_theme>
+		<category_title>Moo</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>302_quiz</category_id>
+		<category_type>quiz</category_type>
+		<category_color>null</category_color>
+		<category_img>null</category_img>
+		<category_level>null</category_level>
+		<category_theme>null</category_theme>
+		<category_title>null</category_title>
+		<category_voca>null</category_voca>
+		<category_sentence>null</category_sentence>
+	</category>
+	<category>
+		<category_id>303_story_a</category_id>
+		<category_type>story</category_type>
+		<category_color>255,152,0</category_color>
+		<category_img>101_08</category_img>
+		<category_level>3</category_level>
+		<category_theme>Shapes_A</category_theme>
+		<category_title>Let's Help the Shapey Mouse</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>303_story_b</category_id>
+		<category_type>story</category_type>
+		<category_color>0,188,212</category_color>
+		<category_img>101_08</category_img>
+		<category_level>3</category_level>
+		<category_theme>Shapes_B</category_theme>
+		<category_title>Magic Pen</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>303_quiz</category_id>
+		<category_type>quiz</category_type>
+		<category_color>null</category_color>
+		<category_img>null</category_img>
+		<category_level>null</category_level>
+		<category_theme>null</category_theme>
+		<category_title>null</category_title>
+		<category_voca>null</category_voca>
+		<category_sentence>null</category_sentence>
+	</category>
+	<category>
+		<category_id>304_story_a</category_id>
+		<category_type>story</category_type>
+		<category_color>255,152,0</category_color>
+		<category_img>101_08</category_img>
+		<category_level>3</category_level>
+		<category_theme>Colors_A</category_theme>
+		<category_title>Mix the Colors</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>304_story_b</category_id>
+		<category_type>story</category_type>
+		<category_color>0,188,212</category_color>
+		<category_img>101_08</category_img>
+		<category_level>3</category_level>
+		<category_theme>Colors_B</category_theme>
+		<category_title>I Like Colors</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>304_quiz</category_id>
+		<category_type>quiz</category_type>
+		<category_color>null</category_color>
+		<category_img>null</category_img>
+		<category_level>null</category_level>
+		<category_theme>null</category_theme>
+		<category_title>null</category_title>
+		<category_voca>null</category_voca>
+		<category_sentence>null</category_sentence>
+	</category>
+	<category>
+		<category_id>305_story_a</category_id>
+		<category_type>story</category_type>
+		<category_color>255,152,0</category_color>
+		<category_img>101_08</category_img>
+		<category_level>3</category_level>
+		<category_theme>Music_A</category_theme>
+		<category_title>Music Boxes</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>305_story_b</category_id>
+		<category_type>story</category_type>
+		<category_color>0,188,212</category_color>
+		<category_img>101_08</category_img>
+		<category_level>3</category_level>
+		<category_theme>Music_B</category_theme>
+		<category_title>Music Concert</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>305_quiz</category_id>
+		<category_type>quiz</category_type>
+		<category_color>null</category_color>
+		<category_img>null</category_img>
+		<category_level>null</category_level>
+		<category_theme>null</category_theme>
+		<category_title>null</category_title>
+		<category_voca>null</category_voca>
+		<category_sentence>null</category_sentence>
+	</category>
+	<category>
+		<category_id>306_story_a</category_id>
+		<category_type>story</category_type>
+		<category_color>255,152,0</category_color>
+		<category_img>101_08</category_img>
+		<category_level>3</category_level>
+		<category_theme>Push &amp; Pull_A</category_theme>
+		<category_title>Carrots for the Bunny</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>306_story_b</category_id>
+		<category_type>story</category_type>
+		<category_color>0,188,212</category_color>
+		<category_img>101_08</category_img>
+		<category_level>3</category_level>
+		<category_theme>Push &amp; Pull_B</category_theme>
+		<category_title>Dora Helps the Little Chick</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>306_quiz</category_id>
+		<category_type>quiz</category_type>
+		<category_color>null</category_color>
+		<category_img>null</category_img>
+		<category_level>null</category_level>
+		<category_theme>null</category_theme>
+		<category_title>null</category_title>
+		<category_voca>null</category_voca>
+		<category_sentence>null</category_sentence>
+	</category>
+	<category>
+		<category_id>401_story_a</category_id>
+		<category_type>story</category_type>
+		<category_color>255,152,0</category_color>
+		<category_img>101_08</category_img>
+		<category_level>4</category_level>
+		<category_theme>Weather_A</category_theme>
+		<category_title>Boots' Kite</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>401_story_b</category_id>
+		<category_type>story</category_type>
+		<category_color>0,188,212</category_color>
+		<category_img>101_08</category_img>
+		<category_level>4</category_level>
+		<category_theme>Weather_B</category_theme>
+		<category_title>How's the Weather?</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>401_quiz</category_id>
+		<category_type>quiz</category_type>
+		<category_color>null</category_color>
+		<category_img>null</category_img>
+		<category_level>null</category_level>
+		<category_theme>null</category_theme>
+		<category_title>null</category_title>
+		<category_voca>null</category_voca>
+		<category_sentence>null</category_sentence>
+	</category>
+	<category>
+		<category_id>402_story_a</category_id>
+		<category_type>story</category_type>
+		<category_color>255,152,0</category_color>
+		<category_img>101_08</category_img>
+		<category_level>4</category_level>
+		<category_theme>Actions_A</category_theme>
+		<category_title>Dora the Starcatcher</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>402_story_b</category_id>
+		<category_type>story</category_type>
+		<category_color>0,188,212</category_color>
+		<category_img>101_08</category_img>
+		<category_level>4</category_level>
+		<category_theme>Actions_B</category_theme>
+		<category_title>Baseball Game</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>402_quiz</category_id>
+		<category_type>quiz</category_type>
+		<category_color>null</category_color>
+		<category_img>null</category_img>
+		<category_level>null</category_level>
+		<category_theme>null</category_theme>
+		<category_title>null</category_title>
+		<category_voca>null</category_voca>
+		<category_sentence>null</category_sentence>
+	</category>
+	<category>
+		<category_id>403_story_a</category_id>
+		<category_type>story</category_type>
+		<category_color>255,152,0</category_color>
+		<category_img>101_08</category_img>
+		<category_level>4</category_level>
+		<category_theme>Body_A</category_theme>
+		<category_title>Doctor Dora</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>403_story_b</category_id>
+		<category_type>story</category_type>
+		<category_color>0,188,212</category_color>
+		<category_img>101_08</category_img>
+		<category_level>4</category_level>
+		<category_theme>Body_B</category_theme>
+		<category_title>Dance Party</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>403_quiz</category_id>
+		<category_type>quiz</category_type>
+		<category_color>null</category_color>
+		<category_img>null</category_img>
+		<category_level>null</category_level>
+		<category_theme>null</category_theme>
+		<category_title>null</category_title>
+		<category_voca>null</category_voca>
+		<category_sentence>null</category_sentence>
+	</category>
+	<category>
+		<category_id>404_story_a</category_id>
+		<category_type>story</category_type>
+		<category_color>255,152,0</category_color>
+		<category_img>101_08</category_img>
+		<category_level>4</category_level>
+		<category_theme>Vegetables_A</category_theme>
+		<category_title>Isa the Farmer</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>404_story_b</category_id>
+		<category_type>story</category_type>
+		<category_color>0,188,212</category_color>
+		<category_img>101_08</category_img>
+		<category_level>4</category_level>
+		<category_theme>Vegetables_B</category_theme>
+		<category_title>A Great Cook</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>404_quiz</category_id>
+		<category_type>quiz</category_type>
+		<category_color>null</category_color>
+		<category_img>null</category_img>
+		<category_level>null</category_level>
+		<category_theme>null</category_theme>
+		<category_title>null</category_title>
+		<category_voca>null</category_voca>
+		<category_sentence>null</category_sentence>
+	</category>
+	<category>
+		<category_id>405_story_a</category_id>
+		<category_type>story</category_type>
+		<category_color>255,152,0</category_color>
+		<category_img>101_08</category_img>
+		<category_level>4</category_level>
+		<category_theme>Transportation_A</category_theme>
+		<category_title>Tico's Nutty Car</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>405_story_b</category_id>
+		<category_type>story</category_type>
+		<category_color>0,188,212</category_color>
+		<category_img>101_08</category_img>
+		<category_level>4</category_level>
+		<category_theme>Transportation_B</category_theme>
+		<category_title>Where Is Azul?</category_title>
+		<category_voca>One/Two/Three</category_voca>
+		<category_sentence>"One/two/three, please!"</category_sentence>
+	</category>
+	<category>
+		<category_id>405_quiz</category_id>
+		<category_type>quiz</category_type>
+		<category_color>null</category_color>
+		<category_img>null</category_img>
+		<category_level>null</category_level>
+		<category_theme>null</category_theme>
+		<category_title>null</category_title>
+		<category_voca>null</category_voca>
+		<category_sentence>null</category_sentence>
+	</category>
+</root>

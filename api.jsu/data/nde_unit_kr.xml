@@ -1,0 +1,1038 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<unit>
+		<unit_id>101A</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 1</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>101B</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 2</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>101C</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 3</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>101D</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 4</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>101E</unit_id>
+		<unit_type>review</unit_type>
+		<unit_img>review_img</unit_img>
+		<unit_day>Day 5</unit_day>
+		<unit_icon>checkup_color_icon</unit_icon>
+		<unit_title>퀴즈 풀기</unit_title>
+		<unit_info>24개</unit_info>
+	</unit>
+	<unit>
+		<unit_id>102A</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 1</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>102B</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 2</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>102C</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 3</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>102D</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 4</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>102E</unit_id>
+		<unit_type>review</unit_type>
+		<unit_img>review_img</unit_img>
+		<unit_day>Day 5</unit_day>
+		<unit_icon>checkup_color_icon</unit_icon>
+		<unit_title>퀴즈 풀기</unit_title>
+		<unit_info>24개</unit_info>
+	</unit>
+	<unit>
+		<unit_id>103A</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 1</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>103B</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 2</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>103C</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 3</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>103D</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 4</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>103E</unit_id>
+		<unit_type>review</unit_type>
+		<unit_img>review_img</unit_img>
+		<unit_day>Day 5</unit_day>
+		<unit_icon>checkup_color_icon</unit_icon>
+		<unit_title>퀴즈 풀기</unit_title>
+		<unit_info>24개</unit_info>
+	</unit>
+	<unit>
+		<unit_id>104A</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 1</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>104B</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 2</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>104C</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 3</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>104D</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 4</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>104E</unit_id>
+		<unit_type>review</unit_type>
+		<unit_img>review_img</unit_img>
+		<unit_day>Day 5</unit_day>
+		<unit_icon>checkup_color_icon</unit_icon>
+		<unit_title>퀴즈 풀기</unit_title>
+		<unit_info>24개</unit_info>
+	</unit>
+	<unit>
+		<unit_id>105A</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 1</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>105B</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 2</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>105C</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 3</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>105D</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 4</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>105E</unit_id>
+		<unit_type>review</unit_type>
+		<unit_img>review_img</unit_img>
+		<unit_day>Day 5</unit_day>
+		<unit_icon>checkup_color_icon</unit_icon>
+		<unit_title>퀴즈 풀기</unit_title>
+		<unit_info>24개</unit_info>
+	</unit>
+	<unit>
+		<unit_id>106A</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 1</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>106B</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 2</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>106C</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 3</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>106D</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 4</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>106E</unit_id>
+		<unit_type>review</unit_type>
+		<unit_img>review_img</unit_img>
+		<unit_day>Day 5</unit_day>
+		<unit_icon>checkup_color_icon</unit_icon>
+		<unit_title>퀴즈 풀기</unit_title>
+		<unit_info>24개</unit_info>
+	</unit>
+	<unit>
+		<unit_id>201A</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 1</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>201B</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 2</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>201C</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 3</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>201D</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 4</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>201E</unit_id>
+		<unit_type>review</unit_type>
+		<unit_img>review_img</unit_img>
+		<unit_day>Day 5</unit_day>
+		<unit_icon>checkup_color_icon</unit_icon>
+		<unit_title>퀴즈 풀기</unit_title>
+		<unit_info>24개</unit_info>
+	</unit>
+	<unit>
+		<unit_id>202A</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 1</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>202B</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 2</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>202C</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 3</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>202D</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 4</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>202E</unit_id>
+		<unit_type>review</unit_type>
+		<unit_img>review_img</unit_img>
+		<unit_day>Day 5</unit_day>
+		<unit_icon>checkup_color_icon</unit_icon>
+		<unit_title>퀴즈 풀기</unit_title>
+		<unit_info>24개</unit_info>
+	</unit>
+	<unit>
+		<unit_id>203A</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 1</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>203B</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 2</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>203C</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 3</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>203D</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 4</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>203E</unit_id>
+		<unit_type>review</unit_type>
+		<unit_img>review_img</unit_img>
+		<unit_day>Day 5</unit_day>
+		<unit_icon>checkup_color_icon</unit_icon>
+		<unit_title>퀴즈 풀기</unit_title>
+		<unit_info>24개</unit_info>
+	</unit>
+	<unit>
+		<unit_id>204A</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 1</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>204B</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 2</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>204C</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 3</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>204D</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 4</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>204E</unit_id>
+		<unit_type>review</unit_type>
+		<unit_img>review_img</unit_img>
+		<unit_day>Day 5</unit_day>
+		<unit_icon>checkup_color_icon</unit_icon>
+		<unit_title>퀴즈 풀기</unit_title>
+		<unit_info>24개</unit_info>
+	</unit>
+	<unit>
+		<unit_id>205A</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 1</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>205B</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 2</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>205C</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 3</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>205D</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 4</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>205E</unit_id>
+		<unit_type>review</unit_type>
+		<unit_img>review_img</unit_img>
+		<unit_day>Day 5</unit_day>
+		<unit_icon>checkup_color_icon</unit_icon>
+		<unit_title>퀴즈 풀기</unit_title>
+		<unit_info>24개</unit_info>
+	</unit>
+	<unit>
+		<unit_id>206A</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 1</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>206B</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 2</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>206C</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 3</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>206D</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 4</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>206E</unit_id>
+		<unit_type>review</unit_type>
+		<unit_img>review_img</unit_img>
+		<unit_day>Day 5</unit_day>
+		<unit_icon>checkup_color_icon</unit_icon>
+		<unit_title>퀴즈 풀기</unit_title>
+		<unit_info>24개</unit_info>
+	</unit>
+	<unit>
+		<unit_id>301A</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 1</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>301B</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 2</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>301C</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 3</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>301D</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 4</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>301E</unit_id>
+		<unit_type>review</unit_type>
+		<unit_img>review_img</unit_img>
+		<unit_day>Day 5</unit_day>
+		<unit_icon>checkup_color_icon</unit_icon>
+		<unit_title>퀴즈 풀기</unit_title>
+		<unit_info>24개</unit_info>
+	</unit>
+	<unit>
+		<unit_id>302A</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 1</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>302B</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 2</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>302C</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 3</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>302D</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 4</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>302E</unit_id>
+		<unit_type>review</unit_type>
+		<unit_img>review_img</unit_img>
+		<unit_day>Day 5</unit_day>
+		<unit_icon>checkup_color_icon</unit_icon>
+		<unit_title>퀴즈 풀기</unit_title>
+		<unit_info>24개</unit_info>
+	</unit>
+	<unit>
+		<unit_id>303A</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 1</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>303B</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 2</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>303C</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 3</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>303D</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 4</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>303E</unit_id>
+		<unit_type>review</unit_type>
+		<unit_img>review_img</unit_img>
+		<unit_day>Day 5</unit_day>
+		<unit_icon>checkup_color_icon</unit_icon>
+		<unit_title>퀴즈 풀기</unit_title>
+		<unit_info>24개</unit_info>
+	</unit>
+	<unit>
+		<unit_id>304A</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 1</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>304B</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 2</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>304C</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 3</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>304D</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 4</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>304E</unit_id>
+		<unit_type>review</unit_type>
+		<unit_img>review_img</unit_img>
+		<unit_day>Day 5</unit_day>
+		<unit_icon>checkup_color_icon</unit_icon>
+		<unit_title>퀴즈 풀기</unit_title>
+		<unit_info>24개</unit_info>
+	</unit>
+	<unit>
+		<unit_id>305A</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 1</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>305B</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 2</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>305C</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 3</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>305D</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 4</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>305E</unit_id>
+		<unit_type>review</unit_type>
+		<unit_img>review_img</unit_img>
+		<unit_day>Day 5</unit_day>
+		<unit_icon>checkup_color_icon</unit_icon>
+		<unit_title>퀴즈 풀기</unit_title>
+		<unit_info>24개</unit_info>
+	</unit>
+	<unit>
+		<unit_id>306A</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 1</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>306B</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 2</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>306C</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 3</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>306D</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 4</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>306E</unit_id>
+		<unit_type>review</unit_type>
+		<unit_img>review_img</unit_img>
+		<unit_day>Day 5</unit_day>
+		<unit_icon>checkup_color_icon</unit_icon>
+		<unit_title>퀴즈 풀기</unit_title>
+		<unit_info>24개</unit_info>
+	</unit>
+	<unit>
+		<unit_id>401A</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 1</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>401B</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 2</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>401C</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 3</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>401D</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 4</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>401E</unit_id>
+		<unit_type>review</unit_type>
+		<unit_img>review_img</unit_img>
+		<unit_day>Day 5</unit_day>
+		<unit_icon>checkup_color_icon</unit_icon>
+		<unit_title>퀴즈 풀기</unit_title>
+		<unit_info>24개</unit_info>
+	</unit>
+	<unit>
+		<unit_id>402A</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 1</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>402B</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 2</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>402C</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 3</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>402D</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 4</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>402E</unit_id>
+		<unit_type>review</unit_type>
+		<unit_img>review_img</unit_img>
+		<unit_day>Day 5</unit_day>
+		<unit_icon>checkup_color_icon</unit_icon>
+		<unit_title>퀴즈 풀기</unit_title>
+		<unit_info>24개</unit_info>
+	</unit>
+	<unit>
+		<unit_id>403A</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 1</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>403B</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 2</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>403C</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 3</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>403D</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 4</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>403E</unit_id>
+		<unit_type>review</unit_type>
+		<unit_img>review_img</unit_img>
+		<unit_day>Day 5</unit_day>
+		<unit_icon>checkup_color_icon</unit_icon>
+		<unit_title>퀴즈 풀기</unit_title>
+		<unit_info>24개</unit_info>
+	</unit>
+	<unit>
+		<unit_id>404A</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 1</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>404B</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 2</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>404C</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 3</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>404D</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 4</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>404E</unit_id>
+		<unit_type>review</unit_type>
+		<unit_img>review_img</unit_img>
+		<unit_day>Day 5</unit_day>
+		<unit_icon>checkup_color_icon</unit_icon>
+		<unit_title>퀴즈 풀기</unit_title>
+		<unit_info>24개</unit_info>
+	</unit>
+	<unit>
+		<unit_id>405A</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 1</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>405B</unit_id>
+		<unit_type>story_a</unit_type>
+		<unit_img>alphabet_a_img</unit_img>
+		<unit_day>Day 2</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>405C</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 3</unit_day>
+		<unit_icon>story_color_icon</unit_icon>
+		<unit_title>스토리 듣기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>405D</unit_id>
+		<unit_type>story_b</unit_type>
+		<unit_img>alphabet_b_img</unit_img>
+		<unit_day>Day 4</unit_day>
+		<unit_icon>repeat_color_icon,dialogue_color_icon,sentence_color_icon</unit_icon>
+		<unit_title>학습하기</unit_title>
+		<unit_info>5분</unit_info>
+	</unit>
+	<unit>
+		<unit_id>405E</unit_id>
+		<unit_type>review</unit_type>
+		<unit_img>review_img</unit_img>
+		<unit_day>Day 5</unit_day>
+		<unit_icon>checkup_color_icon</unit_icon>
+		<unit_title>퀴즈 풀기</unit_title>
+		<unit_info>24개</unit_info>
+	</unit>
+</root>
