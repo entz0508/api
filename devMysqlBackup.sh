@@ -1,0 +1,11 @@
+mysqldump -u root -pbluearkedu01  slp_account_db > slp_account_db.sql
+mysqldump -u root -pbluearkedu01  slp_common_db > slp_common_db.sql
+mysqldump -u root -pbluearkedu01  slp_dla_db > slp_dla_db.sql
+mysqldump -u root -pbluearkedu01  slp_dla_info_db > slp_dla_info_db.sql
+mysqldump -u root -pbluearkedu01  slp_en_db > slp_en_db.sql
+mysqldump -u root -pbluearkedu01  slp_en_info_db > slp_en_info_db.sql
+mysqldump -u root -pbluearkedu01  slp_kw_db > slp_kw_db.sql
+mysqldump -u root -pbluearkedu01  slp_kw_action_log_db > slp_kw_action_log_db.sql
+mysqldump -u root -pbluearkedu01  slp_log_db > slp_log_db.sql
+mysqldump -u root -pbluearkedu01  slp_platform_db > slp_platform_db.sql
+mysqldump -u root -pbluearkedu01  slp_kw_info_db > slp_kw_info_db.sql
