@@ -1,0 +1,58 @@
+{
+  "CONFIG": {
+    "PACKAGE_NAME": "com.dramabible.adb"
+  },
+  "LOG_INFO": {
+    "LOGGER_LEVEL": "DEBUG",
+    "FILE_PATH": "/data/logs/node/api.adb/adb.log",
+    "CATEGORY": "ADB_PROJECT"
+  },
+  "SERVER_INFO": {
+    "SERVER_ID": 1,
+    "NAME": "ADB KOR VER",
+    "PORT": 20001,
+    "LEVEL": 1,
+    "PHOTO": {
+      "LOCAL_FILE_PATH": "/data/file_ADB/",
+      "LOCAL_TEMP_PATH": "/data/temp_adb/",
+      "LOCAL_IMAGE_URL": "http://104.199.129.129:8002/files",
+
+      "IMG_SERVER_REAL": {
+        "HOST": "image.bluearkedu.com",
+        "PORT": 22,
+        "USERNAME": "bluedora",
+        "PRIVATE_KEY": "./ssh/rsa-key-slp-dla-photo-upload-real.openssh",
+        "PHOTO_PATH_BEGIN": "/data/www/images/adb/profile",
+        "PHOTO_PATH_END": "photos/"
+      },
+      "IMG_SERVER": {
+        "HOST": "14.63.169.217",
+        "PORT": 22,
+        "USERNAME": "slpphoto",
+        "PRIVATE_KEY": "./ssh/rsa-key-slp-dla-photo-upload-dev.openssh",
+        "PHOTO_PATH_BEGIN": "/data/www/images/adb/lv",
+        "PHOTO_PATH_END": "photos/"
+      }
+    }
+  },
+  "MAILER_INFO": {
+    "GMAIL_ID": "no-reply@blueark.com",
+    "GMAIL_PASS": "ehfk@#$395",
+    "SENDER_MAIL": "'dramabible' <no-reply@blueark.com>",
+    "SERVICE_URL": "https://gnm.blueark.com"
+  },
+  "ADB_PLATFORM": {
+    "URL": "127.0.0.1",
+    "PORT": 80,
+    "PATH_IS_AUTH_ACCOUNT": "adb/account/isloggedin/with"
+  },
+  "MYSQL_ADB_ACCOUNT": {
+    "HOST": "localhost",
+    "PORT": 16612,
+    "USER": "slpadbdev",
+    "PASSWORD": "qmffndkzm!!!!",
+    "DATABASE": "ADB"
+  },
+  "end": {
+  }
+}

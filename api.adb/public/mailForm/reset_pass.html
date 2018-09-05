@@ -1,0 +1,195 @@
+﻿<!-- saved from url=(0057)http://download.blueark.com/dla/dea_web/account/#pw_reset -->
+<html class="ui-mobile">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <!--<base href="http://download.blueark.com/dla/dea_web/account/#pw_reset">-->
+    
+    <title>비밀번호 재발급</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="http://download.blueark.com/dla/dea_web/account/css/jquery.mobile-1.4.5.min.css">
+
+    <!--
+    <link rel="stylesheet" href="http://download.blueark.com/dla/dea_web/account/css/slp_custom_theme.min.css">
+    <link rel="stylesheet" href="http://download.blueark.com/dla/dea_web/account/css/jquery.mobile.icons.min.css">
+    
+    <link rel="stylesheet" href="http://download.blueark.com/dla/dea_web/account/css/header.css">
+    <script async="" src="http://download.blueark.com/dla/dea_web/account/js/analytics.js"></script>
+    -->
+    
+    <!--
+    <script src="http://download.blueark.com/dla/dea_web/account/js/jquery-1.11.2.min.js"></script>
+    <script src="http://download.blueark.com/dla/dea_web/account/js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="http://download.blueark.com/dla/dea_web/account/js/jquery.ba-bbq.js"></script>
+    <script src="http://download.blueark.com/dla/dea_web/account/js/api_controller.js"></script>
+    <script src="http://download.blueark.com/dla/dea_web/account/js/localize_string.js"></script>
+    <script src="http://download.blueark.com/dla/dea_web/account/js/request_handler.js"></script>
+    -->
+
+    <style type="text/css">
+        body {
+            font-family: 'Nanum Gothic', serif;
+        }
+
+        .alert_text {
+            color: red;
+            text-align: center;
+            font-weight: bold;
+            font-size: 10pt;
+        }
+    </style>
+    <script type="text/javascript">
+
+        APP_SEND_PROTOCOL = {
+            login : 1,
+            set_account_id : 2,
+            close_view : 3,
+            success_optional_info : 4,
+            break_account : 5,
+            set_api_url : 6,
+            set_access_info : 7
+        }
+
+        APP_CONFIG = {
+            app_id : "1000000000",
+            client_uid : "1000000000",
+            guest : false
+        }
+
+        LOGIN_TYPE = {
+            slp : "slp",
+            google : "google",
+            facebook : "facebook",
+            kakao : "kakao"
+        }
+
+        KIDSWATTS_APP_ID = "999";
+
+        var lang;
+        var loginType = LOGIN_TYPE.slp;
+        var isIphone, isAndroid, isIpad;
+        var isAccountCreateComplete;
+        var isCreateFlow;
+        var isLoginFlow;
+        var finishTransferSession;
+
+        var user = {
+            email:"",
+            pw:"",
+            country:"",
+            token:"",
+            accountId:"",
+            iam:"",
+            birthday:"",
+            transfer:0
+        }
+
+        var resetPwData = {
+            email : "",
+            ch_token : ""
+        }
+
+        $(document).ready(function() {
+            checkPlatform();
+            lang = navigator.language || navigator.userLanguage;
+
+            $.mobile.page.prototype.options.domCache = true;
+
+            $(window).orientationchange();
+
+            adjustCSS();
+            //selectedCountryFromBrowserLanguage();
+
+            new localize_string();
+            callAppFunc(APP_SEND_PROTOCOL.set_api_url, SERVER_CONFIG.addr);
+
+            if(isIphone){
+                $.mobile.hashListeningEnabled = false;
+            }
+
+            $("input").keyup(function(e){
+                if (e.keyCode == 13) {
+                    $(this).blur();
+                }
+            });
+
+            $("#privacy_policy_content").load("page/privacy_policy.html");
+            $("#service_terms_content").load("page/service_terms.html");
+        });
+
+        function adjustCSS() {
+            $(".rotate-resize-btn").css("margin", "5pt auto");
+            $(".slp-btn").css("background", "#40382D").css("color", "#ffffff").css("text-shadow", "0px 0 black");
+            $(".fb-btn").css("background", "#3B64BC").css("color", "#ffffff").css("text-shadow", "0px 0 black");
+            $(".gg-btn").css("background", "#DD4C39").css("color", "#ffffff").css("text-shadow", "0px 0 black");
+            $(".kakao-btn").css("background", "#FFEB00").css("color", "#000000").css("text-shadow", "0px 0 black");
+            $(".nagative-btn").css("background", "#BEB6A9").css("color", "#ffffff").css("text-shadow", "0px 0 black");
+            $(".single-btn-align").css("margin", "20px auto 0 auto").css("width", "50%");
+        }
+
+        $(window).on("orientationchange", function(event) {
+            if (event.orientation == "landscape") {
+                $("#main_img").css("width", "30%");
+                $("#main_text0").css("font-size", "20pt");
+                $("#main_text1").css("font-size", "10pt");
+                $(".rotate-resize-btn").css("width", "55%");
+                $("#join_img").css("width", "50%");
+            }
+            else {
+                $("#main_img").css("width", "50%");
+                $("#main_text0").css("font-size", "20pt");
+                $("#main_text1").css("font-size", "13pt");
+                $(".rotate-resize-btn").css("width", "");
+                $("#join_img").css("width", isIpad ? "50%" : "100%");
+            }
+        });
+
+
+    </script>
+
+    <style id="style-1-cropbar-clipper">
+        /* Copyright 2014 Evernote Corporation. All rights reserved. */
+        .en-markup-crop-options {
+            top: 18px !important;
+            left: 50% !important;
+            margin-left: -100px !important;
+            width: 200px !important;
+            border: 2px rgba(255,255,255,.38) solid !important;
+            border-radius: 4px !important;
+        }
+
+        .en-markup-crop-options div div:first-of-type {
+            margin-left: 0px !important;
+        }
+    </style> 
+</head>
+<body class="ui-mobile-viewport ui-overlay-a">
+    <div data-role="page" id="pw_reset" data-url="pw_reset" tabindex="0" class="ui-page ui-page-theme-a ui-page-active" style="min-height: 623px;">
+        <div data-role="header" role="banner" class="ui-header ui-bar-inherit">
+            <h1 localize="forget_pw_manage_title_name" class="ui-title" role="heading" aria-level="1">비밀번호 재발급</h1>
+            <div class="header_bottom_line"></div>
+        </div>
+        <div role="main" class="ui-content">
+            <h4 localize="pw_manage_sub_text_02">새로운 비밀번호를 입력해 주세요 </h4>
+            <label localize="join_id_create_name_pw" for="reset_new_pw_field">비밀번호</label>
+            <div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input localize="join_id_create_input_pw" type="password" id="reset_new_pw_field" placeholder="6자 이상 입력" style="height:45px;"></div>
+            <label localize="join_id_create_name_pwconfirm" for="reset_new_pw_confirm_field">확인</label>
+            <div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input localize="join_id_create_input_pwconfirm" type="password" id="reset_new_pw_confirm_field" placeholder="재입력" style="height:45px;"></div>
+            <p class="alert_text"></p>
+            <a localize="btn_next" class="ui-btn ui-corner-all slp-btn single-btn-align" onclick="onConfirm('pw_reset')" style="background: rgb(64, 56, 45); color: rgb(255, 255, 255); text-shadow: black 0px 0px; margin: 20px auto 0px; width: 50%;">변경하기</a>
+        </div>
+    </div>
+    <div data-role="page" id="pw_reset_complete" data-url="pw_reset_complete">
+        <div data-role="header">
+            <h1 localize="forget_pw_manage_title_name">비밀번호 변경완료</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <h4 localize="alert_forget_pw_manage_sucess">정상적으로 비밀번호 변경이 완료되었습니다. 변경된 비밀번호로 로그인하세요</h4>
+        </div>
+    </div>
+
+    <div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon-loading"></span><h1>loading</h1></div>
+</body>
+</html>

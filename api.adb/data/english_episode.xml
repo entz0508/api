@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<abc id="epe101_w1" type="0" pairing_episode="Step 01">
+		<title>One, Two, Three!</title>
+		<headline>Dora and Boots need to cross the river to get to the Apple Tree. Do you see anyone who can help them go across the river?</headline>
+		<objective1>Able to say the numbers from one to three in English.</objective1>
+		<objective2>Able to count objects from one to three in English.</objective2>
+		<objective3>Able to listen and understand frequently used expressions in English.</objective3>
+	</abc>
+	<abc id="epe101_w2" type="0" pairing_episode="Step 01">
+		<title>Yummy Ice Cream</title>
+		<headline>It's an ice cream truck!Do you want to go get some ice cream with Dora and Boots?</headline>
+		<objective1>Able to listen and understand "One, please."</objective1>
+		<objective2>Able to listen and understand frequently used expressions in English.</objective2>
+	</abc>
+	<abc id="epe101_w3" type="0" pairing_episode="Step 01">
+		<title>Let's sing a song!</title>
+		<headline>Yay! Welcome to the concert!Let's sing a song with Dora and Boots.</headline>
+		<objective1>Able to sing a number song in English.</objective1>
+		<objective2>Able to follow along a simple dance with friends.</objective2>
+	</abc>
+	<abc id="epe101_w4" type="0" pairing_episode="Step 01">
+		<title>Secret Cards</title>
+		<headline>Boots found the secret cards.Can he find all the secret codes and find the hidden pictures?</headline>
+		<objective1>Able to learn and recognize the uppercase letters of A, B, C, and D.</objective1>
+		<objective2>Able to learn the sounds of A, B, C, and D.</objective2>
+	</abc>
+	<abc id="epe102_w1" type="0" pairing_episode="Step 01">
+		<title>Go, Go! Little Chicks!</title>
+		<headline>There's a race at Running Forest!Can the timid Little Chicks finish the race?</headline>
+		<objective1>Able to learn the expressions, "Run!" and "Jump!"</objective1>
+		<objective2>Able to listen and understand frequently used expressions in English.</objective2>
+	</abc>
+	<abc id="epe102_w2" type="1" pairing_episode="step 02">
+		<title>Watch Out!</title>
+		<headline>Ahh! Nuts are falling from the trees!Let's say "Watch out!" so Tico can move.</headline>
+		<objective1>Able to understand and say, "Watch out!"</objective1>
+		<objective2>Able to say "Jump!" in appropriate situations.</objective2>
+		<objective3>Able to listen and understand frequently used expressions in English.</objective3>
+	</abc>
+	<abc id="epe102_w3" type="1" pairing_episode="step 02">
+		<title>Let's sing a song!</title>
+		<headline>Jump! Jump!Let's sing together and jump!</headline>
+		<objective1>Able to sing along in English.</objective1>
+		<objective2>Able to follow along a simple dance with friends.</objective2>
+	</abc>
+	<abc id="epe102_w4" type="1" pairing_episode="step 02">
+		<title>Armadillos' Letter Cards</title>
+		<headline>Our Armadillo friends are hiding.Can our Armadillo friends see the letter cards?</headline>
+		<objective1>Able to learn and recognize the uppercase letters of E, F, and G. </objective1>
+		<objective2>Able to learn the sounds of E, F, and G.</objective2>
+	</abc>
+	<abc id="epe103_w1" type="1" pairing_episode="step 02">
+		<title>The Big Big Beanstalk</title>
+		<headline>There's a rainbow at the top of the Big Big Beanstalk.Can the Unicorn ride the rainbow and get back home?</headline>
+		<objective1>Able to learn the words, 'big' and 'small'.'</objective1>
+		<objective2>Able to compare sizes.</objective2>
+		<objective3>Able to listen and understand frequently used expressions in English.</objective3>
+	</abc>
+	<abc id="epe103_w2" type="1" pairing_episode="step 02">
+		<title>Big Sheep and Small Sheep</title>
+		<headline>We have to get to the Shepherd Boy at the High Hill!Get past the big cloud and the small cloud! Go! Go! To the High Hill!</headline>
+		<objective1>Able to listen and understand the complete sentences, "It's big" and "It's small." </objective1>
+		<objective2>Able to listen and understand frequently used expressions in English.</objective2>
+	</abc>
+	<abc id="epe103_w3" type="1" pairing_episode="step 02">
+		<title>Let's sing a song!</title>
+		<headline>Today, we sing with a very special friend.Are you ready?</headline>
+		<objective1>Able to sing along "Big and Small" song.</objective1>
+		<objective2>Able to follow along a simple dance with friends.</objective2>
+	</abc>
+	<abc id="epe103_w4" type="1" pairing_episode="step 02">
+		<title>Isa's Alphabet Flowers</title>
+		<headline>Isa has special flower seeds for her friends.Let's plant the seeds and see what flowers grow!</headline>
+		<objective1>Able to learn and recognize the uppercase letters of H, I, J, and K.</objective1>
+		<objective2>Able to learn the sounds of H, I, J, and K.</objective2>
+	</abc>
+	<abc id="epe104_w1" type="1" pairing_episode="step 02">
+		<title>Gingerbread's Magic Cards</title>
+		<headline>Gingerbread is crying!What is happening to Gingerbread?</headline>
+		<objective1>Able to learn the names of toys in English.</objective1>
+		<objective2>Able to listen and understand frequently used expressions in English.</objective2>
+	</abc>
+	<abc id="epe104_w2" type="1" pairing_episode="step 02">
+		<title>Let's make wishes</title>
+		<headline>Let's make a wish on the Little Stars in the toy constellations! What will Dora and Boots wish for?</headline>
+		<objective1>Able to understand and say the sentence, "Don't cry!"</objective1>
+		<objective2>Able to listen and understand the complete sentence, "It's a ______."</objective2>
+	</abc>
+	<abc id="epe104_w3" type="1" pairing_episode="step 02">
+		<title>Let's sing a song!</title>
+		<headline>Our friends are crying because they lost their toys!Sing together to make our friends stop crying.Don't cry!</headline>
+		<objective1>Able to sing along "Don't cry" song. </objective1>
+		<objective2>Able to follow along a simple dance with friends.</objective2>
+	</abc>
+	<abc id="epe104_w4" type="1" pairing_episode="step 03">
+		<title>We can help you, Benny!</title>
+		<headline>Benny is a mailman! Let's help Benny and stamp the letters.</headline>
+		<objective1>Able to learn and recognize the uppercase letters of L, M, N, O, and P.</objective1>
+		<objective2>Able to learn the sounds of L, M, N, O, and P.</objective2>
+	</abc>
+	<abc id="epe105_w1" type="1" pairing_episode="step 03">
+		<title>A Cake for Boots</title>
+		<headline>Today is Boots' birthday! What fruits do we put on his cake?</headline>
+		<objective1>Able to learn the names of fruits in English.</objective1>
+		<objective2>Able to listen and understand frequently used expressions in English.</objective2>
+	</abc>
+	<abc id="epe105_w2" type="1" pairing_episode="step 03">
+		<title>Welcome to Troll Land</title>
+		<headline>Grumpy Old Troll prepared something fo Dora and her friends. Let's go on an adventure to Troll Land.</headline>
+		<objective1>Able to listen and understand the complete sentence, "I want_______."</objective1>
+		<objective2>Able to listen and understand the sentence, "It's yummy!" </objective2>
+	</abc>
+	<abc id="epe105_w3" type="1" pairing_episode="step 03">
+		<title>Let's sing a song!</title>
+		<headline>Boots got a special card from his friends. What will happen when he opens the card?</headline>
+		<objective1>Able to sing along in English.</objective1>
+		<objective2>Able to follow along a simple dance with friends.</objective2>
+	</abc>
+	<abc id="epe105_w4" type="1" pairing_episode="step 03">
+		<title>An Exciting Festival</title>
+		<headline>Wow, There's an exciting festival! Let's enjoy the festival together!</headline>
+		<objective1>Able to learn and recognize the uppercase letters of Q, R, S, T, U, and V.</objective1>
+		<objective2>Able to learn the sounds of Q, R, S, T, U, and V.</objective2>
+	</abc>
+	<abc id="epe106_w1" type="1" pairing_episode="step 03">
+		<title>Clean Up! Clean Up!</title>
+		<headline>Uh oh! This is not the sea we imagined. What is happening in the sea?</headline>
+		<objective1>Able to learn the colors of red, yellow, and blue in English.</objective1>
+		<objective2>Able to listen and understand frequently used expressions in English.</objective2>
+	</abc>
+	<abc id="epe106_w2" type="1" pairing_episode="step 03">
+		<title>Quack! Quack!</title>
+		<headline>Do you hear the sound coming from the book? Quack! Quack! Let's find out what is happening!</headline>
+		<objective1>Able to listen and understand the complete sentence, "Color it __________."</objective1>
+		<objective2>Able to understand and say the sentence, "Color it___________."</objective2>
+	</abc>
+	<abc id="epe106_w3" type="1" pairing_episode="step 03">
+		<title>Let's Sing a Song!</title>
+		<headline>Let's color the picture with pretty colors and sing a fun song.</headline>
+		<objective1>Able to sing along in English.</objective1>
+		<objective2>Able to listen and understand the colors in English while coloring pictures.</objective2>
+	</abc>
+	<abc id="epe106_w4" type="1" pairing_episode="step 03">
+		<title>The Train Wants to Run Again!</title>
+		<headline>Block Train has stopped. The train wants to run again.Let's help the train run again~!</headline>
+		<objective1>Able to learn and recognize the uppercase letters of W, X, Y, and Z.</objective1>
+		<objective2>Able to learn the sounds of W, X, Y, and Z.</objective2>
+	</abc>
+	<abc id="epe107_w1" type="1" pairing_episode="step 03">
+		<title>Go, Go! Big Red Chicken!</title>
+		<headline>We can hear many people cheering for Big Red Chicken.Help Dora and Boots and cheer for Big Red Chicken~</headline>
+		<objective1>Able to say the numbers from four to six in English.</objective1>
+		<objective2>Able to count objects from four to six in English.</objective2>
+		<objective3>Able to say and count from one to six in English, including the numbers previously learned.</objective3>
+	</abc>
+	<abc id="epe107_w2" type="1" pairing_episode="step 03">
+		<title>What Happened to Swiper?</title>
+		<headline>Something is different about Swiper.What happened to Swiper?</headline>
+		<objective1>Able to understand the senctence, "Let's count together."</objective1>
+		<objective2>Able to listen and understand frequently used expressions in English.</objective2>
+	</abc>
+	<abc id="epe107_w3" type="1" pairing_episode="step 03">
+		<title>Let's Sing a Song!</title>
+		<headline>We invited special friends to the Concert Hall.Let's sing a fun song with our special friends.</headline>
+		<objective1>Able to sing along in English.</objective1>
+		<objective2>Able to follow along a simple dance with friends.</objective2>
+	</abc>
+	<abc id="epe107_w4" type="1" pairing_episode="step 03">
+		<title>Boo Hoo! Boots Is Crying! </title>
+		<headline>Sob... Sob… Boots is crying. How can we make him feel better?</headline>
+		<objective1>Able to learn and recognize the lowercase letters of a, b, c, and d.</objective1>
+		<objective2>Able to learn the sounds of a, b, c, and d.</objective2>
+	</abc>
+	<abc id="epe108_w1" type="1" pairing_episode="step 03">
+		<title>Dring Dring Hello? </title>
+		<headline>Ring! Ring! Dora got a phone call!Hello~?</headline>
+		<objective1>Able to learn the expressions, "Up!" and "Down!"</objective1>
+		<objective2>Able to understand the expressions and move accordingly.</objective2>
+		<objective3>Able to listen and understand frequently used expressions in English.</objective3>
+	</abc>
+	<abc id="epe108_w2" type="1" pairing_episode="step 03">
+		<title>Yay! Guess Who Won</title>
+		<headline>It's the Up and Down Race.Who won the race? </headline>
+		<objective1>Able to understand and say the sentence, "Let's go up" and "Let's go down."</objective1>
+		<objective2>Able to listen and understand frequently used expressions in English.</objective2>
+	</abc>
+	<abc id="epe108_w3" type="1" pairing_episode="step 03">
+		<title>Let's Sing a Song!</title>
+		<headline>Boots is the Dance King!Let's learn to dance from Boots!</headline>
+		<objective1>Able to understand and sing along "Up, down" song.</objective1>
+		<objective2>Able to understand the sentence and move accordingly.</objective2>
+	</abc>
+	<abc id="epe108_w4" type="1" pairing_episode="step 03">
+		<title>Isa Loves Flowers</title>
+		<headline>Isa really likes flowers!Shall we go to Isa's Garden?</headline>
+		<objective1>Able to learn and recognize the lowercase letters of e, f, and g.</objective1>
+		<objective2>Able to learn the sounds of e, f, and g.</objective2>
+	</abc>
+	<abc id="epe109_w1" type="1" pairing_episode="step 03">
+		<title>Let's Go Visit, Benny!</title>
+		<headline>Benny the Chef invited his friends to his barn!Let's go visit him together!</headline>
+		<objective1> Able to learn and say the names of yummy food in English.</objective1>
+		<objective2> Able to experience the characteristic of yummy food.</objective2>
+	</abc>
+	<abc id="epe109_w2" type="1" pairing_episode="step 03">
+		<title>What's Happened at the Festival</title>
+		<headline>What is happening?Our friends are all staring at something!</headline>
+		<objective1> Able to listen and understand the complete sentence, "I like_____."</objective1>
+		<objective2> Able to understand and say the complete sentence, "I like_____."</objective2>
+		<objective3> Able to listen and understand frequently used expressions in English.</objective3>
+	</abc>
+	<abc id="epe109_w3" type="1" pairing_episode="step 03">
+		<title>Let's Sing a Song!</title>
+		<headline>Let's sing with our cute friends!</headline>
+		<objective1> Able to sing along "yummy food" song in English.</objective1>
+		<objective2> Able to follow along a simple dance with friends.</objective2>
+	</abc>
+	<abc id="epe109_w4" type="1" pairing_episode="step 03">
+		<title>Pajamas Day</title>
+		<headline>Today is Pajamas Day!Let's make our own pajamas!</headline>
+		<objective1> Able to learn and recognize the lowercase letters of h, i, j, and k.</objective1>
+		<objective2> Able to learn the sounds of h, i, j, and k.</objective2>
+	</abc>
+	<abc id="epe110_w1" type="1" pairing_episode="step 03">
+		<title>I'm Lost! Help!</title>
+		<headline>I'm lost!Please help me~! Help! Help!</headline>
+		<objective1> Able to learn and say the names of pets in English.</objective1>
+		<objective2> Able to find a matching house by listening the pet's name in English.</objective2>
+		<objective3> Able to listen and understand frequently used expressions in English.</objective3>
+	</abc>
+	<abc id="epe110_w2" type="1" pairing_episode="step 03">
+		<title>My New Friend</title>
+		<headline>We have a new friend!Who's the new friend?</headline>
+		<objective1> Able to listen and understand the complete sentence, "I have ______."</objective1>
+		<objective2> Able to understand and say the complete sentence, "I have ______."</objective2>
+		<objective3> Able to listen and understand frequently used expressions in English.</objective3>
+	</abc>
+	<abc id="epe110_w3" type="1" pairing_episode="step 03">
+		<title>Let's Sing a Song!</title>
+		<headline>Let's sing with our new friends!</headline>
+		<objective1> Able to sing along the fun "pets" song in English.</objective1>
+		<objective2> Able to follow along a simple dance with friends.</objective2>
+	</abc>
+	<abc id="epe110_w4" type="1" pairing_episode="step 03">
+		<title> Warm Hugs</title>
+		<headline>Let's go with Dora and Boots to show our love~</headline>
+		<objective1> Able to learn and recognize the lowercase letters of l, m, n, o,  and p.</objective1>
+		<objective2> Able to learn the sounds of l, m, n, o,  and p.</objective2>
+	</abc>
+	<abc id="epe111_w1" type="1" pairing_episode="step 03">
+		<title>The Fix-It Machine</title>
+		<headline>Follow me! Like this!</headline>
+		<objective1> Able to learn and say the eyes, nose, and the mouth on face in English. </objective1>
+		<objective2> Able to listen and understand frequently used expressions in English.</objective2>
+	</abc>
+	<abc id="epe111_w2" type="1" pairing_episode="step 03">
+		<title>Halloween Party</title>
+		<headline>What a nice mask!Let's help Dora and Boots make some cool masks.</headline>
+		<objective1> Able to listen and understand the complete sentence, "Let's draw ______."</objective1>
+		<objective2> Able to understand and say the complete sentence, "Let's draw ______."</objective2>
+		<objective3> Able to listen and understand frequently used expressions in English.</objective3>
+	</abc>
+	<abc id="epe111_w3" type="1" pairing_episode="step 03">
+		<title>Let's Sing a Song!</title>
+		<headline>There are pretty balloons all around us!Let's sing a fun song together!</headline>
+		<objective1> Able to sing a long with friends in English</objective1>
+		<objective2> Able to understand and draw the pictures with complete sentence</objective2>
+	</abc>
+	<abc id="epe111_w4" type="1" pairing_episode="step 03">
+		<title>Uh oh! The Robot Isn't Moving.</title>
+		<headline>Ah! The robot is not moving~Let's help Dora and Boots to find out what happened.</headline>
+		<objective1> Able to learn and recognize the lowercase letters of q, r, s, t, u, and v.</objective1>
+		<objective2> Able to learn the sounds of q, r, s, t, u, and v.</objective2>
+	</abc>
+	<abc id="epe112_w1" type="1" pairing_episode="step 03">
+		<title>Where Should We Go?</title>
+		<headline>Uh oh! Where should Dora and Boots go? Let's help them!</headline>
+		<objective1> Able to learn and say the words, "open" and "close".</objective1>
+		<objective2> Able to listen and understand frequently used expressions in English.</objective2>
+	</abc>
+	<abc id="epe112_w2" type="1" pairing_episode="step 03">
+		<title> Magic Spell!</title>
+		<headline>We came to find amazing treasures, but we got locked in!Let's say the password together!</headline>
+		<objective1> Able to listen and understand "Open it" and "Close it".</objective1>
+		<objective2> Able to understand and say "Open it" and "Close it".</objective2>
+		<objective3> Able to listen and understand frequently used expressions in English.</objective3>
+	</abc>
+	<abc id="epe112_w3" type="1" pairing_episode="step 03">
+		<title>Let's Sing a Song!</title>
+		<headline>Let's sing a song with fun passwords!</headline>
+		<objective1> Able to sing along in English.</objective1>
+		<objective2> Able to follow along a simple dance with friends.</objective2>
+	</abc>
+	<abc id="epe112_w4" type="1" pairing_episode="step 03">
+		<title>Shoe Store</title>
+		<headline>The shoes at the Shoe Store are all mixed up.Shall we organize the shoes together~?</headline>
+		<objective1> Able to learn and recognize the lowercase letters of w, x, y, and z.</objective1>
+		<objective2> Able to learn the sounds of w, x, y, and z.</objective2>
+	</abc>
+	<abc id="epe201_w1" type="1" pairing_episode="step 03">
+		<title>Don't worry, Tico!</title>
+		<headline>Oh, no! Tico's Nutty Car has stopped.\nHow can we help Tico?</headline>
+		<objective1>Able to say the numbers from one to ten in English.</objective1>
+		<objective2>Able to count objects from one to ten in English.</objective2>
+		<objective3>Able to listen and understand frequently used expressions in English.</objective3>
+	</abc>
+	<abc id="epe201_w2" type="1" pairing_episode="step 03">
+		<title>I Love Blueberries.</title>
+		<headline>Yummy, juicy blueberries!\nLet's go pick ten blueberries with Dora and Boots!</headline>
+		<objective1>Able to listen and understand the sentence, "There are ________."</objective1>
+		<objective2>Able to count from one to ten in English.</objective2>
+		<objective3>Able to listen and understand frequently used expressions in English.</objective3>
+	</abc>
+	<abc id="epe201_w3" type="1" pairing_episode="step 03">
+		<title>Let's sing a song!</title>
+		<headline>Fun and easy Number Song!\nLet's sing along with Dora and Boots!</headline>
+		<objective1>Able to sing the Number Song in English.</objective1>
+		<objective2>Able to follow along a simple dance with friends.</objective2>
+	</abc>
+	<abc id="epe201_w4" type="1" pairing_episode="step 03">
+		<title>Find Keys of Treasure Boxes</title>
+		<headline>Dora and Boots have the keys to open the treasure boxes.\nWill you help Dora and Boots find the treasure boxes?</headline>
+		<objective1>Able to match the uppercase letters of A, B, C, and D with the corresponding lowercase letters.</objective1>
+		<objective2>Able to count the numbers from one to four in English.</objective2>
+	</abc>
+	<abc id="epe202_w1" type="1" pairing_episode="step 03">
+		<title>Benny's Puzzles</title>
+		<headline>Dora and Boots are visiting Benny's barn today.\nLet's put the animal puzzles together.</headline>
+		<objective1>Able to identify the names of the farm animals.</objective1>
+		<objective2>Able to listen and understand frequently used expressions in English.</objective2>
+	</abc>
+	<abc id="epe202_w2" type="1" pairing_episode="step 03">
+		<title>Moo</title>
+		<headline>The animal farm around the hill is very noisy!\nDo you want to find out what is happening there?</headline>
+		<objective1>Able to listen to the sounds of the farm animals in English.</objective1>
+		<objective2>Able to listen and understand the sentence, "Cows say 'Moo'."</objective2>
+		<objective3>Able to listen and understand frequently used expressions in English.</objective3>
+	</abc>
+	<abc id="epe202_w3" type="1" pairing_episode="step 03">
+		<title>Let's sing a song!</title>
+		<headline>Dora and Boots came to a farm.\nLet's sing a fun song with animal friends!</headline>
+		<objective1>Able to sing along in English.</objective1>
+		<objective2>Able to follow along a simple dance with friends.</objective2>
+	</abc>
+</data>
