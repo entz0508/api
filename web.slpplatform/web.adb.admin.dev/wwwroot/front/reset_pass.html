@@ -1,0 +1,164 @@
+﻿<?
+require_once($_SERVER['DOCUMENT_ROOT']."/inc/dbcon.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/inc/lib.php");
+
+$tokenID = (!isset($_GET['token'])) ? "":$_GET['token'];
+$sql = "CALL spcheckToken('$tokenID');";
+$result = $db->query($sql);
+$row = $result->fetch_assoc();
+?>
+
+<html class="ui-mobile">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>비밀번호 재발급</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+    <style type="text/css">
+        /*body {
+            font-family: 'Nanum Gothic', serif;
+        }*/
+
+        html, body {
+            height: 100%;
+            overflow: auto;
+        }
+
+        .ui-page {
+            height: 100%;
+            border: 3px #f99 solid
+        }
+
+        .alert_text {
+            color: red;
+            text-align: center;
+            font-weight: bold;
+            font-size: 10pt;
+        }
+    </style>
+    <script type="text/javascript">
+        
+        $(document).ready(function () {
+            $(window.document).on("contextmenu", function (event) { return false; });
+            $(window.document).on("selectstart", function (event) { return false; });
+            $(window.document).on("dragstart", function (event) { return false; });
+
+            adjustCSS();
+
+            <? if($row['RES'] == 0) { ?>
+                $("#newPass").css("display", "block");
+            <? }else { ?>
+                $("#resultPass").css("display", "block");
+            <? } ?>
+            
+            $("#btnSubmit").click(function (event) {
+                event.preventDefault();
+                var form = $('#adbForm')[0];
+                var data = new FormData(form);
+                $("#btnSubmit").prop("disabled", true);
+
+                var postData = {};
+                $('#reset_new_pw_field').val($.trim($('#reset_new_pw_field').val()).replace(/ /g, ''));
+                $('#reset_new_pw_confirm_field').val($.trim($('#reset_new_pw_confirm_field').val()).replace(/ /g, ''));
+                
+                postData.signup_pass = $('#reset_new_pw_field').val();
+                postData.signup_pass2 = $('#reset_new_pw_confirm_field').val();
+                postData.signup_token = "<?=$tokenID ?>";
+                
+                if (postData.signup_pass == "") {
+                    $(".alert_text").text("비밀번호를 입력하세요.");
+                    $("#btnSubmit").prop("disabled", false);
+                    $("#reset_new_pw_field").focus();
+                    return false;
+                }
+
+                if (postData.signup_pass.length < 4 || postData.signup_pass.length > 12) {
+                    $(".alert_text").text("비밀번호는 4자~12자 이내입니다.");
+                    $("#btnSubmit").prop("disabled", false);
+                    $("#reset_new_pw_field").focus();
+                    return false;
+                }
+
+                if (postData.signup_pass2 == "") {
+                    $(".alert_text").text("비밀번호를 확인을 입력하세요.");
+                    $("#btnSubmit").prop("disabled", false);
+                    $("#reset_new_pw_confirm_field").focus();
+                    return false;
+                }
+
+                if (postData.signup_pass != postData.signup_pass2) {
+                    $(".alert_text").text("비밀번호 입력값이 동일하지 않습니다. 다시 확인해주세요.");
+                    $("#btnSubmit").prop("disabled", false);
+                    return false;
+                }
+
+                var thisDomain = window.location.hostname;
+                var apiUrl = "https://apiDEV.doralab.co.kr";
+                if (thisDomain == "gnm.blueark.com") {
+                    apiUrl = "https://adb.blueark.com";
+                }
+                
+                $.post(apiUrl+'/adb/account/pwChange', postData,
+                    function (data) {
+                        if (data.res == 0) {
+                            $("#message").text("비밀번호가 변경되었습니다. 새로운 비밀번호로 로그인하세요.");
+                            $("#resultPass").css("display", "block");
+                            $("#newPass").css("display", "none");
+                        } else {
+                            $(".alert_text").text("다음의 사유로 비밀번호 변경중 문제가 발생했습니다. : " + data.msg);
+                        }
+                        $("#btnSubmit").prop("disabled", false);
+                    }, "json");
+                
+            });
+
+        });
+
+        function adjustCSS() {
+            $(".slp-btn").css("background", "#40382D").css("color", "#ffffff").css("text-shadow", "0px 0 black");
+            $(".single-btn-align").css("margin", "20px auto 0 auto").css("width", "50%");
+        }
+    </script>
+</head>
+<body class="ui-mobile-viewport ui-overlay-a">
+    <div data-role="page" id="pw_reset" data-url="pw_reset" tabindex="0" class="ui-page ui-page-theme-a ui-page-active" style="margin:auto;min-height: 623px;">
+        <div data-role="header" role="banner" class="ui-header ui-bar-inherit">
+            <h1 localize="forget_pw_manage_title_name" class="ui-title" role="heading" aria-level="1">비밀번호 재발급</h1>
+            <div class="header_bottom_line"></div>
+        </div>
+        <div id="newPass" role="main" class="ui-content" style="width:360px;vertical-align:middle;position:absolute;top:0;bottom:0;left:0;right:0;height:400px;margin:auto;display:none;">
+            <form name="adbForm" id="adbForm" method="post" class="form-horizontal form-label-left" novalidate>
+                <h4 localize="pw_manage_sub_text_02">새로운 비밀번호를 입력해 주세요 </h4>
+                <label localize="join_id_create_name_pw" for="reset_new_pw_field">비밀번호</label>
+                <div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset">
+                    <input localize="join_id_create_input_pw" type="password" maxlength="12" id="reset_new_pw_field" placeholder="4자~12자 입력" style="height:45px;">
+                </div>
+                <label localize="join_id_create_name_pwconfirm" for="reset_new_pw_confirm_field">확인</label>
+                <div class="ui-input-text ui-body-inherit ui-corner-all ui-sh adow-inset">
+                    <input localize="join_id_create_input_pwconfirm" type="password" maxlength="12" id="reset_new_pw_confirm_field" placeholder="재입력" style="height:45px;">
+                </div>
+                <p class="alert_text"></p>
+                <button id="btnSubmit" type="submit" class="ui-btn ui-corner-all slp-btn single-btn-align" style="background: rgb(64, 56, 45); color: rgb(255, 255, 255); text-shadow: black 0px 0px; margin: 20px auto 0px; width: 200px;">변경하기</button>
+            </form>
+        </div>
+        <div id="resultPass" role="main" class="ui-content" style="display:none;width:600px;vertical-align:middle;position:absolute;top:0;bottom:0;left:0;right:0;height:300px;margin:auto;">
+            <p class="alert_text" style="margin-bottom:100px;color:darkolivegreen;" id="message">
+                시간이 경과하였거나 유효하지 않는 정보입니다. 다시 시도해주세요.
+            </p>
+            <a localize="btn_next" class="ui-btn ui-corner-all slp-btn single-btn-align" onclick="window.close();" style="background: rgb(64, 56, 45); color: rgb(255, 255, 255); text-shadow: black 0px 0px; margin: 20px auto 0px; width: 200px;">창닫기</a>
+        </div>
+        <div id="bottomArea" style="width:500px;position:absolute;bottom:5px;left:0;right:0;margin:auto;text-align:center;float:none;">
+            <a href="http://www.dramabible.org" target="_blank">
+                <img src="/images/logo-brown.png" />
+            </a>
+            <h5>
+                문의사항은 고객지원팀 <a href="mailto:help@gnmkorea.org">help@gnmkorea.org</a>으로 보내주시기 바랍니다. <br><br>
+                <a href="http://www.dramabible.org" target="_blank" style="">www.dramabible.org</a>
+            </h5>
+        </div>
+
+    </div>
+</body >
+</html >

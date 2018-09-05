@@ -1,0 +1,338 @@
+﻿<? include $_SERVER['DOCUMENT_ROOT']."/include/TITLE_HEAD.php";?>
+<!-- Switchery -->
+<link href="/vendors/switchery/dist/switchery.min.css" rel="stylesheet">
+
+    <!-- iCheck -->
+<link href="/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+<!-- bootstrap-wysiwyg -->
+<link href="/vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+<!-- Select2 -->
+<link href="/vendors/select2/dist/css/select2.min.css" rel="stylesheet">
+<!-- Switchery -->
+<link href="/vendors/switchery/dist/switchery.min.css" rel="stylesheet">
+<!-- starrr -->
+<link href="/vendors/starrr/dist/starrr.css" rel="stylesheet">
+<!-- bootstrap-daterangepicker -->
+<link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+<!-- bootstrap-datetimepicker -->
+<link href="../vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
+
+<!-- Custom Theme Style -->
+<link href="/build/css/custom.min.css" rel="stylesheet">
+
+
+            <!-- page content -->
+            <div class="right_col" role="main">
+                <div class="">
+                    <div class="page-title">
+                        <div class="title_left">
+                            <h3> NEWS Banner <small> Dev</small> </h3>
+                        </div>
+                        <div class="title_right">
+                            <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search for...">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button">Go!</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h2>상단배너 <small> Dev </small></h2>
+                                    <ul class="nav navbar-right panel_toolbox">
+                                        <li>
+                                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li>
+                                                    <a href="#">Settings 1</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Settings 2</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a class="close-link"><i class="fa fa-close"></i></a>
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                    <div class="row">
+
+                                        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+                                            <ul id="myTab1" class="nav nav-tabs bar_tabs right" role="tablist">
+                                                <li role="presentation" class="active">
+                                                    <a href="#tab_content11" id="home-tabb" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">목록</a>
+                                                </li>
+                                                <li role="presentation" class="">
+                                                    <a href="#tab_content22" role="tab" id="profile-tabb" data-toggle="tab" aria-controls="profile" aria-expanded="false">신규등록</a>
+                                                </li>
+                                                <li role="presentation" class="">
+                                                    <a href="#tab_content33" role="tab" id="profile-tabb3" data-toggle="tab" aria-controls="profile" aria-expanded="false">수정</a>
+                                                </li>
+                                            </ul>
+                                            <div id="myTabContent2" class="tab-content">
+                                                <!-- LIST TAB-->
+                                                <div role="tabpanel" class="tab-pane fade active in" id="tab_content11" aria-labelledby="home-tab">
+                                                   
+                                                    <form name="adbForm" id="adbForm" enctype="multipart/form-data" method="post" action="banner.php" class="form-horizontal form-label-left" novalidate>
+                                                        <!--<p>
+                                                        For alternative validation library <code>parsleyJS</code> check out in the <a href="form.html">form page</a>
+                                                        </p>
+                                                        <span class="section">Personal Info</span>-->
+
+                                                        <div class="item form-group">
+                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="occupation">
+                                                                TITLE <span class="required">*</span>
+                                                            </label>
+                                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                <input id="title" type="text" name="title" placeholder="간략한 제목을 30자 내로 입력하세요." data-validate-length-range="1,50" class="optional form-control col-md-7 col-xs-12">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="item form-group">
+                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">
+                                                                Link URL <span class="required">*</span>
+                                                            </label>
+                                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                <input type="url" id="linkurl" name="linkurl" required="required" placeholder="링크URL을 입력하세요.(ex : http://www.naver.com)" class="form-control col-md-7 col-xs-12">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="item form-group">
+                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">
+                                                                게시기간 <span class="required">*</span>
+                                                            </label>
+                                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                <div class="col-md-4">
+                                                                    게시 기간을 선택하세요.
+                                                                    <fieldset>
+                                                                        <div class="control-group">
+                                                                            <div class="controls">
+                                                                                <div class="input-prepend input-group">
+                                                                                    <span class="add-on input-group-addon"><i class="glyphicon glyphicon-calendar fa fa-calendar"></i></span>
+                                                                                    <input type="text" style="width: 200px" name="reservation" id="reservation" class="form-control" value="02/08/2018 - 02/08/2019" />
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </fieldset>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="item form-group">
+                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">
+                                                                노출 순서 <span class="required">*</span>
+                                                            </label>
+                                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                <select class="form-control" style="width:120px;" id="sortid" name="sortid">
+                                                                    <option>1</option>
+                                                                    <option>2</option>
+                                                                    <option>3</option>
+                                                                    <option>4</option>
+                                                                    <option>5</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="item form-group">
+                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">
+                                                                노출 설정 <span class="required">*</span>
+                                                            </label>
+                                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                <input type="checkbox" class="js-switch" id="displayid" name="displayid" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="item form-group">
+                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">
+                                                                배너 이미지 선택 <span class="required">*</span>
+                                                            </label>
+                                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                <input type="file" class="js-switch" id="bannerimage" name="bannerimage" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="ln_solid"></div>
+                                                        <div class="form-group">
+                                                            <div class="col-md-6 col-md-offset-3">
+                                                                <button type="reset" class="btn btn-primary">취소</button>
+                                                                <button id="btnSubmit" type="submit" class="btn btn-success">등록하기</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                    <textarea id="result" style="width:1200px"></textarea>
+                                                    
+                                                </div>
+
+                                                <!-- REGIST TAB -->
+                                                <div role="tabpanel" class="tab-pane fade" id="tab_content22" aria-labelledby="profile-tab">
+                                                    profile-tab
+                                                    
+                                                </div>
+                                                
+                                                <div role="tabpanel" class="tab-pane fade" id="tab_content3" aria-labelledby="profile-tab">
+                                                    <p>
+                                                        xxFood truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo
+                                                        booth letterpress, commodo enim craft beer mlkshk
+                                                    </p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <!--<p>상단배너를 관리합니다.</p>
+                                        <button type="button" class="btn btn-primary">신규배너 등록</button>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /page content -->
+
+<script>
+
+    
+    $(document).ready(function () {
+
+        $("#btnSubmit").click(function (event) {
+            
+            event.preventDefault();
+            var form = $('#adbForm')[0];
+            var data = new FormData(form);
+            data.append("CustomField", "This is some extra data, testing");
+
+            //$("#btnSubmit").prop("disabled", true);
+            console.log(form.title.value);
+            console.log(form.linkurl.value);
+            console.log(form.reservation.value);
+            console.log(form.sortid.value);
+            console.log(form.displayid.checked);
+
+            console.log(form.bannerimage.value);
+            //console.log(JSON.stringify(form));
+            //console.log(JSON.stringify(data));
+            //return false;
+
+            //form.submit();
+            
+            $.ajax({
+                type: "POST",
+                enctype: 'multipart/form-data',
+                url: "/news/banner.php",
+                data: data,
+                processData: false,
+                contentType: false,
+                cache: false,
+                timeout: 600000,
+                success: function (data) {
+                    $("#result").text(JSON.stringify(data));
+                    console.log("SUCCESS : ", JSON.stringify(data));
+                    $("#btnSubmit").prop("disabled", false);
+                },
+                error: function (e) {
+                    $("#result").text(e.responseText);
+                    console.log("ERROR : ", e);
+                    $("#btnSubmit").prop("disabled", false);
+                }
+            });
+            
+        });
+
+    });
+    
+        
+    /*
+        var spage = 1;
+        function playModify() {
+            var form = $("#modifyform");
+            var parameters = new FormData(form);
+            var roundID = $("#roundID").val();
+            var roundValue = $("#roundValue").val();
+
+            if (!$.isNumeric(roundID) || !$.isNumeric(roundValue)) {
+                alert('회차와 변경결과값을 정확히 입력하세요.');
+                return;
+            }
+            if (roundID < 1 || roundID > 480 || roundValue < 0 || roundValue > 36) {
+                alert('회차와 변경결과값을 정확히 입력하세요.');
+                return;
+            }
+
+            parameters.append("roundID", roundID);
+            parameters.append("roundValue", roundValue);
+            var targetUrl = "roundModify.php";
+            $.ajax({
+                url: targetUrl,
+                processData: false,
+                contentType: false,
+                data: parameters,
+                type: 'POST',
+                success: function (result) {
+                    console.log(result);
+                    if (result.Result) {
+                        alert(result.ResultMsg);
+                        GetReport(spage);
+                    }
+                    else {
+                        alert(result.ResultMsg);
+                    }
+
+                },
+                error: function (e) {
+                    console.log(e);
+                }
+            });
+
+        }
+    */
+</script>
+
+
+
+<!--bootstrap - progressbar -->
+<script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+<!-- iCheck -->
+<script src="../vendors/iCheck/icheck.min.js"></script>
+
+<!-- bootstrap-daterangepicker -->
+<script src="../vendors/moment/min/moment.min.js"></script>
+<script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+<!-- bootstrap-datetimepicker-->
+<script src="../vendors/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+ 
+<!-- bootstrap-wysiwyg -->
+<script src="../vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+<script src="../vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
+<script src="../vendors/google-code-prettify/src/prettify.js"></script>
+<!-- jQuery Tags Input -->
+<script src="../vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
+<!-- Switchery -->
+<script src="../vendors/switchery/dist/switchery.min.js"></script>
+<!-- Select2 -->
+<script src="../vendors/select2/dist/js/select2.full.min.js"></script>
+<!-- Parsley -->
+<script src="../vendors/parsleyjs/dist/parsley.min.js"></script>
+<!-- Autosize -->
+<script src="../vendors/autosize/dist/autosize.min.js"></script>
+<!-- jQuery autocomplete -->
+<script src="../vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
+
+<!-- starrr -->
+<script src="../vendors/starrr/dist/starrr.js"></script>
+
+<!-- validator -->
+<script src="../vendors/validator/validator.js"></script>
+
+<? include $_SERVER['DOCUMENT_ROOT']."/include/BOTTOM.php";?>

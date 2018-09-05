@@ -1,0 +1,143 @@
+﻿<?
+if(isset($_GET['type'])) {
+    $bType = $_GET['type'];
+} else {
+    $bType = 1;                 // 1:top banner, 2:bottom banner
+}
+
+if(isset($_GET['bID'])) {
+    $bannerID = $_GET['bID'];
+} else {
+    $bannerID = 0;
+}
+
+$bannerTitle = "";
+$imageUrl = "";
+$bannerLink = "";
+$resDatetime = "";
+$sortID = 0;
+$displayType = 0;
+
+if($bannerID > 0){
+    require_once($_SERVER['DOCUMENT_ROOT']."/inc/dbcon.php");
+    $sql = "SELECT BANNER_ID, BANNER_TITLE,
+				    IMAGE_URL,
+				    BANNER_LINK,
+				    concat(DATE_FORMAT(FROM_DATETIME, '%c/%e/%Y %h:%i %p'),' - ',DATE_FORMAT(TO_DATETIME, '%c/%e/%Y %h:%i %p')) as `RES_DATETIME`,
+				    SORT_ID,
+				    DISPLAY_TYPE,
+                    BANNER_TYPE
+			    FROM ADB.banner_tb
+			    WHERE BANNER_ID = ".$bannerID;
+    $result = $db->query($sql);
+    $row = $result->fetch_assoc();
+
+    if($row['BANNER_ID'] != null){
+	    $bannerTitle = $row['BANNER_TITLE'];
+	    $imageUrl = $row['IMAGE_URL'];
+	    $bannerLink = $row['BANNER_LINK'];
+	    $resDatetime = $row['RES_DATETIME'];
+	    $sortID = $row['SORT_ID'];
+	    $displayType = $row['DISPLAY_TYPE'];
+        // $bannerType = $row['BANNER_TYPE'];
+    }
+}
+?>
+<!-- REGIST TAB   role="tabpanel" class="tab-pane fade" id="tab_content22" aria-labelledby="profile-tab" -->
+<div>
+    <form name="adbForm" id="adbForm" class="form-horizontal form-label-left">
+        <input type="hidden" name="bannerType" id="bannerType" value="<?=$bType ?>" />
+        <input type="hidden" name="bannerID" id="bannerID" value="<?=$bannerID ?>" />
+        <input type="hidden" id="bannerFile" name="bannerFile" value="<?=$imageUrl ?>" />
+        <div class="item form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="occupation">
+                TITLE <span class="required">*</span>
+            </label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <input id="title" type="text" name="title" required="required" placeholder="간략한 제목을 30자 내로 입력하세요." data-validate-length-range="1,50" class="optional form-control col-md-7 col-xs-12" value="<?=$bannerTitle ?>" />
+            </div>
+        </div>
+
+        <div class="item form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">
+                Link URL <span class="required">*</span>
+            </label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <input type="url" id="linkurl" name="linkurl" required="required" placeholder="링크URL을 입력하세요.(ex : http://www.naver.com)" class="form-control col-md-7 col-xs-12" value="<?=$bannerLink ?>" />
+            </div>
+        </div>
+        <?
+        $ndate = date('m/d/Y', time());
+        $todate = date('m/d/Y', strtotime(' + 1 months'));
+        ?>
+        <div class="item form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">
+                게시기간 <span class="required">*</span>
+            </label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <div>
+                    게시 기간을 선택하세요. <?=$resDatetime ?>
+                    <fieldset>
+                        <div class="control-group">
+                            <div class="controls">
+                                <div class="input-prepend input-group">
+                                    <span class="add-on input-group-addon"><i class="glyphicon glyphicon-calendar fa fa-calendar"></i></span>
+                                    <input type="text" class="form-control pull-right" id="reservationtime" name="reservationtime" value="<?=$resDatetime ?>"  />
+                                </div>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="item form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">
+                노출 순서 <span class="required">*</span>
+            </label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <select class="form-control" style="width:120px;" id="sortid" name="sortid">
+                    <?
+                    for($i = 1; $i < 9; $i++){
+                        if($i == $sortID) echo "<option selected>$i</option>";
+                        else echo "<option>$i</option>";
+                    }
+                    ?>
+                </select>
+            </div>
+        </div>
+
+        <div class="item form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">
+                노출 설정 <span class="required">*</span>
+            </label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <input type="checkbox" class="js-switch" id="displayid" name="displayid" <? if($displayType == 1) echo "checked"; ?> />
+                <!--<input type="checkbox" class="js-switch" id="displayid" name="displayid" checked="checked" />-->
+            </div>
+        </div>
+
+        <div class="item form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">
+                배너 이미지 선택 <span class="required">*</span>
+            </label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <? if($imageUrl != ""){ ?>
+                <img style="width: 250px; display: block;" src="/upfile/banner/<?=$imageUrl ?>" alt="image" />
+                <? } ?>
+                <input type="file" class="js-switch" id="bannerimage" name="bannerimage" required="required" />
+            </div>
+        </div>
+
+        <div class="ln_solid"></div>
+        <div class="form-group">
+            <div class="col-md-6 col-md-offset-3">
+                <button type="button" class="btn btn-primary" onclick="GetReports();">취소</button>
+                <button id="btnSubmit" type="submit" class="btn btn-success"><? echo ($bannerID > 0)?"업데이트":"등록하기"; ?></button>
+            </div>
+        </div>
+    </form>
+    <!--<textarea id="result" style="width:1200px"></textarea>-->
+</div>

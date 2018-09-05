@@ -1,0 +1,488 @@
+﻿<? include $_SERVER['DOCUMENT_ROOT']."/include/TITLE_HEAD.php";?>
+<?
+$bannerType = 2;
+?>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<!-- Switchery -->
+<link href="/vendors/switchery/dist/switchery.min.css" rel="stylesheet">
+
+<!-- iCheck -->
+<link href="/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+<!-- bootstrap-wysiwyg -->
+<link href="/vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+<!-- Select2 -->
+<link href="/vendors/select2/dist/css/select2.min.css" rel="stylesheet">
+<!-- Switchery -->
+<link href="/vendors/switchery/dist/switchery.min.css" rel="stylesheet">
+<!-- starrr -->
+<link href="/vendors/starrr/dist/starrr.css" rel="stylesheet">
+<!-- bootstrap-daterangepicker -->
+<link href="/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+<!-- bootstrap-datetimepicker -->
+<link href="/vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
+
+<!-- Custom Theme Style -->
+<link href="/build/css/custom.min.css" rel="stylesheet">
+
+            <!-- page content -->
+            <div class="right_col" role="main">
+                <div class="">
+                    <div class="page-title">
+                        <div class="title_left">
+                            <h3> NEWS Banner <small> Dev</small> </h3>
+                        </div>
+                        <div class="title_right">
+                            <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search for...">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button">Go!</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h2>하단배너 <small> Dev </small></h2>
+                                    <ul class="nav navbar-right panel_toolbox">
+                                        <li>
+                                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li>
+                                                    <a href="#">Settings 1</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Settings 2</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a class="close-link"><i class="fa fa-close"></i></a>
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="x_content">
+                                    <div class="row">
+
+                                        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+                                            <ul id="myTab1" class="nav nav-tabs bar_tabs right" role="tablist">
+                                                <li role="presentation" class="active">
+                                                    <a href="#tab_content11" id="home-tabb" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">목록</a>
+                                                </li>
+                                                <li role="presentation" class="">
+                                                    <a href="#tab_content22" role="tab" id="profile-tabb" data-toggle="tab" aria-controls="profile" aria-expanded="false">신규등록</a>
+                                                </li>
+                                            </ul>
+                                            <div id="myTabContent2" class="tab-content">
+                                                <!-- LIST TAB-->
+                                                <div role="tabpanel" class="tab-pane fade active in" id="tab_content11" aria-labelledby="home-tab">
+                                                    
+                                                    <?
+                                                    require_once($_SERVER['DOCUMENT_ROOT']."/inc/dbcon.php");
+                                                    require_once($_SERVER['DOCUMENT_ROOT']."/inc/lib.php");
+
+                                                    $sql = "SELECT BANNER_ID,
+                                                                BANNER_TITLE,
+                                                                IMAGE_URL,
+                                                                BANNER_LINK,
+                                                                DATE_FORMAT(FROM_DATETIME, '%Y-%m-%d') as `FROM_DATETIME`,
+                                                                DATE_FORMAT(TO_DATETIME, '%Y-%m-%d') as `TO_DATETIME`,
+                                                                CASE WHEN (now() >= FROM_DATETIME AND now() < date_add(TO_DATETIME, INTERVAL 1 day) AND DISPLAY_TYPE = 1) THEN 1 ELSE 0 END AS LIVE,
+                                                                SORT_ID,
+                                                                DISPLAY_TYPE,
+                                                                REG_DATETIME,
+                                                                BANNER_TYPE
+                                                            FROM ADB.banner_tb
+                                                            WHERE BANNER_TYPE = $bannerType
+                                                            ORDER BY LIVE DESC,DISPLAY_TYPE DESC, SORT_ID ASC,REG_DATETIME DESC;";
+                                                    /*
+                                                    $sql = "SELECT BANNER_ID,
+                                                            BANNER_TITLE,
+                                                            IMAGE_URL,
+                                                            BANNER_LINK,
+                                                            DATE_FORMAT(FROM_DATETIME, '%Y-%m-%d') as `FROM_DATETIME`,
+                                                            DATE_FORMAT(TO_DATETIME, '%Y-%m-%d') as `TO_DATETIME`,
+                                                            SORT_ID,
+                                                            DISPLAY_TYPE
+                                                        FROM ADB.banner_tb
+                                                        WHERE BANNER_TYPE = 1
+                                                        ORDER BY DISPLAY_TYPE DESC, SORT_ID ASC;";
+                                                    */
+                                                    //echo $sql;
+                                                    if($result = $db->query($sql)){
+                                                    ?>
+                                                    <table id="datatable-buttons" class="table table-striped table-bordered">
+                                                        <thead>
+                                                            <tr>
+                                                                <th width="100px">배너 ID</th>
+                                                                <th>배너 이름</th>
+                                                                <th width="420px">BANNER IMAGE</th>
+                                                                <th width="100px">정렬</th>
+                                                                <th width="100px">노출</th>
+                                                                <th width="220px">게재 기간</th>
+                                                                <th width="120px">등록일</th>
+                                                                <th width="150px">옵션</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <?
+                                                            while($row = $result->fetch_assoc())
+                                                            {
+                                                            $bid = $row['BANNER_ID'];
+                                                            ?>
+                                                            <tr>
+                                                                <td><?=$row['BANNER_ID']?>
+                                                                <?
+                                                                if($row['LIVE'] == 1) echo '<br /><i class="fa fa-eye"></i> 노출';
+                                                                ?>
+                                                                </td>
+                                                                <td><?=$row['BANNER_TITLE']?></td>
+                                                                <td>
+                                                                    <div style="width:400px;position: relative;min-height: 1px;float: left;padding-right: 5px;padding-left: 5px">
+                                                                        <div class="thumbnail">
+                                                                            <div class="image view view-first">
+                                                                                <img style="width: 100%; display: block;" src="/upfile/banner/<?=$row['IMAGE_URL']?>" alt="image" />
+                                                                                <div class="mask">
+                                                                                    <p><?=$row['BANNER_TITLE']?></p>
+                                                                                    <div class="tools tools-bottom">
+                                                                                        <a href="<?=$row['BANNER_LINK']?>" target="_blank"><i class="fa fa-link"></i></a>
+                                                                                        <!--<a href="#"><i class="fa fa-pencil"></i></a>
+                                                                                        <a href="#"><i class="fa fa-times"></i></a>-->
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="caption">
+                                                                                <font size="2">Link : <?=$row['BANNER_LINK']?></font>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <select class="form-control" onchange="modDisplay('<?=$bid?>', this.value, 0);">
+                                                                        <?
+                                                                        for($si=1; $si < 9; $si++){
+                                                                        if($si == $row['SORT_ID'])
+                                                                        echo "
+                                                                        <option selected>".$si."</option>";
+                                                                        else
+                                                                        echo "
+                                                                        <option>".$si."</option>";
+                                                                        }
+                                                                        ?>
+                                                                    </select>
+
+                                                                </td>
+                                                                <td>
+                                                                    <label>
+                                                                        <?
+                                                                        // modDisplay(bannerID, sortid, isDisplay)
+                                                                        $dp = ($row['DISPLAY_TYPE'] == 1) ? "checked" : "";
+                                                                        ?>
+                                                                        <input type="checkbox" class="js-switch" <?=$dp ?> onclick="modDisplay('<?=$row["BANNER_ID"]?>',0,this.checked);" />
+                                                                    </label>
+                                                                </td>
+                                                                <td>
+                                                                    <?=$row['FROM_DATETIME']?> ~ <?=$row['TO_DATETIME']?>
+                                                                </td>
+                                                                <td>
+                                                                    <?=$row['REG_DATETIME']?>
+                                                                </td>
+                                                                <td>
+                                                                    <button type="button" class="btn btn-default" onclick="modinfo(<?=$row['BANNER_ID']?>);">수정</button>
+                                                                    <button type="button" class="btn btn-danger" onclick="dropbanner(<?=$row['BANNER_ID']?>,'<?=$row["IMAGE_URL"]?>');">삭제</button>
+                                                                </td>
+                                                            </tr>
+                                                            <?
+                                                            }
+                                                            ?>
+                                                        </tbody>
+                                                    </table>      
+                                                    
+                                                    <?
+                                                    }else{
+                                                        echo "NO DATA";
+                                                    }
+                                                    ?>
+                                                </div>
+
+                                                <!-- REGIST TAB -->
+                                                <div role="tabpanel" class="tab-pane fade" id="tab_content22" aria-labelledby="profile-tab">
+                                                    <form name="adbForm" id="adbForm" enctype="multipart/form-data" method="post" action="banner.php" class="form-horizontal form-label-left" novalidate>
+                                                        <input type="hidden" name="bannerType" id="bannerType" value="<?=$bannerType ?>" />
+                                                        <div class="item form-group">
+                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="occupation">
+                                                                TITLE <span class="required">*</span>
+                                                            </label>
+                                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                <input id="title" type="text" name="title" placeholder="간략한 제목을 30자 내로 입력하세요." data-validate-length-range="1,50" class="optional form-control col-md-7 col-xs-12">
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="item form-group">
+                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">
+                                                                Link URL <span class="required">*</span>
+                                                            </label>
+                                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                <input type="url" id="linkurl" name="linkurl" required="required" placeholder="링크URL을 입력하세요.(ex : http://www.naver.com)" class="form-control col-md-7 col-xs-12">
+                                                            </div>
+                                                        </div>
+                                                        <?
+                                                        $ndate = date('m/d/Y', time());
+                                                        $todate = date('m/d/Y', strtotime(' + 1 months'));
+                                                        ?>
+                                                        <div class="item form-group">
+                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">
+                                                                게시기간 <span class="required">*</span>
+                                                            </label>
+                                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                <div class="col-md-4">
+                                                                    게시 기간을 선택하세요.
+                                                                    <fieldset>
+                                                                        <div class="control-group">
+                                                                            <div class="controls">
+                                                                                <div class="input-prepend input-group">
+                                                                                    <span class="add-on input-group-addon"><i class="glyphicon glyphicon-calendar fa fa-calendar"></i></span>
+                                                                                    <input type="text" style="width: 200px" name="reservation" id="reservation" class="form-control" value="<?=$ndate ?> - <?=$todate ?>" />
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </fieldset>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="item form-group">
+                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">
+                                                                노출 순서 <span class="required">*</span>
+                                                            </label>
+                                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                <select class="form-control" style="width:120px;" id="sortid" name="sortid">
+                                                                    <?
+                                                                    for($i = 1; $i < 9; $i++){
+                                                                        echo "<option>$i</option>";
+                                                                    }
+                                                                    ?>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="item form-group">
+                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">
+                                                                노출 설정 <span class="required">*</span>
+                                                            </label>
+                                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                <input type="checkbox" class="js-switch" id="displayid" name="displayid" />
+                                                                <!--<input type="checkbox" class="js-switch" id="displayid" name="displayid" checked="checked" />-->
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="item form-group">
+                                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">
+                                                                배너 이미지 선택 <span class="required">*</span>
+                                                            </label>
+                                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                <input type="file" class="js-switch" id="bannerimage" name="bannerimage" />
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="ln_solid"></div>
+                                                        <div class="form-group">
+                                                            <div class="col-md-6 col-md-offset-3">
+                                                                <button type="button" class="btn btn-primary" onclick="cancelBtn()">취소</button>
+                                                                <button id="btnSubmit" type="submit" class="btn btn-success">등록하기</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                    <!--<textarea id="result" style="width:1200px"></textarea>-->
+                                                </div>
+                                               
+                                            </div>
+                                        </div>
+                                        <!--<p>상단배너를 관리합니다.</p>
+                                        <button type="button" class="btn btn-primary">신규배너 등록</button>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /page content -->
+
+<script>
+
+
+    $(document).ready(function () {
+
+        $("#btnSubmit").click(function (event) {
+            event.preventDefault();
+            var form = $('#adbForm')[0];
+            var data = new FormData(form);
+            $("#btnSubmit").prop("disabled", true);
+
+            $.ajax({
+                type: "POST",
+                enctype: 'multipart/form-data',
+                url: "/news/banner.php",
+                data: data,
+                processData: false,
+                contentType: false,
+                cache: false,
+                timeout: 600000,
+                success: function (data) {
+                    //console.log("SUCCESS : ", JSON.stringify(data));
+                    if (data.Result == 0) {
+                        alert('등록되었습니다.');
+                        location.href = "banner_bottom.html";
+                    } else {
+                        alert('처리중 문제가 발생했습니다. err1 : ' + data.Result);
+                    }
+                    $("#btnSubmit").prop("disabled", false);
+                },
+                error: function (e) {
+                    alert('처리중 문제가 발생했습니다. err2 : ' + e.responseText);
+                    $("#btnSubmit").prop("disabled", false);
+                }
+            });
+
+        });
+
+    });
+
+    function dropbanner(bannerID, bannerFile) {
+        if (confirm('삭제후 복원할수 없습니다. 삭제하시겠습니까?')) {
+            $.post("/news/banner_drop.php",
+                { bannerID: bannerID, bannerFile: bannerFile },
+                function (data, textStatus, jqXHR) {
+                    alert('삭제되었습니다.');
+                    location.href = "banner_bottom.html";
+                }).fail(function (jqXHR, textStatus, errorThrown) {
+                    console.log("SUCCESS : ", JSON.stringify(textStatus));
+                    alert(textStatus);
+                });
+        }
+    }
+
+    function modDisplay(bannerID, sortid, isDisplay) {
+        $.post("/news/banner_view.php",
+            { bannerID: bannerID, sortid: sortid, isDisplay: isDisplay },
+            function (data, textStatus, jqXHR) {
+                alert('변경되었습니다.');
+                location.href = "banner_bottom.html";
+            }).fail(function (jqXHR, textStatus, errorThrown) {
+                alert(textStatus);
+            });
+
+        /*
+        $.ajax({
+            type: "POST",
+            //enctype: 'multipart/form-data',
+            url: "/news/banner_view.php",
+            dataType: "json",
+            data: formData,
+            processData: false,
+            contentType: false,
+            cache: false,
+            timeout: 600000,
+            success: function (data) {
+                if (data.Result == 0) {
+                    alert('처리되었습니다.');
+                    location.href = "banner.html";
+                } else {
+                    alert('처리중 문제가 발생했습니다. err1 : ' + data.Result);
+                }
+            },
+            error: function (jqXHR, exception) {
+                //alert('처리중 문제가 발생했습니다. err2 : ' + e);
+                var msg = '';
+                if (jqXHR.status === 0) {
+                    msg = 'Not connect.\n Verify Network.';
+                } else if (jqXHR.status == 404) {
+                    msg = 'Requested page not found. [404]';
+                } else if (jqXHR.status == 500) {
+                    msg = 'Internal Server Error [500].';
+                } else if (exception === 'parsererror') {
+                    msg = 'Requested JSON parse failed.';
+                } else if (exception === 'timeout') {
+                    msg = 'Time out error.';
+                } else if (exception === 'abort') {
+                    msg = 'Ajax request aborted.';
+                } else {
+                    msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                }
+                console.log(msg);
+            }
+        });
+        */
+
+    }
+
+    // 수정하기 이동
+    function modinfo(modid) {
+        var form = document.createElement("form");
+        form.setAttribute("method", "POST");
+        form.setAttribute("action", "banner_form.html");
+
+        var hiddenField = document.createElement("input");
+        hiddenField.setAttribute("type", "hidden");
+        hiddenField.setAttribute("name", "bid");
+        hiddenField.setAttribute("value", modid);
+        form.appendChild(hiddenField);
+
+        document.body.appendChild(form);
+        form.submit();
+    }
+
+    function cancelBtn() {
+        location.href = "banner_bottom.html";
+
+    }
+    
+</script>
+
+
+
+<!--bootstrap - progressbar -->
+<script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+
+<!-- iCheck -->
+<script src="../vendors/iCheck/icheck.min.js"></script>
+<!-- bootstrap-daterangepicker -->
+<script src="../vendors/moment/min/moment.min.js"></script>
+<script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+<!-- bootstrap-wysiwyg -->
+<script src="../vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+<script src="../vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
+<script src="../vendors/google-code-prettify/src/prettify.js"></script>
+<!-- jQuery Tags Input -->
+<script src="../vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
+<!-- Switchery -->
+<script src="../vendors/switchery/dist/switchery.min.js"></script>
+<!-- Select2 -->
+<script src="../vendors/select2/dist/js/select2.full.min.js"></script>
+<!-- Parsley -->
+<script src="../vendors/parsleyjs/dist/parsley.min.js"></script>
+<!-- Autosize -->
+<script src="../vendors/autosize/dist/autosize.min.js"></script>
+<!-- jQuery autocomplete -->
+<script src="../vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
+
+<!-- starrr -->
+<script src="../vendors/starrr/dist/starrr.js"></script>
+
+<!-- validator -->
+<script src="../vendors/validator/validator.js"></script>
+
+
+<? include $_SERVER['DOCUMENT_ROOT']."/include/BOTTOM.php";?>

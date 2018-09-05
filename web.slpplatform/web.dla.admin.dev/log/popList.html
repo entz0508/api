@@ -1,0 +1,323 @@
+﻿<? include $_SERVER['DOCUMENT_ROOT']."/include/NO_HEAD.php";?>
+<?
+if(isset($_GET['page'])) {
+    $page = $_GET['page'];
+} else {
+    $page = 1;
+}
+?>
+<!--main content start-->
+<section id="main-content">
+    <section>
+        <div>
+            <div class="col-lg-12">
+                <form class="navbar-form" name="searchform" id="searchform" method="post">
+                    <!--  action="login.php" -->
+                    <ul class="nav navbar-nav navbar-right">
+                        &nbsp;&nbsp;&nbsp;
+                        <select class="form-control m-bot10" style="width:110px;" id="st">
+                            <option value="EMAIL">SEQID</option>
+                        </select>
+                        <input class="form-control" placeholder="Search" type="text" style="width:100px;" id="sv">
+                        <a class="btn btn-default btn-sm" href="javascript:searchchk()" title="Bootstrap 3 themes generator">조회</a>
+                        <a class="btn btn-default btn-sm" href="javascript:resset()" title="Bootstrap 3 themes generator">전체</a>
+                    </ul>
+                    <ol class="breadcrumb">
+                        <li><a href="javascript:;" onclick="openpop();">*</a>
+                            <a href="javascript:popp('https://api.doralab.co.kr')">api.doralab.co.kr</a>
+                            <a href="javascript:popp('https://apiDEV.doralab.co.kr')">apiDEV.doralab.co.kr</a>
+                            <a href="javascript:popp('https://ftp.bluearkedu.com/blueark.html')">ftp.bluearkedu.com</a>
+                            <a href="javascript:popp('https://cdn.bluearkedu.com')">cdn.bluearkedu.com</a>
+                            <a href="javascript:popp('https://web.bluearkedu.com')">web.bluearkedu.com</a>
+                            <a href="javascript:popp('https://image.bluearkedu.com')">image.bluearkedu.com</a>
+                            <a href="javascript:popp('https://ebs.bluearkedu.com/blueark.html')">ebs.bluearkedu.com</a>
+                        </li>
+                    </ol>
+                </form>
+            </div>
+        </div>
+
+        <!-- page start-->
+        <div class="row">
+            <div class="col-lg-12" id="reportDiv" style="width:100%;">
+                        loading..
+            </div>
+        </div>
+        <iframe id="ebswww" src="testpop.html" frameborder="0" style="width:600px;height:45px;"></iframe>
+        <!-- page end-->
+    </section>
+</section>
+<!--main content end-->
+
+    <!--[if lt IE 9]> <script src="/js/jquery-1.8.3.min.js"></script> <![endif]-->
+    <!--[if gte IE 9]><!-->
+    <script src="/js/jquery-1.8.3.min.js"></script>
+    <!--<![endif]-->
+    
+    <script>
+        var param = "";
+        var d = new Date();
+        console.log('time : '+d);
+
+        function openpop() {
+            window.open('testpop.html', 'testpop', 'directories=0,fullscreen=1,top=0,left=0px,location=0,menubar=0,resizable=0,scrollbars=0,status=0,titlebar=0,toolbar=0', false);
+
+        }
+
+        function parentReloadPage() {
+            location.reload();
+            
+        }
+        function popp(url) {
+            var popUrl = url;
+            var
+                //w = 770,
+                //h = 600,
+                //l = (screen.availWidth - w) / 2,
+                //t = (screen.availHeight - h) / 2,
+                w = screen.availWidth,
+                h = screen.availHeight,
+                l = 0,
+                t = 0,
+                popPage = '.popup';
+
+            window.open(popUrl, "window", "width=" + w + ",height=" + h + ",left=" + l + ",top=" + t + ",directories=0,fullscreen=1,location=0,menubar=0,resizable=0,scrollbars=0,status=0,titlebar=0,toolbar=0");
+            
+        }
+
+        function makeid(len) {
+            var text = "";
+            var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+            for (var i = 0; i < len; i++)
+                text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+            return text;
+        }
+
+
+        function resset() {
+            searchform.sv.value = "";
+            param = "";
+            GetReport(1);
+        }
+
+        function searchchk() {
+            var str = searchform.st.value
+            var svr = searchform.sv.value
+            if (!svr) {
+                alert("검색어를 입력하세요.");
+                searchform.sv.focus();
+                return false;
+            }
+            param = "&st=" + str + "&sv=" + svr;
+            GetReport(1);
+        }
+
+        function GetReport(page) {
+            var url = '';
+            //var param = '';
+                    url = 'popList.php';
+            $.ajax({
+                            url: url + '?page=' + page + param,
+                            cache: false,
+                            type: 'GET'
+            }).done(function (html) {
+                            document.getElementById("reportDiv").innerHTML = html;
+                //gPage = page;
+            });
+        }
+
+        function GetUserReport(userID, page) {
+            var url = '';
+            var param = '&userID='+userID;
+                    url = 'userInfo.php';
+            $.ajax({
+                            url: url + '?page=' + page + param,
+                            cache: false,
+                            type: 'GET'
+            }).done(function (html) {
+                            document.getElementById("reportDiv").innerHTML = html + "<div  id='reportList' >" + document.getElementById("reportList").innerHTML + "</div>";
+                            //gPage = page;
+                            back_top();
+            });
+        }    
+
+        GetReport(<?=$page ?>);
+        $(window.document).ready(function () {
+            
+        });
+        
+        function back_top() 
+        { 
+                x = document.body.scrollLeft; 
+                y = document.body.scrollTop; 
+                step = 2;
+                while ((x != 0) || (y != 0)) { 
+                        scroll (x, y); 
+                        step += (step * step / 300); 
+                        x -= step; 
+                        y -= step; 
+                        if (x < 0) x = 0; 
+                        if (y < 0) y = 0; 
+                } 
+                scroll (0, 0); 
+        } 
+
+        function GetEBSReport(stepAttendID, encUserID, buyIP) {
+            //alert(stepAttendID + '/' + encUserID + '/' + buyIP);
+            var ran = makeid(4);
+            var ebs_auth_key = "EbsLang";
+
+            var tokenParam = ran + '|' + encUserID + '|' + ebs_auth_key + '|' + buyIP;
+            var domain = 'https://apidev.doralab.co.kr';
+            var url = domain + '/nde/open/enc';
+
+            var xParam = null;
+            // x-transfer-token 생성
+            $.post(url, { token: tokenParam })
+                .done(function (data) {
+                    var obj = JSON.parse(data);
+                    xParam = obj.data;
+
+                    url = domain + "/nde/open/bodyuser";
+                    $.post(url, { token: xParam })
+                        .done(function (data) {
+                            var obj = JSON.parse(data);         // { "success":true, "error":null, "data":{ "uId":"885eb9a4d8445e1fcf748a8a3f15c898dd198b03" } }
+                            var uid = obj.data['uId'];
+                            tokenParam = ran + '|' + uid + '|' + ebs_auth_key + '|' + buyIP;
+
+                            url = domain + '/nde/open/enc';
+                            $.post(url, { token: tokenParam })
+                                .done(function (data) {
+                                    var obj = JSON.parse(data);
+                                    xParam = obj.data;
+
+                                    // window.open
+                                    var popUrl = "https://ebs.bluearkedu.com/nde_web/report";
+                                    xParam = "?step_attend_id=" + stepAttendID + "&token=" + xParam;
+                                    popUrl = popUrl + xParam;
+                                    var
+                                        //w = 770,
+                                        //h = 600,
+                                        //l = (screen.availWidth - w) / 2,
+                                        //t = (screen.availHeight - h) / 2,
+                                        w = screen.availWidth,
+                                        h = screen.availHeight,
+                                        l = 0,
+                                        t = 0,
+                                        popPage = '.popup';
+
+                                    
+                                    window.open(popUrl, "window", "width=" + w + ",height=" + h + ",left=" + l + ",top=" + t + ",scrollbars=no,location=no,toolbar=no,menubar=no,status=no");
+                                    /*
+                                    var popup = window.open(URL);
+                                    if (popup == null)
+                                        alert('Please change your popup settings');
+                                    else  {
+                                        popup.moveTo(0, 0);
+                                        popup.resizeTo(screen.width, screen.height);
+                                    }
+                                    */
+                                    
+                                    console.log('tokenValue : ' + xParam);
+                                });
+
+                        });
+
+                });
+
+
+        }
+
+        function Getplay(stepAttendID, tmplID, pdtID, encUserID, buyIP) {
+            var ran = makeid(4);
+            var ebs_auth_key = "EbsLang";
+            /*
+            >> token
+            PARAMETER:?step_attend_id=학습고유번호&token=[난수4자리][blueark_uid][lesson_tmpl_id][ext_pdt_id][ebs auth key][user ip address]
+            >> blueark_uid
+            blueark_uid 생성 : [난수4자리][enc_user_Id][ebs auth key][user ip address]
+
+            */
+            var tokenParam = ran + '|' + encUserID + '|' + ebs_auth_key + '|' + buyIP;
+            var domain = 'https://apidev.doralab.co.kr';
+            var url = domain + '/nde/open/enc';
+            
+            var xParam = null;
+            // x-transfer-token 생성
+            $.post(url, { token: tokenParam })
+                .done(function (data) {
+                    var obj = JSON.parse(data);
+                    xParam = obj.data;
+                    /*
+                    url = domain + '/nde/open/user';
+                    $.ajaxSetup({
+                        headers: {
+                            'x-transfer-token': xParam
+                        }
+                    });
+                    */
+                    url = domain + "/nde/open/bodyuser";
+                    $.post(url, { token : xParam })
+                        .done(function (data) {
+                            var obj = JSON.parse(data);         // { "success":true, "error":null, "data":{ "uId":"885eb9a4d8445e1fcf748a8a3f15c898dd198b03" } }
+                            var uid = obj.data['uId'];
+                            tokenParam = ran + '|' + uid + '|' + tmplID + '|' + pdtID + '|' + ebs_auth_key + '|' + buyIP;
+
+                            url = domain + '/nde/open/enc';
+                            $.post(url, { token: tokenParam })
+                                .done(function (data) {
+                                    var obj = JSON.parse(data);
+                                    xParam = obj.data;
+
+                                    // window.open
+                                    var popUrl = "https://ebs.bluearkedu.com/nde_web/contents";
+                                    xParam = "?step_attend_id=" + stepAttendID + "&token=" + xParam;
+                                    popUrl = popUrl + xParam;
+                                    var
+                                        //w = 770,
+                                        //h = 600,
+                                        //l = (screen.availWidth - w) / 2,
+                                        //t = (screen.availHeight - h) / 2,
+                                        w = screen.availWidth,
+                                        h = screen.availHeight,
+                                        l = 0,
+                                        t = 0,
+                                        popPage = '.popup';
+
+                                    //window.open(popUrl, "window", "width=" + w + ",height=" + h + ",left=" + l + ",top=" + t + ",scrollbars=no,location=no,toolbar=no,menubar=no,status=no");
+                                    /*
+                                    var popup = window.open(URL);
+                                    if (popup == null)
+                                        alert('Please change your popup settings');
+                                    else  {
+                                        popup.moveTo(0, 0);
+                                        popup.resizeTo(screen.width, screen.height);
+                                    }
+                                    */
+                                    //console.log('>>' + encodeURI(xParam));
+                                    //console.log('tokenValue : ' + xParam);
+
+                                    var obj = document.getElementById("ebswww");
+
+                                    var objDoc = obj.contentWindow || obj.contentDocument;
+                                    objDoc.rel = "noopener noreferrer";
+                                    objDoc.playpop(encodeURI(xParam));
+                                    
+                                    console.log('clear');
+                                    frameDoc = obj.contentDocument || obj.contentWindow.document;
+                                    if (frameDoc) frameDoc.removeChild(frameDoc.documentElement);
+                                    
+
+                                    objDoc.location.href = "testpop.html";
+                                    
+                                });
+                            
+                        });
+                    
+                });
+            
+        }    
+    </script>
+<? include $_SERVER['DOCUMENT_ROOT']."/include/NO_BOTTOM.php";?>

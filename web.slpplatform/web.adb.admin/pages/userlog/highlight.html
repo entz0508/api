@@ -1,0 +1,130 @@
+﻿<? include $_SERVER['DOCUMENT_ROOT']."/include/head.php";?>
+<?
+if(isset($_GET['page'])) {
+    $page = $_GET['page'];
+} else {
+    $page = 1;
+}
+
+if(isset($_GET['sv'])) {
+    $param = "&st=".urlencode($_GET['st'])."&sv=".urlencode($_GET['sv']);
+    echo ">>>>".$param;
+}
+?>
+<!-- Pace style -->
+<!--<link rel="stylesheet" href="/plugins/pace/pace.min.css">-->
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        하이라이트
+        <small></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">로그조회</a></li>
+        <li class="active">하이라이트</li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <!-- search form -->
+        <form name="searchform" id="searchform" method="post" class="sidebar-form" style="width:520px;border:none;" onsubmit="searchchk(); return false;">
+            <div style="float:left;">
+                <select id="st" name="st" class="form-control" style="background:#808080;color:#fff;border-color:#333;width:150px;">
+                    <option value="SIGNUP_ID">로그인 이메일</option>
+                    <option value="USERNAME">이름</option>
+                    <option value="ACCOUNT_ID">회원번호</option>
+                    <option value="EMAIL">인증 이메일</option>
+                </select>
+            </div>
+            <div style="float:left;">
+                <input type="text" id="sv" name="sv" class="form-control" style="width:280px;background:#ffffff;" placeholder="회원검색..">
+            </div>
+            <div style="float:left;">
+                <button type="button" name="search-btn" id="search-btn" class="btn btn-flat" style="background:#CFCFCF" onclick="searchchk();">
+                    <i class="fa fa-search"></i>
+                </button>
+                <button type="button" name="reset-btn" id="reset-btn" class="btn btn-flat glyphicon glyphicon-repeat" style="background:#CFCFCF" onclick="param = '';GetReport(1);"></button>
+            </div>
+        </form>
+        <!-- /.search form -->
+        <div class="col-xs-12" id="reportDiv">
+            loading..
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+<!-- /.content -->
+
+
+
+<!-- DataTables -->
+<script src="/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+
+<!-- PACE -->
+<!--<script src="/bower_components/PACE/pace.min.js"></script>-->
+
+<!-- Page specific script -->
+<script>
+    var param = "";
+
+    $("#search-btn").click(function () {
+        searchchk();
+    });
+
+    /*
+    $(document).ajaxStart(function () {
+        Pace.restart()
+    })
+    */
+    function searchchk() {
+        var str = searchform.st.value
+        var svr = searchform.sv.value
+        if (!svr) {
+            alert("검색어를 입력하세요.");
+            searchform.sv.focus();
+            return false;
+        }
+        param = "&st=" + str + "&sv=" + svr;
+        GetReport(1);
+        //return false;
+    }
+
+    function GetReport(page) {
+
+        //Pace.restart(); 
+
+        var url = '';
+        //var param = '';
+        url = 'highlight.php';
+        $.ajax({
+            url: url + '?page=' + page + param,
+            cache: false,
+            type: 'GET'
+        }).done(function (html) {
+            document.getElementById("reportDiv").innerHTML = html;
+            //gPage = page;
+        });
+    }
+
+    GetReport(<?=$page ?>);
+
+    $(function () {
+        $('#example1').DataTable()
+        //$('#example2').DataTable({
+        //    'paging': true,
+        //    'lengthChange': false,
+        //    'searching': false,
+        //    'ordering': true,
+        //    'info': true,
+        //    'autoWidth': false
+        //})
+    })
+</script>
+
+<? include $_SERVER['DOCUMENT_ROOT']."/include/bottom.php";?>

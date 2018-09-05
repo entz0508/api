@@ -1,0 +1,87 @@
+
+1. 전체개요
+	1) 학습구성 :  LEVEL(상품구성단위) 1~4 > Lesson 1~5 > UNIT 1~3
+	2) 상품구성 : LEVEL 각 단위상품, 전체레벨상품
+	3) EBSLang parameter
+		- 공통
+			app_id			APP ID,EBS에서 부여한 고유번호 (APP6ef74743-23e2-496c-a67d-a1010a10c016),40byte  // dla ver app_id (1000000001)
+			pdt_id			상품 ID,EBS에서 부여한 고유번호 (ex: 1190029),10byte // product xml에서 'id' 값
+			step_attend_id	학습고유번호,학습의 최상위 번호 (ex: 5871627),10byte // 상품 구매 후 생성
+			attend_stat_cd	EBS학습상태코드[L15SH2 학습중/L15SH3 복습중/L15SH4 수강완료(학습종료)/L15SH6 수강취소],10byte // 정확한 정의 필요
+		- 학습 history
+			lesson_tmpl_id	차시 ID, EBS에서 전달한 고유ID,10byte - NDE Lesson과 매칭되는 값
+			save_type		차시 구분코드(차시 시작 시 : lesson_start/차시 종료 시 : lesson_finish),15byte
+			send_dt			차시 시작시간(년월일시분초(yyyy-MM-dd hh:mm:ss),7byte
+			comp_yn			차시 완료여부,완료:Y ( 완료시에만 데이터를 전송함),1byte
+		-- 리턴
+			save_yn			처리여부(정상적 처리 :Y/오류발생시 : N),1byte
+
+2. APP API(NDE APP에서 API호출)
+	NDE APP		NDE Server			EBSLang
+	--------------------------------------------------------------------------------------
+	[platform]
+	1) 버젼체크	->	버젼체크(처음 1회)
+	[Account]
+	2) EBS로그인	->	계정생성,로그인(enc_user_id수신),닉네임 유무체크 , 토큰만료시 재로그인
+	3) 닉네임생성	->	프로파일 닉네임 변경
+			<-	에피소드 권한목록
+			<-	플레이 히스토리(학습완료)
+	[Buy]
+	4) 상품구매	->	상품구매처리		->	동기화(step_attend_id수신), 동기화 후 리턴
+				<- 	상품구매 히스토리
+	5) 상품구매 환불->	상품 환불처리			->	동기화(step_attend_id수신), 동기화 후 리턴
+	[ActionLog]
+	6) 학습		->	액션로그 저장		->	동기화
+	7) Listen&Repeat(step1) Recording	->	Level,Lesson,UNIT,Subject,학습시간,원본파일명,녹음파일(명) 서버저장(1~10문항 동시저장 또는 개별저장)
+			규칙 : App표기_날짜_시간_랜덤숫자및 영문조합4자리 A001 ~ ZZZZ
+			예시 : english_yymmdd_hhmm_a001
+			예시 : english_170612_1701_A001
+	8) Quiz Result	-> Level,Lesson,퀴즈문항수,맞힌수,학습시간 저장(마지막 unit quiz -> 퀴즈처리)
+	[Report]
+	9) Overview	- 학습 완료한 주제등 학습현황 제공
+		전체 진행률(Level별 Lesson진행비율) - 학습완료 주제개수/전체 주제 개수
+		학습 완료한 주제(Compleate)/좀 더 학습이 필요한 주제(in progress)/시작 안한 주제(no started) %,개별목록 - Lesson단위
+		학습 완료한 주제(Compleate) - LEVEL,Lesson,학습날짜-마지막학습날짜-당일인경우 today 또는 몇일전,학습시간(분)-해당Lesson 완료까지 시간,Lesson정보
+	10) Quiz Result	- 맞힌 퀴즈 수 등 퀴즈에 대한 결과 제공
+		Quiz Result - 전체누적,중복가능(퀴즈 정답률)
+		Details - Lesson별 결과(전체문항중 맞힌문항 퍼센트), 최근한달치만, Lesson중복 가능, 오늘 또는 x일전 학습날짜 표기
+	11) Activity	- 단어/문장별 아이 목소리 녹음 파일 제공, 최근 15일, (원어민, 녹음파일)
+		LEVEL, Lesson별 녹음 파일 목록, 녹음날짜(오늘 또는 x일전)
+
+3. WEB(EBSLang WEB - EBSLang에서 NDE API 호출)	NDE Server API
+	EBSLang WEB			NDE Server
+	--------------------------------------------------------------------------------------
+	1) 상품구매		->	회원가입처리,상품구매처리(enc_user_id,step_attend_id수신, 닉네임 생성은 앱 최초실행시)
+	2) 상품구매 환불	->	상품 환불처리(관리자)
+
+4. WEB(NDE WEB - EBSLang에서 NDE웹 호출)
+	1) 학습창 호출(enc_user_id,step_attend_id수신)	->	회원로그인 처리 -> 학습 권한 체크 -> 컨텐츠로딩
+	2) 학습 - APP API 공용(unity에서 API호출) ->	액션로그 저장 -> EBSLang 동기화
+	3) 리포터 호출(enc_user_id,step_attend_id수신)	->	회원로그인 처리 -> play history
+	4) 학습 시퀀스(미정)	->	시퀀스 xml 출력(관리자 수정)
+
+5. NDE WEB ADMIN		NDE Server
+	1) NDE 회원조회(아이디,닉네임)-> 회원가입정보, 구매정보(마켓,EBSLang), 학습정보
+	2) NDE 구매회원 조회
+	3) NDE 상품구매 환불처리->	상품 환불처리		->	EBSLang 환불처리 요청
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

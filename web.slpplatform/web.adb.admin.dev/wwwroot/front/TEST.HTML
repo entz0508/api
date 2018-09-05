@@ -1,0 +1,146 @@
+﻿<html class="ui-mobile">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>비밀번호 재발급</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="http://download.blueark.com/dla/dea_web/account/css/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <style type="text/css">
+        /*body {
+            font-family: 'Nanum Gothic', serif;
+        }*/
+        html, body {
+            height: 100%;
+            overflow: auto;
+        }
+
+        .ui-page {
+            height: 100%;
+            border: 3px #f99 solid
+        }
+
+        .alert_text {
+            color: red;
+            text-align: center;
+            font-weight: bold;
+            font-size: 10pt;
+        }
+
+        .layout {
+            width: 100%;
+            max-width: 750px;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#newPass").css("display", "block");
+
+            adjustCSS();
+
+            <? if($row['RES'] == 0) { ?>
+                $("#newPass").css("display", "block");
+            <? }else { ?>
+                $("#resultPass").css("display", "block");
+            <? } ?>
+
+                $("#btnSubmit").click(function (event) {
+                    event.preventDefault();
+
+                    var form = $('#adbForm')[0];
+                    var data = new FormData(form);
+                    $("#btnSubmit").prop("disabled", true);
+
+                    var postData = {};
+                    postData.pass = $.trim($('#reset_new_pw_field').val());
+                    postData.pass2 = $.trim($('#reset_new_pw_confirm_field').val());
+                    postData.token = "<?=$tokenID ?>";
+
+                    if (postData.pass == "") {
+                        alert('비밀번호를 입력하세요.');
+                        $("#btnSubmit").prop("disabled", false);
+                        $("#reset_new_pw_field").focus();
+                        return false;
+                    }
+
+                    if (postData.pass2 == "") {
+                        alert('비밀번호를 확인을 입력하세요.');
+                        $("#btnSubmit").prop("disabled", false);
+                        $("#reset_new_pw_confirm_field").focus();
+                        return false;
+                    }
+
+                    if (postData.pass != postData.pass2) {
+                        alert('비밀번호 입력값이 동일하지 않습니다. 다시 확인해주세요.');
+                        $("#btnSubmit").prop("disabled", false);
+                        return false;
+                    }
+
+                    $.post('reset_pass.php', postData,
+                        function (data) {
+                            if (data.Result == 0) {
+                                alert('등록되었습니다.' + data.ResultMsg);
+                                $("#message").text("비밀번호가 변경되었습니다. 새로운 비밀번호로 로그인하세요.");
+                                $("#resultPass").css("display", "block");
+                                $("#newPass").css("display", "none");
+
+                            } else {
+                                $("#message").text("다음의 사유로 비밀번호 변경중 문제가 발생했습니다. : " + data.Result);
+                                $("#resultPass").css("display", "block");
+                                $("#newPass").css("display", "none");
+
+                            }
+                            $("#btnSubmit").prop("disabled", false);
+
+                        }, "json");
+
+                });
+
+        });
+
+        function adjustCSS() {
+            $(".slp-btn").css("background", "#40382D").css("color", "#ffffff").css("text-shadow", "0px 0 black");
+            $(".single-btn-align").css("margin", "20px auto 0 auto").css("width", "50%");
+        }
+    </script>
+</head>
+<body class="ui-mobile-viewport ui-overlay-a">
+    <div data-role="page" id="pw_reset" data-url="pw_reset" tabindex="0" class="ui-page ui-page-theme-a ui-page-active" style="margin:auto;min-height: 623px;">
+        <div data-role="header" role="banner" class="ui-header ui-bar-inherit">
+            <h1 localize="forget_pw_manage_title_name" class="ui-title" role="heading" aria-level="1">비밀번호 재발급</h1>
+            <div class="header_bottom_line"></div>
+        </div>
+        <div id="newPass" role="main" class="ui-content" style="width:300px;vertical-align:middle;position:absolute;top:0;bottom:0;left:0;right:0;height:300px;margin:auto;display:none;">
+            <form name="adbForm" id="adbForm" method="post" class="form-horizontal form-label-left" novalidate>
+                <h4 localize="pw_manage_sub_text_02">새로운 비밀번호를 입력해 주세요 </h4>
+                <label localize="join_id_create_name_pw" for="reset_new_pw_field">비밀번호</label>
+                <div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset">
+                    <input localize="join_id_create_input_pw" type="password" maxlength="20" id="reset_new_pw_field" placeholder="6자 이상 입력" style="height:45px;">
+                </div>
+                <label localize="join_id_create_name_pwconfirm" for="reset_new_pw_confirm_field">확인</label>
+                <div class="ui-input-text ui-body-inherit ui-corner-all ui-sh adow-inset">
+                    <input localize="join_id_create_input_pwconfirm" type="password" maxlength="20" id="reset_new_pw_confirm_field" placeholder="재입력" style="height:45px;">
+                </div>
+                <p class="alert_text"></p>
+                <button id="btnSubmit" type="submit" class="ui-btn ui-corner-all slp-btn single-btn-align" style="background: rgb(64, 56, 45); color: rgb(255, 255, 255); text-shadow: black 0px 0px; margin: 20px auto 0px; width: 200px;">변경하기</button>
+            </form>
+        </div>
+        <div id="resultPass" role="main" class="ui-content" style="width:600px;vertical-align:middle;position:absolute;top:0;bottom:0;left:0;right:0;height:300px;margin:auto;">
+            <p class="alert_text" style="margin-bottom:100px;color:darkolivegreen;" id="message">
+                시간이 경과하였거나 유효하지 않는 정보입니다. 다시 시도해주세요.
+            </p>
+            <a localize="btn_next" class="ui-btn ui-corner-all slp-btn single-btn-align" onclick="window.close();" style="background: rgb(64, 56, 45); color: rgb(255, 255, 255); text-shadow: black 0px 0px; margin: 20px auto 0px; width: 200px;">창닫기</a>
+        </div>
+        <div id="bottomArea" style="width:500px;position:absolute;bottom:5px;left:0;right:0;margin:auto;text-align:center;float:none;">
+            <a href="http://www.dramabible.org" target="_blank">
+                <img src="https://apidev.doralab.co.kr/mailForm/img/logo-brown.png" />
+            </a>
+            <h5>
+                문의사항은 고객지원팀 <a href="mailto:help@gnmkorea.org">help@gnmkorea.org</a>으로 보내주시기 바랍니다. <br><br>
+                <a href="http://www.dramabible.org" target="_blank" style="">www.dramabible.org</a>
+            </h5>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,639 @@
+## __DORA API__
+
+*DOC LIST*
+* [SLP Platform API](/slp_platform_api?pass=ehfkfpqakstp!1)
+* [DORA API](/dora_api?pass=ehfkfpqakstp!1)
+* [SLP EN API](/slp_en_api?pass=ehfkfpqakstp!1)
+* [SLP NDE API](/slp_nde_api?pass=ehfkfpqakstp!1)
+* [ADB API](/api_ADB?pass=dpdlelql!)
+* [JSU API](/slp_jsu_api?pass=ehfkfpqakstp!1)
+* [ADA API](/fit_ada?pass=fitadavmfhwprxm!1)
+
+*특이사항*
+
+    1. 유저 가입은 일반가입, 페이스북을 통한 가입, 구글 플러스를 통한 가입 이렇게 3가지로 구분이 됨,
+        각각의 가입 경로를 구분하고, 가입시 필요한 데이터를 분리 하기 위해서 3가지 가입에 대한 api를 따로 관리 함
+    2. 중복 접속 정책 : 계정에 대한 중복 접속 체크를 하지 않고, 도라 프로필을 기준으로 중복 접속이 체크가 된다.
+        하나의 프로필이 사용중이면, 앱의 연령에 상관 없이 중복 접속이 허용 되지 않는다.
+    3. 앱의 특성 상 중복 체크는 로그인 시에 처리가 되지 못하며, 최종 접속 프로필만 유효한 접속으로 인정함.
+        그 전에 접속한 프로필은 유효하지 않은 access token을 가지게 되어서 다음 서버와의 통신에서 정상적인 동작을 하지 못한다.
+
+*<strong>개발 서버 주소</strong>*
+
+	DEV Server IP : 104.199.129.129
+	 Dora lv1 : 1000000003
+     Dora lv2 : 1000000004
+     Dora lv3 : 1000000005
+
+[app](#app)
+	1. 버젼 및 서비스 상태 체크  [/dla.app.version.check](#/dla.app.version.check) - POST
+
+[actionLog](#actionLog)
+    1. action log.   [/sdla/action/log](#/sdla/action/log) - POST
+
+[EPISODE](#episode) 
+	1. 에피소드 권한 목록  [/sdla/episode/permlist](#/sdla/episode/permlist) - POST
+	2. 에피소드 상품구매    [/sdla/buy/buyProduct](#/sdla/buy/buyProduct) - POST
+	3. 에피소드 상품구매 히스토리   [/sdla/buy/buyHistory](#/sdla/buy/buyHistory) - POST
+	4. 에피소드 플레이 히스토리 [/sdla/episode/episodePlayHistory](#/sdla/episode/episodePlayHistory) -  POST
+	5. 카테고리 로테이션 플레이 리스트 [/sdla/episode/categoryRotationList](#/sdla/episode/categoryRotationList) -  POST
+	6. 카테고리 로테이션 보상 요청 [/sdla/episode/categoryRotationRewardRequest](#/sdla/episode/categoryRotationRewardRequest) -  POST
+	7. 카테고리 로테이션 보상 히스토리 [/sdla/episode/categoryRotationRewardHistory](#/sdla/episode/categoryRotationRewardHistory) -  POST
+	8. 에피소드 플레이 상위 랭크 리스트 [/sdla/episode/getTopRankEpisodePlay](#/sdla/episode/getTopRankEpisodePlay) -  POST
+	9. 퀘스트(미션) 리스트    [/sdla/quest/questRequestList](#/sdla/quest/questRequestList) - POST
+	10. 퀘스트(미션) 요청    [/sdla/quest/questRequest](#/sdla/quest/questRequest) - POST
+
+[user](#user)
+    유저관련 API 는 platform API 를 이용하십시오.
+	모든 앱의 유저는 플랫폼으로 통합됩니다.
+
+[profile](#profile)
+    프로필관련 API 는 platform API 를 이용하십시오.
+	모든 앱의 유저는 플랫폼으로 통합됩니다.
+
+
+[error](#error)
+	[에러코드 정의](#errorCode)
+
+readme
+
+    -진행율이 50%를 넘으면 기본 ui작업이 가능합니다. 100%가 되지 않으면 개발단계상 output이나 내부 처리로직이 완료되지 않은겁니다.
+	-모든 api는 https 호출을 기본으로 합니다.
+	-케릭터 셋은 utf8을 사용합니다.
+	-에러코드는 클라이언트에서 참고만 합니다.
+
+
+***
+##APP <a id="app" href="#app">¶</a>
+
+
+###1. [/dla.app.version.check] 공통 / POST <a id="/dla.app.version.check" href="#/dla.app.version.check">¶</a>
+
+*info*
+
+    기능 : 어플리케이션 서비스상태, 버전 체크(강제 업데이트 판단)
+    정책 미결정 : DLA, SNS 버젼 관리의 정책이 현재는 없다.
+    os,category_gb,language,application_ver 의 버젼별 정책? 국가별 정책?
+    처리 : 해당 버젼의 최신 application_ver 정보를 출력, 버젼이 낮으면 APP에서 강제 업데이트 진행
+
+*parameter*
+
+ 	app_id : long			// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+	client_uid : string		// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string				// client os, 	ex) andorid, ios
+	c_ver : string			// client version,	ex) 1.0.0
+	country : string		// iso 국가코드 알파벳 2자리, alpha2
+	.
+*return value*
+
+	// 성공
+	{
+		"res":int,				// 성공 0, 실패 0 이 아닌 값,		
+		"ver" : string,			// 클라이언트 버전, 예) 1.0.0
+		"summit" : int,			// 서밋상태 플래그, 0:summit no, 1:summit yes
+		"force_update" : int, 	// 클라이언트 강제 업데이트, 0:강제 업데이트 아님,  1:강제 업데이트 필요
+		"update_url":string,	// update url (market url)
+		"cs_email":string,		// cs 처리 이메일
+		"info":string,		// 암호화된 dea_service_kr.xml 원문
+		"local_date":string		// 해당지역의 로컬 시간 county 를 기준으로 보냄 ( 현재 한국만 가능함 )
+		}
+	}
+
+	//실패
+	{
+			"res":int, // 0 이 아닌 값,
+	}
+
+* * *
+
+
+##actionLog <a id="actionLog" href="#actionLog">¶</a>
+
+
+###1. [/sdla/action/log] 공통 / POST <a id="/sdla/action/log" href="#/sdla/action/log">¶</a>
+
+*info*
+
+    기능 : 에피소드, 챕터의 플레이 시작, 끝, 백그라운드상태 등을 서버에 전송하여 저장
+	
+*parameter*
+
+	app_id : long					// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+    client_uid : string				// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string				// iso 국가코드, alpha2
+	account_id : long				// slp account id
+	access_token : string			//	slp account access token	
+	profile_id:int 			 		// Platform Profile ID	
+	action_type			 			// ActionType : 
+									// 		ep_start : 에피소드 시작
+									// 		ep_end	 : 에피소드 종료
+									// 		ch_start : 챕터 시작
+									// 		ch_end	 : 챕터 종료
+									// 		ep_exit	 : 에피소드 중단(i 버튼등 으로 나올때)
+									// 		app_bg	: App 실행상태에서 백그라운드로 전환
+									// 		app_fg	: App 백그라운드에서 실행상태로 전환
+									// 		ping	: 클라이어트가 실행중일때 5분에 한번 간격으로 호출
+	start_date: string				// 시작시간 ex) 2016-09-19
+	end_date : string				// 종료시간 ex) 2016-09-19	
+	p_time : int					// 챕터 플레이시간, ActionType ep_end 에만 유효함
+	ep_id : string					// Episode ID, ActionType ep_start, ep_end, ep_exit 에만 유효함
+	chapter : int					// 챕터 번호(아이디) 1,2,3 이외의 값만 유효함
+					
+*return value*
+
+	// 성공
+	{
+		"res":int,			// 성공 0, 실패 0 이 아닌 값,
+	}
+
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	
+
+* * *
+
+
+##EPISODE <a id="episode" href="#episode">¶</a>
+
+
+###1. 에피소드 권한 목록 [/sdla/episode/permlist] / POST <a id="/sdla/episode/permlist" href="#/sdla/episode/permlist">¶</a>
+
+*info*
+
+    기능 : 해당 계정의 에피소드 소유 리스트를 반환
+	
+*parameter*
+
+	app_id : long					// APP 의 고유 ID
+    client_uid : string				// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string				// iso 국가코드, alpha2
+	account_id : long				// slp account id
+	access_token : string			//	slp account access token	
+	
+					
+*return value*
+
+	// 성공
+	{
+		"res":int,															// 성공 0, 실패 0 이 아닌 값,
+		"ep_list": [
+			{
+				"episode_id": "ep033",										// 소유한 에피소드 ID
+				"begin_datetime": "2016-10-07 14:19:44",					// 사용  등록 시간
+				"end_datetime": "2290-07-23 14:19:44"						// 사용 만료 시간
+			}, ... 반복
+		]
+	}
+
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	
+
+* * *
+
+
+###2. 에피소드 상품구매 [/sdla/buy/buyProduct] / POST <a id="/sdla/buy/buyProduct" href="#/sdla/buy/buyProduct">¶</a>
+
+*info*
+
+    기능 : 에피소드 상품 구매
+
+*parameter*
+
+	app_id : long					// APP 의 고유 ID
+    client_uid : string				// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string				// iso 국가코드, alpha2
+	account_id : long				// slp account id
+	access_token : string			// slp account access token	
+	profile_id:int		 			// Platform Profile ID	
+	product_id : string				// Product ID - 상품 XML 에 기재되어 있는 pruduct ID
+	reciept : string				// CASH, POINT, COUPON 중 CASH 일 경우 마켓에서 결제 후 받은 영수증
+	pay_method: string	 			// CASH, POINT, COUPON 중 결제 방법 ( 대소문자 구별함 )
+					
+*return value*
+
+	// 성공
+	{
+		"res":int,															// 성공 0, 실패 0 이 아닌 값,
+		"ACCOUNT_ID":"100003265",											// 요청한 account ID
+		"CODE":0,															// 디버깅용으로 사용하는 코드값 이용하지 않습니다.
+		"MSG":"START_POINT:60"												// 해당 계정의 별포인트 값 포인트 결제 시 참고하십시오. 형태가 JSON 방식에서 벗어나니 확인하십시오.
+	}
+
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	
+
+* * *
+
+   
+
+###3. 에피소드 상품구매 히스토리 [/sdla/buy/buyHistory] / POST <a id="/sdla/buy/buyHistory" href="#/sdla/buy/buyHistory">¶</a>
+
+*info*
+
+    기능 : 상품구매 내역을 반환
+	
+*parameter*
+
+	app_id : long					// APP 의 고유 ID
+    client_uid : string				// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string				// iso 국가코드, alpha2
+	account_id : long				// slp account id
+	access_token : string			//	slp account access token
+	
+					
+*return value*
+
+	// 성공
+	{
+		"res":int,															// 성공 0, 실패 0 이 아닌 값,
+		"buy_list": [
+			{
+				"app_id": 1000000003,										// 앱아이디
+				"product_id": "pass_1day_episode_ep010",					// 상품명
+				"pay_method": "POINT",										// 구매 방법 POINT, CASH, COUPON
+				"price": 10,												// 금액
+				"receipt": "none",											// 마켓 영수증 포인트 및 쿠폰일 경우 none
+				"reg_date": "2016-10-21 14:58:50",							// 구매일자
+				"expired_date": "2016-10-22 14:58:50",						// 만료일자
+				"period": 1,												// 기간 ( 날짜 단위 )
+				"refund": "N",												// 환불여부
+				"goods_name": "ep010"										// 상품으로 제공하는 에피소드명 혹은 카테고리명
+			},, ... 반복
+		]
+	}
+
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	
+
+* * *
+
+
+###4. 에피소드 플레이 히스토리 [/sdla/episode/episodePlayHistory] / POST <a id="/sdla/episode/episodePlayHistory" href="#/sdla/episode/episodePlayHistory">¶</a>
+
+*info*
+
+    기능 : 챕터플레이에 대하여 카테고리(주제)순, 에피소드순으로 정렬된 플레이 리스트를 제공
+	
+*parameter*
+
+	app_id : long					// APP 의 고유 ID
+    client_uid : string				// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string				// iso 국가코드, alpha2
+	account_id : long				// slp account id
+	access_token : string			//	slp account access token	
+	profile_id:int		 			// Platform Profile ID	
+	
+					
+*return value*
+
+	// 성공
+	{
+		"res":int,															// 성공 0, 실패 0 이 아닌 값,
+		"play_history" : [
+			{
+				"CATEGORY_ID": "c002",										// 카테고리 아이디
+				"EP_PLAY_SRL": 19,											// 각 에피소드의 플레이 시리얼
+				"TOTAL_PLAYTIME": 10,										// 이번 회차의 에피소드 총 플레이 시간 (분)
+				"EPISODE_LIST": [
+					{
+						"EPISODE_ID": "ep005",								// 에피소드 아이디
+						"CHAPTER": [										// 챕터는 시간 순으로 정렬됨
+							{
+								"CHAPTER_ID": "1",							// 챕터아이디
+								"PLAY_TIME": 5,								// 챕터 플레이 시간 (분)
+								"BEGIN_DATETIME": "2016-09-23 18:23:17",	// 챕터 시작 시간
+								"END_DATETIME": "2016-09-23 18:23:26"		// 챕터 완료 시간
+							}, .... 반복
+						]
+					}, ... 반복
+				]
+			}, ... 반복
+		]
+	}
+
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	
+
+* * *
+
+
+###5. 카테고리 로테이션 플레이 리스트 [/sdla/episode/categoryRotationList] / POST <a id="/sdla/episode/categoryRotationList" href="#/sdla/episode/categoryRotationList">¶</a>
+
+*info*
+
+    기능 : 순환 보상을 받지 않은 카테고리별 실행한 에피소드에 따라 실행한 챕터의 목록을 제공
+	
+*parameter*
+
+	app_id : long					// APP 의 고유 ID
+    client_uid : string				// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string				// iso 국가코드, alpha2
+	account_id : long				// slp account id
+	access_token : string			//	slp account access token	
+	profile_id:int		 			// Platform Profile ID	
+	
+					
+*return value*
+
+	// 성공
+	{
+		"res":int,															// 성공 0, 실패 0 이 아닌 값,
+		"rotation_play_history": [
+			{
+				"CATEGORY_ID": "c002",										// 카테고리 아이디
+				"EPISODE_LIST": [
+					{
+						"EPISODE_ID": "ep005",								// (가)완료한 에피소드 아이디
+						"CHAPTER": [
+							{
+								"CHAPTER_ID": "1"							// 완료한 챕터 아이디	
+							}
+						], ... 반복
+					}
+				], ... 반복
+            }, ... 반복
+		]
+	}
+
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	
+
+* * *
+
+
+
+
+###6. 카테고리 로테이션 보상 요청 [/sdla/episode/categoryRotationRewardRequest] / POST <a id="/sdla/episode/categoryRotationRewardRequest" href="#/sdla/episode/categoryRotationRewardRequest">¶</a>
+
+*info*
+
+    기능 : 파라미터에 명시한 카테고리 아이디에 대하여 순환 완료 보상을 요청
+	
+*parameter*
+
+	app_id : long					// APP 의 고유 ID
+    client_uid : string				// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string				// iso 국가코드, alpha2
+	account_id : long				// slp account id
+	access_token : string			// slp account access token	
+	profile_id: int		 			// Platform Profile ID	
+	category_id: string		 		// DLA category ID
+					
+*return value*
+
+	// 성공
+	{
+		"res":int,								// 성공 0, 실패 0 이 아닌 값,
+		"MSG" : int,															
+		"REWARD_POINT" : int,					// 보상받은 포인트
+		"ACCOUNT_POINT" : int,					// 보상받은 포인트가 적용된 계정의 최종 포인트		
+		"CHAPTER_PLAY_RATIO" : int,				// 정수 형변환 된 개발자용 챕터플레이 백분률
+	}											// 비율공식 = ( 중복제거된 플레이 챕터수 / 카테고리 내 전체에피소드 수 *3 ) *100
+																
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	
+
+* * *
+
+
+###7. 카테고리 로테이션 보상 히스토리 [/sdla/episode/categoryRotationRewardHistory] / POST <a id="/sdla/episode/categoryRotationRewardHistory" href="#/sdla/episode/categoryRotationRewardHistory">¶</a>
+
+*info*
+
+    기능 : 파라미터에 명시한 카테고리 아이디에 대하여 순환 완료 보상을 요청
+	
+*parameter*
+
+	app_id : long					// APP 의 고유 ID
+    client_uid : string				// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string				// iso 국가코드, alpha2
+	account_id : long				// slp account id
+	access_token : string			// slp account access token	
+	profile_id: int		 			// Platform Profile ID	
+					
+*return value*
+
+	// 성공
+	{
+		"res":int,															// 성공 0, 실패 0 이 아닌 값,
+		"REWARD_HISTORY": [													// 보상받은 기록
+			{
+				"CATEGORY_ID": "c001",										// 보상받은 카테고리
+				"REG_DATETIME": "2016-10-10 18:10:43"						// 보상받은 시간
+			}, ... 반복
+		]
+	}
+
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	
+
+* * *
+
+###8. 에피소드 플레이 상위 랭크 리스트 [/sdla/episode/getTopRankEpisodePlay] / POST <a id="/sdla/episode/getTopRankEpisodePlay" href="#/sdla/episode/getTopRankEpisodePlay">¶</a>
+
+*info*
+
+    기능 : 파라미터에 명시한 카테고리 아이디에 대하여 순환 완료 보상을 요청
+	
+*parameter*
+
+	app_id : long					// APP 의 고유 ID
+    client_uid : string				// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string				// iso 국가코드, alpha2
+	account_id : long				// slp account id
+	access_token : string			// slp account access token	
+	search_limit : int		 		// 검색 할 상위 상위 랭크 수
+	search_boundary : string		// 검색 할 범위 지정 GLOBAL : 전체 DOMESTIC : 등록된 계정의 국가 ( 대소문자를 구별하며 잘못 입력 시 에러발생 -1000)
+					
+*return value*
+
+	// 성공
+	{
+		"res":int,															// 성공 0, 실패 0 이 아닌 값,
+		"EPISODE_PLAY_RANK": [
+			{
+				"EPISODE_ID": "ep005",										// 에피소드 아이디	
+				"PLAY_COUNT": 2												// 에피소드가 플레이 된 횟수
+			}
+		], ... 반복
+		"SEARCH_LIMIT": 1,													// 요청 한 상위 랭크 수
+		"SEARCH_BOUNDARY": "GLOBAL"											// 요청한 검색 범위
+	}
+
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	
+
+* * *
+
+
+###9. 퀘스트(미션) 리스트 [/sdla/quest/questRequestList] / POST <a id="/sdla/quest/questRequestList" href="#/sdla/quest/questRequestList">¶</a>
+
+*info*
+
+    기능 : 해당 앱의 퀘스트 중 퀘스트의 현재 요청 가능 여부 리스트를 반환 
+	       퀘스트는 파라미터로 제공받은 TIME ZONE 을 기준으로 판정 ( 없을 경우 Asia/Seoul 이 기본값 )
+		   퀘스트 보상으로 하루 에피소드를 받을 경우 포인트를 0으로 합니다.
+	
+*parameter*
+
+	app_id : long					// APP 의 고유 ID
+    client_uid : string				// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string				// iso 국가코드, alpha2
+	account_id : long				// slp account id
+	access_token : string			// slp account access token	
+	profile_id: int		 			// Platform Profile ID	
+					
+*return value*
+
+	// 성공
+	{
+		"res":int,															// 성공 0, 실패 0 이 아닌 값,
+		"QUEST_LIST": [
+			{
+				"questID": "m_join",										// 퀘스트 아이디
+				"class": "account",											// 퀘스트 클래스
+				"available": "able",										// 퀘스트 요청 가능 여부 able/disable
+				"point": 100												// 보상포인트 ( 0 일경우 에피소드로 보상 )
+			},, ... 반복
+		]
+	}
+
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	
+
+* * *
+
+
+###10. 퀘스트(미션) 요청 [/sdla/quest/questRequest] / POST <a id="/sdla/quest/questRequest" href="#/sdla/quest/questRequest">¶</a>
+
+*info*
+
+    기능 : 퀘스트(미션) 보상을 요청하는 API
+			퀘스트 중 구매자 비구매자를 구분하여 보상할 경우 quest_reward_type 을 point / episode 로 구분하여 보냄
+	
+*parameter*
+
+	app_id : long					// APP 의 고유 ID
+    client_uid : string				// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string				// iso 국가코드, alpha2
+	account_id : long				// slp account id
+	access_token : string			// slp account access token	
+	profile_id: int		 			// Platform Profile ID	
+	quest_id : string				// 퀘스트 아이디
+	quest_reward_type : string		// 퀘스트 보상타입 point / episode point 일경우 XML 에 기재된 포인트를 , episode 일경우 포인트를 0으로 세팅하여 전송함
+					
+*return value*
+
+	// 성공
+	{
+		"res":int,															// 성공 0, 실패 0 이 아닌 값,
+		"MSG":"success",													// 결과 메세지
+		"CODE":0,															// 결과 코드값
+		"QUEST_ID":"m_join",												// 퀘스트 아이디
+		"ACCOUNT_ID":"100003271",											// 계정 아이디
+		"ACCOUNT_POINT":320,												// 보상이 완료된 후의 포인트
+		"PROFILE_ID":"106992"												// 프로필 아이디
+	}
+
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	
+
+* * *

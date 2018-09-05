@@ -1,0 +1,122 @@
+﻿<?
+require_once($_SERVER['DOCUMENT_ROOT']."/inc/dbcon.php");
+if(!isset($_POST['bannerid'])){
+	$bannerid = 0;
+}else{
+	$bannerid = $_POST['bannerid'];
+}
+$sql = "SELECT BANNER_ID, BANNER_TITLE,
+				IMAGE_URL,
+				BANNER_LINK,
+				CONCAT(DATE_FORMAT(FROM_DATETIME, '%m/%d/%Y'),' - ',DATE_FORMAT(TO_DATETIME, '%m/%d/%Y')) as `RES_DATETIME`,
+				SORT_ID,
+				DISPLAY_TYPE
+			FROM ADB.banner_tb
+			WHERE BANNER_TYPE = 1 and BANNER_ID = ".$bannerid;
+$result = $db->query($sql);
+$row = $result->fetch_assoc();
+
+if($row['BANNER_ID'] != null){
+	$bannerTitle = $row['BANNER_TITLE'];
+	$imageUrl = $row['IMAGE_URL'];
+	$bannerLink = $row['BANNER_LINK'];
+	$resDatetime = $row['RES_DATETIME'];
+	$sortID = $row['SORT_ID'];
+	$displayType = $row['DISPLAY_TYPE'];
+}
+
+?>
+<form name="adbForm" id="adbForm" enctype="multipart/form-data" method="post" action="banner.php" class="form-horizontal form-label-left" novalidate>
+    <!--<p>
+    For alternative validation library <code>parsleyJS</code> check out in the <a href="form.html">form page</a>
+    </p>
+    <span class="section">Personal Info</span>-->
+
+    <div class="item form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="occupation">
+            TITLE <span class="required">*</span>
+        </label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <input id="title" type="text" name="title" placeholder="간략한 제목을 30자 내로 입력하세요." data-validate-length-range="1,50" class="optional form-control col-md-7 col-xs-12" value="<?=$bannerTitle?>">
+        </div>
+    </div>
+
+    <div class="item form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">
+            Link URL <span class="required">*</span>
+        </label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <input type="url" id="linkurl" name="linkurl" required="required" placeholder="링크URL을 입력하세요.(ex : http://www.naver.com)" class="form-control col-md-7 col-xs-12">
+        </div>
+    </div>
+
+    <div class="item form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">
+            게시기간 <span class="required">*</span>
+        </label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="col-md-4">
+                게시 기간을 선택하세요.
+                <fieldset>
+                    <div class="control-group">
+                        <div class="controls">
+                            <div class="input-prepend input-group">
+                                <span class="add-on input-group-addon"><i class="glyphicon glyphicon-calendar fa fa-calendar"></i></span>
+                                <input type="text" style="width: 200px" name="reservation" id="reservation" class="form-control" value="02/08/2018 - 02/08/2019" />
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+
+    <div class="item form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">
+            노출 순서 <span class="required">*</span>
+        </label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <select class="form-control" style="width:120px;" id="sortid" name="sortid">
+                <?
+                for($i = 1; $i < 9; $i++){
+                    if($sortID == $i) echo "<option selectrd>$i</option>";
+                    else echo "<option>$i</option>";
+                }
+                ?>
+            </select>
+        </div>
+    </div>
+
+    <div class="item form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">
+            노출 설정 <span class="required">*</span>
+        </label>
+        <div class="col-md-6 col-sm-6 col-xs-12"><?=$displayType ?>
+            <? if( $displayType == 1){ ?>
+            <input type="checkbox" class="js-switch" id="displayid" name="displayid" checked="checked" />
+            <? }else{ ?>
+            <input type="checkbox" class="js-switch" id="displayid" name="displayid" />
+            <? } ?>
+
+            <!--<input type="checkbox" class="js-switch" id="displayid" name="displayid" checked="checked" />-->
+        </div>
+    </div>
+
+    <div class="item form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">
+            배너 이미지 선택 <span class="required">*</span>
+        </label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <input type="file" class="js-switch" id="bannerimage" name="bannerimage" />
+        </div>
+    </div>
+
+    <div class="ln_solid"></div>
+    <div class="form-group">
+        <div class="col-md-6 col-md-offset-3">
+            <button type="reset" class="btn btn-primary" onclick="cancelBtn()">취소</button>
+            <button id="btnSubmit" type="submit" class="btn btn-success">등록하기</button>
+        </div>
+    </div>
+</form>
+<textarea id="result" style="width:1200px"></textarea>

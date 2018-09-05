@@ -1,0 +1,171 @@
+DB  에러코드 정리
+
+-999 : 인증토큰 오류
+-998 : 다른 디바이스에서 프로파일 업데이트
+-997 : SQLEXCEPTION 
+-996 : NOT FOUND CHILD LEVEL 자녀 프로파일 레벨확인 불가능
+-995 : NOT FOUND EPISODE 에피소드를 찾을수 없음
+-994 : invalid Pass 유효한 이용권이 없음
+-993 : not found confirm episode
+
+-100 : 찾을수 없는 이메일
+
+-1 : spAccountLogin, not found account
+-2 : spAccountLogin, fnUpdateAccountToken, account token 확인 불가
+
+-3 : spAccountPasswordModify, fnCheckAccountTokenCount, 
+-4 : spAccountPasswordModify, 비밀번호 변경 실패
+
+-5 : spAccountSecession, fnCheckAccountTokenCount, account token 확인 불가
+-6 : spAccountSecession, failed insert ACCOUNT_SECESSION, 탈퇴정보 입력 실패
+-7 : spAccountSecession, update ACCOUNT_INFO delete
+
+-8 : spCheckToken, accountTokenCount == 0
+-9 : spCheckToken, childTokenCount == 0
+
+-10 : spChildProfileAdd, not found account & token
+-11 : spChildProfileAdd, duple childName
+-12 : spChildProfileAdd, current child profile count MAX
+-13 : spChildProfileAdd, insert failed CHILD_PROFILE_INFO 
+
+-14 : spChildProfileDelete, error accountTokenCount
+-15 : spChildProfileDelete, error childCount
+-16 : spChildProfileDelete, error update CHILD_PROFILE_INFO
+-17 : spChildProfileDelete, error insert CHILD_PROFILE_SUB_INFO
+
+-18 : spChildProfileLogin, error not found child profile id
+-19 : spChildProfileLogin, failed child access token update
+
+-20 : spChildProfileModify, account token not match
+-21 : spChildProfileModify, err not found child profile
+
+-22 : spCreateUser, duplication email, not found account id
+-23 : spCreateUser, error, failed update account token
+-24 : spCreateUser, duplication email
+-25 : spCreateUser, failed insert ACCOUNT_INFO
+-26 : spCreateUser, failed insert CHILD_PROFILE_INFO
+-27 : spCreateUser, failed insert ACCOUNT_VERIFICATION_INFO`
+
+-28 : spEmailVerification, not found verifyKey
+-29 : spEmailVerification, update failed ACCOUNT_VERIFICATION_INFO
+-30 : spEmailVerification, update failed ACCOUNT_INFO
+
+-31 : spGetEpisodeList, validTokenCount empty
+
+-32 : spAccountLogout','node match accountId, unityGUID, accountToken
+
+-33 : spChildProfileLogin','error not match account id, token, uunity'
+
+-34 : spUpdateChildProfileIMG, childCount empty
+-35 : spUpdateChildProfileIMG, failed insert CHILD_PROFILE_IMG_INFO
+
+-36 : spUpdateAdventureIMG, failed insert CHILD_PROFILE_IMG_INFO
+-37 : spUpdateAdventureIMG, failed insert CHILD_ADVENTURE_IMG_INFO
+
+-38 : spUpdateIMG, imgType is null
+-39 : spUpdateIMG, unknown imgType
+
+-40 : spUpdateLastProfileModify, not found account
+-41 : spUpdateLastProfileModify, unknown imgType
+
+-42 : spGenerateEpisodeChapterPlaySRL, failed insert EPISODE_CHAPTER_PLAY_INFO
+
+-43 : spCheckAdminCMD, not found ADMIN_CMD_AUTH
+-44 : spCheckAdminCMD, failed insert EPISODE_CHAPTER_PLAY_INFO
+
+
+-45 : spGetEpisodeListWithCheckAuth, not found CHILD_PROFILE_INFO
+
+-47 : spVisitDoraWorldSectorAdd, not found CHILD_PROFILE_INFO LEVEL
+
+-48 : spVisitDoraWorldSectorList, not match level
+
+-49 : spGetPurchaseHash, not found shop id
+
+-50 : spShopPurchaseConsume, buy history
+-51 : spShopPurchaseConsume, already Consume
+
+-52 : spShopPurchaseGoogleGetPayload, error single, episode id
+
+-53 : fnInsertSHOP_BUY_HISTORY, failed insert SHOP_BUY_HISTORY
+-54 : fnInsertSHOP_BUY_HISTORY, failed insert SHOP_BUY_SINGLE_EPISODE
+
+-55 : spShopPurchaseGoogleGetPayload, failed fnInsertSHOP_BUY_HISTORY
+-56 : spShopPurchaseGoogleGetPayload, error child level
+-57 : spShopPurchaseGoogleGetPayload, error single not found episode id
+
+-58 : spShopPurchaseGoogleConsume, error child level
+-59 : spShopPurchaseConsume, unkown type
+
+-60 : fnShopAddInventoryTypeConsume, unkown type
+
+-61 : spShopPurchaseGoogleGetPayload, not match Valid Pass
+
+-62 : fnShopAddPassTypeSingle, episodID is null
+-63 : fnShopAddPassTypeSingle, nnot found episodID 
+
+-64 : spGetEpisodeCahapterStartInfo, not found child
+
+-65 : spGenerateEpisodeChapterPlaySRL, not found episode
+
+-66 : fnShopAddPassTypeConsume, not found episode
+
+-67 : spCreateUser, Duplicate Email
+
+-68 : spShopPurchaseGoogleGetPayload, already confirmed single episode;
+
+-69 : spShopPurchaseGoogleGetPayload, already confirmed single episode;
+
+-70 : spShopPurchaseGoogleGetPayload, error not complete shop buy history
+
+-71 : spChildProfileDelete, not expire pass
+
+-72 : spChildProfileDelete, not expire pass
+
+-73 : spIncreaseEpisodeDownloadCount, not found child level
+-74 : spIncreaseEpisodeDownloadCount, not found episode level
+
+-75 : spCheckEpisodDownloadPass, not found pass
+
+-80 : spCreateUser, duplication email, is Secession Email
+
+-80 : spCreateUser, duplication email, is Secession Email
+
+-83 : spIncreaseEpisodeDownloadCount, not found episode
+
+-84 : fnCheckEpisodeCount, error ep count 
+
+-85 : spCreateUser, spCreateUser, dafault star point is null
+
+-86 : spShopPurchaseSinglEPGoogleGetPayload, not found open episode, 오픈된 에피소드가 아님
+-87 : spShopPurchaseSinglEPGoogleGetPayload, not found open episode, 오픈된 에피소드가 아님
+
+-88 : spShopPurchaseSinglEPGoogleGetPayload, not found open episode, 오픈된 에피소드가 아님
+
+-89 : not found package
+-90 : 프리에피소드는 구매 불가능함
+
+-100 : spIsValidCoupon, 유효하지 않은 쿠폰번호
+-101 : spUseCoupon, 유효하지 않은 쿠폰번호, not found packageID
+-102 : spUseCoupon, 유효하지 않은 쿠폰번호, not found packageID, db not match
+-103 : spUseCoupon, not found packageID, db not match
+-104 : spUseCoupon, failed insert EPISODE_BUY_HISTORY'
+-105 : spUseCoupon, duplicate Package Count
+-106 : spUseCoupon, 사용된 쿠폰
+-107 : spUseCoupon, 유효기간 만료
+
+-150 : 가입경로와 로그인 경로가 다름
+-151 : 이미 가입된 Guest UNITY_GUID
+
+-200 : 등록된 디바이스가 아님
+-201 : 디바이스 등록 오류
+
+
+// 여기부터 kidswell
+-1000 : spKidswellGetTargetEpisodeID, not found open Episode
+-1010 : spKidswellGetTargetEpisodeID, not found open Episode
+
+// 에피소드 파일 서버
+-2000 : 에피소드 다운로드 key 가 올바르지 않음.
+
+

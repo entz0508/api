@@ -1,0 +1,723 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<quiz>
+		<quiz_id>9110101</quiz_id>
+		<unit_id>e101</unit_id>
+		<medal_category>1</medal_category>
+		<quiz_desc01>내가 말하는 수를 잘 듣고, 그 수만큼 바구니에 사과를 담아 보세요.</quiz_desc01>
+		<quiz_desc02>"One"의 뜻을 알고 있습니다. </quiz_desc02>
+		<quiz_desc03>"One"의 뜻을 알고 있습니다. </quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110102</quiz_id>
+		<unit_id>e101</unit_id>
+		<medal_category>1</medal_category>
+		<quiz_desc01>내가 말하는 숫자를 듣고 어떤 숫자가 숨어있는지 맞혀 보세요.</quiz_desc01>
+		<quiz_desc02>"Two"의 뜻을 알고 있습니다. </quiz_desc02>
+		<quiz_desc03>"Two"의 뜻을 알고 있습니다. </quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110103</quiz_id>
+		<unit_id>e101</unit_id>
+		<medal_category>1</medal_category>
+		<quiz_desc01>내가 하는 말을 잘 듣고, 내가 말한 수와 장난감의 수가 같으면 O, 다르면 x를 눌러 주세요.</quiz_desc01>
+		<quiz_desc02>"Three"의 뜻을 알고\n수를 바르게 셀 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"Three"의 뜻을 알고\n수를 바르게 셀 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110104</quiz_id>
+		<unit_id>e101</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>내가 말하는 글자를 잘 듣고, 쿠키 상자 안에 들어갈 알맞은 쿠키를 골라보세요.</quiz_desc01>
+		<quiz_desc02>A를 듣고, 알맞은 대문자를 고를 수 있습니다. </quiz_desc02>
+		<quiz_desc03>A를 듣고, 알맞은 대문자를 고를 수 있습니다. </quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110105</quiz_id>
+		<unit_id>e101</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>내가 말하는 글자를 잘 듣고, 쿠키 상자 안에 들어갈 알맞은 쿠키를 골라보세요.</quiz_desc01>
+		<quiz_desc02>B를 듣고, 알맞은 대문자를 고를 수 있습니다. </quiz_desc02>
+		<quiz_desc03>B를 듣고, 알맞은 대문자를 고를 수 있습니다. </quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110106</quiz_id>
+		<unit_id>e101</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>놀이공원에 놀러 온 친구들이 하는 말을 잘 듣고, 친구들에게 알맞은 풍선을 주세요.</quiz_desc01>
+		<quiz_desc02>C를 듣고, 알맞은 대문자를 고를 수 있습니다. </quiz_desc02>
+		<quiz_desc03>C를 듣고, 알맞은 대문자를 고를 수 있습니다. </quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110107</quiz_id>
+		<unit_id>e101</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>놀이공원에 놀러 온 친구들이 하는 말을 잘 듣고, 친구들에게 알맞은 풍선을 주세요.</quiz_desc01>
+		<quiz_desc02>D를 듣고, 알맞은 대문자를 고를 수 있습니다. </quiz_desc02>
+		<quiz_desc03>D를 듣고, 알맞은 대문자를 고를 수 있습니다. </quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110201</quiz_id>
+		<unit_id>e102</unit_id>
+		<medal_category>1</medal_category>
+		<quiz_desc01>내가 하는 말을 잘 듣고, 친구 중에 내가 말한 대로 움직이고 있는 친구를 찾아봐.</quiz_desc01>
+		<quiz_desc02>"Run" 단어를 듣고 알맞은 동작을 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"Run" 단어를 듣고 알맞은 동작을 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110202</quiz_id>
+		<unit_id>e102</unit_id>
+		<medal_category>1</medal_category>
+		<quiz_desc01>내가 하는 말을 잘 듣고, 티코가 내가 말한 대로 움직이면 O, 아니면 X를 눌러 줘.</quiz_desc01>
+		<quiz_desc02>"Jump" 단어를 듣고 알맞은 동작을 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"Jump" 단어를 듣고 알맞은 동작을 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110203</quiz_id>
+		<unit_id>e102</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>내가 하는 말을 잘 듣고, 알맞은 옷을 걸어줘.</quiz_desc01>
+		<quiz_desc02>"E"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"E"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110204</quiz_id>
+		<unit_id>e102</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>내가 하는 말을 잘 듣고, 알맞은 옷을 걸어줘.</quiz_desc01>
+		<quiz_desc02>"F"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"F"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110205</quiz_id>
+		<unit_id>e102</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>내가 하는 말을 잘 듣고, 알맞은 옷을 걸어줘.</quiz_desc01>
+		<quiz_desc02>"G"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"G"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110301</quiz_id>
+		<unit_id>e103</unit_id>
+		<medal_category>1</medal_category>
+		<quiz_desc01>친구들이 하는 말을 잘 듣고, 친구들이 원하는 가방을 선물해 주세요.</quiz_desc01>
+		<quiz_desc02>"Big" 단어를 듣고, 알맞은 크기의\n가방을 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"Big" 단어를 듣고, 알맞은 크기의\n가방을 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110302</quiz_id>
+		<unit_id>e103</unit_id>
+		<medal_category>1</medal_category>
+		<quiz_desc01>친구들이 하는 말을 잘 듣고, 친구들이 원하는 가방을 선물해 주세요.</quiz_desc01>
+		<quiz_desc02>"Small" 단어를 듣고, 알맞은 크기의\n가방을 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"Small" 단어를 듣고, 알맞은 크기의\n가방을 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110303</quiz_id>
+		<unit_id>e103</unit_id>
+		<medal_category>2</medal_category>
+		<quiz_desc01>부츠가 하는 말을 잘 듣고, 어떤 그림이 부츠가 그린 그림인지 맞혀 보세요.</quiz_desc01>
+		<quiz_desc02>"Big! It’s big!" 문장을 듣고, 알맞은 그림을 고를 수 있습니다. </quiz_desc02>
+		<quiz_desc03>"Big! It’s big!" 문장을 듣고, 알맞은 그림을 고를 수 있습니다. </quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110304</quiz_id>
+		<unit_id>e103</unit_id>
+		<medal_category>2</medal_category>
+		<quiz_desc01>부츠가 하는 말을 잘 듣고, 어떤 그림이 부츠가 그린 그림인지 맞혀 보세요.</quiz_desc01>
+		<quiz_desc02>"Small! It’s small!" 문장을 듣고, 알맞은 그림을 고를 수 있습니다. </quiz_desc02>
+		<quiz_desc03>"Small! It’s small!" 문장을 듣고, 알맞은 그림을 고를 수 있습니다. </quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110305</quiz_id>
+		<unit_id>e103</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>해적돼지들이 하는 말을 잘 듣고, 보물 상자를 열 수 있도록 돼지들에게 필요한 열쇠를 찾아 주세요.</quiz_desc01>
+		<quiz_desc02>"H"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"H"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110306</quiz_id>
+		<unit_id>e103</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>해적돼지들이 하는 말을 잘 듣고, 보물 상자를 열 수 있도록 돼지들에게 필요한 열쇠를 찾아 주세요.</quiz_desc01>
+		<quiz_desc02>"I"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"I"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110307</quiz_id>
+		<unit_id>e103</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>부츠가 하는 말을 잘 듣고, 부츠가 생각하고 있는 퍼즐 조각은 어떤 것인지 골라보세요.</quiz_desc01>
+		<quiz_desc02>"J"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"J"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110308</quiz_id>
+		<unit_id>e103</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>부츠가 하는 말을 잘 듣고, 부츠가 생각하고 있는 퍼즐 조각은 어떤 것인지 골라보세요.</quiz_desc01>
+		<quiz_desc02>"K"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"K"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110401</quiz_id>
+		<unit_id>e104</unit_id>
+		<medal_category>1</medal_category>
+		<quiz_desc01>티코가 하는 말을 잘 듣고, 같은 장난감이 맞으면 O, 다르면 X를 눌러 주세요.</quiz_desc01>
+		<quiz_desc02>"Car" 단어를 듣고, 어떤 장난감을\n말하는지 알 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"Car" 단어를 듣고, 어떤 장난감을\n말하는지 알 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110402</quiz_id>
+		<unit_id>e104</unit_id>
+		<medal_category>1</medal_category>
+		<quiz_desc01>내가 말하는 장난감을 그린 친구는 누구일까요?</quiz_desc01>
+		<quiz_desc02>"Teddy Bear" 단어를 듣고, 어떤 장난감을\n말하는지 알 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"Teddy Bear" 단어를 듣고, 어떤 장난감을\n말하는지 알 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110403</quiz_id>
+		<unit_id>e104</unit_id>
+		<medal_category>1</medal_category>
+		<quiz_desc01>내가 말하는 장난감을 상자에 담은 친구는 누구일까요?</quiz_desc01>
+		<quiz_desc02>"Ball" 단어를 듣고 알맞은 장난감 그림을 그린 친구를 찾을 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"Ball" 단어를 듣고 알맞은 장난감 그림을 그린 친구를 찾을 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110404</quiz_id>
+		<unit_id>e104</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>내가 하는 말을 잘 듣고, 알맞은 글자 풍선을 가진 친구가 누구인지 맞혀 보세요.</quiz_desc01>
+		<quiz_desc02>"L"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"L"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110405</quiz_id>
+		<unit_id>e104</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>내가 하는 말을 잘 듣고, 알맞은 글자 풍선을 가진 친구가 누구인지 맞혀 보세요.</quiz_desc01>
+		<quiz_desc02>"M"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"M"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110406</quiz_id>
+		<unit_id>e104</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>자동차에 글자 바퀴를 달아야 해요. 내가 하는 말을 잘 듣고, 알맞은 글자 바퀴를 달아 주세요.</quiz_desc01>
+		<quiz_desc02>"N"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"N"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110407</quiz_id>
+		<unit_id>e104</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>자동차에 글자 바퀴를 달아야 해요. 내가 하는 말을 잘 듣고, 알맞은 글자 바퀴를 달아 주세요.</quiz_desc01>
+		<quiz_desc02>"O"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"O"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110408</quiz_id>
+		<unit_id>e104</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>자동차에 글자 바퀴를 달아야 해요. 내가 하는 말을 잘 듣고, 알맞은 글자 바퀴를 달아 주세요.</quiz_desc01>
+		<quiz_desc02>"P"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"P"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110501</quiz_id>
+		<unit_id>e105</unit_id>
+		<medal_category>2</medal_category>
+		<quiz_desc01>로봇 친구들이 하는 말을 잘 듣고, 알맞은 주스를 줘.</quiz_desc01>
+		<quiz_desc02>"I want an apple juice!" 문장을 듣고,\n알맞은 과일 주스 그림을 찾을 수 있습니다. </quiz_desc02>
+		<quiz_desc03>"I want an apple juice!" 문장을 듣고,\n알맞은 과일 주스 그림을 찾을 수 있습니다. </quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110502</quiz_id>
+		<unit_id>e105</unit_id>
+		<medal_category>2</medal_category>
+		<quiz_desc01>로봇 친구들이 하는 말을 잘 듣고, 알맞은 주스를 줘.</quiz_desc01>
+		<quiz_desc02>"I want a kiwi juice!" 문장을 듣고,\n알맞은 과일 주스 그림을 찾을 수 있습니다. </quiz_desc02>
+		<quiz_desc03>"I want a kiwi juice!" 문장을 듣고,\n알맞은 과일 주스 그림을 찾을 수 있습니다. </quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110503</quiz_id>
+		<unit_id>e105</unit_id>
+		<medal_category>2</medal_category>
+		<quiz_desc01>로봇 친구들이 하는 말을 잘 듣고, 알맞은 주스를 줘.</quiz_desc01>
+		<quiz_desc02>"I want an orange juice!" 문장을 듣고,\n알맞은 과일 주스 그림을 찾을 수 있습니다. </quiz_desc02>
+		<quiz_desc03>"I want an orange juice!" 문장을 듣고,\n알맞은 과일 주스 그림을 찾을 수 있습니다. </quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110504</quiz_id>
+		<unit_id>e105</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>내가 하는 말을 잘 듣고, 알맞은 글자 쿠키를 가진 친구를 찾아봐.</quiz_desc01>
+		<quiz_desc02>"Q"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"Q"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110505</quiz_id>
+		<unit_id>e105</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>내가 하는 말을 잘 듣고, 알맞은 글자 쿠키를 가진 친구를 찾아봐.</quiz_desc01>
+		<quiz_desc02>"R"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"R"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110506</quiz_id>
+		<unit_id>e105</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>내가 하는 말을 잘 듣고, 알맞은 글자 쿠키를 가진 친구를 찾아봐.</quiz_desc01>
+		<quiz_desc02>"S"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"S"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110507</quiz_id>
+		<unit_id>e105</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>내가 말하는 글자가 화면에 있는 글자와 같으면 O, 다르면 X를 눌러 줘.</quiz_desc01>
+		<quiz_desc02>"T"의 발음을 듣고,\n대문자 T를 구별할 수 있습니다. </quiz_desc02>
+		<quiz_desc03>"T"의 발음을 듣고,\n대문자 T를 구별할 수 있습니다. </quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110508</quiz_id>
+		<unit_id>e105</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>내가 말하는 글자가 화면에 있는 글자와 같으면 O, 다르면 X를 눌러 줘.</quiz_desc01>
+		<quiz_desc02>"U"의 발음을 듣고,\n대문자 U를 구별할 수 있습니다. </quiz_desc02>
+		<quiz_desc03>"U"의 발음을 듣고,\n대문자 U를 구별할 수 있습니다. </quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110509</quiz_id>
+		<unit_id>e105</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>내가 말하는 글자가 화면에 있는 글자와 같으면 O, 다르면 X를 눌러 줘.</quiz_desc01>
+		<quiz_desc02>"V"의 발음을 듣고,\n대문자 V를 구별할 수 있습니다. </quiz_desc02>
+		<quiz_desc03>"V"의 발음을 듣고,\n대문자 V를 구별할 수 있습니다. </quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110601</quiz_id>
+		<unit_id>e106</unit_id>
+		<medal_category>2</medal_category>
+		<quiz_desc01>내가 하는 말을 잘 듣고 말하는 색깔을 골라서 그림을 완성 시켜 보세요.</quiz_desc01>
+		<quiz_desc02>"Color it Red!" 문장을 듣고, 알맞은 색깔을 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"Color it Red!" 문장을 듣고, 알맞은 색깔을 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110602</quiz_id>
+		<unit_id>e106</unit_id>
+		<medal_category>2</medal_category>
+		<quiz_desc01>내가 하는 말을 잘 듣고 말하는 색깔을 골라서 그림을 완성 시켜 보세요.</quiz_desc01>
+		<quiz_desc02>"Color it Yellow!" 문장을 듣고, 알맞은 색깔을 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"Color it Yellow!" 문장을 듣고, 알맞은 색깔을 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110603</quiz_id>
+		<unit_id>e106</unit_id>
+		<medal_category>2</medal_category>
+		<quiz_desc01>내가 하는 말을 잘 듣고 말하는 색깔을 골라서 그림을 완성 시켜 보세요.</quiz_desc01>
+		<quiz_desc02>"Color it Blue!" 문장을 듣고, 알맞은 색깔을 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"Color it Blue!" 문장을 듣고, 알맞은 색깔을 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110604</quiz_id>
+		<unit_id>e106</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>내가 하는 말을 잘 듣고, 내가 원하는 대로 트램펄린 꽃을 놓아 주세요.</quiz_desc01>
+		<quiz_desc02>"W"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"W"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110605</quiz_id>
+		<unit_id>e106</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>내가 하는 말을 잘 듣고, 내가 원하는 대로 트램펄린 꽃을 놓아 주세요.</quiz_desc01>
+		<quiz_desc02>"X"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"X"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110606</quiz_id>
+		<unit_id>e106</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>돼지 친구들이 원하는 코코넛 주스가 모두 달라요. 친구들이 하는 말을 잘 듣고, 맞는 주스를 주세요.</quiz_desc01>
+		<quiz_desc02>"Y"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"Y"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110607</quiz_id>
+		<unit_id>e106</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>돼지 친구들이 원하는 코코넛 주스가 모두 달라요. 친구들이 하는 말을 잘 듣고, 맞는 주스를 주세요.</quiz_desc01>
+		<quiz_desc02>"Z"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"Z"를 듣고, 알맞은 대문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110701</quiz_id>
+		<unit_id>e107</unit_id>
+		<medal_category>1</medal_category>
+		<quiz_desc01>디에고가 가지고 있는 놀이동산 티넷은 몇 개 일까요?</quiz_desc01>
+		<quiz_desc02>"One, two, three" 수를 세 보고, 알맞은 숫자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"One, two, three" 수를 세 보고, 알맞은 숫자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110702</quiz_id>
+		<unit_id>e107</unit_id>
+		<medal_category>1 </medal_category>
+		<quiz_desc01>친구들에게 연이 하나씩 필요해요. 모두 몇 개의 연이 필요할까요?</quiz_desc01>
+		<quiz_desc02>"One, two, three" 수를 세 보고, 알맞은 숫자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"One, two, three" 수를 세 보고, 알맞은 숫자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110703</quiz_id>
+		<unit_id>e107</unit_id>
+		<medal_category>1 </medal_category>
+		<quiz_desc01>내가 말하는 숫자를 잘 듣고, 알맞은 숫자 블록에 올라간 친구가 누군지 맞혀 보세요.</quiz_desc01>
+		<quiz_desc02>"Four"을 듣고,\n알맞은 숫자 블록을 찾을 수 있습니다. </quiz_desc02>
+		<quiz_desc03>"Four"을 듣고,\n알맞은 숫자 블록을 찾을 수 있습니다. </quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110704</quiz_id>
+		<unit_id>e107</unit_id>
+		<medal_category>1 </medal_category>
+		<quiz_desc01>로베르토의 상자 안에 담긴 물건은 모두 몇 개인가요?</quiz_desc01>
+		<quiz_desc02>"One" 부터 "Five"까지 수를 세 보고,\n알맞은 숫자를 고를 수 있습니다. </quiz_desc02>
+		<quiz_desc03>"One" 부터 "Five"까지 수를 세 보고,\n알맞은 숫자를 고를 수 있습니다. </quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110705</quiz_id>
+		<unit_id>e107</unit_id>
+		<medal_category>1 </medal_category>
+		<quiz_desc01>병에 숫자 스티커를 붙여야 해요. 병에 담겨진 구슬을 세보고 알맞은 스티커를 골라 보세요.</quiz_desc01>
+		<quiz_desc02>"One" 부터 "Six"까지 수를 세 보고,\n알맞은 숫자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"One" 부터 "Six"까지 수를 세 보고,\n알맞은 숫자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110706</quiz_id>
+		<unit_id>e107</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>친구들이 원하는 모자를 선물해 주세요.</quiz_desc01>
+		<quiz_desc02>"a"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"a"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110707</quiz_id>
+		<unit_id>e107</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>친구들이 원하는 모자를 선물해 주세요.</quiz_desc01>
+		<quiz_desc02>"b"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"b"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110708</quiz_id>
+		<unit_id>e107</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>글자 솜사탕을 사러 온 친구들에게 알맞은 솜사탕을 주세요.</quiz_desc01>
+		<quiz_desc02>"c"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"c"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110709</quiz_id>
+		<unit_id>e107</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>글자 솜사탕을 사러 온 친구들에게 알맞은 솜사탕을 주세요.</quiz_desc01>
+		<quiz_desc02>"d"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"d"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110801</quiz_id>
+		<unit_id>e108</unit_id>
+		<medal_category>1 </medal_category>
+		<quiz_desc01>시소를 잘 보고 두 친구 중 알맞은 친구를 골라 봐.</quiz_desc01>
+		<quiz_desc02>"Up" 단어를 듣고, 알맞은 위치에 있는 친구를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"Up" 단어를 듣고, 알맞은 위치에 있는 친구를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110802</quiz_id>
+		<unit_id>e108</unit_id>
+		<medal_category>1 </medal_category>
+		<quiz_desc01>화면을 잘 보고 두 친구 중 알맞은 친구를 골라 줘.</quiz_desc01>
+		<quiz_desc02>"Down" 단어를 듣고, 알맞은 위치에 있는 친구를 고를 수 있습니다. </quiz_desc02>
+		<quiz_desc03>"Down" 단어를 듣고, 알맞은 위치에 있는 친구를 고를 수 있습니다. </quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110803</quiz_id>
+		<unit_id>e108</unit_id>
+		<medal_category>2</medal_category>
+		<quiz_desc01>진저브레드 친구들이 진짜 보물이 있는 상자를 알고 있대. 친구들이 말하는 걸 잘 듣고, 알맞은 화살표를 눌러 줘.</quiz_desc01>
+		<quiz_desc02>"Let's go up!" 문장을 듣고, 알맞은 방향을 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"Let's go up!" 문장을 듣고, 알맞은 방향을 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110804</quiz_id>
+		<unit_id>e108</unit_id>
+		<medal_category>2</medal_category>
+		<quiz_desc01>진저브레드 친구들이 진짜 보물이 있는 상자를 알고 있대. 친구들이 말하는 걸 잘 듣고, 알맞은 화살표를 눌러 줘.</quiz_desc01>
+		<quiz_desc02>"Let's go down!" 문장을 듣고, 알맞은 방향을 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"Let's go down!" 문장을 듣고, 알맞은 방향을 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110805</quiz_id>
+		<unit_id>e108</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>화분을 잘 보고 안에 심어야 할 알맞은 씨앗을 골라 줘.</quiz_desc01>
+		<quiz_desc02>"e"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"e"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110806</quiz_id>
+		<unit_id>e108</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>화분을 잘 보고 안에 심어야 할 알맞은 씨앗을 골라 줘.</quiz_desc01>
+		<quiz_desc02>"f를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"f를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110807</quiz_id>
+		<unit_id>e108</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>화분을 잘 보고 안에 심어야 할 알맞은 씨앗을 골라 줘.</quiz_desc01>
+		<quiz_desc02>"g"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"g"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110901</quiz_id>
+		<unit_id>e109</unit_id>
+		<medal_category>2</medal_category>
+		<quiz_desc01>친구들이 하는 말을 잘 듣고, 친구들이 어떤 음식을 좋아하는지 맞혀 보세요.</quiz_desc01>
+		<quiz_desc02>"I like Spaghetti!" 문장을 듣고, 알맞은 음식을 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"I like Spaghetti!" 문장을 듣고, 알맞은 음식을 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110902</quiz_id>
+		<unit_id>e109</unit_id>
+		<medal_category>2</medal_category>
+		<quiz_desc01>친구들이 하는 말을 잘 듣고, 친구들이 어떤 음식을 좋아하는지 맞혀 보세요.</quiz_desc01>
+		<quiz_desc02>"I like Salad!" 문장을 듣고, 알맞은 음식을 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"I like Salad!" 문장을 듣고, 알맞은 음식을 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110903</quiz_id>
+		<unit_id>e109</unit_id>
+		<medal_category>2</medal_category>
+		<quiz_desc01>친구들이 하는 말을 잘 듣고, 친구들이 어떤 음식을 좋아하는지 맞혀 보세요.</quiz_desc01>
+		<quiz_desc02>"I like Pie!" 문장을 듣고, 알맞은 음식을 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"I like Pie!" 문장을 듣고, 알맞은 음식을 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110904</quiz_id>
+		<unit_id>e109</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>꿀벌 친구들이 하는 말을 잘 듣고, 친구들에게 알맞은 글자 꿀통을 찾아 주세요.</quiz_desc01>
+		<quiz_desc02>"h"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"h"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110905</quiz_id>
+		<unit_id>e109</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>꿀벌 친구들이 하는 말을 잘 듣고, 친구들에게 알맞은 글자 꿀통을 찾아 주세요.</quiz_desc01>
+		<quiz_desc02>"i"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"i"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110906</quiz_id>
+		<unit_id>e109</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>친구들의 롤러스케이트를 잘 보고, 내가 말하는 글자 스케이트가 맞으면 O, 틀리면 X를 눌러 주세요.</quiz_desc01>
+		<quiz_desc02>"j"의 발음을 듣고, 소문자 j를 구별할 수 있습니다. </quiz_desc02>
+		<quiz_desc03>"j"의 발음을 듣고, 소문자 j를 구별할 수 있습니다. </quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9110907</quiz_id>
+		<unit_id>e109</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>친구들의 롤러스케이트를 잘 보고, 내가 말하는 글자 스케이트가 맞으면 O, 틀리면 X를 눌러 주세요.</quiz_desc01>
+		<quiz_desc02>"k"의 발음을 듣고, 소문자 k를 구별할 수 있습니다. </quiz_desc02>
+		<quiz_desc03>"k"의 발음을 듣고, 소문자 k를 구별할 수 있습니다. </quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9111001</quiz_id>
+		<unit_id>e110</unit_id>
+		<medal_category>1 </medal_category>
+		<quiz_desc01>내가 말하는 동물을 잘 듣고, 같은 동물을 그린, 외계인 친구는 누구일까요?</quiz_desc01>
+		<quiz_desc02>"Puppy" 단어를 듣고, 알맞은 애완동물 그림을 그린 친구를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"Puppy" 단어를 듣고, 알맞은 애완동물 그림을 그린 친구를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9111002</quiz_id>
+		<unit_id>e110</unit_id>
+		<medal_category>1 </medal_category>
+		<quiz_desc01>내가 말하는 동물을 잘 듣고, 같은 동물을 그린, 외계인 친구는 누구일까요?</quiz_desc01>
+		<quiz_desc02>"Kitty"  단어를 듣고, 알맞은 애완동물 그림을 그린 친구를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"Kitty"  단어를 듣고, 알맞은 애완동물 그림을 그린 친구를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9111003</quiz_id>
+		<unit_id>e110</unit_id>
+		<medal_category>1 </medal_category>
+		<quiz_desc01>내가 말하는 동물을 잘 듣고, 같은 동물을 그린, 외계인 친구는 누구일까요?</quiz_desc01>
+		<quiz_desc02>"Parrot"  단어를 듣고, 알맞은 애완동물 그림을 그린 친구를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"Parrot"  단어를 듣고, 알맞은 애완동물 그림을 그린 친구를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9111004</quiz_id>
+		<unit_id>e110</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>티코 사촌들이 하는 말을 잘 듣고, 사촌들이 원하는 달걀을 선물해 주세요.</quiz_desc01>
+		<quiz_desc02>"l"을 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"l"을 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9111005</quiz_id>
+		<unit_id>e110</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>티코 사촌들이 하는 말을 잘 듣고, 사촌들이 원하는 달걀을 선물해 주세요.</quiz_desc01>
+		<quiz_desc02>"m"을 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"m"을 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9111006</quiz_id>
+		<unit_id>e110</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>티코 사촌들이 하는 말을 잘 듣고, 사촌들이 원하는 달걀을 선물해 주세요.</quiz_desc01>
+		<quiz_desc02>"n"을 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"n"을 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9111007</quiz_id>
+		<unit_id>e110</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>티코 사촌들이 하는 말을 잘 듣고, 사촌들이 원하는 달걀을 선물해 주세요.</quiz_desc01>
+		<quiz_desc02>"o"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"o"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9111008</quiz_id>
+		<unit_id>e110</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>티코 사촌들이 하는 말을 잘 듣고, 사촌들이 원하는 달걀을 선물해 주세요.</quiz_desc01>
+		<quiz_desc02>"p"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"p"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9111101</quiz_id>
+		<unit_id>e111</unit_id>
+		<medal_category>1 </medal_category>
+		<quiz_desc01>친구들이 그림을 그렸어. 내가 말하는 것을 그린 친구를 찾아봐.</quiz_desc01>
+		<quiz_desc02>"Eyes" 단어를 듣고 해당하는 얼굴 부위를\n찾을 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"Eyes" 단어를 듣고 해당하는 얼굴 부위를\n찾을 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9111102</quiz_id>
+		<unit_id>e111</unit_id>
+		<medal_category>1 </medal_category>
+		<quiz_desc01>친구들이 그림을 그렸어. 내가 말하는 것을 그린 친구를 찾아봐.</quiz_desc01>
+		<quiz_desc02>"Nose" 단어를 듣고 해당하는 얼굴 부위를\n찾을 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"Nose" 단어를 듣고 해당하는 얼굴 부위를\n찾을 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9111103</quiz_id>
+		<unit_id>e111</unit_id>
+		<medal_category>1 </medal_category>
+		<quiz_desc01>친구들이 그림을 그렸어. 내가 말하는 것을 그린 친구를 찾아봐.</quiz_desc01>
+		<quiz_desc02>"Mouth" 단어를 듣고 해당하는 얼굴 부위를\n찾을 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"Mouth" 단어를 듣고 해당하는 얼굴 부위를\n찾을 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9111104</quiz_id>
+		<unit_id>e111</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>내가 말하는 글자가 써 있는, 글자 장갑을 찾아줘.</quiz_desc01>
+		<quiz_desc02>"q"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"q"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9111105</quiz_id>
+		<unit_id>e111</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>내가 말하는 글자가 써 있는, 글자 장갑을 찾아줘.</quiz_desc01>
+		<quiz_desc02>"r"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"r"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9111106</quiz_id>
+		<unit_id>e111</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>내가 말하는 글자가 써 있는, 글자 장갑을 찾아줘.</quiz_desc01>
+		<quiz_desc02>"s"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"s"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9111107</quiz_id>
+		<unit_id>e111</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>베니가 블록으로 멋진 집을 만들고 있어. 베니가 말하는 글자가 써 있는, 블록을 찾아봐.</quiz_desc01>
+		<quiz_desc02>"t"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"t"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9111108</quiz_id>
+		<unit_id>e111</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>베니가 블록으로 멋진 집을 만들고 있어. 베니가 말하는 글자가 써 있는, 블록을 찾아봐.</quiz_desc01>
+		<quiz_desc02>"u"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"u"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9111109</quiz_id>
+		<unit_id>e111</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>베니가 블록으로 멋진 집을 만들고 있어. 베니가 말하는 글자가 써 있는, 블록을 찾아봐.</quiz_desc01>
+		<quiz_desc02>"v"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"v"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9111201</quiz_id>
+		<unit_id>e112</unit_id>
+		<medal_category>1 </medal_category>
+		<quiz_desc01>로베르토가 하는 말을 잘 듣고 맞으면 O, 틀리면 X를 눌러 주세요.</quiz_desc01>
+		<quiz_desc02>"Open" 단어를 듣고, 그 뜻을 알고 있습니다.</quiz_desc02>
+		<quiz_desc03>"Open" 단어를 듣고, 그 뜻을 알고 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9111202</quiz_id>
+		<unit_id>e112</unit_id>
+		<medal_category>1 </medal_category>
+		<quiz_desc01>로베르토가 하는 말을 잘 듣고 맞으면 O, 틀리면 X를 눌러 주세요.</quiz_desc01>
+		<quiz_desc02>"Close" 단어를 듣고, 그 뜻을 알고 있습니다.</quiz_desc02>
+		<quiz_desc03>"Close" 단어를 듣고, 그 뜻을 알고 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9111203</quiz_id>
+		<unit_id>e112</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>조개 친구의 말을 잘 듣고, 알맞은 진주알을 찾아 주세요.</quiz_desc01>
+		<quiz_desc02>"w"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"w"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9111204</quiz_id>
+		<unit_id>e112</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>조개 친구의 말을 잘 듣고, 알맞은 진주알을 찾아 주세요.</quiz_desc01>
+		<quiz_desc02>"x"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"x"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9111205</quiz_id>
+		<unit_id>e112</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>아기 게가 하는 말을 잘 듣고, 아기 게가 원하는 깃발을 골라주세요.</quiz_desc01>
+		<quiz_desc02>"y"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"y"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+	<quiz>
+		<quiz_id>9111206</quiz_id>
+		<unit_id>e112</unit_id>
+		<medal_category>0</medal_category>
+		<quiz_desc01>아기 게가 하는 말을 잘 듣고, 아기 게가 원하는 깃발을 골라주세요.</quiz_desc01>
+		<quiz_desc02>"z"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc02>
+		<quiz_desc03>"z"를 듣고, 알맞은 소문자를 고를 수 있습니다.</quiz_desc03>
+	</quiz>
+</root>

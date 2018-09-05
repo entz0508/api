@@ -1,0 +1,74 @@
+﻿<? include $_SERVER['DOCUMENT_ROOT']."/include/TITLE_HEAD.php";?>
+<!--main content start-->
+<section id="main-content">
+    <section class="wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <form class="navbar-form" name="searchform" id="searchform" method="post"><!--  action="login.php" -->
+                <h3 class="page-header"><i class="fa fa-table"></i> SHOP </h3>
+                <ul class="nav navbar-nav navbar-right">&nbsp;&nbsp;&nbsp;
+                    <select class="form-control m-bot10" id="st">
+                          <option value="product_dea.xml">도라의 영어모험</option>
+                          <option value="dla_S1_product.xml">Dora lv1 - 도라영유아편</option>
+                          <option value="dla_S2_product.xml">Dora lv2 - 레벨 1</option>
+                          <option value="dla_S3_product.xml">Dora lv3 - 레벨 2</option>
+                      </select>
+                    <!--<a class="btn btn-default btn-sm" href="javascript:searchchk()" title="Bootstrap 3 themes generator">회원검색</a>-->
+                </ul>
+                <ol class="breadcrumb">
+                    <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
+                    <li><i class="fa fa-table"></i>Shop</li>
+                    <li><i class="fa fa-th-list"></i>Gift List xml</li>
+                </ol>
+                </form>                
+            </div>
+        </div>
+        <!-- page start-->
+        <div class="row">
+            <div class="col-lg-12" id="reportDiv" style="width:100%;">
+                        loading..
+            </div>
+        </div>
+        <!-- page end-->
+    </section>
+</section>
+<!--main content end-->
+
+    <!--[if lt IE 9]> <script src="/js/jquery-1.8.3.min.js"></script> <![endif]-->
+    <!--[if gte IE 9]><!-->
+    <script src="/js/jquery-1.8.3.min.js"></script>
+    <!--<![endif]-->
+    
+    <script>
+    var param = "";
+    function searchchk() {
+        var str = searchform.st.value
+                param = "&st=" + str;
+                GetReport(1);
+    }
+
+    function GetReport() {
+        var url = '';
+        //var param = '';
+                url = 'giftDoc.php';
+        $.ajax({
+                        url: url + '?' + param,
+                        cache: false,
+                        type: 'GET'
+        }).done(function (html) {
+                        document.getElementById("reportDiv").innerHTML = html;
+        });
+    }
+
+        GetReport();
+
+    $("#st").change(function() {
+                searchchk();
+    });
+
+    $(window.document).ready(function () {
+        
+    });
+        
+    </script>
+<? include $_SERVER['DOCUMENT_ROOT']."/include/BOTTOM.php";?>

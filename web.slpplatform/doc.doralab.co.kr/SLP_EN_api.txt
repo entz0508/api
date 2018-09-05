@@ -1,0 +1,986 @@
+﻿
+## __SLP EN API__
+
+*DOC LIST*
+* [SLP Platform API](/slp_platform_api?pass=ehfkfpqakstp!1)
+* [DORA API](/dora_api?pass=ehfkfpqakstp!1)
+* [SLP EN API](/slp_en_api?pass=ehfkfpqakstp!1)
+* [SLP NDE API](/slp_nde_api?pass=ehfkfpqakstp!1)
+* [ADB API](/api_ADB?pass=dpdlelql!)
+* [JSU API](/slp_jsu_api?pass=ehfkfpqakstp!1)
+* [ADA API](/fit_ada?pass=fitadavmfhwprxm!1)
+
+*<strong>서버 to 클라이어트 결과</strong>*
+
+	1. 응답 결과는 JSON 으로 전송한다
+	2. 성공 실패는 res 값으로 구분한다.
+       정상 : res == 0
+       그외 : res != 0
+	   예)  { "res":0 , ..... }
+
+*<strong>개발 서버 주소</strong>*
+	
+	DEV Server IP : 104.199.129.129
+	APP ID (Dora 영어) : 1000000001
+		
+
+<br/>
+*<strong>API 목록</strong>*
+
+[APP](#app)
+	1. APP Version 확인  [/sen/app/ver](#/sen/app/ver) - POST
+	2. APP Resource 목록 [/sen/app/res](#/sen/app/res) - POST
+	3. Device Token 등록 [/sen/devicetoken/reg](#/sen/devicetoken/reg) - POST
+	4. Device 접속 날짜 기록 [/sen/app/device/connect](#/sen/app/device/connect) - POST
+	
+[EPISODE](#episode)
+	1. 에피소드 목록  [/sen/episode/list](#/sen/episode/list) - POST
+	2. 에피소드 권한 목록  [/sen/episode/permlist](#/sen/episode/permlist) - POST
+	3. 에피소드 소유권한 확인 (레벨단위)  [/sen/episode/levellist](#/sen/episode/levellist) - POST
+	4. 에피소드 소유권한 확인(에피소드 단위) [/sen/episode/permlist](#/sen/episode/permlist) - POST - 현재 사용 안함
+	5. 에피소드 상품구매    [/sen/episode/buyProduct](#/sen/episode/buyProduct) - POST
+	6. 상품 목록 [/slp.enProductList](#/slp.enProductList) - POST - 위치 예외 
+	7. 레벨 학습 기록 [/sen/episode/levelLearningRatio](#/sen/episode/levelLearningRatio) -  POST	
+	8. 에피소드 플레이 히스토리 [/sen/episode/episodePlayHistory](#/sen/episode/episodePlayHistory) -  POST
+	9. 구매 상품 유효성 목록 [/sen/etc/productPerm](#/sen/etc/productPerm) -  POST
+	10. 정기구독취소 [/sen/etc/setSubscribeFalse](#/sen/etc/setSubscribeFalse) -  POST
+	
+[QUIZ](#quiz)
+	1. Quiz 결과 저장 [/sen/quiz/result/update](#/sen/quiz/result/update) - POST
+	2. Medal 상태 값 가져오기 [/sen/quiz/medal/status](#/sen/quiz/medal/status) - POST
+
+[QUEST](#quest)
+	1. Quest List [/sen/quest/questRequestList](#/sen/quest/questRequestList) - POST
+	2. Quest 보상 요청 [/sen/quest/questRequest](#/sen/quest/questRequest) - POST
+
+[ACTION LOG](#actionlog)
+	1. Action Log [/sen/action/log](#/sen/action/log) - POST
+	2. Action Log 블럭단위 일괄 저장 [/sen/action/episodeBulkStore](#/sen/action/episodeBulkStore) - POST	
+	
+[RES (응답 res 목록)](#res)
+* * * * * * * * *
+
+
+##APP <a id="app" href="#app">¶</a>
+
+###1. APP VERSION 확인 [/sen/app/ver] / POST <a id="/sen/app/ver" href="#/sen/app/ver">¶</a>
+
+*info*
+
+    기능 : APP 버전정보를 가져온다.
+    
+
+*parameter*
+
+	app_id : long			// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+	client_uid : string		// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string				// client os, 	ex) andorid, ios
+	c_ver : string			// client version,	ex) 1.0.0
+	country : string		// iso 국가코드 알파벳 2자리, alpha2
+	.
+
+*return value*
+
+	// 성공
+	{
+		"res":int,				// 성공 0, 실패 0 이 아닌 값,		
+		"ver" : string,			// 클라이언트 버전, 예) 1.0.0
+		"summit" : int,			// 서밋상태 플래그, 0:summit no, 1:summit yes
+		"force_update" : int, 	// 클라이언트 강제 업데이트, 0:강제 업데이트 아님,  1:강제 업데이트 필요
+		"update_url":string,	// update url (market url)
+		"cs_email":string,		// cs 처리 이메일
+		"info":string,		// 암호화된 dea_service_kr.xml 원문
+		"local_date":string		// 해당지역의 로컬 시간 county 를 기준으로 보냄 ( 현재 한국만 가능함 )
+	}
+
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공	　
+	-100000 : 존재하지 않는 APP ID, Not Found APP ID
+
+
+* * *
+
+###2. APP Resource 목록 [/sen/app/res] / POST <a id="/sen/app/res" href="#/sen/app/res">¶</a>
+
+*info*
+
+    기능 : APP Resource 목록을 가져온다.
+    
+
+*parameter*
+
+	app_id : long				// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+    client_uid : string			// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string					// client os, 	ex) andorid, ios
+	c_ver : string				// client version,	ex) 1.0.0
+	country : string			// iso 국가코드, alpha2
+	.
+
+*return value*
+
+	// 성공
+	{
+		"res":int,					// 성공 0, 실패 0 이 아닌 값,		
+		"bundle_base_url":string 	// asset bundle url 최상위 경로,	ex) https://download.blueark.com/dla/DLA_Assetbundles_DEV_Taiwan/
+		"img_server_url":string 	// image url 최상위 경로,	ex) http://14.63.169.217/images/
+		"resources":[ { "id":string,		// 리소스 파일 ID
+						"name":string,		// 파일명, res_primary
+						"ver":int 			// 버전,  
+						}, ........... ]    // ex) "resources":[ {"id":"primary_data","name":"res_primary","ver":1},
+											//				     {"id":"sticker","name":"res_sticker","ver":1},
+											//				     {"id":"thumbnail","name":"res_thumbnail","ver":1}]
+	}
+
+	
+					  
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	　
+	-100000 : 존재하지 않는 APP ID, Not Found APP ID
+
+
+* * *
+
+
+###3. Device Token 등록 [/sen/devicetoken/reg] / POST <a id="/sen/devicetoken/reg" href="#/sen/devicetoken/reg">¶</a>
+
+*info*
+
+    기능 : Device Token 등록
+    
+
+*parameter*
+
+	app_id : long				// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+    client_uid : string			// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string					// client os, 	ex) andorid, ios
+	c_ver : string				// client version,	ex) 1.0.0
+	country : string			// iso 국가코드, alpha2
+	.
+	account_id : long	// Account ID
+	pf_id : long		// Profile ID
+	d_token : string 	// 디바이스 토큰
+
+*return value*
+
+	// 성공
+	{
+		"res":int,					// 성공 0, 실패 0 이 아닌 값,		
+	}
+
+	
+					  
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	　
+	-100000 : 존재하지 않는 APP ID, Not Found APP ID
+
+
+* * *
+
+
+###4. Device 접속 날짜 기록 [/sen/app/device/connect] / POST <a id="/sen/app/device/connect" href="#/sen/app/device/connect">¶</a>
+
+*info*
+
+    기능 : Device 접속 날자 기록
+			APP 실행시 호출
+    
+
+*parameter*
+
+	app_id : long				// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+    client_uid : string			// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string					// client os, 	ex) andorid, ios
+	c_ver : string				// client version,	ex) 1.0.0
+	country : string			// iso 국가코드, alpha2
+	.
+
+*return value*
+
+	// 성공
+	{
+		"res":int,					// 성공 0, 실패 0 이 아닌 값,		
+	}
+
+	
+					  
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	　
+	-100000 : 존재하지 않는 APP ID, Not Found APP ID
+
+
+* * *
+
+
+
+
+##EPISODE <a id="episode" href="#episode">¶</a>
+
+###1. Episode 목록 가져오기 [/sen/episode/list] / POST <a id="/sen/episode/list" href="#/sen/episode/list">¶</a>
+
+*info*
+
+    기능 : Episode 목록 호출
+			
+
+*parameter*
+
+	app_id : long					// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+    client_uid : string			// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string			// iso 국가코드, alpha2
+	account_id : long 				// slp account id
+	account_access_token : string    //	slp account access token	
+	
+	.
+					
+*return value*
+
+	// 성공
+	{
+		"res":int,			// 성공 0, 실패 0 이 아닌 값,
+		"ep_list": [ {	"en_id":string,			// 영어 카테고리 ID
+						"unity_code":string,	// UNITY_CODE
+						"ver":int,				// file version
+						}, ...........
+		]
+	}
+
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	
+
+* * *
+
+
+###2. Episode 소유 권한 목록 [/sen/episode/permlist] / POST <a id="/sen/episode/permlist" href="#/sen/episode/permlist">¶</a>
+
+*info*
+
+    기능 : 소유한 Episode 목록 호출
+			
+
+*parameter*
+
+	app_id : long						// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+	client_uid : string					// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string							// client os, 	ex) andorid, ios
+	c_ver : string						// client version,	ex) 1.0.0
+	country : string					// iso 국가코드, alpha2	
+	account_id : long 					// slp account id
+	account_access_token : string    	// slp account access token	
+					
+*return value*
+
+	// 성공
+	{
+		"res":int,					// 성공 0, 실패 0 이 아닌 값,
+		"ep_list": [ string, string, ... ]		// 소유 권을 가진 EPISODE ID 목록
+	}
+
+	//실패
+	{
+		"res":int,					// 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	
+
+* * *
+
+
+###3. 에피소드 소유권한 확인 (레벨단위) [/sen/episode/levellist] / POST <a id="/sen/episode/levellist" href="#/sen/episode/levellist">¶</a>
+
+*info*
+
+    사용가능한 레벨(상품)의 목록과 기간 목록 호출
+
+
+*parameter*
+
+	app_id : long						// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+	client_uid : string					// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string							// client os, 	ex) andorid, ios
+	c_ver : string						// client version,	ex) 1.0.0
+	country : string					// iso 국가코드, alpha2	
+	account_id : long 					// slp account id
+	account_access_token : string    	// slp account access token	
+
+*return value*
+
+        // 성공
+        {
+                "res":int,						// 성공 0, 실패 0 이 아닌 값
+                "lv_list": [ { "level_id" : string,
+                               "begin_datetime : datetime,
+                               "end_datetime : datetime  } ......  ]	// 소유 권을 가진 EPISODE ID 목록
+        }
+
+        // 실패
+        {
+                "res":int,						// 0 이 아닌 값,
+        }
+
+*res*
+
+        0 : 성공
+
+
+* * *
+
+
+###5. 에피소드 상품 구매 [/sen/episode/buyProduct] -  POST <a id="/sen/episode/buyProduct" href="#/sen/episode/buyProduct">¶</a>
+
+*info*
+
+    마켓에서 구매한 후 서버로 기록하거나 포인트로 구매할 때 쓰임
+
+
+*parameter*
+
+	app_id : long					// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+	client_uid : string				// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string				// iso 국가코드, alpha2	
+	account_id : long 				// slp account id
+	account_access_token : string    	// slp account access token	
+	product_id : string				// XML 에 기록된 상품명
+	pay_method : string				// 구매 방법 CASH or POINT
+	receipt : string				// 마켓에서 발행산 영수증 
+	goods_id : string				// 에피소드 1개를 구매할 때 쓰이는 에피소드 아이디 추후 스텝아이디도 쓰일 수 있음 레벨구매시 의미없음
+
+*return value*
+
+        // 성공
+        {
+                "res":int,                      // 성공 0, 실패 0 이 아닌 값
+        }
+
+        // 실패
+        {
+                "res":int,			// 실패 0이 아닌 값
+        }
+
+*res*
+
+        0 : 성공
+
+
+* * *
+
+
+###6. 상품 목록  [/slp.enProductList] -  POST <a id="/slp.enProductList" href="#/slp.enProductList">¶</a>
+
+*info*
+
+   	상품의 목록을 XML 로 반환
+
+*parameter*
+
+	없음
+
+*return value*
+
+        // 성공
+        {
+                "res":int,                      // 성공 0, 실패 0 이 아닌 값
+                "msg": XML Document		// XML 문서
+        }
+        // 실패
+        {
+                "res":int,			// 0 이 아닌 값
+        }
+
+
+*res*
+
+        0 : 성공
+
+
+* * *
+
+
+###7. 레벨 학습 기록 [/sen/episode/levelLearningRatio] -  POST <a id="/sen/episode/levelLearningRatio" href="#/sen/episode/levelLearningRatio">¶</a>
+
+*info*
+
+    레벨별 학습완료 된 에피소드 수를 레벨 전체의 에피소드 수로 나누어 백분률을 반환함
+
+
+*parameter*
+
+	app_id : long					// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+	client_uid : string				// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string				// iso 국가코드, alpha2	
+	account_id : long 				// slp account id
+	account_access_token : string    	// slp account access token	
+	pf_id: long					// 프로필 아이디
+
+*return value*
+
+        // 성공
+        {
+                "res":int,                      // 성공 0, 실패 0 이 아닌 값
+		"learningRatio":[ string, string ]		// { "level_id":1, "step_id":1, "episode_id": 변경 될 수 있습니다. Action log 입력 후 결과 값 업데이트 합니다.
+        }
+
+        // 실패
+        {
+                "res":int,			// 실패 0이 아닌 값
+        }
+
+*res*
+
+        0 : 성공
+
+
+* * *
+
+
+###8. 에피소드 플레이 히스토리 [/sen/episode/episodePlayHistory] -  POST <a id="/sen/episode/episodePlayHistory" href="#/sen/episode/episodePlayHistory">¶</a>
+
+*info*
+
+    학습 완료한 에피소드의 학습 회수와 마지막 학습 시간을 반환, 에피소드를 학습하여 얻어진 포인트를 반환
+
+
+*parameter*
+
+	app_id : long					// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+	client_uid : string				// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string				// iso 국가코드, alpha2	
+	account_id : long 				// slp account id
+	account_access_token : string    	// slp account access token	
+	pf_id: long					// 프로필 아이디
+
+*return value*
+
+        // 성공
+        {
+                "res":int,                      // 성공 0, 실패 0 이 아닌 값
+		"play_history":[ string, string ]		// { "level_id":1, "step_id":1, "episode_id": 변경 될 수 있습니다. Action log 입력 후 결과 값 업데이트 합니다.
+        }
+
+        // 실패
+        {
+                "res":int,			// 실패 0이 아닌 값
+        }
+
+*res*
+
+        0 : 성공
+
+
+* * *
+
+
+###9. 구매 상품 유효성 목록 [/sen/etc/productPerm] -  POST <a id="/sen/etc/productPerm" href="#/sen/etc/productPerm">¶</a>
+
+*info*
+
+    구매한 상품의 만료일에 대한 목록
+
+
+*parameter*
+
+	app_id : long					// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+	client_uid : string				// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string				// iso 국가코드, alpha2	
+	account_id : long 				// slp account id
+	account_access_token : string    	// slp account access token
+
+*return value*
+
+        // 성공
+        {
+                "res":int,                      // 성공 0, 실패 0 이 아닌 값
+		"product":[ string, string ]		// { "level_id":1, "step_id":1, "episode_id": 변경 될 수 있습니다. Action log 입력 후 결과 값 업데이트 합니다.
+        }
+
+        // 실패
+        {
+                "res":int,			// 실패 0이 아닌 값
+        }
+
+*res*
+
+        0 : 성공
+
+
+* * *
+
+
+###10. 정기구독취소 [/sen/etc/setSubscribeFalse] -  POST <a id="/sen/etc/setSubscribeFalse" href="#/sen/etc/setSubscribeFalse">¶</a>
+
+*info*
+
+    정기구독을 취소합니다. 본 API를 호출하면 정기구독이 호출한 시점부터 무효화 되고, 현재 자신의 product list 를 반환합니다.
+
+
+*parameter*
+
+	app_id : long					// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+	client_uid : string				// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string				// iso 국가코드, alpha2	
+	account_id : long 				// slp account id
+	account_access_token : string    // slp account access token
+	sub_script_status: string    	// false 만 가능합니다.
+
+*return value*
+
+        // 성공
+        {
+                "res":int,                      // 성공 0, 실패 0 이 아닌 값
+                "product_list":string		// {"product_list" : {"app_id", "account_id", "product_id", "reg_datetime", "end_datetime"}, .... }
+        }
+
+        // 실패
+        {
+                "res":int,			// 실패 0이 아닌 값
+        }
+
+*res*
+
+        0 : 성공
+
+
+* * *
+
+
+
+##QUIZ <a id="quiz" href="#quiz">¶</a>
+
+###1. Quiz 결과 저장 [/sen/quiz/result/update] / POST <a id="/sen/quiz/result/update" href="#/sen/quiz/result/update">¶</a>
+
+*info*
+
+    기능 : Quzi 결과 저장
+			
+
+*parameter*
+
+	app_id : long					// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+    client_uid : string			// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string			// iso 국가코드, alpha2
+	account_id : long 				// slp account id
+	account_access_token : string    //	slp account access token	
+	pf_id:int 			 // SLP Profile ID
+	quiz : JSON String       // 평가 결과 정보 JOSN 형식
+							 // ex) { "step": string,   // 현재 Step ID
+							          "quiz":[  {"id":int,   	// quiz ID
+												 "result":int   // 퀴즈 결과, 0:오답, 1:정답
+												}, ..... 
+											], 
+									  "medal": [ {"id": int,	// Medal ID
+												  "status": int // 상태 0:획득실패, 1:획득성공
+												  }, ... 
+											 ] 
+									}
+	.
+					
+*return value*
+
+	// 성공
+	{
+		"res":int,			// 성공 0, 실패 0 이 아닌 값,
+	}
+
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	
+
+* * *
+
+###2. Medal 상태 값 가져오기 [/sen/quiz/medal/status] / POST <a id="/sen/quiz/medal/status" href="#/sen/quiz/medal/status">¶</a>
+
+*info*
+
+    기능 : 그동안 획득 성공 또는 실패했던 Medal 들의 현재 상태값 가져오기
+
+*parameter*
+
+	app_id : long					// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+    client_uid : string			// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string			// iso 국가코드, alpha2
+	account_id : long 				// slp account id
+	account_access_token : string    //	slp account access token	
+	pf_id:int 			 // SLP Profile ID	
+	
+*return value*
+
+
+	// 성공
+	{
+		"res":int,			// 성공 0, 실패 0 이 아닌 값,
+		"medal_list":[	{	"id":int,  // Medal ID
+							"status":int  // 현재 상태, 0:획득하지 못함, 1:획득 성공, 2:획득 성공후 획득 실패
+						}, ... ]
+	}
+
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공	
+
+* * *
+
+
+
+[QUEST](#quest)
+	1. Quest List [/sen/quest/questRequestList](#/sen/quest/questRequestList) - POST
+	2. Quest 보상 요청 [/sen/quest/questRequest](#/sen/quest/questRequest) - POST
+
+
+
+
+##QUEST <a id="quest" href="#quest">¶</a>
+
+###1. Quest List [/sen/quest/questRequestList] / POST <a id="/sen/quest/questRequestList" href="#/sen/quest/questRequestList">¶</a>
+
+*info*
+
+    기능 : 계정에 관련한 Quest List 를 사용가능/ 불가능 을 함께 반환
+			
+
+*parameter*
+
+	app_id : long					// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+    client_uid : string			// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string			// iso 국가코드, alpha2
+	account_id : long 				// slp account id
+	account_access_token : string    //	slp account access token	
+	profile_id:int 			 // SLP Profile ID	
+					
+*return value*
+
+	// 성공
+	{
+		"res":int,			// 성공 0, 실패 0 이 아닌 값,
+		"QUEST_LIST" : string,			// {questID:c_join_f,available:disable},{questID:c_firstprofile_photo,available:able}... ,
+		"ACCOUNT_ID": int,
+		"PROFILE_ID": int
+	}
+
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	
+
+* * *
+
+
+
+
+###2. Quest 보상 요청 [/sen/quest/questRequest] / POST <a id="/sen/quest/questRequest" href="#/sen/quest/questRequest">¶</a>
+
+*info*
+
+    기능 :Quest 에 대한 보상을 요청
+			
+
+*parameter*
+
+	app_id : long					// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+    client_uid : string			// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string			// iso 국가코드, alpha2
+	account_id : long 				// slp account id
+	account_access_token : string    //	slp account access token	
+	profile_id:int 			 // SLP Profile ID	
+	quest_id:int 			 // Quest ID					
+*return value*
+
+	// 성공
+	{
+		"res":int,			// 성공 0, 실패 0 이 아닌 값,
+		"MSG" : string,			// duplicated : 중복됨 ( 이미 받았음 ),		success ( 보상요청 성공 ) 
+		"CODE": int,			// 500 : 중복됨 		0:보상요청 성공
+		"QUEST_ID": string,
+		"ACCOUNT_ID": int,
+		"PROFILE_ID": int
+	}
+
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	
+
+* * *
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##ACTION LOG <a id="actionlog" href="#actionlog">¶</a>
+
+###1. Action Log [/sen/action/log] / POST <a id="/sen/action/log" href="#/sen/action/log">¶</a>
+
+*info*
+
+    기능 : Action Log 저장(에피소드 플레이 정보)
+			
+
+*parameter*
+
+	app_id : long					// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+    client_uid : string			// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string			// iso 국가코드, alpha2
+	account_id : long 				// slp account id
+	account_access_token : string    //	slp account access token	
+	pf_id:int 			 // SLP Profile ID	
+	action_type			 // ActionType : 
+						 // 		ep_start : 에피소드 시작
+						 // 		ep_end	 : 에피소드 종료
+						 // 		ep_exit	 : 에피소드 중단(i 버튼등 으로 나올때)
+						 // 		app_bg	: App 실행상태에서 백그라운드로 전환
+						 // 		app_fg	: App 백그라운드에서 실행상태로 전환
+						 // 		ping	: 클라이어트가 실행중일때 5분에 한번 간격으로 호출
+	.
+	ep_id : string	// Episode ID, ActionType ep_start, ep_end, ep_exit 에만 유효함
+	p_time : int 	// 챕터 플레이시간, ActionType ep_end 에만 유효함
+	.
+					
+*return value*
+
+	// 성공
+	{
+		"res":int,			// 성공 0, 실패 0 이 아닌 값,
+	}
+
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	
+
+* * *
+
+###2. Action Log 블럭단위 일괄 저장 [/sen/action/episodeBulkStore] / POST <a id="/sen/action/episodeBulkStore" href="#/sen/action/episodeBulkStore">¶</a>
+
+*info*
+
+    기능 : Action Log 블럭단위 일괄 저장(에피소드 플레이 정보)
+			
+
+*parameter*
+
+	app_id : long					// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+    client_uid : string			// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string			// iso 국가코드, alpha2
+	account_id : long 				// slp account id
+	account_access_token : string    //	slp account access token	
+	pf_id:int 			 // SLP Profile ID	
+	episode_record			// JSON 형식의 에피소드 기록 { "playHistory":[ {"EPISODE_ID":"ep1", "BEGIN_DATETIME":"2016-06-13 12:12:12", "END_DATETIME":"2016-06-13 12:12:15", "PLAY_TIME":"4"}, ... ]}
+					
+*return value*
+
+	// 성공
+	{
+		"res":int,			// 성공 0, 실패 0 이 아닌 값,
+	}
+
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	
+
+* * *
+
+
+
+
+##RES (응답 res 목록) <a id="res" href="#res">¶</a>
+
+	0 : 성공
+	　
+	-1 : DB 오류
+	-2 : 알 수 없는 오류 
+	　
+	-1000 : 잘못된 파라메터 값
+	　
+	-100000 : 존재하지 않는 APP ID, Not Found APP ID
+	　
+	-200000 : 계정 생성 실패
+	-200001 : 중복 이메일
+	-200002 : 계정 추가 실패
+	-200003 : 마일리지 추가 실패, failed, Add Mileage
+	-200004 : 마일리지 추가 실패, failed, Add Mileage
+	-200005 : 프로파일 추가 실패, failed, Add Profile
+	-200006 : 프로파일(히든) 추가 실패 failed, Add Profile Hidden
+	-200007 : 가입경로 정보 추가 실패, failed, Insert SignupInfo
+	-200008 : 접근 허용된 APP 추가 실패, failed, Insert Account Allow Access APP
+	-200009 : App Access Token 업데이트실패, failed, Update App Access Token
+	-200010 : 이메일과 비밀번호가 일치하지 않음, Not Match E-Mail or Password
+	-200011 : 이메일의 가입경로가 다름
+	-200013 : Prifile ID 찾을 수 없음, Not found Profile ID
+	-200014 : failed, Update App Access Current Profile ID
+	-200015 : 프로파일 갯수 MAX, Profile Count Max
+	-200016 : 계정 정보를 찾을수 없음 , Not found Account ID
+	-200017 : 찾을수 없는 이메일, NOT FOUND EMAIL
+	-200018 : 비밀번호 초기화는 SLP 만 가능
+	-200019 : 현재 프로파일 갯수가 1개 이하, Profile Count Min
+	-200020 : 이 계정에서는 접근이 허용되지 않은 APP 입니다.
+	-200021 : 이미 연동된 APP 입니다.
+	-200022 : 계정 연동 정보 저장 실패, failed, insert EXT APP USER ACCOUNT TRANS
+	-200023 : 비밀번초 초기화, 토큰 유효시간 초과
+	-200024 : 연동된 APP를 확인할수 없습니다.
+	-200100 : 로그인 되지 않음
+	
+	
+	
+	SLP DLA
+	-400100 : 이 clientUID 는 이미 게스트 ID가 존재함
+	-400101 : SLP DLA 계정 생성 실패, Failed, INSERT INTO `user_slp_account_tb`
+	-400102 : SLP DLA 계정 생성 실패, Failed, INSERT INTO `guest_client_uid_tb`
+	-400103 : SLP DLA 계정 생성 실패, Failed, INSERT INTO `user_slp_account_tb`
+	-400104 : SLP ACCOUNT로 이미 계정을 생성 했음
+	-400110 : SLP DLA User 로그인 실패(guest)
+	-400111 : SLP DLA User 로그인 실패(slp)
+	-400112 : SLP DLA User ACCESS_TOKEN 업데이트 오류
+	-400113 : SLP DLA User 로그인 상태 아님, AccessToken Not Match
+	-400114 : SLP DLA User 게스트 계정이 아님
+	-400115 : SLP DLA User SLP와 연동된 ( spConversion )  된 계정
+	-400116 : SLP DLA User spConversion, Failed, INSERT INTO `user_slp_account_tb`
+	-400117 : SLP DLA User 계정을 찾을 수 없음
+	-400118 : SLP DLA User Ticket 수량 업데이트 실패
+	
+	-401000 : SLP DLA Shop 패키지를 찾을 수 없습니다.
+	-401001 : SLP DLA Shop google payload 생성 실패.
+	-401002 : SLP DLA Shop google payload, store google 아님
+	-401003 : SLP DLA Shop google palay googlePlayVerifier 실패
+	-401004 : SLP DLA Shop shop_buy_history 상태 변경 실패.
+	-401005 : SLP DLA Shop , FAILED_VERIFY_PAYMENT_APPLE
+	-401006 : SLP DLA Shop google payload, store apple 아님
+	-401007 : SLP DLA Use Ticket, Episode 구매, 소모 TicketQTY 오류
+	-401008 : SLP DLA Use Ticket, Episode 구매, 보유 TicketQTY 부족
+	-401009 : SLP DLA Use Ticket, Episode 구매, fnAddConfirmEpisode 실패
+	-401010 : SLP DLA Use Ticket, Episode 구매, 이미 구매한 에피소드
+	-401011 : SLP DLA Use Ticket, icket 구매 한계 초과
+	
+	-401050 : SLP DLA Use Photo, Upload, error params files
+	
+	
+	-402001 : SLP DLA failed insert client_uid srl;
+	-402002 : SLP DLA failed insert episode_play_tb;	
+	-402004 : SLP DLA failed not found episode_play_tb srl;
+	-402005 : SLP DLA failed insert chapter_play_tb;
+	-402006 : SLP DLA failed not found chapter_play_tb srl;
+	
+	
+	SLP Action Log
+	-500000 : 알수없는 ActionType
+	-500001 : 영어 로그 APP_ID 일치 하지 않음
+	
+	-501000 : SLP EN failed not found client_uid_tb srl;
+	-501001 : SLP EN failed not found episode_play_tb srl;
+	-501002 : SLP EN failed insert client_uid srl;
+	-501003 : SLP EN failed insert episode_play_tb;	
+	
+	
+	SLP EN
+	-601000 : SLP EN Failed, insert, quiz_result_group_tb
+	-601001 : SLP EN Failed, insert, quiz_result_tb
+	-601002 : SLP EN Failed, insert, profile_medal_history_tb
+	-601003 : SLP EN Failed, insert or update, profile_medal_tb

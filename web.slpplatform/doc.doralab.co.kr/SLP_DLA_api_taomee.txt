@@ -1,0 +1,476 @@
+## __SLP DLA API__
+	
+*<strong>서버 to 클라이어트 결과</strong>*
+
+	1. 응답 결과는 JSON 으로 전송한다
+	2. 성공 실패는 res 값으로 구분한다.
+       정상 : res == 0
+       그외 : res != 0
+	   예)  { "res":0 , ..... }
+
+*<strong>개발 서버 주소</strong>*
+	
+	DEV - IP : 14.49.39.61
+		  APP ID : Dora 영어 : 1000000001
+				   Dora 전화 : 1000000002
+				   Dora lv1 : 1000000003 // 현재 사용 가능한 APP_ID
+				   Dora lv2 : 1000000004
+				   Dora lv3 : 1000000005
+				   Dora lv4 : 1000000006
+		
+
+<br/>
+*<strong>API 목록</strong>*
+
+[APP](#app)
+	1. APP Version 확인  [/sdla/app/ver](#/sdla/app/ver) - POST
+	2. APP Resource 목록  [/sdla/app/res](#/sdla/app/res) - POST
+	
+	
+[EPISODE](#episode)
+	1. 에피소드 목록  [/sdla/episode/list](#/sdla/episode/list) - POST
+
+	
+[PHOTO](#photo)
+	1. Photo Upload [/sdla/photo/upload](#/sdla/photo/upload) - POST
+	2. Photo List [/sdla/photo/list](#/sdla/photo/list) - POST
+
+[ACTION LOG](#actionlog)
+	1. Action Log [/sdla/action/log](#/sdla/action/log) - POST
+
+[PING LOG](#pinglog)
+	1. Ping Log [/sdla/ping/log](#/sdla/ping/log) - POST
+	
+	
+[RES (응답 res 목록)](#res)
+* * * * * * * * *
+
+
+##APP <a id="app" href="#app">¶</a>
+
+###1. APP VERSION 확인 [/sdla/app/ver] / POST <a id="/sdla/app/ver" href="#/sdla/app/ver">¶</a>
+
+*info*
+
+    기능 : APP 버전정보를 가져온다.
+    
+
+*parameter*
+
+	app_id : long			// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+    client_uid : string		// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string				// client os, 	ex) andorid, ios
+	c_ver : string			// client version,	ex) 1.0.0
+	country : string		// iso 국가코드, alpha2
+	.
+
+*return value*
+
+	// 성공
+	{
+		"res":int,				// 성공 0, 실패 0 이 아닌 값,		
+		"ver" : string,			// 클라이언트 버전, 예) 1.0.0
+		"summit" : int,			// 서밋상태 플래그, 0:summit no, 1:summit yes
+		"force_update" : int, 	// 클라이언트 강제 업데이트, 0:강제 업데이트 아님,  1:강제 업데이트 필요
+		"update_url":string,	// update url (market url)
+		"cs_email":string,		// cs 처리 이메일
+	}
+
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공	　
+	-100000 : 존재하지 않는 APP ID, Not Found APP ID
+
+
+* * *
+
+###2. APP Resource 목록 [/sdla/app/res] / POST <a id="/sdla/app/res" href="#/sdla/app/res">¶</a>
+
+*info*
+
+    기능 : APP Resource 목록을 가져온다.
+    
+
+*parameter*
+
+	app_id : long				// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+    client_uid : string			// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string					// client os, 	ex) andorid, ios
+	c_ver : string				// client version,	ex) 1.0.0
+	country : string			// iso 국가코드, alpha2
+	.
+
+*return value*
+
+	// 성공
+	{
+		"res":int,					// 성공 0, 실패 0 이 아닌 값,		
+		"bundle_base_url":string 	// asset bundle url 최상위 경로,	ex) https://download.blueark.com/dla/DLA_Assetbundles_DEV_Taiwan/
+		"img_server_url":string 	// image url 최상위 경로,	ex) http://14.63.169.217/images/
+		"resources":[ { "id":string,		// 리소스 파일 ID
+						"name":string,		// 파일명, res_primary
+						"ver":int 			// 버전,  
+						}, ........... ]    // ex) "resources":[ {"id":"primary_data","name":"res_primary","ver":1},
+											//				     {"id":"sticker","name":"res_sticker","ver":1},
+											//				     {"id":"thumbnail","name":"res_thumbnail","ver":1}]
+	}
+
+	
+					  
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	　
+	-100000 : 존재하지 않는 APP ID, Not Found APP ID
+
+
+* * *
+
+
+
+
+##EPISODE <a id="episode" href="#episode">¶</a>
+
+###1. Episode 목록 호출 [/sdla/episode/list] / POST <a id="/sdla/episode/list" href="#/sdla/episode/list">¶</a>
+
+*info*
+
+    기능 : Episode 목록 호출
+			
+
+*parameter*
+
+	app_id : long					// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+    client_uid : string			// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string			// iso 국가코드, alpha2
+	account_id : long 				// slp account id
+	account_access_token : string    //	slp account access token	
+	
+	.
+					
+*return value*
+
+	// 성공
+	{
+		"res":int,			// 성공 0, 실패 0 이 아닌 값,
+		"ep_list": [ {	"ep_id":string,			// Episode ID
+						"unity_code":string,	// UNITY_CODE
+						"ver":int,				// file version
+						"title":string			// episode 제목
+						}, ...........
+		]
+	}
+
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	
+
+* * *
+
+
+##PHOTO <a id="photo" href="#photo">¶</a>
+
+###1. Photo Upload [/sdla/photo/upload] / POST <a id="/sdla/photo/upload" href="#/sdla/photo/upload">¶</a>
+
+*info*
+
+    기능 : photo Upload
+			
+
+*parameter*
+
+	app_id : long					// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+    client_uid : string			// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string			// iso 국가코드, alpha2
+	account_id : long 				// slp account id
+	account_access_token : string    //	slp account access token	
+	pf_id:int 			 // SLP Profile ID
+	ep_id : string       // Episode ID
+	uploadfile : string	 // 이미지 파일
+	.
+					
+*return value*
+
+	// 성공
+	{
+		"res":int,			// 성공 0, 실패 0 이 아닌 값,
+		"path":string,		// url path
+		"img_ori":string,	// 사진 파일명
+		"img_th":string,	// 사진 썸네일 파일명
+	}
+
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	
+
+* * *
+
+
+###2. Photo list [/sdla/photo/list] / POST <a id="/sdla/photo/list" href="#/sdla/photo/list">¶</a>
+
+*info*
+
+    기능 : photo list
+			
+		결과값에
+		
+		host + path + img_sec = 실제 이미지 경로
+		ex) 	{"episode_id":"ep101",
+				 "path":"images/slp_dla_photos/lv1/100001/0/",
+				 "img_src":"a1000000003_100001_0_0_1432020138_715.png",
+				 "img_th":"a1000000003_100001_0_0_1432020138_715_th.png"}
+				 
+				원본 이미지 http://14.63.169.217/images/slp_dla_photos/lv1/100001/0/a1000000003_100001_0_0_1432020138_715.png
+				썸네일 이미지 http://14.63.169.217/images/slp_dla_photos/lv1/100001/0/a1000000003_100001_0_0_1432020138_715_th.png
+
+*parameter*
+
+	app_id : long					// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+    client_uid : string			// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string			// iso 국가코드, alpha2
+	account_id : long 				// slp account id
+	account_access_token : string    //	slp account access token	
+	pf_id:int 			 // SLP Profile ID	
+					
+*return value*
+
+
+	// 성공
+	{
+		"res":int,			// 성공 0, 실패 0 이 아닌 값,
+		"photo_list":[	{	"ep_id":string,		// Episode ID
+							"path": 			// path, ex)"images/slp_dla_photos/lv1/100001/1000/",
+							"img_src":string,  	// 사진 파일명
+							"img_th":string		// 사진 썸네일 파일명	
+						}, ... ]
+	}
+
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공	
+
+* * *
+
+
+##ACTION LOG <a id="actionlog" href="#actionlog">¶</a>
+
+###1. Action Log [/sdla/action/log] / POST <a id="/sdla/action/log" href="#/sdla/action/log">¶</a>
+
+*info*
+
+    기능 : Action Log 저장(에피소드 플레이 정보)
+			
+
+*parameter*
+
+	app_id : long					// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+    client_uid : string			// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string			// iso 국가코드, alpha2
+	account_id : long 				// slp account id
+	account_access_token : string    //	slp account access token	
+	pf_id:int 			 // SLP Profile ID	
+	action_type			 // ActionType : 
+						 // 		ep_start : 에피소드 시작
+						 // 		ep_end	 : 에피소드 종료
+						 // 		ch_start : 챕터 시작
+						 // 		ch_end   : 챝터 종료
+						 // 		app_bg	: App 실행상태에서 백그라운드로 전환
+						 // 		app_fg	: App 백그라운드에서 실행상태로 전환
+	.
+	ep_id : string	// Episode ID
+	chapter : int	// 에피소드 챕터, 1,2,3
+	p_time : int 	// 챕터 플레이시간, ch_end 종료시에만 사용됨
+	.
+					
+*return value*
+
+	// 성공
+	{
+		"res":int,			// 성공 0, 실패 0 이 아닌 값,
+	}
+
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	
+
+* * *
+
+
+##PING LOG <a id="pinglog" href="#pinglog">¶</a>
+
+###1. Ping Log [/sdla/ping/log] / POST <a id="/sdla/ping/log" href="#/sdla/ping/log">¶</a>
+
+*info*
+
+    기능 : Ping Log 저장, 5분에 한번씩 호출
+			
+
+*parameter*
+
+	app_id : long					// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+    client_uid : string			// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string			// iso 국가코드, alpha2
+	account_id : long 				// slp account id
+	account_access_token : string    //	slp account access token	
+	pf_id:int 			 // SLP Profile ID	
+	p_type			 // PingType : 
+					 // 	ep_play	 : 에피소드 플레이중(챕터 선택 전)
+					 // 	ch_play : 챕터 플레이중
+					 // 	menu : 그외, 일반 메뉴화면들
+	.
+	p1 : string	// p_type 이 ep_play, ch_play 일때, Episode ID
+	p2 : int	// p_type ch_play 일때 챕터, 1,2,3
+	.
+					
+*return value*
+
+	// 성공
+	{
+		"res":int,			// 성공 0, 실패 0 이 아닌 값,
+	}
+
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	
+
+* * *
+
+##RES (응답 res 목록) <a id="res" href="#res">¶</a>
+
+	0 : 성공
+	　
+	-1 : DB 오류
+	-2 : 알 수 없는 오류 
+	　
+	-1000 : 잘못된 파라메터 값
+	　
+	-100000 : 존재하지 않는 APP ID, Not Found APP ID
+	　
+	-200000 : 계정 생성 실패
+	-200001 : 중복 이메일
+	-200002 : 계정 추가 실패
+	-200003 : 마일리지 추가 실패, failed, Add Mileage
+	-200004 : 마일리지 추가 실패, failed, Add Mileage
+	-200005 : 프로파일 추가 실패, failed, Add Profile
+	-200006 : 프로파일(히든) 추가 실패 failed, Add Profile Hidden
+	-200007 : 가입경로 정보 추가 실패, failed, Insert SignupInfo
+	-200008 : 접근 허용된 APP 추가 실패, failed, Insert Account Allow Access APP
+	-200009 : App Access Token 업데이트실패, failed, Update App Access Token
+	-200010 : 이메일과 비밀번호가 일치하지 않음, Not Match E-Mail or Password
+	-200011 : 이메일의 가입경로가 다름
+	-200013 : Prifile ID 찾을 수 없음, Not found Profile ID
+	-200014 : failed, Update App Access Current Profile ID
+	-200015 : 프로파일 갯수 MAX, Profile Count Max
+	-200016 : 계정 정보를 찾을수 없음 , Not found Account ID
+	-200017 : 찾을수 없는 이메일, NOT FOUND EMAIL
+	-200018 : 비밀번호 초기화는 SLP 만 가능
+	-200019 : 현재 프로파일 갯수가 1개 이하, Profile Count Min
+	-200020 : 이 계정에서는 접근이 허용되지 않은 APP 입니다.
+	-200021 : 이미 연동된 APP 입니다.
+	-200022 : 계정 연동 정보 저장 실패, failed, insert EXT APP USER ACCOUNT TRANS
+	-200023 : 비밀번초 초기화, 토큰 유효시간 초과
+	-200024 : 연동된 APP를 확인할수 없습니다.
+	-200100 : 로그인 되지 않음
+	
+	
+	
+	SLP DLA
+	-400100 : 이 clientUID 는 이미 게스트 ID가 존재함
+	-400101 : SLP DLA 계정 생성 실패, Failed, INSERT INTO `user_slp_account_tb`
+	-400102 : SLP DLA 계정 생성 실패, Failed, INSERT INTO `guest_client_uid_tb`
+	-400103 : SLP DLA 계정 생성 실패, Failed, INSERT INTO `user_slp_account_tb`
+	-400104 : SLP ACCOUNT로 이미 계정을 생성 했음
+	-400110 : SLP DLA User 로그인 실패(guest)
+	-400111 : SLP DLA User 로그인 실패(slp)
+	-400112 : SLP DLA User ACCESS_TOKEN 업데이트 오류
+	-400113 : SLP DLA User 로그인 상태 아님, AccessToken Not Match
+	-400114 : SLP DLA User 게스트 계정이 아님
+	-400115 : SLP DLA User SLP와 연동된 ( spConversion )  된 계정
+	-400116 : SLP DLA User spConversion, Failed, INSERT INTO `user_slp_account_tb`
+	-400117 : SLP DLA User 계정을 찾을 수 없음
+	-400118 : SLP DLA User Ticket 수량 업데이트 실패
+	
+	-401000 : SLP DLA Shop 패키지를 찾을 수 없습니다.
+	-401001 : SLP DLA Shop google payload 생성 실패.
+	-401002 : SLP DLA Shop google payload, store google 아님
+	-401003 : SLP DLA Shop google palay googlePlayVerifier 실패
+	-401004 : SLP DLA Shop shop_buy_history 상태 변경 실패.
+	-401005 : SLP DLA Shop , FAILED_VERIFY_PAYMENT_APPLE
+	-401006 : SLP DLA Shop google payload, store apple 아님
+	-401007 : SLP DLA Use Ticket, Episode 구매, 소모 TicketQTY 오류
+	-401008 : SLP DLA Use Ticket, Episode 구매, 보유 TicketQTY 부족
+	-401009 : SLP DLA Use Ticket, Episode 구매, fnAddConfirmEpisode 실패
+	-401010 : SLP DLA Use Ticket, Episode 구매, 이미 구매한 에피소드
+	-401011 : SLP DLA Use Ticket, icket 구매 한계 초과
+	
+	-401050 : SLP DLA Use Photo, Upload, error params files
+	
+	
+	-402001 : SLP DLA failed insert client_uid srl;
+	-402002 : SLP DLA failed insert episode_play_tb;
+	-402003 : SLP DLA failed not found client_uid_tb srl;
+	-402004 : SLP DLA failed not found episode_play_tb srl;
+	-402005 : SLP DLA failed insert chapter_play_tb;
+	-402006 : SLP DLA failed not found chapter_play_tb srl;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

@@ -1,0 +1,203 @@
+﻿<? include $_SERVER['DOCUMENT_ROOT']."/include/TITLE_HEAD.php";?>
+<?
+if(isset($_GET['page'])) {
+    $page = $_GET['page'];
+} else {
+    $page = 1;
+}
+?>
+
+
+<!--main content start-->
+<section id="main-content">
+    <section class="wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <form class="navbar-form" name="searchform" id="searchform" method="post"><!--  action="login.php" -->
+                <h3 class="page-header"><i class="fa fa-table"></i> EBSLang 구매 List </h3><input type="hidden" id="refundValue" value="0" />
+                <ul class="nav navbar-nav navbar-right">&nbsp;&nbsp;&nbsp;
+                    <select class="form-control m-bot10" id="st">
+                          <option value="EMAIL">EMAIL</option>
+                          <option value="ACCOUNT_ID">ACCOUNT_ID</option>
+                          <option value="PROFILE_Name">PROFILE_Name</option>
+                          <option value="PROFILE_ID">PROFILE_ID</option>
+                      </select>
+                    <input class="form-control" placeholder="Search" type="text"  style="width:250px;" id="sv"> 
+                    <a class="btn btn-default btn-sm" href="javascript:searchchk()" title="Bootstrap 3 themes generator">회원검색</a>
+                    <a class="btn btn-default btn-sm" href="javascript:GetReport(1)" title="Bootstrap 3 themes generator">전체</a>
+                </ul>
+                <ol class="breadcrumb">
+                    <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
+                    <li><i class="fa fa-table"></i>Account</li>
+                    <li><i class="fa fa-th-list"></i>List</li>
+                </ol>
+                </form>                
+            </div>
+        </div>
+        <!-- page start-->
+        <div class="row">
+            <div class="col-lg-12" id="reportDiv" style="width:100%;">
+                        loading..
+            </div>
+        </div>
+        <!-- page end-->
+    </section>
+</section>
+<!--main content end-->
+                              
+<!-- Modal -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">[주의] 구매취소</h4>
+            </div>
+            <div class="modal-body">
+                <div id="comment">구매 취소시 번복하기 힘듭니다. 취소처리를 하시겠습니까?</div>
+                <div id="refundResult"></div>
+            </div>
+            <div class="modal-footer">
+                <button data-dismiss="modal" class="btn btn-default" type="button" id="cancelBtn">아니오.</button>
+                <button class="btn btn-warning" type="button" id="buyRefund"> 네. 취소하겠습니다.</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- modal -->
+
+
+    <!--[if lt IE 9]> <script src="/js/jquery-1.8.3.min.js"></script> <![endif]-->
+    <!--[if gte IE 9]><!-->
+    <script src="/js/jquery-1.8.3.min.js"></script>
+    <!--<![endif]-->
+    
+    <script>
+        
+        var param = "";
+        function searchchk() {
+            var str = searchform.st.value
+            var svr = searchform.sv.value
+            if (!svr) {
+                alert("검색어를 입력하세요.");
+                searchform.sv.focus();
+                return false;
+            }
+            param = "&st=" + str + "&sv=" + svr;
+            GetReport(1);
+        }
+
+        function GetReport(page) {
+            var url = '';
+            //var param = '';
+            url = 'ndeList.php';
+            $.ajax({
+                url: url + '?page=' + page + param,
+                cache: false,
+                type: 'GET'
+            }).done(function (html) {
+                document.getElementById("reportDiv").innerHTML = html;
+                //gPage = page;
+            });
+        }
+
+        function GetUserReport(userID, page) {
+            var url = '';
+            var param = '&userID=' + userID;
+            url = 'userInfo.php';
+            $.ajax({
+                url: url + '?page=' + page + param,
+                cache: false,
+                type: 'GET'
+            }).done(function (html) {
+                document.getElementById("reportDiv").innerHTML = html + "<div  id='reportList' >" + document.getElementById("reportList").innerHTML + "</div>";
+                //gPage = page;
+                back_top();
+            });
+        }
+
+        GetReport(<?=$page ?>);
+
+        $(window.document).ready(function () {
+            $("#buyRefund").click(function (event) {
+                console.log('buyRefund >> '+$("#refundValue").val());
+                $.post("https://api.doralab.co.kr/nde/to/refund",
+                    { seq_id: $("#refundValue").val() },
+                    function (data, textStatus, jqXHR) {
+                        var result = JSON.parse(data);
+
+                        console.log("res : ", result.res);
+                        //console.log("exParam : ", result.exParam);
+
+                        //console.log("data : ", JSON.stringify(data));
+                        //console.log("exParam : ", JSON.stringify(result.exParam));
+                        //console.log("data : ", JSON.stringify(textStatus));
+
+                        //$("#refundResult").text('res : ' + result.res);
+                        //$("#refundResult").text($("#refundResult").text() + '\n exParam : ' + JSON.stringify(result.exParam));
+
+                        $("#refundResult").html('<pre>' + JSON.stringify(result, null, 4) + '</pre>');
+                        // '<pre>' + JSON.stringify(object, 0, 4) + '</pre>'
+                        //alert('삭제되었습니다.');
+                        //location.href = "banner_bottom.html";
+
+                        $("#comment").text("처리수신결과 : ");
+                        
+                    }).fail(function (jqXHR, textStatus, errorThrown) {
+                        console.log("fail : ", JSON.stringify(textStatus));
+                        alert(textStatus);
+                    });
+
+                $("#refundValue").val(0);
+                //refundBtn
+                //closeBtn
+                $("#cancelBtn").text("닫기");
+                $("#buyRefund").hide();
+
+                //$("#refundResult").text("취소완료!!");
+                GetReport(<?=$page ?>);
+            });
+            
+        });
+
+        function back_top() {
+            x = document.body.scrollLeft;
+            y = document.body.scrollTop;
+            step = 2;
+            while ((x != 0) || (y != 0)) {
+                scroll(x, y);
+                step += (step * step / 300);
+                x -= step;
+                y -= step;
+                if (x < 0) x = 0;
+                if (y < 0) y = 0;
+            }
+            scroll(0, 0);
+        }
+
+        function refundAlert(seq, buyID) {
+            
+
+            if (buyID == 1000000007) {
+                $("#comment").text('관리자 결제는 취소처리를 할 수 없습니다.');
+                //$("#refundResult").text('관리자 결제는 취소처리를 할 수 없습니다.');
+                //$("#refundValue").val(seq);
+                $("#cancelBtn").text("닫기");
+                $("#buyRefund").hide();
+            } else {
+                $("#refundValue").val(seq);
+                //$("#refundResult").text(seq);
+            }
+        }
+        // buyRefund
+        //function refundGo(seq, buyID) {
+        //    if (buyID == 1000000007) {
+        //        $("#refundResult").text('관리자 결제는 취소처리를 할 수 없습니다.');
+        //    } else {
+        //        $("#refundResult").text(seq);
+        //    }
+        //
+        //}
+
+    </script>
+<? include $_SERVER['DOCUMENT_ROOT']."/include/BOTTOM.php";?>

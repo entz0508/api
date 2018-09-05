@@ -1,0 +1,1510 @@
+﻿
+## __ADB API__
+
+*<strong>서버 to 클라이어트 결과</strong>*
+
+	1. 응답 결과는 JSON 으로 전송한다
+	2. 성공 실패는 res 값으로 구분한다.
+       정상 : res == 0
+       그외 : res != 0
+	   예)  { "res":0 , ..... }
+	3. 회원의 인증
+		유져는 토큰을 디바이스에 저장해서 인증에 이용한다.
+		일정기간내에 저장된 토큰을 보내면 그대로 인증된다.(account는 device당 1개의 토큰을 갖는다.)
+		일정기간이 경과한 토큰에 대해서는 인정하지 않는다. 다시 로그인
+		매처리시 토큰을 같이 보내고. 이를 유져의 키값으로 인증한다.
+		다른 디바이스를 이용해서 로그인시 토큰을 신규 생성한다.
+	4. 회원가입시 공통 체크
+		signup_path	enum('adb','facebook','kakao')
+		client_uid	length:0~64, 기기고유코드
+		os			enum('android','ios','web')
+		signup_id	signup_path가 'adb'일때 이메일 형식 체크, 그외는 체크 없음
+		password	signup_path가 'adb'일때 not null, length:4~12, sns 의 경우 필요없음.
+		signup_name	signup_path가 'adb'일때 not null, length:2~16, 
+					sns 회원가입의 경우 null 일수 있음. /^[~!@\#$%<>^&*\()\-=+\’]/ 특수문자 안됨
+		sns_email	sns가입시 받은 유져이메일, 체크안함, null 일수 있음.
+	5. 로그인인증시 공통 체크
+		ClientUID	length:0~64, 기기고유코드
+		os			enum('android','ios','web')
+		Token 		not null, length:40
+
+
+*<strong>서버 주소</strong>*
+
+	API URL : https://gnm.blueark.com
+
+*<strong>API 목록</strong>*
+
+[ACCOUNT](#account)
+    1. 회원가입 - 이메일/SNS  [/adb/account/join](#/adb/account/join) - POST
+	2. 로그인 - 이메일/sns [/adb/account/login](#/adb/account/login) - POST
+	3. 계정정보 가져오기 - 로그인회원 [/adb/account/getInfo](#/adb/account/getInfo) - POST
+	4. 비밀번호 찾기 - 인증메일 발송 [/adb/account/pwEmail](#/adb/account/pwEmail) - POST
+	5. 비밀번호 찾기 - 이메일토큰 인증 - [/adb/account/checkToken](#/adb/account/checkToken) - POST
+	6. 비밀번호 찾기 - 비밀번호 변경 [/adb/account/pwChange](#/adb/account/pwChange) - POST
+	7. 마이페이지 - 이름변경 [/adb/account/modName](#/adb/account/modName) - POST
+	8. 마이페이지 - 사진등록,변경 [/adb/mypage/photo](#/adb/mypage/photo) - POST
+	9. 마이페이지 - 비밀번호변경 [/adb/account/modPass](#/adb/account/modPass) - POST
+	10. 마이페이지 - 계정탈퇴 [/adb/account/leave](#/adb/account/leave) - POST
+
+[myPage](#myPage)
+	1. 마이페이지 최근활동 [/adb/mypage/mainHistory](#/adb/mypage/mainHistory) - POST
+	2. 북마크리스트 [/adb/mypage/bookmarklist](#/adb/mypage/bookmarklist) - POST
+	3. 하이라이트리스트 [/adb/mypage/highlightlist](#/adb/mypage/highlightlist) - POST
+	4. 하이라이트 상세보기 [/adb/mypage/highlightView](#/adb/mypage/highlightView) - POST
+	5. 하이라이트 로그삭제 [/adb/mypage/highlightLogDel](#/adb/mypage/highlightLogDel) - POST
+	6. 노트리스트 & 더보기 [/adb/mypage/noteList](#/adb/mypage/notelistMore) - POST
+	7. 노트읽기 [/adb/mypage/getNote](#/adb/mypage/noteView) - POST
+	8. 듣기로그리스트 & 더보기 [/adb/mypage/loglistMore](#/adb/mypage/loglistMore) - POST
+
+[Edit](#Edit)
+	1. 북마크 등록/삭제 [/adb/bible/bookmark](#/adb/bible/bookmark) - POST
+	2. 하이라이트 등록/삭제 [/adb/bible/highlight](#/adb/bible/highlight) - POST
+	2. 노트등록 [/adb/bible/addNote](#/adb/bible/addNote) - POST
+	3. 노트수정 [/adb/bible/modNote](#/adb/bible/modNote) - POST
+	4. 노트삭제 [/adb/bible/delNot](#/adb/bible/delNot) - POST
+
+[bible](#bible)
+	1. 성경 읽기 [/adb/bible/play](#/adb/bible/play) - POST
+	2. 성경구문 검색 - 1 [/adb/bible/searchBible](#/adb/bible/searchBible) - POST
+	3. 성경구문 검색 - 2 & 더보기 [/adb/bible/searchVersemore](#/adb/bible/searchVersemore) - POST
+	4. 듣기로그등록 [/adb/bible/setLog](#/adb/bible/setLog) - POST
+
+[News(channel)](#news)
+	1. 메인페이지 리스트 [/adb/news/getMain](#/adb/news/getMain) - POST
+
+[etc](#Etc)
+	1. api서버 통신테스트 [/adb/etc/check](#/adb/etc/check) - POST
+
+
+[ERROR CODE](#errorCode)
+* * * * *
+
+##ACCOUNT <a id="account" href="#account">¶</a>
+
+
+###1. 회원가입 - 이메일/SNS  [/adb/account/join] / POST <a id="/adb/account/join" href="#/adb/account/join">¶</a>
+
+*info*
+
+    기능 : ADB 회원가입 - 이메일, SNS 회원가입 공용 
+	추가 예정 : sns에서 이메일 전달시 메일입력 추가 예정, 가입시 이메일이 있는경우 인증메일 발송 추가 예정
+
+*parameter*
+
+	client_uid: string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	signup_id : string			// 이메일 또는 sns 유져인증키
+	password : string			// 이메일의 경우 비번, sns의 경우 이메일이 있으면 이메일정보
+	signup_name : string		// 이름(sns 가입의 경우 이름이 없을수 있음)
+	signup_path : string		// 가입경로,이메일가입은 "adb",  ENUM('adb','google','facebook','kakao')
+	sns_email :string			// sns에서 전달받은 이메일
+
+*return value*
+
+	// 성공
+	{
+		"res": int,						// 성공 0
+		"msg": null,					// null
+		"data": {
+			"access_token": string,		// 로그인 토큰
+			"account_name": string		// 이름
+		}
+	}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null
+    }
+
+*res*
+
+    0 : 성공　
+	-1000	파라미터 오류
+	-200001 이미 가입한 회원
+	-200002 회원 가입처리 오류
+	-200007 로그인 정보 등록 오류
+	-200009 토큰 생성오류
+
+
+
+###2\. 로그인 - 이메일,SNS [/adb/account/login] / POST <a id="/adb/account/login" href="#/adb/account/login">¶</a>
+
+_info_
+
+    기능 : Email/SNS 로그인
+
+_parameter_
+
+    os : string             // ios, android, web
+    client_uid :  string	// 클라이언트의 고유값 (client Identifier)
+    signup_id : string      // 이메일 또는 SNS UserKey
+    password : string       // 이메일비번 또는 SNS UserKey(이메일가입의 경우 비번, SNS계정의 경우 UserKey 입력)
+    signup_path : string    // 가입경로, (adb,google,facebook,kakao )
+
+_return value_
+
+	// 성공
+	{
+		"res": int,						// 성공 0
+		"msg": null,					// null
+		"data": {
+			"access_token": string,		// 로그인 토큰
+			"account_name": string		// 이름
+		}
+	}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null
+    }
+
+_res_
+
+    0 : 성공
+    -200010 : 계정없음
+    -200011 : 비밀번호 틀림
+	-200012 : 차단된 계정
+
+
+###3\. 계정정보 가져오기 - 로그인한 회원 [/adb/account/getInfo] / POST <a id="/adb/account/getInfo" href="#/adb/account/getInfo">¶</a>
+
+_info_
+
+    기능 : 토큰인증을 통한 회원정보 조회
+
+_parameter_
+
+    os : string             // ios, android, web
+    client_uid :  string	// 클라이언트의 고유값 (client Identifier)
+    access_token : string   // access token, 로그인을 통해 디바이스 내 보관하고 있는 token을 입력한다.
+
+
+_return value_
+
+	// 성공
+	{
+		"res": int,								// 성공 0
+		"msg": string,							// "정보조회 성공",
+		"data": {
+			"signupID": string,					// 가입시 등록한 이메일 또는 SNS Key
+			"email": string,					// 인증된 이메일주소 또는 ""
+			"accountName": string,				// 유져 이름
+			"accountImage": string,				// 회원이미지 경로, 없을경우 ""
+			"signUpPath": string,				// 가입경로
+			"regDatetime": string				// 가입날짜
+		}
+	}
+
+    //실패
+	{
+		"res": int,						// 0 이 아닌 값,	
+		"msg": string,					// 오류 메세지
+		"data": {}
+	}
+
+_res_
+
+    0 : 성공
+	-1000 : 파라미터 오류
+    -200010 : 계정없음
+
+
+###4\. 비밀번호찾기 - 인증메일 발송 [/adb/account/pwEmail] / POST <a id="/adb/account/pwEmail" href="#/adb/account/pwEmail">¶</a>
+
+_info_
+
+    기능 : 비밀번호 찾기시 이메일 입력, 메일발송 처리
+	- 메일로 발송된 토큰 정보는 1회만 인증됨, 이메일 발송 후 1시간 경과시 인증안됨.
+	- 아직 메일발송은 안됨. 작업 예정
+
+_parameter_
+
+    os : string             // ios, android, web
+    client_uid :  string	// 클라이언트의 고유값 (client Identifier)
+    signup_id : string      // 이메일가입자의 이메일
+    signup_path : string    // 가입경로, (adb), "adb" 가 아닌경우 잘못된 호출 에러
+
+_return value_
+
+	// 성공
+	{
+		"res": int,						// 성공 0
+		"msg": null,					// "이메일이 발송되었습니다."
+		"data": {}						// 개발 테스트용 정보가 있습니다. 서비스시 삭제예정
+	}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null
+    }
+
+_res_
+
+    0 : 성공
+	-1000 : 잘못된 parameter, 잘못된 signup_path
+    -200010 : 계정없음
+	-200012 : 차단된 계정
+
+	
+###5\. 비밀번호찾기 - 이메일토큰 인증 [/adb/account/checkToken] / POST <a id="/adb/account/checkToken" href="#/adb/account/checkToken">¶</a>
+
+_info_
+
+    기능 : 비밀번호 찾기시 인증메일 링크페이지 토큰값 인증
+	- 메일로 발송된 토큰 정보는 1회만 인증됨, 이메일 발송 후 1시간 경과시 인증안됨.
+	- 링크페이지 호출시 토큰값을 인증
+	- 웹페이지 호출 api
+
+_parameter_
+
+    signup_token : string   // 이메일가입자의 이메일
+
+_return value_
+
+	// 성공
+	{
+		"res": int,						// 성공 0
+		"msg": null,					// ""
+		"data": {}						// {}
+	}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null					// {}
+    }
+
+_res_
+
+    0 : 성공
+    -200110 : 잘못된 토큰정보
+
+
+
+###6\. 비밀번호찾기 - 비밀번호 변경 [/adb/account/pwChange] / POST <a id="/adb/account/pwChange" href="#/adb/account/pwChange">¶</a>
+
+_info_
+
+    기능 : 비밀번호 찾기 - 비밀번호 업데이트
+	- 발송된 토큰정보, 새비밀번호 입력
+	- 웹페이지 호출 api
+
+_parameter_
+
+    signup_token : string   // 이메일가입자의 이메일
+	signup_pass : string	// 새 비밀번호
+
+_return value_
+
+	// 성공
+	{
+		"res": int,						// 성공 0
+		"msg": null,					// ""
+		"data": {}						// {}
+	}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null
+    }
+
+_res_
+
+    0 : 성공
+	-1000 : 잘못된 parameter, 잘못된 signup_path
+    -200110 : 잘못된 토큰정보(이미 인증된 토큰이거나, 1시간이 경과된 토큰 또는 없는 토큰)
+
+
+###7\. 마이페이지 - 이름 변경 [/adb/account/modName] / POST <a id="/adb/account/modName" href="#/adb/account/modName">¶</a>
+
+_info_
+
+    기능 : 마이페이지에서 이름 변경
+
+_parameter_
+
+	client_uid: string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	access_token : string       // access token
+    set_username : string		// 변경할 이름
+
+_return value_
+
+	// 성공
+	{
+		"res": int,							// 성공일때 0
+		"msg": string,						// msg, "업데이트 성공",
+		"data": {
+			"MSG": 1
+		}
+	}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null
+    }
+
+_res_
+
+    0 : 성공
+	-1000 : 잘못된 parameter, 잘못된 signup_path
+    -200110 : 토큰정보 없음
+	-200010 : 계정없음
+
+
+###8\. 마이페이지 - 사진등록,변경 [/adb/mypage/photo] / POST <a id="/adb/mypage/photo" href="#/adb/mypage/photo">¶</a>
+
+_info_
+
+    기능 : 마이페이지에서 내 사진 변경
+
+_parameter_
+
+	client_uid: string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	access_token : string       // access token
+    uploadfile : file			// 처음 등록하거나 변경할 파일
+
+_return value_
+
+	// 성공
+	{
+		"res": int,							// 성공일때 0
+		"msg": string,						// msg, "등록되었습니다",
+		"data": {
+			"myphoto_url": string			// 등록된 이미지의 웹URL ex."http://104.199.129.129:8002/files/04/0004/100000004/profile_100000004.jpg"
+		}
+	}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": {}
+    }
+
+_res_
+
+    0 : 성공
+	-1000 : 잘못된 parameter, 잘못된 signup_path
+    -200110 : 토큰정보 없음
+	-200010 : 계정없음
+
+###9\. 마이페이지 - 비밀번호 변경 [/adb/account/modPass] / POST <a id="/adb/account/modPass" href="#/adb/account/modPass">¶</a>
+
+_info_
+
+    기능 : 마이페이지에서 비밀번호 업데이트
+
+_parameter_
+
+	client_uid: string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	access_token : string       // access token
+    set_userpass : string		// 변경할 비밀번호
+
+_return value_
+
+	// 성공
+	{
+		"res": int,							// 성공일때 0
+		"msg": string,						// msg, "업데이트 성공",
+		"data": {
+			"MSG": 1
+		}
+	}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null
+    }
+
+_res_
+
+    0 : 성공
+	-1000 : 잘못된 parameter, 잘못된 signup_path
+    -200110 : 토큰정보 없음
+	-200010 : 계정없음
+
+
+
+###10\. 마이페이지 - 회원탈퇴 [/adb/account/leave] / POST <a id="/adb/account/leave" href="#/adb/account/leave">¶</a>
+
+_info_
+
+    기능 : 마이페이지에서 회원탈퇴
+
+_parameter_
+
+	client_uid: string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	access_token : string       // access token
+
+_return value_
+
+	// 성공
+	{
+		"res": int,							// 성공일때 0
+		"msg": string,						// msg, "처리성공"
+		"data": {}
+	}
+	
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null
+    }
+
+_res_
+
+    0 : 성공
+	-1000 : 잘못된 parameter, 잘못된 signup_path
+    -200110 : 토큰정보 없음
+	-200010 : 계정없음
+
+
+
+
+##MyPage <a id="myPage" href="#myPage">¶</a>
+
+###1. 마이페이지 - 메인 최근활동 [/adb/mypage/mainHistory] / POST <a id="/adb/mypage/mainHistory" href="#/adb/mypage/mainHistory">¶</a>
+
+*info*
+
+    기능 : 마이페이지 메인 하단의 최근활동 100개를 불러온다.(북마크,하이라이트,노트,듣기기록)
+	설명 : 등록데이터가 적어 현재 account = 1 의정보를 출력하고 있음, 회원인증은 정상적인 절차대로 하시면 됩니다.
+	- category = 1: 북마크, 2: 하이라이트, 3: 듣기기록,  4: 노트
+	- sort는 최근순으로 해야하나 데이타가 적어 현재 랜덤순으로 출력하고 있음. 테스트 후 말씀주시면 원래대로 적용하겠습니다.
+	- 주의 카테고리에 따라 출력필드가 다름니다. 처리시 주의하세요.
+
+*parameter*
+
+	client_uid: string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	access_token : string       // access token
+
+*return value*
+
+	// 성공
+	{
+		"res": int,							// 성공일때 0
+		"msg": string,						// msg, "조회되었습니다.",
+		"data": {
+			"searchCnt": int,				// 리스트 개수
+			"verseList": [
+				{
+					"category": 4,			// int = 4 는 노트
+					"note_id": int,			// note ID 값, 링크시 호출 Key (글보기,수정,삭제시에도 key)
+					"title": string,		// 제목
+					"contents": string,		// 내용
+					"date": "2018-01-31"	// 등록일
+				},
+				{
+					"category": 3,			// int = 3 은 듣기기록
+					"bible_id": int,		// bible ID
+					"chapter_id": int,		// chapter ID
+					"community_id": int,	// community ID (97/122/200)
+					"detail_id": int,		// detail ID (community의 detail ID)
+					"bible_name": string,	// bible명
+					"date": "2018-01-30"	// 등록일
+				},
+				{
+					"category": 1,			// int = 1 은 북마크
+					"bookmark_id": int,		// bookmark 삭제시 키값
+					"bible_id": int,		// bible ID
+					"chapter_id": int,		// chapter ID
+					"verse_id": int,		// verse ID
+					"verse_time": double,	// verse time(ex, 25.9)
+					"bible_name": string,	// bible명
+					"desc": string,			// 해당구절 내용
+					"date": "2018-01-29"	// 등록일
+				},
+				{
+					"category": 2,			// int = 2 는 하이라이트
+					"highlight_id": int,	// highligh 로그 삭제시 키값
+					"bible_id":	int,		// bible ID
+					"chapter_id": int,		// chapter ID
+					"verse_id": int,		// verse ID
+					"verse_time": double,	// verse time(ex, 25.9)
+					"title": string,		// 구절정보 title명
+					"color": string,		// color code
+					"desc": string,			// 해당구절 내용
+					"date": "2018-01-30"	// 등록일
+				},
+				....
+			]
+		}
+	}
+
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null
+    }
+
+*res*
+
+    0 : 성공　
+	-1000 : parameter error(client_uid,access_token 의 형식 또는 길이에 문제가 있을수 있음)
+	-200100 : no login user, client_uid, access_token 인증실패
+
+
+
+###2. 북마크리스트 & 더보기 [/adb/mypage/bookmarklist] / POST <a id="/adb/mypage/bookmarklist" href="#/adb/mypage/bookmarklist">¶</a>
+
+*info*
+
+    기능 : 마이페이지 북마크 목록을 불러오고, 추가목록도 제공한다.
+	설명 : 
+	- 처음 목록에서 추가로 목록을 요청해서 해당 결과를 기존 목록 아래에 append 처리한다.
+	- 다음 호출된 목록이 있는지 알려준다.
+	- sort 기능을 제공한다.
+
+
+*parameter*
+
+	client_uid : string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	access_token : string       // access token
+	last_id : int				// 마지막 요청목록의 bookmark_id 값, 이 이후 값에 대해 조회한다. 처음 호출시에는 0, sort_type가 변경될시 0 
+	read_count : int			// 한번에 요청할 record 수, 0으로 보내면 기본 10개 출력
+	sort_type : int				// 정렬type, 0:최근등록순, 1:성경순
+
+*return value*
+
+	// 성공
+	{
+		"res": int,								// 성공일때 0
+		"msg": string,							// msg, "조회되었습니다.",
+		"data": {
+			"next": int,						// 더 출력할 목록이 있으면 1, 더이상 목록이 없으면 0
+			"searchCnt": int,					// 리스트 개수
+			"verseList": [
+				{
+					"bookmark_id": int,					// bookmark id 값, 다음목록 호출시 키값, int
+					"bible_id": int,					// bible id
+					"chapter_id": int,					// chapter id
+					"verse_id": int,					// verse id
+					"verse_time": double,				// verse time ex) 25.9,
+					"bible_name": string,				// bible name
+					"desc": string,						// verse desc
+					"date": string,						// 등록날짜 (ex,"2018-01-31")
+				},
+				...
+				{
+					"bookmark_id": 1006005,
+					"bible_id": 1,
+					"chapter_id": 6,
+					"verse_id": 5,
+					"verse_time": 42.3,
+					"bible_name": "창세기",
+					"desc": "여호와께서 사람의 죄악이 세상에 가득함과 그의 마음으로 생각하는 모든 계획이 항상 악할 뿐임을 보시고",
+					"date": "2018-01-29"
+				}
+			]
+		}
+	}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null
+    }
+
+*res*
+
+    0 : 성공　
+	-1000 : parameter error(client_uid,access_token 의 형식 또는 길이에 문제가 있을수 있음)
+	-200100 : no login user, client_uid, access_token 인증실패
+
+
+###3. 하이라이트리스트 & 더보기 [/adb/mypage/highlightlist] / POST <a id="/adb/mypage/highlightlist" href="#/adb/mypage/highlightlist">¶</a>
+
+*info*
+
+    기능 : 마이페이지 하이라이트 목록을 불러오고, 추가목록도 제공한다.
+	설명 : 
+	- 처음 목록에서 추가로 목록을 요청해서 해당 결과를 기존 목록 아래에 append 처리한다.
+	- 다음 호출된 목록이 있는지 알려준다.
+	- sort 기능을 제공한다.
+
+
+*parameter*
+
+	client_uid : string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	access_token : string       // access token
+	last_id : string				// 마지막 요청목록의 bookmark_id 값, 이 이후 값에 대해 조회한다. 처음 호출시에는 '', sort_type가 변경될시 ''
+	read_count : int			// 한번에 요청할 record 수, 0으로 보내면 기본 10개 출력
+	sort_type : int				// 정렬type, 0:최근등록순, 1:성경순
+
+*return value*
+
+	// 성공
+	{
+		"res": int,								// 성공일때 0
+		"msg": string,							// msg, "조회되었습니다.",
+		"data": {
+			"next": int,						// 더 출력할 목록이 있으면 1, 더이상 목록이 없으면 0
+			"searchCnt": int,					// 리스트 개수
+			"verseList": [
+				{
+					"highlight_id": int or string,		// bookmark id 값, 다음목록 호출시 키값 sort_type 이 1일때 string, 0일때 int, ex) "1001001_22",
+					"bible_id": int,					// bible id
+					"chapter_id": int,					// chapter id
+					"verse_id": int,					// verse id
+					"verse_time": double,				// verse time ex) 25.9,
+					"title": string,					// title
+					"color": string,					// highlight color,
+					"desc": string,						// verse desc
+					"date": string,						// 등록날짜 (ex,"2018-01-31")
+				},
+				...
+			]
+		}
+	}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null
+    }
+
+*res*
+
+    0 : 성공　
+	-1000 : parameter error(client_uid,access_token 의 형식 또는 길이에 문제가 있을수 있음)
+	-200100 : no login user, client_uid, access_token 인증실패
+
+
+###4. 하이라이트 상세보기 [/adb/mypage/highlightView] / POST <a id="/adb/mypage/highlightView" href="#/adb/mypage/highlightView">¶</a>
+
+*info*
+
+    기능 : 하이라이트 로그 공유시 상세내용 조회.
+	설명 : 
+	
+
+
+*parameter*
+
+	client_uid : string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	access_token : string       // access token
+	highlight_id : int			// highlight id
+
+*return value*
+
+	// 성공
+	{
+		"res": int,								// 성공일때 0
+		"msg": string,							// msg, "조회되었습니다.",
+		"data": {
+			"HIGHLIGHT_ID": int,				// highlight id 값
+			"TITLE": string,					// highlight 제목, ex. "창세기 1:4,6-7,9",
+			"DES": string,						// 구절내용, 절과절구분 "<br/>"
+			"BIBLE_ID": int,					// bible id
+			"CHAPTER_ID": int,					// chapter id
+			"VERSE_ID": int,					// verse id
+			"VERSE_TIME": long,					// verse time
+			"VERSE_ID2": int,					// verse id 2
+			"VERSE_TIME2": long,				// verse time 2
+			"COLOR": string,					// highlight color
+			"DATE": string						// 등록날짜 (ex,"2018-01-31")
+		}
+	}
+	
+    //실패
+	{
+		"res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": {}
+	}
+
+*res*
+
+    0 : 성공　
+	-1000 : parameter error(client_uid,access_token 의 형식 또는 길이에 문제가 있을수 있음)
+	-200100 : no login user, client_uid, access_token 인증실패
+	-300000 : 조회내역 없음
+
+
+
+###5. 하이라이트 로그 삭제 [/adb/mypage/highlightLogDel] / POST <a id="/adb/mypage/highlightLogDel" href="#/adb/mypage/highlightLogDel">¶</a>
+
+*info*
+
+    기능 : 하이라이트 로그를 삭제 합니다. 본문의 하이라이트삭제와는 별개입니다.
+	설명 : 해당하이라이트의 id값을 같이 전송해야합니다. 토큰으로 인증된 유져의 작성 노트만 삭제가능합니다.
+
+*parameter*
+
+	client_uid: string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	access_token : string       // access token
+	highlight_id : string		// 등록된 하이라이트의 ID, 리스트의 highlight_id 값 (ex : 1001001_22)
+
+*return value*
+
+	// 성공
+	{
+		"res": int,						// 성공 0
+		"msg": string					// 메세지 : 처리성공 or 처리실패
+		"data": {
+			"deleteID": int				// 삭제된 하이라이트 id 
+		}
+	}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": {}
+    }
+
+*res*
+
+    0 : 성공　
+	-1000 : parameter error(client_uid,access_token 의 형식 또는 길이에 문제가 있을수 있음)
+    -9000 : 삭제실패, 등록유져가 다르거나 해당되는 노트ID 가 존재하지 않는경우
+	-200100 : no login user, client_uid, access_token 인증실패
+
+
+###6. 노트리스트 & 더보기 [/adb/mypage/notelistMore] / POST <a id="/adb/mypage/notelistMore" href="#/adb/mypage/notelistMore">¶</a>
+
+*info*
+
+    기능 : 마이페이지 노트 목록을 불러오고, 추가목록도 제공한다.
+	설명 : 등록데이터가 적어 현재 account = 1 의정보를 출력하고 있음, 회원인증은 정상적인 절차대로 하시면 됩니다.
+	- 처음 목록에서 추가로 목록을 요청해서 해당 결과를 기존 목록 아래에 append 처리한다.
+	- 다음 호출된 목록이 있는지 알려준다.
+
+
+*parameter*
+
+	client_uid : string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	access_token : string       // access token
+	last_id : int				// 마지막 요청목록의 note_id 값, 이 이후 값에 대해 조회한다. 처음 호출시에는 0
+	read_count : int			// 한번에 요청할 record 수, 0으로 보내면 기본 10개 출력
+
+*return value*
+
+	// 성공
+	{
+		"res": int,								// 성공일때 0
+		"msg": string,							// msg, "조회되었습니다.",
+		"data": {
+			"next": int,						// 더 출력할 목록이 있으면 1, 더이상 목록이 없으면 0
+			"searchCnt": int,					// 리스트 개수
+			"verseList": [
+				{
+					"note_id": int,				// note id 값, 글보기, 삭제, 수정시 key값
+					"title": string,			// note 제목, 목록 최대 100자
+					"contents": string,			// note 내용, 목록 최대 100자
+					"date": string,				// 등록날짜 (ex,"2018-01-31")
+				},
+				{
+					"note_id": 16,
+					"title": "xxxxxxxxxxxxxx",
+					"contents": "oooooooooooooooooooo",
+					"date": "2018-01-31"
+				},
+				....
+			]
+		}
+	}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null
+    }
+
+*res*
+
+    0 : 성공　
+	-1000 : parameter error(client_uid,access_token 의 형식 또는 길이에 문제가 있을수 있음)
+	-200100 : no login user, client_uid, access_token 인증실패
+
+
+
+###7. 노트읽기 [/adb/mypage/noteView] / POST <a id="/adb/mypage/noteView" href="#/adb/mypage/noteView">¶</a>
+
+*info*
+
+    기능 : 마이페이지 노트 읽기.
+	설명 : 등록데이터가 적어 현재 account = 1 의정보를 출력하고 있음, 회원인증은 정상적인 절차대로 하시면 됩니다.
+	- note_id 와 account_id 가 유효한지 확인한다.
+
+
+*parameter*
+
+	client_uid : string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	access_token : string       // access token
+	note_id : int				// note id
+
+*return value*
+
+	// 성공
+	{
+		"res": int,								// 성공일때 0
+		"msg": string,							// msg, "조회되었습니다.",
+		"data": {
+			"NOTE_ID": int,						// note id 값
+			"TITLE": string,					// note 제목, 목록 최대 500자
+			"CONTENTS": string,					// note 내용, 목록 최대 5000자
+			"BIBLE_ID": int,						// bible id
+			"CHAPTER_ID": int,					// chapter id
+			"VERSE_ID": int,						// verse id
+			"VERSE_TIME": long,					// verse time
+			"VERSE_ID2": int,					// verse id 2
+			"VERSE_TIME2": long,					// verse time 2
+			"DATE": string						// 등록날짜 (ex,"2018-01-31")
+		}
+	}
+
+    //실패
+	{
+		"res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": {}
+	}
+
+*res*
+
+    0 : 성공　
+	-1000 : parameter error(client_uid,access_token 의 형식 또는 길이에 문제가 있을수 있음)
+	-200100 : no login user, client_uid, access_token 인증실패
+	-300000 : 조회내역 없음
+
+
+###8. 듣기로그리스트 & 더보기 [/adb/mypage/loglistMore] / POST <a id="/adb/mypage/loglistMore" href="#/adb/mypage/loglistMore">¶</a>
+
+*info*
+
+    기능 : 마이페이지 듣기기록을 불러오고, 추가목록도 제공한다.
+	설명 : 등록데이터가 적어 현재 account = 1 의정보를 출력하고 있음, 회원인증은 정상적인 절차대로 하시면 됩니다.
+	- 처음 목록에서 추가로 목록을 요청해서 해당 결과를 기존 목록 아래에 append 처리한다.
+	- 다음 호출된 목록이 있는지 알려준다.
+
+
+*parameter*
+
+	client_uid : string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	access_token : string       // access token
+	last_id : int				// 마지막 요청목록의 _id 값, 이 이후 값에 대해 조회한다. 처음 호출시에는 0
+	read_count : int			// 한번에 요청할 record 수, 0으로 보내면 기본 10개 출력
+
+*return value*
+
+	// 성공
+	{
+		"res": int,								// 성공일때 0
+		"msg": string,							// msg, "조회되었습니다.",
+		"data": {
+			"next": int,						// 더 출력할 목록이 있으면 1, 더이상 목록이 없으면 0
+			"searchCnt": int,					// 리스트 개수
+			"verseList": [
+				{
+					"log_id": 16,				// log id, last_id 참조값
+					"bible_id": int,			// bible id
+					"chapter_id": int,			// chapter id
+					"community_id": int,		// 커뮤니티일 경우 community id
+					"detail_id": int,			// 커뮤니티일 경우 detail id
+					"bible_name": string,		// bible name
+					"date": "2018-01-30"		// 읽기 날짜
+				},
+				.....
+				{
+					"log_id": 14,
+					"bible_id": 19,
+					"chapter_id": 64,
+					"community_id": 122,
+					"detail_id": 4,
+					"bible_name": "시편",
+					"date": "2018-01-30"
+				}
+			]
+		}
+	}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null
+    }
+
+*res*
+
+    0 : 성공　
+	-1000 : parameter error(client_uid,access_token 의 형식 또는 길이에 문제가 있을수 있음)
+	-200100 : no login user, client_uid, access_token 인증실패
+
+
+
+
+##Edit <a id="Edit" href="#Edit">¶</a>
+
+
+###1. 북마크 등록 및 제거 [/adb/bible/bookmark] / POST <a id="/adb/bible/bookmark" href="#/adb/bible/bookmark">¶</a>
+
+*info*
+
+    기능 : 북마크,하이라이트,언드라인 등록 및 제거 동작을 합니다.
+	추가 예정 : 현재 단건 처리지만, 성능향상의 필요에 따라 여러건 처리기능이 추가되거나 변경될 수 있습니다.
+	변경 예정
+
+*parameter*
+
+	client_uid: string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	access_token : string       // access token
+	bible_id : int				// bible_id
+	chapter_id : int			// chapter_id
+	verse_id : int				// verse_id
+
+*return value*
+
+	// 성공
+	{
+		"res": 0,							// 성공 0
+		"msg": "정상처리되었습니다.",		// 메세지 : 처리성공 or 처리실패
+		"data": {
+			"bookmark": 0,					// bookmark 결과	1:등록, 0:삭제
+		}
+	}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null
+    }
+
+*res*
+
+    0 : 성공　
+    ? : 정리중
+
+
+###2. 하이라이트 등록 및 제거 [/adb/bible/highlight] / POST <a id="/adb/bible/highlight" href="#/adb/bible/highlight">¶</a>
+
+*info*
+
+    기능 : 하이라이트 등록 및 제거 동작을 합니다.
+	변경사항 : 여러건의 중복 등록가능하게, 마이페이지에서는 삭제된 등록내용도 보이게,verse는 최종 등록된 정보만 보이게
+			color가 #fff 일때 삭제처리
+
+*parameter*
+
+	client_uid: string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	access_token : string       // access token
+	bible_id : int				// bible_id
+	chapter_id : int			// chapter_id
+	verse_id : string			// verse_id 정보(여러건일때 콤마(,) 로 구분)
+	title_str : string			// 제목(성경구절정보), 최대 100자
+	editValue : string			// 하이라이트 등록 및 삭제시 color코드, 삭제시 '#fff'
+
+
+*return value*
+
+	// 성공
+	{
+		"res": 0,							// 성공 0
+		"msg": "정상처리되었습니다.",		// 메세지 : 처리성공 or 처리실패
+		"data": {
+			"highlight": "null"				// highlight 결과, 처리 color 코드정보
+		}
+	}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null
+    }
+
+*res*
+
+    0 : 성공　
+    ? : 정리중
+
+
+###3. 노트등록 [/adb/bible/addNote] / POST <a id="/adb/bible/addNote" href="#/adb/bible/addNote">¶</a>
+
+*info*
+
+    기능 : 노트를 등록 합니다.
+	설명 : 수정 또는 삭제시에는 해당노트의 id값을 같이 전송해야합니다.
+			link정보 추가됨.
+
+*parameter*
+
+	client_uid: string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	access_token : string       // access token
+	title_str : string			// 제목(성경구절정보), 최대 100자
+	content_str : string		// 내용, 최대 5000자
+	bibleid : int				// bible_id
+	chapterid : int				// chapter_id
+	verseid : int				// verse_id
+	verseid2 : int				// verse_id2
+
+*return value*
+
+	// 성공
+	{
+		"res": int,						// 성공 0
+		"msg": string					// 메세지 : 처리성공 or 처리실패
+		"data": {
+			"noteID": int				// 등록된 노트id (수정,삭제시 키값)
+		}
+	}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": {}
+    }
+
+*res*
+
+    0 : 성공　
+	-1000 : parameter error(client_uid,access_token 의 형식 또는 길이에 문제가 있을수 있음)
+    -9000 : 등록실패
+	-200100 : no login user, client_uid, access_token 인증실패
+
+
+###4. 노트수정 [/adb/bible/modNote] / POST <a id="/adb/bible/modNote" href="#/adb/bible/modNote">¶</a>
+
+*info*
+
+    기능 : 노트를 수정 합니다.
+	설명 : 해당노트의 id값을 같이 전송해야합니다. 토큰으로 인증된 유져의 작성 노트만 수정가능합니다.
+
+*parameter*
+
+	client_uid: string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	access_token : string       // access token
+	note_id : int				// 등록된 노트의 ID
+	title_str : string			// 제목(성경구절정보), 최대 100자
+	content_str : string		// 내용, 최대 5000자
+
+*return value*
+
+	// 성공
+	{
+		"res": int,						// 성공 0
+		"msg": string					// 메세지 : 처리성공 or 처리실패
+		"data": {
+			"noteID": int				// 수정된 노트id
+		}
+	}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": {}
+    }
+
+*res*
+
+    0 : 성공　
+	-1000 : parameter error(client_uid,access_token 의 형식 또는 길이에 문제가 있을수 있음)
+    -9000 : 수정실패, 등록유져가 다르거나 해당되는 노트ID 가 존재하지 않는경우
+	-200100 : no login user, client_uid, access_token 인증실패
+
+
+###5. 노트삭제 [/adb/bible/delNote] / POST <a id="/adb/bible/delNote" href="#/adb/bible/delNote">¶</a>
+
+*info*
+
+    기능 : 노트를 삭제 합니다.
+	설명 : 해당노트의 id값을 같이 전송해야합니다. 토큰으로 인증된 유져의 작성 노트만 삭제가능합니다.
+
+*parameter*
+
+	client_uid: string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	access_token : string       // access token
+	note_id : int				// 등록된 노트의 ID
+
+*return value*
+
+	// 성공
+	{
+		"res": int,						// 성공 0
+		"msg": string					// 메세지 : 처리성공 or 처리실패
+		"data": {
+			"noteID": int				// 삭제된 노트id 
+		}
+	}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": {}
+    }
+
+*res*
+
+    0 : 성공　
+	-1000 : parameter error(client_uid,access_token 의 형식 또는 길이에 문제가 있을수 있음)
+    -9000 : 삭제실패, 등록유져가 다르거나 해당되는 노트ID 가 존재하지 않는경우
+	-200100 : no login user, client_uid, access_token 인증실패
+
+
+
+##Bible <a id="Bible" href="#Bible">¶</a>
+
+###1. 성경 읽기 [/adb/bible/play] / POST <a id="/adb/bible/play" href="#/adb/bible/play">¶</a>
+
+*info*
+
+    기능 : 성경읽기(북마크,하이라이트,언드라인 정보포함)
+	추가 예정 : 로그인 적용전, access_token 에 1을 보내면 account_id 가 1인 회원이 로딩됩니다.
+
+*parameter*
+
+	client_uid: string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	access_token : string       // access token
+	bible_id : int				// bible_id
+	chapter_id : int			// chapter_id
+	
+
+*return value*
+
+	// 성공
+	{
+		"res": int,							// 성공일때 0
+		"msg": string,						// msg, "조회되었습니다.",
+		"data": {
+			"searchCnt": int,				// verse 개수
+			"verseList": [
+				{
+					"id": 1,
+					"bookmark": 0,				// bookmark 설정시 1 아닌경우 0
+					"highlight": "#HHH",		// 하이라이트 설정시 color 값, 아닌경우 ""
+				},
+				{
+					"id": 2,
+					"bookmark": 0,
+					"highlight": "#HHH",
+				},
+				...
+				{
+					"id": 31,
+					"bookmark": 0,
+					"highlight": "",
+				}
+			]
+		}
+	}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null
+    }
+
+*res*
+
+    0 : 성공　
+    ? : 정리중
+
+
+###2. 성경 구문 검색 - 1 [/adb/bible/searchBible] / POST <a id="/adb/bible/searchBible" href="#/adb/bible/searchBible">¶</a>
+
+*info*
+
+    기능 : 성경 구문검색 Step 1, bible별 검색수 리스트
+	- 구문검색시엔 토큰을 이용한 유져인증은 별도로 하지 않는다.
+
+*parameter*
+
+	client_uid: string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	access_token : string       // access token
+	search_str : string			// 검색구문
+
+*return value*
+
+	// 성공
+	{
+		"res": int,							// 성공일때 0
+		"msg": string,						// msg, "조회되었습니다.",
+		"data": {
+			"searchCnt": int,				// bible 개수
+			"bibleList": [
+				{
+					"bibleid": int,			// bible id
+					"name": string,			// bible name
+					"type": int,			// 1 : 구약 2: 신약
+					"cnt": int				// verse 개수
+				},
+				...
+				{
+					"bibleid": 61,
+					"name": "베드로후서",
+					"type": 2,
+					"cnt": 1
+				}
+			]
+		}
+	}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null
+    }
+
+*res*
+
+    0 : 성공　
+    ? : 정리중
+
+
+###3. 성경 구문 검색 - 2 & 더보기 [/adb/bible/searchVersemore] / POST <a id="/adb/bible/searchVersemore" href="#/adb/bible/searchVersemore">¶</a>
+
+*info*
+
+    기능 : 성경 구문검색 Step 2, verse별 검색수 리스트, 더보기 포함
+	- 구문검색시엔 토큰을 이용한 유져인증은 별도로 하지 않는다.
+
+*parameter*
+
+	bible_id : int				// bible id
+	search_str : string			// 검색구문
+	last_id : int				// 마지막 요청목록의 note_id 값, 이 이후 값에 대해 조회한다. 처음 호출시에는 0
+	read_count : int			// 한번에 요청할 record 수, 0으로 보내면 기본 10개 출력
+
+*return value*
+
+	// 성공
+	{
+		"res": int,							// 성공일때 0
+		"msg": string,						// msg, "조회되었습니다.",
+		"data": {
+			"next": 1,
+			"searchCnt": int,				// verse 개수
+			"bibletype": int,				// 1 : 구약 2: 신약
+			"biblename": "string",			// bible name
+			"bibleid": int,					// bible id
+			"verseList": [
+				{
+					"bibleid": int,				// bible id
+					"chapterid": int,			// chapter id
+					"id": int,					// verse id
+					"time": string,				// verse time
+					"desc": string				// verse desc
+					"index": int				// 검색열 위치
+					"search_id": int			// 다음검색용 next 값
+				},
+				...
+			]
+		}
+	}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null
+    }
+
+*res*
+
+    0 : 성공　
+    ? : 정리중
+
+
+
+
+###4. 듣기로그등록 [/adb/bible/setLog] / POST <a id="/adb/bible/setLog" href="#/adb/bible/setLog">¶</a>
+
+*info*
+
+    기능 : 성경 읽기 로그 저장
+	- access_token 이 없거나, 로그인된 유져의 경우가 아닐때 -1000 애러가 발생한다
+
+*parameter*
+
+	client_uid: string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	access_token : string       // access token, 로그인 개발전까지 값에 1을 보내시면 Account_ID를 1로 처리합니다.
+	bible_id : int				// bible_id
+	chapter_id : int			// chapter_id
+	community_id : int			// community_id, 없을때 0으로..
+	detail_id : int				// detail_id, 없을때 0으로..
+	
+
+*return value*
+
+	// 성공
+	{
+		"res": int,					// 성공일때 0
+		"msg": string,				// msg, "처리성공"
+		"data": {}					// {}
+	}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null
+    }
+
+*res*
+
+    0 : 성공　
+	-1000	: parameter 에러, access_token
+    -200301 : 로그등록실패
+
+
+	
+
+
+##NEWS <a id="news" href="#news">¶</a>
+
+###1. News Main  [/adb/news/getMain] / POST <a id="/adb/news/getMain" href="#/adb/news/getMain">¶</a>
+
+*info*
+
+    기능 : News 메인 목록
+	설명 : 오늘의 말씀은 a절~b절과 같이 여러개 지정이 가능함.
+
+*parameter*
+
+    os : string             // enum(ios/android/web)
+    signup_path : string    // 가입경로 # enum(email,google,facebook,kakao)
+
+*return value*
+
+    // 성공
+    {
+        "res":int,							// 성공 0,
+		"msg":null							// null
+		"data":{
+			"topBanner": {
+				"count": int,				// 상단배너개수
+				"list": [
+					{
+						"imageUrl": string,				// 배너 이미지URL
+						"linkUrl": string				// 배너 링크URL
+					},
+					{
+					....
+				]
+			},
+			"todays": {
+				"date": string,				// 날짜(ex. 2017.12.14)
+				"bibleName": string,		// bible 이름
+				"bibleid": int,				// bible ID
+				"chapterid": int,			// chapter ID
+				"verseid": int,				// verse ID
+				"versetime": 19.8,			// versetime
+				"verseid2": int,			// 마지막 verse ID
+				"versetime2": 19.8,			// 마지막 verse의 versetime
+				"text": string				// Description, 여러개절인 경우 <br/> 로 절구분됨.
+			},
+			"footBanner": {
+				"count": int,				// 하단배너개수
+				"list": [
+					{
+						"imageUrl": string,				// 배너 이미지URL
+						"linkUrl": string				// 배너 링크URL
+					},
+					{
+					....
+				]
+			}		
+		}
+    }
+
+    //실패
+    {
+        "res": int,							// 0 이 아닌 값, 실패코드
+		"msg": string						// 실패 메세지
+		"data":null
+    }
+
+
+*res*
+
+    0 : 성공　
+    -200001 : 중복 이메일
+
+
+
+
+##Etc <a id="etc" href="#etc">¶</a>
+
+
+###1. 통신테스트 [/adb/etc/check] / POST <a id="/adb/etc/check" href="#/adb/etc/check">¶</a>
+
+*info*
+
+    기능 : api 서버의 통신상태를 확인한다.
+	설명 : os, clientUID 값만 수신하고, 접속된 ip정보를 리턴한다.
+
+*parameter*
+
+	client_uid: string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	
+
+*return value*
+
+	// 성공
+	{
+		"res": int,				// 성공시 0
+		"msg": string,			// msg
+		"data": {
+			"clientIP": "118.220.142.116"		// 호출 ip
+		}
+	}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null
+    }
+
+*res*
+
+    0 : 성공　
+    ? : 정리중

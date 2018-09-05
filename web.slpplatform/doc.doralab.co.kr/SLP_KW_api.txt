@@ -1,0 +1,793 @@
+## __SLP Kidswatts API__
+
+*<strong>서버 to 클라이어트 결과</strong>*
+
+	1. 응답 결과는 JSON 으로 전송한다
+	2. 성공 실패는 res 값으로 구분한다.
+       정상 : res == 0
+       그외 : res != 0
+	   예)  { "res":0 , ..... }
+
+*<strong>개발 서버 주소</strong>*
+	
+	DEV - IP : 104.199.129.129
+		  APP ID : Kidswatts : 1000000000
+				   Dora 영어 : 1000000001
+				   Dora lv1 : 1000000003
+				   Dora lv2 : 1000000004
+				   Dora lv3 : 1000000005
+				   NEW Dora English : 1000000007
+		
+
+<br/>
+*<strong>API 목록</strong>*
+
+[APP](#app)
+	1. APP Version 확인  [/skw/app/ver](#/skw/app/ver) - POST
+	2. APP Resource 목록  [/skw/app/res](#/skw/app/res) - POST	
+
+[PUSH DEVICE TOKEN](#push_device_token)
+	1. Push Token 등록 [/skw/push/token/reg](#/skw/push/token/reg) - POST
+	
+[REPORT DLA](#report_dla)
+	1. DLA, 오늘의 학습 내역 [/skw/report/dla/todaylearning](#/skw/report/dla/todaylearning) - POST
+	2. DLA, 다중 지능 발달 리포트 [/skw/report/dla/multiintelli](#/skw/report/dla/multiintelli) - POST
+	3. DLA, 이용통계 [/skw/report/dla/usagestatistics](#/skw/report/dla/usagestatistics) - POST	
+	
+[REPORT ENGLISH](#report_english)
+	1. 영어, 오늘의 학습 내역 [/skw/report/english/todaylearning](#/skw/report/english/todaylearning) - POST
+	2. 영어, 학습 리포트 [/skw/report/english/learningreport](#/skw/report/english/learningreport) - POST
+	3. 영어, 이용 통계 [/skw/report/english/usagestatistics](#/skw/report/english/usagestatistics) - POST
+	4. 영어, 나의 메달 [/skw/report/english/mymedal](#/skw/report/english/mymedal) - POST
+	5. 영어, 홈스쿨 상태 업데이트 [skw/report/english/homeschool/update](#skw/report/english/homeschool/update) - POST
+	6. 영어, 에피소드플레이 클리어 히스토리<a href="#skw/report/english/episodeClearList">skw/report/english/episodeClearList</a> - POST</p>
+	
+
+	
+[RES (응답 res 목록)](#res)
+* * * * * * * * *
+
+
+##APP <a id="app" href="#app">¶</a>
+
+###1. APP VERSION 확인 [/skw/app/ver] / POST <a id="/skw/app/ver" href="#/skw/app/ver">¶</a>
+
+*info*
+
+    기능 : APP 버전정보를 가져온다.
+    
+
+*parameter*
+
+	app_id : long					// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+    client_uid : string				// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client UID )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string 				// 국가 코드
+
+*return value*
+
+	// 성공
+	{
+		"res":int,				// 성공 0, 실패 0 이 아닌 값,		
+		"ver" : string,			// 클라이언트 버전, 예) 1.0.0
+		"summit" : int,			// 서밋상태 플래그, 0:summit no, 1:summit yes
+		"force_update" : int, 	// 클라이언트 강제 업데이트, 0:강제 업데이트 아님,  1:강제 업데이트 필요
+		"update_url":string,	// update url (market url)
+		"cs_email":string,		// cs 처리 이메일
+	}
+
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+	0 : 성공
+	　
+	-100000 : 존재하지 않는 APP ID, Not Found APP ID
+
+
+* * *
+
+###2. APP Resource 목록 [/skw/app/res] / POST <a id="/skw/app/res" href="#/skw/app/res">¶</a>
+
+*info*
+
+    기능 : APP Resource 목록을 가져온다.
+    
+
+*parameter*
+
+	app_id : long					// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+    client_uid : string			// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string 				// 국가 코드
+
+*return value*
+
+	// 성공
+	{
+		"res":int,					// 성공 0, 실패 0 이 아닌 값,		
+		"bundle_base_url":string 	// asset bundle url 최상위 경로,	ex) https://download.blueark.com/dla/DLA_Assetbundles_DEV_Taiwan/
+		"img_server_url":string 	// image url 최상위 경로,	ex) http://14.63.169.217/images/
+		"resources":[ { "id":string,		// 리소스 파일 ID
+						"name":string,		// 파일명, res_primary
+						"ver":int 			// 버전,  
+						}, ........... ]    // ex) "resources":[ {"id":"primary_data","name":"res_primary","ver":1},
+											//				     {"id":"sticker","name":"res_sticker","ver":1},
+											//				     {"id":"thumbnail","name":"res_thumbnail","ver":1}]
+	}
+
+	
+					  
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	　
+	-100000 : 존재하지 않는 APP ID, Not Found APP ID
+
+
+* * *
+
+
+
+##PUSH DEVICE TOKEN <a id="push_device_token" href="#push_device_token">¶</a>
+
+###1. Push Device Token 등록 [/skw/push/token/reg] / POST <a id="/skw/push/token/reg" href="#/skw/push/token/reg">¶</a>
+
+*info*
+
+    기능 : push token 등록
+	
+			
+
+*parameter*
+
+	app_id : long					// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+    client_uid : string			// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string 				// 국가 코드
+	account_id : long 				// slp account id
+	access_token : string    //	slp account access token
+	d_token : string 				// device token
+	
+					
+*return value*
+
+	// 성공
+	{
+		"res":int,			// 성공 0, 실패 0 이 아닌 값,
+	}
+
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+
+* * *
+
+
+##REPORT DLA <a id="report_dla" href="#report_dla">¶</a>
+
+###1. DLA 오늘의 학습 내역 [/skw/report/dla/todaylearning] / POST <a id="/skw/report/dla/todaylearning" href="#/skw/report/dla/todaylearning">¶</a>
+
+*info*
+
+    기능 : Report 오늘 학습내역
+	
+			
+
+*parameter*
+
+	app_id : long					// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+    client_uid : string				// 문자열로 구분된 client 의 고유 ID, 최대 64자
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string 				// 국가 코드
+	account_id : long 				// account id
+	access_token : string    //	account access token
+	pf_id : long 					// profile id
+	
+					
+*return value*
+
+	// 성공
+	{
+		"res":int,			// 성공 0, 실패 0 이 아닌 값
+		
+		"learn_cnt":int		// 학습 횟수
+		
+		"ep_day_learn":[		// 에피소드별
+						{
+							"ep_id":string		// Episode ID
+							"begin_ts":unix_timestamp  // 시작 시간
+							"end_ts":unix_timestamp  	// 종료 시간
+							"p_time":int	// 플레이 타임, 분단위
+							"progress":int 	// 학습 진행률
+						}, ...
+					]		
+	}
+
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+
+* * *
+
+
+###2. DLA 다중 지능 발달 리포트 [/skw/report/dla/multiintelli] / POST <a id="/skw/report/dla/multiintelli" href="#/skw/report/dla/multiintelli">¶</a>
+
+*info*
+
+    기능 : Report 다중 지능 발달 리포트
+	
+			
+
+*parameter*
+
+	app_id : long					// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+    client_uid : string			// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string 				// 국가 코드
+	account_id : long 				// slp account id
+	access_token : string    //	slp account access token
+	pf_id : long 				// Profile ID
+	
+					
+*return value*
+
+	// 성공
+	{
+		"res":int			// 성공 0, 실패 0 이 아닌 값,
+		,
+		"intelli":{ // 현재 프로파일의 누적 지능 점수
+			"update_ts":unix_timestamp 	// 마지막 업데이트 시간, 
+			"score":[ int, int, .... ]  // 현재 프로파일은 누적 지능 점수
+										// 배열에 점수는 다음 순서로 정렬되어 있음
+										// [ 언어, 논리수학, 시각공간, 자기성찰, 인간친화, 자연탐구, 음악, 신체, 예술 ]
+		}
+		,		
+		"all_intelli" { // 다른 아이들이 많이 경험한 지능 
+			"update_ts":unix_timestamp 	// 마지막 업데이트 시간, 
+			"score":[ int, int, ... ] 	// 다른 아이들이 많이 경험한 지능 % 단위
+										// 배열에 % 는 다음 순서로 정렬되어 있음
+										// [ 언어, 논리수학, 시각공간, 자기성찰, 인간친화, 자연탐구, 음악, 신체, 예술 ]
+		}
+	}
+
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+
+* * *
+
+
+###3. DLA 이용통계 [/skw/report/dla/usagestatistics] / POST <a id="/skw/report/dla/usagestatistics" href="#/skw/report/dla/usagestatistics">¶</a>
+
+*info*
+
+    기능 : Report 다중 지능 발달 리포트
+	
+			
+
+*parameter*
+
+	app_id : long					// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+    client_uid : string			// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string 				// 국가 코드
+	account_id : long 				// slp account id
+	access_token : string    //	slp account access token
+	pf_id : long 				// Profile ID
+	
+					
+*return value*
+
+	// 성공
+	{
+		"res":int,			// 성공 0, 실패 0 이 아닌 값
+		"update_ts":unix_timestamp, 	// 마지막 업데이트 시간
+		"d_ep_p_cnt_average" : int,  	// 하루 평균 학습 횟수 평균
+		"d_ep_p_time_average" : int,  	// 하루 평균 학습 시간 평균, 분단위
+		"learn_timezone_ratio":[ int, int, int, ... ]	// 시간대별 플레이 비율 % 단위
+														// 다음 시간대 순으로 졍렬
+														//	[ 00:00 ~ 02:59,
+														//	  03:00 ~ 05:59,
+														//	  06:00 ~ 08:59,
+														//	  09:00 ~ 11:59,
+														//	  12:00 ~ 14:59,
+														//	  15:00 ~ 17:59,
+														//	  18:00 ~ 20:59,
+														//	  21:00 ~ 23:59 ]
+								],
+		"ep_preferred_score":[	// 에피소드 선호점수, 1,2,3 위
+								{
+									"ep_id":string 	// Episode ID
+									"score":int 	// 점수
+								}
+							]
+	}
+
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+
+* * *
+
+
+
+
+##REPORT ENGLISH <a id="report_english" href="#report_english">¶</a>
+
+###1. 영어, 오늘의 학습 내역 [/skw/report/english/todaylearning] / POST <a id="/skw/report/english/todaylearning" href="#/skw/report/english/todaylearning">¶</a>
+
+*info*
+
+    기능 : Report, 영어 학습, 오늘의 학습 내역
+	
+			
+
+*parameter*
+
+	app_id : long					// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+    client_uid : string				// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string 				// 국가 코드
+	account_id : long 				// slp account id
+	access_token : string   //	slp account access token
+	pf_id : long 					// Profile ID
+	
+					
+*return value*
+
+	// 성공
+	{
+		"res":int,			// 성공 0, 실패 0 이 아닌 값
+		"update_ts" : int ,	// 마지막 업데이트 unix_timestamp
+		"t_p_time" : int ,	// 총 플레이시간
+		"t_p_cnt" : int ,	// 총 플레이 횟수
+		"t_q_cnt" : int ,	// 오늘의 총 문항수
+		"t_q_r_y" : int ,	// 정답 문항수
+		"t_q_r_n" : int ,	// 오답 문항수	
+		"units":[
+					{
+						"step_id" : string,  	// step id
+						"type" : int, 		// 0:영어 에피소드, 1:영어퀴즈
+						"ep_id" : string,	// 에피소드ID
+						"q_g_srl" : int, 		// QUIZ Group Serial
+						"begin_ts" : int,	// 에피소드 시작 시간, unix_timestamp
+						"p_time" : int,			// 플레이시간, 분단위
+						"quiz_list":[ 	// quiz 결과 목록, type==1 인 경우에만 유효
+										{ 
+											"id":		// QUIZ_ID
+											"result": 	// 퀴즈풀이 결과, 0:오답, 1:정답
+										}, ..... 
+									]	
+						"p_r_per" : int , // Phonics 정답률
+						"v_r_per" : int , // Vocabulary 정답률
+						"s_r_per" : int , // Sentence 정답률
+						"t_r_per" : int , // Total 정답률
+					
+						"medal_list" : [ int, ... ], // 획득한 메달 ID 목록
+						"m_p_cnt" : int ,	// Phonics 메달수
+						"m_v_cnt" : int ,	// Vocabulary 메달수
+						"m_s_cnt" : int ,	// Sentence 메달수
+						"prog_per" : int ,  // 학습 진행률
+				}, ...... 
+			],
+	}
+
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+
+* * *
+
+
+	
+	
+###2. 영어, 학습 리포트 [/skw/report/english/learningreport] / POST <a id="/skw/report/english/learningreport" href="#/skw/report/english/learningreport">¶</a>
+
+*info*
+
+    기능 : Report, 영어, 학습 리포트
+	
+			
+
+*parameter*
+
+	app_id : long					// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+    client_uid : string				// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string 				// 국가 코드
+	account_id : long 				// slp account id
+	access_token : string   //	slp account access token
+	pf_id : long 					// Profile ID
+	
+					
+*return value*
+
+	// 성공
+	{
+		"res":int,			// 성공 0, 실패 0 이 아닌 값
+		"steps":[
+					{
+						"step_id":string,			// step id
+						"begin_ts": int,			// step 시작시간 unix_timestamp
+						"avr_learn_per": int, 		// 평균학습 진행률
+						"q_r_per" : int, 			// 퀴즈 정답률
+						"h_p_per" : int,			// 홈스쿨 진행률
+						"n_p_e_cnt" : int,			// 플레이하지 않은 에피소드 갯수
+						"t_e_cnt" : int,			// 전체 에피소드 갯수
+						"n_p_q_cnt" : int,			// 풀지 않은 퀴즈 갯수
+						"t_q_cnt" : int,			// 전체 퀴즈 갯수
+						"n_p_h_cnt" : int, 			// 진행하지 않은 복습활동 갯수
+						"t_h_cnt" : int, 			// 전체 복습활동 갯수
+						
+						"e_p_c_cnt" : int, 			// 학습 완료
+						"e_p_i_cnt" : int,			// 학습 진행중
+						"e_p_n_cnt" : int,			// 학습 안함
+						
+						"quiz" : {
+									"avr_r_per" : int, 	// 평균 정답률
+									"q_r_p_per" : int, 	// Phonics 영역 문제 정답률
+									"q_r_v_per" : int, 	// Vocabulary 영역 문제 정답률
+									"q_r_s_per" : int, 	// Sentence 영역 문제 정답률
+									"quiz_list":[	{	
+														"id":int, 		// quiz ID
+														"result":int, 	// -1:풀지않음, 0:오답, 1:정답
+													}
+												]
+								},
+								
+						"home" :  {
+									"prog_per" : int, 	// 홈스쿨 진행률
+									"h_t_cnt" : int		// 홈스쿨 전체 갯수
+									"h_c_cnt" : int		// 홈스쿨 완료 갯수
+									"h_n_cnt" : int		// 홈스쿨 미완료 갯수
+									"home_list" : [
+													{
+														"id":string, 	// episode ID
+														"status":int 	// 상태, 0:미완료, 1:완료
+													}
+												]
+								},
+								
+						"ep_list" : [ 
+										{
+											"ep_id":string, // episode id
+											"p_cnt":int		// 누적 play 횟수
+											"p_per":int		// 학습 진행률
+										}, ...
+						]
+					}
+		]
+	}
+
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+
+* * *
+
+
+
+###3. 영어, 이용 통계 [/skw/report/english/usagestatistics] / POST <a id="/skw/report/english/usagestatistics" href="#/skw/report/english/usagestatistics">¶</a>
+
+*info*
+
+    기능 : Report, 영어, 이용 통계
+	
+			
+
+*parameter*
+
+	app_id : long					// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+    client_uid : string				// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string 				// 국가 코드
+	account_id : long 				// slp account id
+	access_token : string   //	slp account access token
+	pf_id : long 					// Profile ID
+	
+					
+*return value*
+
+	// 성공
+	{
+		"res":int,			// 성공 0, 실패 0 이 아닌 값
+		"update_ts" : int ,	// 업데이트 시간 , unix_timestamp
+		"daily":{
+					"ep_p_cnt":int 		// 에피소드 플레이 횟수
+					"avr_p_time":int 	// 하루 평균 플레이시간, 분단위
+				},
+		"learn_timezone_ratio":[ int, int, int, ... ],	// 시간대별 플레이 비율 % 단위
+														// 다음 시간대 순으로 졍렬
+														//	[ 00:00 ~ 02:59,
+														//	  03:00 ~ 05:59,
+														//	  06:00 ~ 08:59,
+														//	  09:00 ~ 11:59,
+														//	  12:00 ~ 14:59,
+														//	  15:00 ~ 17:59,
+														//	  18:00 ~ 20:59,
+														//	  21:00 ~ 23:59 ]
+		"ep_preferred_score":[	// 에피소드 선호점수, 1,2,3 위
+								{
+									"ep_id":string, 	// Episode ID
+									"score":int, 	// 점수
+									"p_cnt":int,		// 누적 play 횟수
+									"p_per":int,		// 학습 진행률
+								}
+							],
+	}
+
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+
+* * *
+
+
+
+###4. 영어, 나의 메달 [/skw/report/english/mymedal] / POST <a id="/skw/report/english/mymedal" href="#/skw/report/english/mymedal">¶</a>
+
+*info*
+
+    기능 : 선택한 프로파일의 메달 획득 상태
+	
+			
+
+*parameter*
+
+	app_id : long					// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+    client_uid : string				// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string 				// 국가 코드
+	account_id : long 				// slp account id
+	access_token : string   //	slp account access token
+	pf_id : long 					// Profile ID
+	
+					
+*return value*
+
+	// 성공
+	{
+		"res" : int,		// 성공 0, 실패 0 이 아닌 값
+		"t_c_m_cnt" : int,	// 현재 획득한 모든 메달수
+		"t_t_m_cnt" : int,	// 전체 메달 수
+		"medal_p" : {		// 파닉스 메달 정보
+						"c_m_cnt" : int,	// 현재 획득한 파닉스 메달수
+						"t_m_cnt" : int,	// 전체 파닉스 메달수
+						"list" : [			// 메달 상태 목록
+									{	
+										"id" : int,		// 메달 고유 아이디
+										"status" : int	// 메달 상태 -1:획득한적 없음, 0:획득했다 없어짐, 1:획득
+									}, ...
+								]
+		},
+		"medal_v" : {	// 단어 메달 정보
+						"c_m_cnt" : int,	// 현재 획득한 단어 메달수
+						"t_m_cnt" : int,	// 전체 단어 메달수
+						"list" : [			// 메달 상태 목록
+									{
+										"id" : int,		// 메달 고유 아이디
+										"status" : int	// 메달 상태 -1:획득한적 없음, 0:획득했다 없어짐, 1:획득
+									}, ...
+								]
+		},
+		"medal_s" : {	// 문장 메달 정보
+						"c_m_cnt" : int,	// 현재 획득한 문장 메달수
+						"t_m_cnt" : int,	// 전체 문장 메달수
+						"list": [			// 메달 상태 목록
+									{
+										"id" : int,		// 메달 고유 아이디
+										"status" : int	// 메달 상태 -1:획득한적 없음, 0:획득했다 없어짐, 1:획득
+									}, ...
+								]
+		}
+	}
+	
+
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+
+* * *
+
+
+
+###5. 영어, 홈스쿨 상태 업데이트 [skw/report/english/homeschool/update] / POST <a id="skw/report/english/homeschool/update">¶</a>
+
+*info*
+
+    기능 : 영어, 홈스쿨 상태 업데이트
+	
+			
+
+*parameter*
+
+	app_id : long					// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+    client_uid : string				// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string						// client os, 	ex) andorid, ios
+	c_ver : string					// client version,	ex) 1.0.0
+	country : string 				// 국가 코드
+	account_id : long 				// slp account id
+	access_token : string   		//	slp account access token
+	pf_id : long 					// Profile ID
+	step_id : string				// STEP ID
+	ep_id : string					// EPISODE ID
+	status : int					// 상태, 0:미완료, 1:완료
+	
+					
+*return value*
+
+	// 성공
+	{
+		"res" : int,		// 성공 0, 실패 0 이 아닌 값
+	}
+	
+
+	//실패
+	{
+		"res":int, // 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+
+* * *
+
+
+<h3>6. 영어, 에피소드 클리어 히스토리 [skw/report/english/episodeClearList] / POST <a id="skw/report/english/episodeClearList">¶</a></h3>
+
+<p><em>info</em></p>
+
+<pre class="prettyprint linenums"><code>기능 : 에피소드 클리어 히스토리
+</code></pre>
+
+<p><em>parameter</em></p>
+
+<pre class="prettyprint linenums"><code>
+app_id : long                   // 보고자 하는 APP 의 아이디 ex) DEA : 1000000001
+client_uid : string             // 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+os : string                     // client os,   ex) andorid, ios
+c_ver : string                  // client version,  ex) 1.0.0
+country : string                // 국가 코드
+account_id : long               // slp account id
+access_token : string           //  slp account access token
+pf_id : long                    // Profile ID
+
+</code></pre>
+
+<p><em>return value</em></p>
+
+<pre class="prettyprint linenums"><code>// 성공
+{    
+	"isSuccess": true,
+	"err": null,
+	"res": 0,
+	"msg": "",
+	"episodeClearList": [
+		{ "episodeID": "e109_w4", "endDateTime": "2016-05-23 08:29:48"}
+		....
+		....
+	]
+}
+
+
+//실패
+{
+	"res":int, // 0 이 아닌 값,
+}
+</code></pre>
+
+<p><em>res</em></p>
+
+<pre class="prettyprint linenums"><code>0 : 성공
+</code></pre>
+
+* * *
+
+
+
+##RES (응답 res 목록) <a id="res" href="#res">¶</a>
+
+	0 : 성공
+	　
+	-1 : DB 오류
+	-2 : 알 수 없는 오류 
+	　
+	-1000 : 잘못된 파라메터 값
+	　
+	-100000 : 존재하지 않는 APP ID, Not Found APP ID
+	　
+	-200000 : 계정 생성 실패
+	-200001 : 중복 이메일
+	-200002 : 계정 추가 실패
+	-200003 : 마일리지 추가 실패, failed, Add Mileage
+	-200004 : 마일리지 추가 실패, failed, Add Mileage
+	-200005 : 프로파일 추가 실패, failed, Add Profile
+	-200006 : 프로파일(히든) 추가 실패 failed, Add Profile Hidden
+	-200007 : 가입경로 정보 추가 실패, failed, Insert SignupInfo
+	-200008 : 접근 허용된 APP 추가 실패, failed, Insert Account Allow Access APP
+	-200009 : App Access Token 업데이트실패, failed, Update App Access Token
+	-200010 : 이메일과 비밀번호가 일치하지 않음, Not Match E-Mail or Password
+	-200011 : 이메일의 가입경로가 다름
+	-200013 : Prifile ID 찾을 수 없음, Not found Profile ID
+	-200014 : failed, Update App Access Current Profile ID
+	-200015 : 프로파일 갯수 MAX, Profile Count Max
+	-200016 : 계정 정보를 찾을수 없음 , Not found Account ID
+	-200017 : 찾을수 없는 이메일, NOT FOUND EMAIL
+	-200018 : 비밀번호 초기화는 SLP 만 가능
+	-200019 : 현재 프로파일 갯수가 1개 이하, Profile Count Min
+	-200020 : 이 계정에서는 접근이 허용되지 않은 APP 입니다.
+	-200021 : 이미 연동된 APP 입니다.
+	-200022 : 계정 연동 정보 저장 실패, failed, insert EXT APP USER ACCOUNT TRANS
+	-200023 : 비밀번초 초기화, 토큰 유효시간 초과
+	-200024 : 연동된 APP를 확인할수 없습니다.
+	-200100 : 로그인 되지 않음
+	
+	
+	
+	SLP KW
+	-600100 : deviceToken 추가 실패	
+	
+	
+	
+	
+	
+	

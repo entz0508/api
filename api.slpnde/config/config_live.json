@@ -1,0 +1,106 @@
+{
+  "CONFIG": {
+    "PACKAGE_NAME": "com.blueark.slp.nde"
+  },
+  "LOG_INFO": {
+    "LOGGER_LEVEL": "DEBUG",
+    "FILE_PATH": "/data/logs/node/slp_nde/slp_nde.log",
+    "CATEGORY": "SLP_NDE"
+  },
+  "CDN_INFO": {
+    "URI": "http://ftp.bluearkedu.com/",
+    "DEV_CDN": "http://ftp.bluearkedu.com/",
+    "REAL_CDN": "http://cdn.bluearkedu.com/"
+  },
+  "SERVER_INFO": {
+    "SERVER_ID": 1,
+    "NAME": "SLP NDE KOR VER",
+    "PORT": 18001,
+    "APP_ID": [1000000007],
+    "LEVEL": 1,
+    "GOOGLEPLAY_PUBLIC_KEY": "",
+    "SHOP_APPLE_VERIFY_RECEIPT_URL_LIVE": "buy.itunes.apple.com",
+    "SHOP_APPLE_VERIFY_RECEIPT_URL_SANDBOX": "sandbox.itunes.apple.com",
+    "PHOTO": {
+      "LOCAL_TEMP_PATH": "/data/temp_photo/",
+      "IMG_SERVER_REAL": {
+        "HOST": "image.bluearkedu.com",
+        "PORT": 22,
+        "USERNAME": "bluedora",
+        "PRIVATE_KEY": "./ssh/rsa-key-slp-dla-photo-upload-real.openssh",
+        "PHOTO_PATH_BEGIN": "/data/www/images/slp/profile",
+        "PHOTO_PATH_END": "photos/"
+      },
+      "IMG_SERVER": {
+        "HOST": "14.63.169.217",
+        "PORT": 22,
+        "USERNAME": "slpphoto",
+        "PRIVATE_KEY": "./ssh/rsa-key-slp-dla-photo-upload-dev.openssh",
+        "PHOTO_PATH_BEGIN": "/data/www/images/sdla/lv",
+        "PHOTO_PATH_END": "photos/"
+      }
+    },
+    "RECORD": {
+      "LOCAL_TEMP_PATH": "/data/temp_photo/",
+      "FILE_SERVER_REAL": {
+        "HOST": "image.bluearkedu.com",
+        "PORT": 22,
+        "USERNAME": "bluedora",
+        "PRIVATE_KEY": "./ssh/rsa-key-slp-dla-photo-upload-real.openssh",
+        "FILE_PATH_BEGIN": "/data/www/upfile",
+        "FILE_PATH_END": "voice/"
+      },
+      "FILE_SERVER": {
+        "HOST": "14.63.169.217",
+        "PORT": 22,
+        "USERNAME": "slpphoto",
+        "PRIVATE_KEY": "./ssh/rsa-key-slp-dla-photo-upload-dev.openssh",
+        "FILE_PATH_BEGIN": "/data/www/images/sdla/lv",
+        "FILE_PATH_END": "photos/"
+      }
+    }
+  },
+  "SLP_PLATFORM": {
+    "URL": "127.0.0.1",
+    "PORT": 80,
+    "PATH_IS_AUTH_SLP_ACCOUNT_WITH_PROFILE": "slp/user/account/isloggedin/withprofile",
+    "PATH_IS_AUTH_SLP_ACCOUNT_WITHOUT_PROFILE": "slp/user/account/isloggedin/withoutprofile"
+  },
+  "MYSQL_SLP_NDE": {
+    "HOST": "104.199.192.78",
+    "PORT": 16612,
+    "USER": "slpndedev",
+    "PASSWORD": "qmffndkzm!!!!",
+    "DATABASE": "slp_nde_db",
+    "CONNECTION_LIMIT": 5
+  },
+  "MYSQL_SLP_NDE_INFO": {
+    "HOST": "104.199.192.78",
+    "PORT": 16612,
+    "USER": "slpndedev",
+    "PASSWORD": "qmffndkzm!!!!",
+    "DATABASE": "slp_nde_info_db",
+    "CONNECTION_LIMIT": 5
+  },
+  "MYSQL_SLP_KW_ACTION_LOG": {
+    "HOST": "104.199.192.78",
+    "PORT": 16612,
+    "USER": "splkwapidev",
+    "PASSWORD": "qmffndkzm!!!!",
+    "DATABASE": "slp_kw_action_log_db",
+    "CONNECTION_LIMIT": 5
+  },
+  "MYSQL_SLP_COMMON": {
+    "HOST": "104.199.192.78",
+    "PORT": 16612,
+    "USER": "slpcommondev",
+    "PASSWORD": "qmffndkzm!!!!",
+    "DATABASE": "slp_common_db",
+    "CONNECTION_LIMIT": 5
+  },
+  "MONGODB_CACHE": {
+    "CONNECT_STRING": "mongodb://slpencache:jditn!!$#@127.0.0.1:34024/slp_en_cache"
+  },
+  "end": {
+  }
+}

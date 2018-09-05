@@ -1,0 +1,493 @@
+## __Kidswell API__
+
+<a id="top" href="#top"></a>
+
+*특이사항*
+
+    1. 개발중 stage 서버 9002 로 접속 예) 14.63.171.143:9002/
+    2. 공통 인자는 중 app 는 kidswell 로 고정
+
+
+
+[app](#app)
+    1. 버젼 및 서비스 상태 체크  [/kidswell.app.version.check](#/kidswell.app.version.check) - POST
+    2. 클라이언트 리소스 정보   [/kidswell.app.res](#/kidswell.app.res) - POST
+
+[account](#account)
+    1. 회원(계정) 로그인 [/kidswell.account.login](#/kidswell.account.login) - POST
+    2. 회원(계정) 로그아웃 [/kidswell.account.logout](#/kidswell.account.logout) - POST
+    3. 프로파일 목록 [/kidswell.account.profile.list](#/kidswell.account.profile.list) - POST
+    4. 미확인 리포트 갯수 [/kidswell.report.unchecked.count](#/kidswell.report.unchecked.count) - POST
+
+[Daily](#daily)
+    1. 일일 Report Summary  [/report.day.summary](#/report.day.summary) - POST
+
+
+[Weekly](#weekly)
+    1. 주간 Report Summary  [/report.week.summary](#/report.week.summary) - POST
+
+
+[error](#error)
+	[에러코드 정의](#errorCode)
+
+readme
+
+
+
+***
+##APP <a id="app" href="#app">¶</a>
+
+###1. [/kidswell.app.version.check] 공통 / POST <a id="/kidswell.app.version.check" href="#/kidswell.app.version.check">¶</a>
+
+*info*
+
+    기능 : 어플리케이션 서비스상태, 버전 체크(강제 업데이트 판단)
+    정책 미결정 : DLA, SNS 버젼 관리의 정책이 현재는 없다.
+    os,category_gb,language,application_ver 의 버젼별 정책? 국가별 정책?
+    처리 : 해당 버젼의 최신 application_ver 정보를 출력, 버젼이 낮으면 APP에서 강제 업데이트 진행
+
+*parameter*
+
+    app : string()      // required kidswell
+    os : string()       // required ios, android
+    lang : string()     // lang
+
+*return value*
+
+    // 성공
+    {
+        "result": "S000",
+        "data": {
+            "app": "kidswell",              // 요청한 app (kidswell)
+            "os": "ios",                    // 요청한 OS, ison, android
+            "service": int,                 // 0:서비스 점검, 1:서비스 정상
+            "ver": string(),                // 버전 예) 1.0.0
+            "server_time" : unix_timestamp  // 서버시간 unix_timestamp
+            "force_update": int,            // 강제 업데이트, 0:강제업데이트 안함, 1:강제 업데이트,
+            "update_url" : string()         // 업데이트 URL
+            "cs_email" : string()           // 문의 이메일
+            "notice_msg" : string()         // 서버 점검등 공지 메세지
+        }
+    }
+
+    //실패
+    {
+            "result": "N002",
+            "data": {}
+    }
+
+* * *
+
+##2. [/kidswell.app.res] 공통 / POST <a id="/kidswell.app.res" href="#/kidswell.app.res">¶</a>
+
+*info*
+
+    기능 : 클라이어트 리소스 정보.
+
+*parameter*
+
+    app : string()      // required kidswell
+    os : string()       // required ios, android
+    lang : string()     // lang
+
+*return value*
+
+    // 성공
+    {
+        "result": "S000",
+        "data": {
+            "image_server_url": "",                                                   // 이미지 서버 url
+            "bundle_base_url": "",                                                    // bundle_base_url
+            "res_url": "",                                                            // 리소스 URL
+            "dla_app_url": "",                                                        // dla 앱스토어 URL
+            "term_service_url":"http://dora.61.com.tw/info/Terms_Service.html",       // term service URL
+            "privacy_policy_url":"http://dora.61.com.tw/info/privacy-policy.html",    // privacy policy URL
+            "res": [    
+                        {   "id":string(),      // 리소스 ID, (sticker, thumbnail)
+                            "name":string(),    // 리소스 이름
+                            "ver":int()         // 리소스 버전.
+                        }, .....
+                    ]
+        }
+    }
+
+    //실패
+    {
+            "result": "N002",
+            "data": {}
+    }
+
+* * *
+
+* * *
+
+***
+##ACCOUNT <a id="account" href="#account">¶</a>
+
+###1. [/kidswell.account.login] 공통 / POST <a id="/kidswell.account.login" href="#/kidswell.account.login">¶</a>
+
+로그인 - 계정 로그인, 이메일,비번체크 유저 아이 프로파일 목록 호출
+
+*info*
+
+    기능 : 회원 로그인 1단계로 이메일,비번, signup_pathb를 통한 회원인증 1단계
+    유저의 인증 정보(email, password)만을 이용해 해당 유저의 계정 정보와 아이 프로파일 리스트를 가져온다.
+
+*parameter*
+
+	app : string()              	// required kidswell
+	os : string()               	// required ios, android
+	lang : string()             	// required kr, en, jp, ch, tw
+	unity_guid : string()       	// 클라이언트(유니티) 생성하는 고유식별자
+	account_id : long           	// 유저(계정) 고유번호
+	account_access_token : string()	// 유저(계정)의 access_token
+	access_token : string()     	// 자녀 프로파일의 access_token
+    *
+    email : string()		// required	email 주소 (255자까지 입력 가능함)
+    password : string()     // 비밀 번호(페이스북, 구글플러스의 경우 해당 서비스의 id가 비밀번호로 대체 된다)
+    signup_path : string()  // 가입경로(dora / facebook / google, taomee), 가입경로별로 중복 이메일이 존재함.
+
+*History*
+
+
+*return value*
+
+	// 성공
+	{
+		"result": "S000",                   // 결과 코드
+            "data": {                       // 데이터
+                "account_id": int,              // 계정의 고유번호
+				"account_access_token" : string	// 계정의 access token
+                "email_auth": int,              // 이메일 인증 유무(0:미인증,1:인증)
+                "kidswell_login": int,          // 키즈웰 최초 로그인 유무(0:로그인 한적 없음,1:로그인 한적 있음)
+                "child_profiles": [         // 아이 프로필 데이터 list
+                    {
+                        "child_profile_id": ,  // 아이 프로필 고유번호 아이디
+                        "level": ,             // 교육과정 level
+                        "name":                // string(20) : 닉네임(기본값 Guest 사용)
+                        "birthday": 1998-10-01,  // YYYY-MM-DD : 생일
+                        "gender": ,            // 'm' or 'f' : 성별
+                        "img_url": ,           // string(255)  : 이미지 경로
+                        "reg_ts":              // 생성 시간 unix_timestamp
+                        "payload":             // 구매 완료되지 않은 payload 값
+                        "pass":int,            // 이용권 상태, 0:이용권 없음, 1:이용권 있음
+                        "last_report" :  {     // 마지막 리포트 업데이트된 리포트 일자 정보
+                                "d_day" : unix_timestamp,   // Daily 리포트, 마지막 업데이트 된 날짜의 unix_timestamp,  없으면 0
+                                "w_year" : int,             // weekly 리포트, 년도, 없으면 0
+                                "w_month" : int,            // weekly 리포트, 월,   없으면 0
+                                "w_week" : int              // weekly 리포트, 주차, 없으면 0
+                                "w_day" : int               // weekly 리포트, 일, 없으면 0
+                        }
+                        "uncheck_report" : {    // 미확인 리포드 갯수
+                                "d_cnt" : int,  // daily report 미확인 갯수
+                                "w_cnt" : int   // weekly report 미확인 갯수
+                        }
+                    }
+                ],
+            }
+        }
+	}
+
+	//실패
+	{
+		"result": "U002",       // 결과 코드
+		"data": {}
+	}
+* * *
+
+***
+###2. [/kidswell.account.profile.list] 공통 / POST <a id="/kidswell.account.profile.list" href="#/kidswell.account.profile.list">¶</a>
+
+로그인한 계정의 프로파일 목록 호출
+
+*info*
+
+    기능 : 회원 로그인 1단계로 이메일,비번, signup_pathb를 통한 회원인증 1단계
+    유저의 인증 정보(email, password)만을 이용해 해당 유저의 계정 정보와 아이 프로파일 리스트를 가져온다.
+
+*parameter*
+
+    app : string()                  // required kidswell
+    os : string()                   // required ios, android
+    lang : string()                 // required kr, en, jp, ch, tw
+    unity_guid : string()           // 클라이언트(유니티) 생성하는 고유식별자
+    account_id : long               // 유저(계정) 고유번호
+    account_access_token : string() // 유저(계정)의 access_token
+    access_token : string()         // 자녀 프로파일의 access_token
+    *
+
+*History*
+
+
+*return value*
+
+    // 성공
+    {
+        "result": "S000",                   // 결과 코드
+            "data": {                       // 데이터
+                "child_profiles": [         // 아이 프로필 데이터 list
+                    {
+                        "child_profile_id": ,  // 아이 프로필 고유번호 아이디
+                        "level": ,             // 교육과정 level
+                        "name":                // string(20) : 닉네임(기본값 Guest 사용)
+                        "birthday": 1998-10-01,  // YYYY-MM-DD : 생일
+                        "gender": ,            // 'm' or 'f' : 성별
+                        "img_url": ,           // string(255)  : 이미지 경로
+                        "reg_ts":              // 생성 시간 unix_timestamp
+                        "payload":             // 구매 완료되지 않은 payload 값
+                        "pass":int,            // 이용권 상태, 0:이용권 없음, 1:이용권 있음
+                        "last_report" :  {     // 마지막 리포트 업데이트된 리포트 일자 정보
+                                "d_day" : unix_timestamp,   // Daily 리포트, 마지막 업데이트 된 날짜의 unix_timestamp
+                                "w_year" : int,             // weekly 리포트, 년도
+                                "w_month" : int,            // weekly 리포트, 월
+                                "w_week" : int              // weekly 리포트, 주차
+                                "w_day" : int               // weekly 리포트, 일, 없으면 0
+                        }
+                        "uncheck_report" : {    // 미확인 리포드 갯수
+                                "d_cnt" : int,  // daily report 미확인 갯수
+                                "w_cnt" : int   // weekly report 미확인 갯수
+                        }
+                    }
+                ],
+            }
+        }
+    }
+
+    //실패
+    {
+        "result": "U002",       // 결과 코드
+        "data": {}
+    }
+* * *
+
+
+***
+###3. [/kidswell.account.logout] 공통 / POST <a id="/kidswell.account.logout" href="#/kidswell.account.logout">¶</a>
+
+계정 로그 아웃
+
+*info*
+
+    기능 : 현재 기기에서 로그아웃 한다.
+
+*parameter*
+
+    app : string()                  // required kidswell
+    os : string()                   // required ios, android
+    lang : string()                 // required kr, en, jp, ch, tw
+    unity_guid : string()           // 클라이언트(유니티) 생성하는 고유식별자
+    account_id : long               // 유저(계정) 고유번호
+    account_access_token : string() // 유저(계정)의 access_token
+    access_token : string()         // 자녀 프로파일의 access_token
+    *
+
+*History*
+
+
+*return value*
+
+    // 성공
+    {
+        "result": "S000",                   // 결과 코드
+            "data": {}
+        }
+    }
+
+    //실패
+    {
+        "result": "U002",       // 결과 코드
+        "data": {}
+    }
+* * *
+
+
+***
+###4. [/kidswell.report.unchecked.count] 공통 / POST <a id="/kidswell.report.unchecked.count" href="#/kidswell.report.unchecked.count">¶</a>
+
+미확인된 리포트 갯수를 가져온다.
+
+*info*
+
+    기능 : 지정한 프로파일의 미확인된 리포트 갯수를 가져온다.
+
+*parameter*
+
+    app : string()                  // required kidswell
+    os : string()                   // required ios, android
+    lang : string()                 // required kr, en, jp, ch, tw
+    unity_guid : string()           // 클라이언트(유니티) 생성하는 고유식별자
+    account_id : long               // 유저(계정) 고유번호
+    account_access_token : string() // 유저(계정)의 access_token
+    access_token : string()         // 자녀 프로파일의 access_token
+    *
+    
+    child_profile_id : int  // 프로파일 고유번호
+
+*History*
+    
+
+*return value*
+
+    // 성공
+    {
+        "result": "S000",                   // 결과 코드
+            "data": {
+                "daily_count"  : int    // 미확인된 일일 리포트 갯수
+                "weekly_count" : int    // 미확인된 주간 리포트 갯수
+            }
+        }
+    }
+
+    //실패
+    {
+        "result": "U002",       // 결과 코드
+        "data": {}
+    }
+* * *
+
+
+***
+##Daily <a id="daily" href="#daily">¶</a>
+
+###1. [/report.day.summary] 공통 / POST <a id="/report.day.summary" href="#/report.day.summary">¶</a>
+
+일일 Report summary 페이지
+
+*info*
+
+    기능 : 일일 Report summary 페이지 데이타
+
+*parameter*
+
+    app : string()                  // required kidswell
+    os : string()                   // required ios, android
+    lang : string()                 // required kr, en, jp, ch, tw
+    unity_guid : string()           // 클라이언트(유니티) 생성하는 고유식별자
+    account_id : long               // 유저(계정) 고유번호
+    account_access_token : string() // 유저(계정)의 access_token
+    *
+    child_profile_id : number() // 자녀 프로파일 고유번호
+    day : string()              // 리포트를 보고싶은 일자 형식 2014-07-20
+    
+
+*History*
+
+
+*return value*
+
+    // 성공
+    {
+        "result": "S000",                   // 결과 코드
+        "data": {
+                    "this_week_ep_id": string,            // '이번주 에피소드 ID', 요청한 날짜 기준의 이번주 EPISODE_ID
+                    "month":int,                          // '이번주 에피소드 월', 요청한 날짜 기준의 이번주 EPISODE 의 월
+                    "week":int,                           // '이번주 에피소드 주차', 요청한 날짜 기준의 이번주 EPISODE 의 주차
+                    "open_date": unix_timestamp,          // 에피소드 오픈 일시 unix_timestamp
+                    "t_play_date_cnt": int,               // 플레이 일수
+                    "t_ptime": int,                       // '총 합습 시간', 이번주에 플레이한 모든 에피소드의 플레이 타임 총합 (분 단위)
+                    "t_play_ep_cnt": int,                 // '총 학습 에피소드', 이번주에 플레이한 에피소드 개수
+                    "average_pg_per": int,                // '평균 확습 진행률'
+                    "learning": string,                   // '학습진도', string table id, 예) d_s_w_nd, 타이틀은 string table 뒤에 '_t' 를 붙임 -> d_s_w_nd_t
+                    "use_habits": string,                 // '이용습관', string table id, 예) w_s_all_nv, 타이틀 table i d는  string table 뒤에 '_t' 를 붙임 -> w_s_all_nv_ㅅ
+                    "this_week_ep_pg": [int,int,int,int],               // 이번주 에피소드 진행 상황, 배열은 챕터 1,2,3,4 순서대로 정렬, -1:시작하지 않음, 0:시작은 하였으나 완료하지 못함, 1:완료
+                    "t_ep_pg_list": [ {                                 // 지정한 날짜에 플레이한 에피소드 리스트
+                                        "episode_id": string,               // 에피소드ID
+                                        "playtime": int,                    // 플레이 시간(분 단위)
+                                        "open_date": unix_timestamp,        // 에피소드 오픈 일시 unix_timestamp                                        
+                                        "week":int,                         // 해당 에피소드의 월 주차
+                                        "chapter": [int,int,int,int]        // 에피소드 진행 상황, 배열은 챕터 1,2,3,4 순서대로 정렬, -1:시작하지 않음, 0:시작은 하였으나 완료하지 못함, 1:완료
+
+                                    },
+                                    ...... ],
+                    "top_up_intelli" :                    // '제일 많이 증가한 지능', string table id  예) d_intell_top_n, 타이틀은 string table 뒤에 '_t' 를 붙임 -> d_intell_top_n_t
+                    "matrix": [int,int,int,int,int,int,int,int,int],        // 오늘 발달지능, 누적된 지능별 증가 수치
+                                                                            // 배열의 값의 지능 순서는 아래 순서
+                                                                            // [ Varbal-Linguistic, Logical-Mathematical, Naturalistic, 
+                                                                            //   Visual-Spatia, Interpersonal, Intrapersonal, 
+                                                                            //   Creative-Artistic, Musical-Rhythmic, Bodily-Kinesthetic]
+                    "uncheck_d_cnt":int, // 미확인된 daily report count
+                    "uncheck_w_cnt":int  // 미확인된 weekly report count
+        }
+    }
+
+    //실패
+    {
+        "result": "U002",       // 결과 코드
+        "data": {}
+    }
+* * *
+
+***
+##WEEKLY <a id="weekly" href="#weekly">¶</a>
+
+###1. [/report.week.summary] 공통 / POST <a id="/report.week.summary" href="#/report.week.summary">¶</a>
+
+주간 Report summary 페이지
+
+*info*
+
+    기능 : 주간 Report summary 페이지 데이타
+
+*parameter*
+
+    app : string()                  // required kidswell
+    os : string()                   // required ios, android
+    lang : string()                 // required kr, en, jp, ch, tw
+    unity_guid : string()           // 클라이언트(유니티) 생성하는 고유식별자
+    account_id : long               // 유저(계정) 고유번호
+    account_access_token : string() // 유저(계정)의 access_token
+    *
+    child_profile_id : number() // 자녀 프로파일 고유번호
+    year : int                  // 주간 리포트 연도, 예)2014
+    month : int                 // 주간 리포트 월, 1~12
+    week : int                  // 주간 리포트 주, 1~5
+    
+    
+
+*History*
+
+
+*return value*
+
+    // 성공
+    {
+        "result": "S000",                   // 결과 코드
+        "data": {
+                    "this_week_ep_id": string,            // '이번주 에피소드 ID', 요청한 날짜 기준의 이번주 EPISODE_ID
+                    "month":int,                          // '이번주 에피소드 월', 요청한 날짜 기준의 이번주 EPISODE 의 월
+                    "week":int,                           // '이번주 에피소드 주차', 요청한 날짜 기준의 이번주 EPISODE 의 주차
+                    "open_date": unix_timestamp,          // 에피소드 오픈 일시 unix_timestamp
+                    "t_play_date_cnt": int,               // 플레이 일수
+                    "t_ptime": int,                       // '총 합습 시간', 이번주에 플레이한 모든 에피소드의 플레이 타임 총합 (분 단위)
+                    "t_play_ep_cnt": int,                 // '총 학습 에피소드', 이번주에 플레이한 에피소드 개수
+                    "average_pg_per": int,                // '평균 확습 진행률'
+                    "learning": string,                   // '학습진도', string table id, 예) d_s_w_nd, 타이틀은 string table 뒤에 '_t' 를 붙임 -> d_s_w_nd_t
+                    "use_habits": string,                 // '이용습관', string table id, 예) w_s_all_nv, 타이틀 table i d는  string table 뒤에 '_t' 를 붙임 -> w_s_all_nv_ㅅ
+                    "this_week_ep_pg": [int,int,int,int],               // 이번주 에피소드 진행 상황, 배열은 챕터 1,2,3,4 순서대로 정렬, -1:시작하지 않음, 0:시작은 하였으나 완료하지 못함, 1:완료
+                    "t_ep_pg_list": [ {                                 // 지정한 날짜에 플레이한 에피소드 리스트
+                                        "episode_id": string,               // 에피소드ID
+                                        "playtime": int,                    // 플레이 시간(분 단위)
+                                        "open_date": unix_timestamp,        // 에피소드 오픈 일시 unix_timestamp
+                                        "week":int,                         // 해당 에피소드의 월 주차
+                                        "chapter": [int,int,int,int]        // 에피소드 진행 상황, 배열은 챕터 1,2,3,4 순서대로 정렬, -1:시작하지 않음, 0:시작은 하였으나 완료하지 못함, 1:완료
+                                    },
+                                    ...... ],
+                    "matrix": [int,int,int,int,int,int,int,int,int]         // 오늘 발달지능, 누적된 지능별 증가 수치
+                                                                            // 배열의 값의 지능 순서는 아래 순서
+                                                                            // [ Varbal-Linguistic, Logical-Mathematical, Naturalistic, 
+                                                                            //   Visual-Spatia, Interpersonal, Intrapersonal, 
+                                                                            //   Creative-Artistic, Musical-Rhythmic, Bodily-Kinesthetic]
+                    "dow_ptime" : [int,int,int,int,int,int,int],            // 요일별 플레이시간, [금,토,일,월.화,수,목] 순서
+                    "uncheck_d_cnt":int,    // 미확인된 daily report count
+                    "uncheck_w_cnt":int     // 미확인된 weekly report count
+
+        }
+    }
+
+    //실패
+    {
+        "result": "U002",       // 결과 코드
+        "data": {}
+    }
+* * *
+    

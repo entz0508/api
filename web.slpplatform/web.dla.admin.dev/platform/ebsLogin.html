@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NDE</title>
+    <!-- Bootstrap CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <!-- bootstrap theme -->
+    <link href="/css/bootstrap-theme.css" rel="stylesheet">
+    <!--external css-->
+    <!-- font icon -->
+    <link href="/css/elegant-icons-style.css" rel="stylesheet" />
+    <link href="/css/font-awesome.css" rel="stylesheet" />
+    <!-- Custom styles -->
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/style-responsive.css" rel="stylesheet" />
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!--[if lt IE 9]> <script src="/js/jquery-1.8.3.min.js"></script> <![endif]-->
+    <!--[if gte IE 9]><!-->
+    <script src="/js/jquery-1.8.3.min.js"></script>
+    <!--<![endif]-->
+
+
+</head>
+<body>
+    <div class="container">
+        <form class="login-form" name="loginform" id="loginform" onsubmit="return loginchk()" action="login.php" method="post" style="margin: 50px auto 0;">
+            <div class="login-wrap">
+                <p class="login-img"><i class="icon_lock_alt"></i></p>
+
+                <select class="form-control m-bot8" id="userSelectID">
+                    <option value="">테스트계정 선택</option>
+                    <option value="13EECEB0B146F2938F14B8F4FA2DD3051C81C96B5A631CCF321FD6445E16779D3B7036428FE19A5D1DB4512B525912F4A5E5FB785AF65CE25C6A6B64A1EC466V">테스트계정 1</option>
+                    <option value="14EECEB0B146F2938F14B8F4FA2DD3051C81C96B5A631CCF321FD6445E16779D3B7036428FE19A5D1DB4512B525912F4A5E5FB785AF65CE25C6A6B64A1EC466V">테스트계정 2</option>
+                    <option value="15EECEB0B146F2938F14B8F4FA2DD3051C81C96B5A631CCF321FD6445E16779D3B7036428FE19A5D1DB4512B525912F4A5E5FB785AF65CE25C6A6B64A1EC466V">테스트계정 3</option>
+                    <option value="16EECEB0B146F2938F14B8F4FA2DD3051C81C96B5A631CCF321FD6445E16779D3B7036428FE19A5D1DB4512B525912F4A5E5FB785AF65CE25C6A6B64A1EC466V">테스트계정 4</option>
+                    <option value="17EECEB0B146F2938F14B8F4FA2DD3051C81C96B5A631CCF321FD6445E16779D3B7036428FE19A5D1DB4512B525912F4A5E5FB785AF65CE25C6A6B64A1EC466V">테스트계정 5</option>
+                </select>
+                
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="icon_profile"></i></span>
+                    <input type="text" name="user_login" id="user_login" class="form-control" placeholder="Username" autofocus>
+                </div>
+                <button class="btn btn-primary btn-lg btn-block" type="button" id="newUser">신규생성</button>
+                <button class="btn btn-primary btn-lg btn-block" type="button" id="userView">계정확인</button>
+                <br /><br /><br />
+            </div>
+        </form>
+        <div class="text-right">
+            <div class="credits">
+            </div>
+        </div>
+    </div>
+
+    <script language="javascript">
+        var isNull = function isNull(chk_value) {
+            return ("undefined" === typeof chk_value) || (null === chk_value) || (undefined === chk_value) || ("" === chk_value);
+        };
+
+        var isEmailNDE = function (value) {
+            return !isNull(value) && /^[A-Z0-9]+[A-Z0-9]{127,127}$/g.test(value);
+        };
+
+        var getUniqueCode = function (length) {
+            var returnVal = "";
+            for (var i = 0; i < length; i++) {
+                returnVal += "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ".substr(Math.floor(Math.random() * 36), 1);
+            }
+            return returnVal;
+        };
+
+        $("#userSelectID").change(function () {
+            $("#user_login").val($("#userSelectID").val());
+        });
+
+        $("#newUser").click(function () {
+            $("#user_login").val(getUniqueCode(128));
+        });
+
+        $("#userView").click(function () {
+            alert(fnGetUserData());
+        });
+
+        function fnGetUserData() {
+            if (isEmailNDE($("#user_login").val())) {
+                return $("#user_login").val();
+            } else {
+                return "";
+            }
+        }
+
+        function fnUserCreate() {
+            var str = loginform.userSelectID.value
+            alert(str);
+
+        }
+
+        function loginchk() {
+            var str = loginform.user_login.value
+            if (!str) {
+                alert("아이디를 입력하세요.");
+                loginform.user_login.focus();
+                return false;
+            }
+
+            var str = loginform.user_pass.value
+            if (!str) {
+                alert("비밀번호를 입력하세요.");
+                loginform.user_pass.focus();
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

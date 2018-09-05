@@ -1,0 +1,67 @@
+{
+    "CONFIG":
+    {
+        "PACKAGE_NAME":"com.blueark.slp.en"
+    },
+    "LOG_INFO" :
+    {
+        "LOGGER_LEVEL" : "DEBUG",
+        "FILE_PATH" : "/data/logs/node/slp_en/slp_en.log",
+        "CATEGORY" : "SLP_DLA"
+    },
+    "SERVER_INFO" :
+    {
+        "SERVER_ID":1,
+        "NAME":"SLP EN",
+        "PORT":16002,
+        "APP_ID":[1000000001],
+        "GOOGLEPLAY_PUBLIC_KEY":"",
+        "SHOP_APPLE_VERIFY_RECEIPT_URL_LIVE":"buy.itunes.apple.com",
+        "SHOP_APPLE_VERIFY_RECEIPT_URL_SANDBOX":"sandbox.itunes.apple.com"
+    },
+    "SLP_PLATFORM" : {
+        "URL":"127.0.0.1",
+        "PORT":80,
+        "PATH_IS_AUTH_SLP_ACCOUNT_WITH_PROFILE":"slp/user/account/isloggedin/withprofile",
+        "PATH_IS_AUTH_SLP_ACCOUNT_WITHOUT_PROFILE":"slp/user/account/isloggedin/withoutprofile"
+    },
+    "MYSQL_SLP_EN_INFO" : {
+      "HOST": "localhost",
+      "PORT": 16612,
+      "USER": "splendev",
+      "PASSWORD": "qmffndkzm!!!!",
+      "DATABASE": "slp_en_info_db",
+      "CONNECTION_LIMIT":5
+    },
+    "MYSQL_SLP_EN" : {
+        "HOST": "localhost",
+        "PORT": 16612,
+        "USER": "splendev",
+        "PASSWORD": "qmffndkzm!!!!",
+        "DATABASE": "slp_en_db",
+        "CONNECTION_LIMIT":5
+    },
+    "MYSQL_SLP_KW_ACTION_LOG" : {
+        "HOST": "localhost",
+        "PORT": 16612,
+        "USER": "splkwapidev",
+        "PASSWORD": "qmffndkzm!!!!",
+        "DATABASE": "slp_kw_action_log_db",
+        "CONNECTION_LIMIT":5
+    },
+    "MYSQL_SLP_COMMON" : {
+        "HOST": "localhost",
+        "PORT": 16612,
+        "USER": "slpcommondev",
+        "PASSWORD": "qmffndkzm!!!!",
+        "DATABASE": "slp_common_db",
+        "CONNECTION_LIMIT":5
+    },
+    "MONGODB_CACHE" :
+    {
+        "CONNECT_STRING" : "mongodb://slpencache:jditn!!$#@127.0.0.1:34024/slp_en_cache"
+    },
+    "end" : {
+    }
+
+}

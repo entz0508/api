@@ -1,0 +1,47 @@
+﻿<? include $_SERVER['DOCUMENT_ROOT']."/include/TITLE_HEAD.php";?>
+<!--main content start-->
+<section id="main-content">
+    <section class="wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header"><i class="fa fa-table"></i> QUEST </h3>
+                <ol class="breadcrumb">
+                    <li><i class="fa fa-home"></i><a href="/">Home</a></li>
+                    <li><i class="fa fa-table"></i>Shop</li>
+                    <li><i class="fa fa-th-list"></i>Quest List xml</li>
+                </ol>
+            </div>
+        </div>
+        <!-- page start-->
+        <div class="row">
+            <div class="col-lg-12" id="reportDiv" style="width:100%;">
+                        loading..
+            </div>
+        </div>
+        <!-- page end-->
+    </section>
+</section>
+<!--main content end-->
+
+    <!--[if lt IE 9]> <script src="/js/jquery-1.8.3.min.js"></script> <![endif]-->
+    <!--[if gte IE 9]><!-->
+    <script src="/js/jquery-1.8.3.min.js"></script>
+    <!--<![endif]-->
+    <script>
+    function GetReport() {
+        var url = '';
+                url = 'questDoc.php';
+        $.ajax({
+                        url: url ,
+                        cache: false,
+                        type: 'GET'
+        }).done(function (html) {
+                        document.getElementById("reportDiv").innerHTML = html;
+        });
+    }
+        GetReport();
+
+    $(window.document).ready(function () {
+    });
+    </script>
+<? include $_SERVER['DOCUMENT_ROOT']."/include/BOTTOM.php";?>

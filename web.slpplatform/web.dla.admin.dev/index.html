@@ -1,0 +1,192 @@
+<? include $_SERVER['DOCUMENT_ROOT']."/include/TITLE_HEAD.php";?>
+
+      <section id="main-content">
+          <section class="wrapper">            
+              <!--overview start-->
+			  <div class="row">
+				<div class="col-lg-12">
+					<h3 class="page-header"><i class="fa fa-laptop"></i> Dashboard</h3>
+					<ol class="breadcrumb">
+						<li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
+						<li><i class="fa fa-laptop"></i>Dashboard</li>					
+					</ol>
+				</div>
+			</div>
+              <?
+              require_once("./inc/dbcon.php");
+
+              $sql = 'select count(*) as cnt from account_tb where REG_DATETIME >= date_add(now(), interval -24 hour);';
+              $result = $db->query($sql);
+              $row = $result->fetch_assoc();
+              $person = $row['cnt'];
+
+              $sql = 'select count(*) as cnt from profile_tb where REG_DATETIME >= date_add(now(), interval -24 hour);';
+              $result = $db->query($sql);
+              $row = $result->fetch_assoc();
+              $profile = $row['cnt'];
+              
+              
+              
+              $sql = "select count(distinct account_id) as users, count(account_id) as pays from
+                        (
+                                select account_id from slp_common_db.buy_history_tb
+                                    where reg_date > date_add(now(), interval -7 day) and pay_method='CASH' and receipt != 'CS'
+                                union all
+                                select account_id from slp_dla_db.buy_history_tb 
+                                    where reg_date > date_add(now(), interval -7 day) and pay_method='CASH' and receipt != 'CS'
+                        ) as temp;";
+              $result = $db->query($sql);
+              $row = $result->fetch_assoc();
+              $users = $row['users'];
+              $pays = $row['pays'];
+              ?>
+            <div class="row">
+				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+					<div class="info-box blue-bg">
+						<i class="fa fa-cloud-download"></i>
+						<div class="count"><?=number_format($person)?></div>
+						<div class="title">신규회원</div>						
+					</div><!--/.info-box-->			
+				</div><!--/.col-->
+
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                    <div class="info-box dark-bg">
+                        <i class="fa fa-thumbs-o-up"></i>
+                        <div class="count"><?=number_format($profile)?></div>
+                        <div class="title">신규 Profile</div>
+                    </div><!--/.info-box-->
+                </div><!--/.col-->
+              
+				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+					<div class="info-box brown-bg">
+						<i class="fa fa-shopping-cart"></i>
+						<div class="count"><?=number_format($users)?></div>
+						<div class="title">결제회원수</div>						
+					</div><!--/.info-box-->			
+				</div><!--/.col-->	
+				
+
+				
+				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+					<div class="info-box green-bg">
+						<i class="fa fa-cubes"></i>
+						<div class="count"><?=number_format($pays)?></div>
+						<div class="title">결제수</div>						
+					</div><!--/.info-box-->			
+				</div><!--/.col-->
+				
+			</div><!--/.row-->
+		
+			
+           <div class="row">
+		    <div class="col-lg-9 col-md-12">
+					
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h2><i class="fa fa-map-marker red"></i><strong>국가별 가입자분포 지도  (최근 24시간)</strong></h2>
+							<div class="panel-actions">
+								<a href="index.html#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
+								<a href="index.html#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
+								<a href="index.html#" class="btn-close"><i class="fa fa-times"></i></a>
+							</div>	
+						</div>
+						<div class="panel-body-map">
+							<div id="map" style="height:380px;"></div>	
+						</div>
+	
+					</div>
+				</div>
+
+              <div class="col-md-3">
+              <!-- List starts -->
+				<ul class="today-datas">
+                <!-- List #1 -->
+				<li>
+                  <!-- Graph -->
+                  <div><span id="todayspark1" class="spark"></span></div>
+                  <!-- Text -->
+                  <div class="datas-text">일별 가입자 추세(-15 Days)</div>
+                </li>
+                <li>
+                  <div><span id="todayspark5" class="spark"></span></div>
+                  <div class="datas-text">주간 가입자 추세(-6 Month)</div>
+                </li>
+              </ul>
+              </div>
+              
+			 
+           </div>  
+            
+		  
+		  <!-- Today status end -->
+			
+              
+				
+			<div class="row">
+               	
+				<div class="col-lg-9 col-md-12">	
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h2><i class="fa fa-flag-o red"></i><strong>국가별 가입자분포 TOP 10 (최근 24시간)</strong></h2>
+							<div class="panel-actions">
+								<a href="index.html#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
+								<a href="index.html#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
+								<a href="index.html#" class="btn-close"><i class="fa fa-times"></i></a>
+							</div>
+						</div>
+						<div class="panel-body">
+							<table class="table bootstrap-datatable countries">
+								<thead>
+									<tr>
+										<th></th>
+										<th>Country Name kr</th>
+										<th>Country Name</th>
+										<th>Account</th>
+										<th>Total Ratio</th>
+									</tr>
+								</thead>   
+								<tbody>
+                                    <?
+                                    $sql = 'select IFNULL(b.country_name_kr,a.COUNTRY) as country_name_kr,IFNULL(b.country_name,a.COUNTRY) as country_name,a.COUNTRY, IFNULL(a.cnt,0) as cnt
+                                                from
+                                                (select COUNTRY,count(*) as cnt
+                                                from slp_account_db.account_tb
+                                                where REG_DATETIME >= date_add(now(), interval -24 hour)
+                                                group by COUNTRY order by cnt desc limit 10
+                                                ) a left join slp_platform_db.country_tb b on a.COUNTRY = b.iso_cd
+                                                order by a.cnt desc';
+                                    $result = $db ->query($sql);
+                                    $gd = "";
+                                    while ($row = $result ->fetch_assoc()) {
+                                        //$gd.= "\"".$row['iso_cd']."\":".$row['cnt'].",";
+                                        $rat = round($row['cnt']/$person*100,2);
+                                        ?>
+                                        <tr>
+                                            <td><img src="/img/flags32/<?=$row['COUNTRY']?>.png" style="height:18px; margin-top:-2px;"></td>
+                                            <td><?=$row['country_name_kr']?></td>
+                                            <td><?=$row['country_name']?></td>
+                                            <td><?=number_format($row['cnt'])?></td>
+                                            <td>
+                                                <div class="progress thin">
+                                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100" style="width: <?=$rat?>%">
+                                                    </div>
+                                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="27" aria-valuemin="0" aria-valuemax="100" style="text-align:left;width: <?=100-$rat?>%">&nbsp;&nbsp;<?=$rat?> %
+                                                    </div>
+                                                </div>
+                                                <span class="sr-only">73%</span>
+                                            </td>
+                                        </tr>
+                                        <?
+                                    }
+                                    ?>
+								</tbody>
+							</table>
+						</div>
+					</div>	
+				</div><!--/col-->
+              </div>
+
+          </section>
+      </section>
+
+<? include $_SERVER['DOCUMENT_ROOT']."/include/BOTTOM.php";?>

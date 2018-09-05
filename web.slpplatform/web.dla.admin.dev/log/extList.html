@@ -1,0 +1,124 @@
+﻿<? include $_SERVER['DOCUMENT_ROOT']."/include/TITLE_HEAD.php";?>
+<?
+if(isset($_GET['page'])) {
+    $page = $_GET['page'];
+} else {
+    $page = 1;
+}
+?>
+
+          
+<!--main content start-->
+<section id="main-content">
+    <section class="wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <form class="navbar-form" name="searchform" id="searchform" method="post"><!--  action="login.php" -->
+                <h3 class="page-header"><i class="fa fa-table"></i> EBSLang Log List </h3>
+                <ul class="nav navbar-nav navbar-right">&nbsp;&nbsp;&nbsp;
+                    <select class="form-control m-bot10" id="st">
+                          <option value="API_PATH">API_PATH</option>
+                          <option value="ACCOUNT_ID">ACCOUNT_ID</option>
+                          <option value="PROFILE_Name">PROFILE_Name</option>
+                          <option value="PROFILE_ID">PROFILE_ID</option>
+                      </select>
+                    <input class="form-control" placeholder="Search" type="text"  style="width:250px;" id="sv"> 
+                    <a class="btn btn-default btn-sm" href="javascript:searchchk()" title="Bootstrap 3 themes generator">검색</a>
+                    <a class="btn btn-default btn-sm" href="javascript:location.href='extList.html';" title="Bootstrap 3 themes generator">전체</a>
+                </ul>
+                <ol class="breadcrumb">
+                    <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
+                    <li><i class="fa fa-table"></i>Log</li>
+                    <li><i class="fa fa-th-list"></i>extList</li>
+                </ol>
+                </form>                
+            </div>
+        </div>
+        <!-- page start-->
+        <div class="row">
+            <div class="col-lg-12" id="reportDiv" style="width:100%;">
+                        loading..
+            </div>
+        </div>
+        <!-- page end-->
+    </section>
+</section>
+<!--main content end-->
+
+    <!--[if lt IE 9]> <script src="/js/jquery-1.8.3.min.js"></script> <![endif]-->
+    <!--[if gte IE 9]><!-->
+    <script src="/js/jquery-1.8.3.min.js"></script>
+    <!--<![endif]-->
+    
+    <script>
+    var param = "";
+    function searchchk() {
+        var str = searchform.st.value
+        var svr = searchform.sv.value
+        if (!svr) {
+                    alert("검색어를 입력하세요.");
+                    searchform.sv.focus();
+            return false;
+        }
+                param = "&st=" + str + "&sv=" + svr;
+                GetReport(1);
+        }
+
+        function GetReport(page) {
+            var url = '';
+            //var param = '';
+                    url = 'extList.php';
+            $.ajax({
+                            url: url + '?page=' + page + param,
+                            cache: false,
+                            type: 'GET'
+            }).done(function (html) {
+                            document.getElementById("reportDiv").innerHTML = html;
+                //gPage = page;
+            });
+        }
+
+
+        GetReport(<?=$page?>);
+        $(window.document).ready(function () {
+            
+        });
+        
+        function back_top() 
+        { 
+                x = document.body.scrollLeft; 
+                y = document.body.scrollTop; 
+                step = 2;
+                while ((x != 0) || (y != 0)) { 
+                        scroll (x, y); 
+                        step += (step * step / 300); 
+                        x -= step; 
+                        y -= step; 
+                        if (x < 0) x = 0; 
+                        if (y < 0) y = 0; 
+                } 
+                scroll (0, 0); 
+        } 
+        
+        function jsonResultStr(token) {
+            $.ajax({
+                url: "http://apidev.doralab.co.kr/nde/open/dec",
+                type: "POST",
+                data: { token: $token },
+                success: function (data, textStatus, jqXHR) {
+                    return data;
+                    // data 는 서버로 부터 수신된 응답
+                    // $('#result').empty();
+                    // $('#result').append(data);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log(textStatus);
+                    return textStatus;
+                }
+            });
+
+            //return json_encode(json_decode($str), JSON_PRETTY_PRINT);
+        }
+
+    </script>
+<? include $_SERVER['DOCUMENT_ROOT']."/include/BOTTOM.php";?>

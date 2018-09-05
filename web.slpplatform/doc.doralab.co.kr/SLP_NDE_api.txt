@@ -1,0 +1,1076 @@
+## __NDE API__
+
+*DOC LIST*
+* [SLP Platform API](/slp_platform_api?pass=ehfkfpqakstp!1)
+* [DORA API](/dora_api?pass=ehfkfpqakstp!1)
+* [SLP EN API](/slp_en_api?pass=ehfkfpqakstp!1)
+* [SLP NDE API](/slp_nde_api?pass=ehfkfpqakstp!1)
+* [ADB API](/api_ADB?pass=dpdlelql!)
+* [JSU API](/slp_jsu_api?pass=ehfkfpqakstp!1)
+* [ADA API](/fit_ada?pass=fitadavmfhwprxm!1)
+
+*<strong>서버 to 클라이어트 결과</strong>*
+
+	1. 응답 결과는 JSON 으로 전송한다
+	2. 성공 실패는 res 값으로 구분한다.
+       정상 : res == 0
+       그외 : res != 0
+	   예)  { "res":0 , ..... }
+
+*<strong>개발 서버 주소</strong>*
+
+	DEV Server IP : 104.199.129.129
+	APP ID (Dora 영어) : 1000000007
+
+
+*<strong>API 목록</strong>*
+
+[ACCOUNT](#account)
+    1. SLP 계정 로그인(계정생성)  [/slp.user.account.nde.login](#/slp.user.account.nde.login) - POST
+	2. SLP 계정 정보 가져오기  [/slp.user.account.get.info](#/slp.user.account.get.info) - POST
+	3. SLP 프로파일 정보 수정(닉네임 등록) [/slp.user.account.profile.edit](#/slp.user.account.profile.edit) - POST
+
+[EPISODE](#episode)
+    1. 에피소드 권한 목록  [/nde/episode/permlist](#/nde/episode/permlist) - POST
+    2. 에피소드 플레이 히스토리 [/nde/episode/episodePlayHistory](#/nde/episode/episodePlayHistory) -  POST
+	3. 에피소드 학습시작일 등록 [/nde/episode/episode_begining](#/nde/episode/episode_begining) - POST ------*<strong>동기처리 0%</strong>*
+	4. 에피소드 학습시작일 등록(EBSLang) [/nde/episode/episode_begining](#/nde/episode/ebslang_episode_begining) - POST ------*<strong>구현 0%</strong>*
+
+[BUY](#buy)
+    1. 에피소드 상품구매  [/nde/buy/BuyProduct](#/nde/buy/BuyProduct)~~ - POST------*<strong>동기처리 완료</strong>*
+	2. 에피소드 상품환불  [/nde/buy/refundProduct](#/nde/buy/refundProduct) - POST ------*<strong>구현 0%</strong>* 
+    3. 에피소드 상품구매 히스토리   [/nde/buy/buyHistory](#/nde/buy/buyHistory) - /nde/episode/permlist에 통합 [/nde/episode/permlist](#/nde/episode/permlist) - POST
+	4. 에피소드 상품구매(EBSLang, 계정생성)   [/nde/buy/buyProduct](#/nde/buy/buyProduct) - POST ------*<strong>구현 0%</strong>*
+	5. 에피소드 상품환불(EBSLang)   [/nde/buy/refundProduct/web](#/nde/buy/refundProduct/web) - POST ------*<strong>구현 0%</strong>*
+
+[ACTION_LOG](#actionLog) - 개발과정에서 분리가능
+    1. Action Log  [/nde/action/log](#/nde/action/log) - POST
+	2. Listen&Repeat 녹음파일 등록 [/nde/report/learning/upload](#/nde/report/learning/upload) - POST
+	3. Quiz 결과등록[/nde/checkup](#/nde/checkup) - POST
+	
+[Report](#actionLog) - 개발과정에서 분리가능
+	1. Overview - 전체 진행률(Level별 Lesson진행비율) - /nde/episode/permlist에 통합 [/nde/episode/permlist](#/nde/episode/permlist) - POST
+	2. Overview Details - popup [/nde/report/learning/overview](#/nde/report/learning/overview) - POST
+	3. Quiz Result [/nde/checkup/result](#/nde/checkup/result) - POST
+	4. Activity 조회 [/nde/report/learning/recordList](#/nde/report/learning/recordList) - POST
+
+
+[VERSION_CHECK](#version_check)
+    1. App Version   [/nde/app/ver](#/nde/app/ver) - POST
+
+[ERROR CODE](#errorCode)
+* * * * *
+
+##ACCOUNT <a id="account" href="#account">¶</a>
+
+<!-- 사용안함
+###1. SLP 유저 계정 생성 [/slp.user.account.nde.create] / POST <a id="/slp.user.account.nde.create" href="#/slp.user.account.nde.create">¶</a>
+
+*info*
+
+    기능 : SLP 유저 계정 생성
+
+
+*parameter*
+
+    app_id : long           // 등록된 APP 의 고유 번호
+    os : string             // ios, android
+    email : string          // 이메일 128byte -> 64byte enc_user_id 길이변경
+    password : string       // 이메일과 동일
+    country : string        // 국가코드 # 알파벳 2자리
+    signup_path : string    // 가입경로 # (slp,google,facebook)
+　
+    // 아래 필드는 외부 앱에서 계정 전환 필요시 사용
+    transform       : int           // 외부 앱의 Guest 계정을 SLP 계정으로 # 연동안함:0, 연동함:1
+    ext_app_user_id : long          // 외부앱에 계정 고유번호
+    ext_app_access_token : string   // 외부앱의 계정 access token
+
+
+*return value*
+
+    // 성공
+    {
+        "res":0,            // 성공 0, 실패 0 이 아닌 값,
+        "account_id":long   // 생성된 계정의 고유번호
+    }
+
+    //실패
+    {
+        "res": 0 이 아닌 값,
+    }
+
+
+*res*
+
+    0 : 성공　
+    -200001 : 중복 이메일
+    -200002 : 계정 추가 실패
+    -200005 : 프로파일 추가 실패, failed, Add Profile
+    -200006 : 프로파일(히든) 추가 실패 failed, Add Profile Hidden
+    -200007 : 가입경로 정보 추가 실패, failed, Insert SignupInfo
+    -200008 : 접근 허용된 APP 추가 실패, failed, Insert Account Allow Access APP
+    -200009 : App Access Token 업데이트실패, failed, Update App Access Token
+
+-->
+
+
+###1\. NDE 유저 계정 로그인 [/slp.user.account.nde.login] / POST <a id="/slp.user.account.nde.login" href="#/slp.user.account.nde.login">¶</a>
+
+_info_
+
+    기능 : EBS 유저 계정 생성 및 로그인 (미 가입 된 이메일로 로그인 시 회원가입 진행 후 로그인 진행.)
+
+_parameter_
+
+    app_id : long           // 등록된 APP 의 고유 번호
+    os : string             // ios, android
+    client_uid :  string	// 클라이언트의 고유값 (client Identifier)
+    email : string          // 64byte - end_user_id (ebs 회원키, 64byte)
+    password : string       // 이메일과 동일값 입력 - end_user_id (ebs 회원키, 64byte)
+    signup_path : string    // 가입경로, ( slp,google,facebook,ebs )
+
+_Server parameter(참고)_
+
+	enc_user_id				// EBS 회원 고유키, ebs로그인시 받는 유져키값, 64 byte 고정값
+							// ex) 13EECEB0B146F2938F14B8F4FA2DD3051C81C96B5A631CCF321FD6445E16779D
+	nde_app_id				// EBS에서 부여한  app 고유번호,string 40byte
+	pdt_id					// 상품ID, EBS에서 부여한 상품ID, int 10byte
+	step_attend_id			// 학습고유번호, EBS 학습 최상위 번호, int 10byte
+
+_return value_
+
+    // 성공
+    {
+        "res":0,                            // 성공 0, 실패 0 이 아닌 값,
+        "account_id" : long,                // SLP 계정 고유전호
+        "access_token" : string,            // APP Access Token
+        "is_allow_app" : int,               // 접급 허용된 APP 구분 # 접근허용:1, 접근 비허용:0
+
+    }
+
+    //실패
+    {
+        "res": 0 이 아닌 값,
+    }
+
+_res_
+
+    0 : 성공
+    -200010 : 이메일과 비밀번호가 일치하지 않음, Not Match E-Mail or Password
+    -200011 : 이메일의 가입경로가 다름
+
+
+###2\. SLP 계정 정보 가져오기 [/slp.user.account.get.info] / POST <a id="/slp.user.account.get.info" href="#/slp.user.account.get.info">¶</a>
+
+_info_
+
+    기능 : SLP 계정 정보 가저오기, NDE에서는 기본 프로파일 1개만 사용함.
+
+_parameter_
+
+    app_id : long                // 등록된 APP 의 고유 번호
+    os : string                  // ios, android
+    client_uid :  string         // 클라이언트의 고유값 (client UID)
+    account_id : long            // 계정 고유 번호
+    access_token : string        // access token
+
+_return value_
+
+    // 성공
+    {
+        "res":0,                            // 성공 0, 실패 0 이 아닌 값,
+        "email":string                      // SLP 계정 이메일 주소
+        "account_id" : long,                // SLP 계정 고유전호
+        "access_token" : string,            // Access Token
+        "is_allow_app" : int,               // 접급 허용된 APP 구분 # 접근허용:1, 접근 비허용:0
+        "country" : string,                 // 계정 국가 코드
+        "cur_pf_id" : int,                  // 현재 선택된 SLP 프로파일 고유번호
+        "star" : int,                       // star point
+        "login_type" : string               // 가입경로, slp, google, facebook
+        "pf_list" : [{
+                "pf_id" : long,             // 프로파일 고유번호
+                "name" : string,            // 프로파일 이름
+                "birthday" : string,        // 프로파일 생일 # 예) 2015-01-01
+                "gender" : string,          // 프로파일 성별 # 남자:m, 여자:f
+                "img_url" : string,         // 프로파일 이미지 경로
+                "img_th_url" : string,      // 프로파일 섬네일 이미지 경로
+                "hidden" : int              // 하든 프로파일 # 일반 프로파일:0, 히든 프로파일:1
+                "limit_time" : int          // 하루 사용 제한시간, 분단위
+            }
+        ]
+
+    }
+
+    //실패
+    {
+        "res": 0 이 아닌 값,
+    }
+
+_res_
+
+    0 : 성공
+    -200016 : 계정 정보를 찾을수 없음 failed, Not found Account ID
+    -200020 : 이 계정에서는 접근이 허용되지 않은 APP 입니다.
+    -200100 : 로그인 되지 않음
+
+###3. SLP 프로파일 정보 수정(NDE 닉네임 등록) [/slp.user.account.profile.edit] / POST <a id="/slp.user.account.profile.edit" href="#/slp.user.account.profile.edit">¶</a>
+
+*info*
+
+    기능 : NDE 기본 프로파일 닉네임 등록, NDE에서는 기본 프로파일 1개만 사용함. 닉네임 수정은 없음.
+		   생년월일이 기본값(2015-01-01)이 아니거나 or 성별이 기본값(m)이 아닌경우 닉네임 입력UI 처리
+
+*parameter*
+
+	app_id : long			// 등록된 APP 의 고유 번호
+	os : string 			// ios, android
+	client_uid :  string  // 클라이언트의 고유값 (client UID)
+    account_id : long			// 계정 고유 번호
+    access_token : string		// access token
+	pf_id : long 				// Profile ID
+	name : string,				// 프로파일 이름(등록할 닉네임)
+	birthday : string,  		// NDE에서 사용하지 않음, 프로파일 생일 # 예) 2015-01-01, 서버 기본값을 그대로 보내줌.
+	gender : string,			// NDE에서 사용하지 않음, 프로파일 성별 # 남자:m, 여자:f, 서버 기본값을 그대로 보내줌.
+
+
+*return value*
+
+	// 성공
+	{
+		"res":0,					// 성공 0, 실패 0 이 아닌 값,
+		"pf_id" : long, 			// 프로파일 고유번호
+		"name" : string,			// 프로파일 이름
+		"birthday" : string,  		// NDE에서 사용하지 않음, 프로파일 생일 # 예) 2015-01-01
+		"gender" : string,			// NDE에서 사용하지 않음, 프로파일 성별 # 남자:m, 여자:f
+		"img_url" : string,			// NDE에서 사용하지 않음, 프로파일 이미지 경로
+		"img_th_url" : string,		// NDE에서 사용하지 않음, 프로파일 섬네일 이미지 경로
+		"limit_time" : int			// NDE에서 사용하지 않음, 하루 사용 제한시간, 분단위
+	}
+
+	//실패
+	{
+		"res": 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	-200016 : 계정 정보를 찾을수 없음 failed, Not found Account ID
+	-200020 : 이 계정에서는 접근이 허용되지 않은 APP 입니다.
+	-200100 : 로그인 되지 않음
+
+
+##EPISODE <a id="episode" href="#episode">¶</a>
+
+### 1\. 에피소드 권한 목록 [/nde/episode/permlist] / POST <a id="/nde/episode/permlist" href="#/nde/episode/permlist">¶</a>
+
+_info_
+
+    기능 : 해당 계정이 소유하고 있는 Lesson의 구매일 과 시작일, 종료일, Unit Complete Count, Total Count 를 제공
+
+_parameter_
+
+    app_id : long                   // APP 의 고유 ID
+    client_uid : string             // 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+    os : string                     // client os,   ex) andorid, ios
+    c_ver : string                  // client version,  ex) 1.0.0
+    country : string                // iso 국가코드, alpha2
+    account_id : long               // slp account id
+    access_token : string           // slp account access token
+    seq_id : int                    // 구매후 생성 되는 SEQ_ID 값 (seq_id 값 0 or 미 입력 시 해당 account_id 가 가지고 있는 모든 SEQ_ID 의 퍼미션 리스트가 출력)
+
+_return value_
+
+    // 성공
+    "SEQBuyList": [
+            {
+                "SEQ_ID": 391,                                  //구매 후 생성 되는 SEQ_ID
+                "APP_ID": 1000000007,                           //ACCOUNT ID
+                "PDT_ID": "s1_1year_all",                       //PRODUCT_ID
+                "ACCOUNT_ID": 100029208,                        //APP ID
+                "BUY_DATE": "2017-11-21 15:43:32",              //LESSON 구매 일
+                "BEGIN_DATETIME": null,                         //LESSON 시작 일
+                "END_DATETIME": null,                           //LESSON 종료 일
+                "EXPIRED": "N",                                 //상품 환불 여부 (Y or N)
+                "LESSON_LIST": [
+                    {
+                        "LESSON_ID": "101",                     //LESSON ID
+                        "TOTALUNITCNT": 5,                      //LESSON 내 UNIT 카운트
+                        "COMPLETEUNITCNT": 1,                   //LESSON 내 플레이 된 UNIT 카운트
+                        "UNIT_LIST": [
+                            {
+                                "UNIT_ID": "101A"               //LESSON 내 UNIT ID
+                                "complete": 1
+                            },
+                            {
+                                "UNIT_ID": "101B"
+                                "complete": 0
+                            },
+                            {
+                                "UNIT_ID": "101C"
+                                "complete": 0
+                            },
+                            {
+                                "UNIT_ID": "101D"
+                                "complete": 0
+                            },
+                            {
+                                "UNIT_ID": "101E"
+                                "complete": 0
+                            }
+                        ]
+                    },        ... 반복
+                ]          ... 반복
+            },
+    ]
+    "res": 0
+
+
+    *상품 환불 이후 API 호출*
+    _return value_
+
+        // 성공
+        {
+            "SEQBuyList": [
+                {
+                    "SEQ_ID": 521,                          //SEQ_ID
+                    "PDT_ID": "kr.co.ebs.doradora.lv5",     //PRODUCT_ID
+                    "ACCOUNT_ID": 100029208,                //ACCOUNT_ID
+                    "BUY_DATE": "2017-12-27 18:26:17",      //상품 구매 일
+                    "EXPIRED": "Y",                         //상품 환불 여부 (Y or N)
+                    "EXPIRED_DATE": null                    //상품 환불 날짜 (상품 환불 API 호출 후 시간 출력 됨.)
+                }
+            ],
+            "res": 0
+        }
+        //실패
+        {
+            "res":int, // 0 이 아닌 값,
+        }
+
+### 2\. 에피소드 플레이 히스토리 [/nde/episode/episodePlayHistory] / POST <a id="/nde/episode/episodePlayHistory" href="#/nde/episode/episodePlayHistory">¶</a>
+
+_info_
+
+    기능 : UNIT 플레이에 대하여 SEQ, LESSON, UNIT 순으로 정렬된 플레이 리스트를 제공
+
+
+_parameter_
+
+    app_id : long                   // APP 의 고유 ID
+    client_uid : string             // 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+    os : string                     // client os,   ex) andorid, ios
+    c_ver : string                  // client version,  ex) 1.0.0
+    country : string                // iso 국가코드, alpha2
+    account_id : long               // slp account id
+    access_token : string           // slp account access token
+    pf_id:int                       // Platform Profile ID
+
+_return value_
+
+    // 성공
+    {
+        "play_history": [
+            {
+                "SEQ_ID": 391,                                              //구매 후 생성 되는 SEQ_ID
+                "ACCOUNT_ID": 100029208,                                    //ACCOUNT ID
+                "PROFILE_ID": 159089,                                       //ACCOUNT 내 PROFILE ID
+                "LESSON_LIST": [
+                    {
+                        "LESSON_ID": "102",                                 //LESSON ID
+                        "P_TIME": 100,                                      //LESSON 내 UNIT들의 총 플레이 시간
+                        "UNIT_LIST": [
+                            {
+                                "UNIT_ID": "102A",                          //플레이한 UNIT ID
+                                "BEGIN_DATETIME": "2017-11-21 15:47:27",    //UNIT 시작 시간
+                                "END_DATETIME": "2017-11-21 15:47:42"       //UNIT 종료 시간
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "res": 0
+    }
+
+    //실패
+    {
+        "res":int, // 0 이 아닌 값,
+    }
+
+_res_
+
+    0 : 성공
+
+
+### 3\. 에피소드 학습시작일 등록 [/nde/episode/episode_begining] / POST <a id="/nde/episode/episode_begining" href="#/nde/episode/episode_begining">¶</a>
+
+_info_
+
+    기능 : 에피소드 상품 구매 후 학습시작일 등록, EBSLang 동기처리
+
+_parameter_
+
+    app_id : long                   // APP 의 고유 ID
+    client_uid : string             // 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+    os : string                     // client os,   ex) andorid, ios
+    c_ver : string                  // client version,  ex) 1.0.0
+    country : string                // iso 국가코드, alpha2
+    account_id : long               // slp account id
+    access_token : string           // slp account access token
+    profile_id:int                  // Platform Profile ID
+    seq_id : string					// seq_id - 학습권 구매시 생성되는 학습고유코드(EBSLang 의 Step_attend_id 와 매칭됨)
+    begin_date : string             // 학습 시작일 ex) 20171215 or 2017-12-15
+
+_return value_
+
+    // 성공
+	{
+		"code": int,					// 디버깅용으로 사용하는 코드값 이용하지 않습니다.
+		"msg": "Success",				// 처리결과 message
+		"beginDate": "2017-12-15",		// 학습시작일
+		"endDate": "2018-02-15",		// 학습종료일
+		"res": int						// 성공 0, 실패 0 이 아닌 값
+	}
+
+    //실패
+	{
+		"msg": "Not Found seqID or overlap error",
+		"res": 0									// 0 이 아닌 값,
+	}
+
+_res_
+
+    0 : 성공
+	-300000 : Not Found seqID or overlap error
+	-300001 : incorrect date error
+
+_msg_
+
+	"Not Found seqID or overlap error"	: seq_id가 없거나, 이미 시작일이 등록된 학습
+	"incorrect date error"				: 시작일이 이전날짜인 경우 에러
+	"incorrect date error - 90days"		: 학습시작일이 구매일로 부터 90일이 경과된 경우 에러
+
+
+* * *
+
+##BUY <a id="buy" href="#buy">¶</a>
+
+### 1\. 에피소드 상품구매 [/nde/buy/BuyProduct] / POST <a id="/nde/buy/BuyProduct" href="#/nde/buy/BuyProduct">¶</a>
+
+_info_
+
+    기능 : 에피소드 상품 구매, EBSLang 동기처리
+
+_parameter_
+
+    app_id : long                   // APP 의 고유 ID
+    client_uid : string             // 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+    os : string                     // client os,   ex) andorid, ios
+    c_ver : string                  // client version,  ex) 1.0.0
+    country : string                // iso 국가코드, alpha2
+    account_id : long               // slp account id
+    access_token : string           // slp account access token
+    profile_id:int                  // Platform Profile ID
+    product_id : string             // Product ID - 상품 XML 에 기재되어 있는 pruduct ID
+    reciept : string                // CASH 일 경우 마켓에서 결제 후 받은 영수증
+    pay_method: string              // CASH - NDE는 관리자외는 CASH
+	is_test: string					// 'true'일때 http://ftp.bluearkedu.com/nde/data/nde_product.xml , false면 cdn 경로
+
+_return value_
+
+    // 성공
+    {
+        "res":int,                                                          // 성공 0, 실패 0 이 아닌 값,
+        "ACCOUNT_ID":"100003265",                                           // 요청한 account ID
+        "CODE":0,                                                           // 디버깅용으로 사용하는 코드값 이용하지 않습니다.
+        "MSG":"START_POINT:60"                                              // 해당 계정의 별포인트 값 포인트 결제 시 참고하십시오. 형태가 JSON 방식에서 벗어나니 확인하십시오.
+    }
+
+    //실패
+    {
+        "res":int, // 0 이 아닌 값,
+    }
+
+_res_
+
+    0 : 성공
+
+### 2\. 에피소드 상품구매 히스토리 [/nde/buy/buyHistory] / POST <a id="/nde/buy/buyHistory" href="#/nde/buy/buyHistory">¶</a>
+
+_info_
+
+
+_parameter_
+
+
+_return value_
+
+
+_res_
+
+    0 : 성공
+
+
+### 3\. 상품구매 환불 [/nde/buy/refundProduct] / POST 
+
+_info_
+
+    기능 : 상품구매 환불 처리, EBSLang 동기처리
+
+
+
+### 4\. 에피소드 상품구매(EBSLang, 계정생성) [/nde/buy/exBuyProduct] / POST 
+
+_info_
+
+    기능 : 외부 사이트(EBS) 상품구매시 내부 동기화처리, 특정서버에 대한 접근권한 허용.
+	       구매시 회원정보가 없으면 계정 생성 후 구매처리
+
+_parameter_
+
+    app_id : long					// APP 의 고유 ID (nde : 1000000007)
+    user_id : long					// 외부 account id - ebsLang의 enc_user_id
+	pdt_id : string					// Product ID - ebsLang의 상품코드
+	amount : int					// 구매가격(원) - ebsLang의 실제 구매가격
+	order_id : string				// 구매 고유코드 - ebsLang의 step_attend_id
+
+_return value_
+
+    // 성공
+    {
+        "res":int,                                                          // 성공 0, 실패 0 이 아닌 값,
+        "ACCOUNT_ID":"100003265",                                           // 요청한 account ID
+        "MSG":"START_POINT:60"                                              // 해당 계정의 별포인트 값 포인트 결제 시 참고하십시오. 형태가 JSON 방식에서 벗어나니 확인하십시오.
+    }
+
+    //실패
+    {
+        "res":int, // 0 이 아닌 값,
+    }
+
+_res_
+
+    0 : 성공
+
+
+
+### 5\. 에피소드 상품환불(EBSLang)  [/nde/buy/exRefundProduct] / POST 
+
+_info_
+
+    기능 : 외부 사이트(EBS) 상품구매 환불시 내부 동기화처리, 특정서버에 대한 접근권한 허용.
+
+
+
+
+##ACTION_LOG <a id="actionLog" href="#actionLog">¶</a>
+
+### 1\. Action Log [/nde/action/log] 공통 / POST <a id="/nde/action/log" href="#/nde/action/log">¶</a>
+
+_info_
+
+    기능 : 에피소드, 챕터의 플레이 시작, 끝, 백그라운드상태 등을 서버에 전송하여 저장
+
+_parameter_
+
+    app_id : long                   // SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+    client_uid : string             // 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+    os : string                     // client os,   ex) andorid, ios
+    c_ver : string                  // client version,  ex) 1.0.0
+    country : string                // iso 국가코드, alpha2
+    account_id : long               // slp account id
+    access_token : string           //  slp account access token
+    pf_id:int                  // Platform Profile ID
+    action_type                     // ActionType :
+                                    //      ep_start : 에피소드 시작
+                                    //      ep_end   : 에피소드 종료
+                                    //      ep_exit  : 에피소드 중단(i 버튼등 으로 나올때)
+                                    //      app_bg  : App 실행상태에서 백그라운드로 전환
+                                    //      app_fg  : App 백그라운드에서 실행상태로 전환
+                                    //      ping    : 클라이언트가 실행중일때 5분에 한번 간격으로 호출
+    p_time : int                    // 챕터 플레이시간, ActionType ep_end 에만 유효함
+    ep_id : string                  // NDE Sequence UNIT ID 입력
+    lesson_id : int                 // NDE Sequence LESSON ID 입력
+    seq_id : int                    // 유저가 가지고 있는 상품 구매 이후 키 값
+    level_id : int                  // NDE Sequence LEVEL ID 입력
+
+_return value_
+
+    // 성공
+    {
+        "res":int,          // 성공 0, 실패 0 이 아닌 값,
+    }
+
+    //실패
+    {
+        "res":int, // 0 이 아닌 값,
+    }
+
+_res_
+
+    0 : 성공
+
+
+
+###2. Listen&Repeat 녹음파일 등록 [/nde/report/learning/upload] / POST <a id="/nde/report/learning/upload" href="#/nde/report/learning/upload">¶</a>
+
+*info*
+
+    기능 : NDE Listen & Repeat 음성 녹음 등록
+    
+
+*parameter*
+
+	app_id : long					// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+	client_uid :  string			// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string 					// client os,   ex) andorid, ios
+    country : string                // iso 국가코드, alpha2
+	c_ver : string                  // client version,  ex) 1.0.0
+
+    account_id : long				// slp account id
+    access_token : string			// slp account access token
+	pf_id : long 					// Platform Profile ID
+
+	seq_id : int                    // 유저가 가지고 있는 상품 구매 이후 키 값
+    level_id : int                  // NDE Sequence LEVEL ID 입력
+	lesson_id : int                 // NDE Sequence LESSON ID 입력
+	unit_id : string				// NDE Sequence Unit ID 입력
+	record_text : string,			// 음성녹음 text
+	native_file_name : string,		// 원어민 파일명
+	record_file_name : string,		// 녹음 파일명
+    uploadfile : file,				// 이미지파일
+	
+    
+
+
+
+*return value*
+
+	// 성공
+	{
+		"pf_id": long,				// Profile ID
+		"file_url": string,			// 등록파일 경로 url
+		"res": 0					// 성공 0, 실패 0 이 아닌 값,		
+	}
+
+	//실패
+	{
+		"res": 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	-200016 : 계정 정보를 찾을수 없음 failed, Not found Account ID
+	-200020 : 이 계정에서는 접근이 허용되지 않은 APP 입니다.
+	-200100 : 로그인 되지 않음
+
+
+###3. Quiz 결과등록 [/nde/checkup] / POST <a id="/nde/checkup" href="#/nde/checkup">¶</a>
+
+*info*
+
+    기능 : level > lesson > unit 의 quiz 의 시작, 종료 데이터를 DB에 저장 하고 result 를 출력 하기 위함
+
+
+*parameter*
+
+	app_id : long					// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+	client_uid :  string			// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string 					// client os,   ex) andorid, ios
+    country : string                // iso 국가코드, alpha2
+	c_ver : string                  // client version,  ex) 1.0.0
+
+    account_id : long				// slp account id
+    access_token : string			// slp account access token
+	pf_id : long 					// Platform Profile ID
+
+	seq_id : int                    // 유저가 가지고 있는 상품 구매 이후 키 값
+    correct_check_count : int       // 유저가 퀴즈 진행 시 맞힌 문제 수, ep_end 시 발생 ep_start 시에는 0으로 세팅
+    wrong_check_count : int         // 유저가 퀴즈 진행 시 틀린 문제 수, ep_end 시 발생 ep_start 시에는 0으로 세팅
+    action_type : string            // ep_start, ep_end
+    p_time : int                    // 퀴즈 플레이 타임(분)
+
+
+
+
+
+*return value*
+
+	// 성공
+	{
+		"res": 0					// 성공 0, 실패 0 이 아닌 값,
+	}
+
+	//실패
+	{
+		"res": 0 이 아닌 값,
+	}
+
+*res*
+
+	-1 : DB접속 에러
+	-200016 : 계정 정보를 찾을수 없음 failed, Not found Account ID
+	-200020 : 이 계정에서는 접근이 허용되지 않은 APP 입니다.
+	-200100 : 로그인 되지 않음
+
+
+* * *
+
+##REPORT <a id="report" href="#report">¶</a>
+
+### 1\. OverView - 전체진행률 [] 공통 / POST <a id="" href="#">¶</a>
+
+_info_
+
+
+_parameter_
+
+
+_return value_
+
+
+_res_
+
+
+
+### 2\. OverView Details [/nde/report/learning/overview] 공통 / POST <a id="/nde/report/learning/overview" href="#/nde/report/learning/overview">¶</a>
+
+_info_
+
+    진행완료, 진행중, 미 진행 주제에 대한 리포트
+
+_parameter_
+
+    app_id : long                   // SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+    client_uid : string             // 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+    os : string                     // client os,   ex) andorid, ios
+    c_ver : string                  // client version,  ex) 1.0.0
+    country : string                // iso 국가코드, alpha2
+    account_id : long               // slp account id
+    access_token : string           // slp account access token
+    pf_id : int                     // account Profile ID 값
+    lessonid : int                  // NDE Sequence Lesson ID 값
+
+
+_return value_
+
+    //성공
+    *진행 완료*
+    {
+        "profile_id": 159069,       // ProfileID 값
+        "lesson_id": "201",         // LessonID 값
+        "play_history": [           // Lesson 별 진행 히스토리
+            {
+                "unit_id": "201A",                          // UnitID
+                "begin_datetime": "2017-11-16 15:35:32",    // Unit 시작 시간 action Log API action type = ep_start 시
+                "end_datetime": "2017-11-16 17:34:03",      // Unit 종료 시간 action Log API action type = ep_end 시
+                "play_time": 100                            // 플레이 시간 action Log API p_time 파라미터 값
+            },
+            {
+                "unit_id": "201B",
+                "begin_datetime": "2017-11-16 15:35:37",
+                "end_datetime": "2017-11-16 22:38:57",
+                "play_time": 100
+            },
+            {
+                "unit_id": "201C",
+                "begin_datetime": "2017-11-16 15:35:41",
+                "end_datetime": "2017-11-16 17:09:36",
+                "play_time": 50
+            },
+            {
+                "unit_id": "201D",
+                "begin_datetime": "2017-11-16 15:35:43",
+                "end_datetime": "2017-11-16 17:09:30",
+                "play_time": 10
+            },
+            {
+                "unit_id": "201E",
+                "begin_datetime": "2017-11-16 15:35:47",
+                "end_datetime": "2017-11-16 16:17:42",
+                "play_time": 10
+            },
+        ],
+        "res": 0
+    }
+
+    *진행 중*
+    {
+        "profile_id": 159069,          // ProfileID 값
+        "lesson_id": "201",            // LessonID 값
+        "play_history": [              // Lesson 별 진행 히스토리
+            {
+                "unit_id": "301B",                          // UnitID
+                "begin_datetime": "2017-11-16 22:41:56",    // Unit 시작 시간 action Log API action type = ep_start 시
+                "end_datetime": "0000-00-00 00:00:00",      // Unit 종료 시간 - 진행중인 유닛 이기 때문에 end date 없음
+                "play_time": 0                              // 플레이 시간 - 진행중인 유닛 이기 때문에 play time 없음
+            },
+            {
+                "unit_id": "201B",
+                "begin_datetime": "2017-11-17 00:31:31",
+                "end_datetime": "0000-00-00 00:00:00",
+                "play_time": 0
+            }
+        ],
+        "res": 0
+    }
+
+    *미 진행*
+    {
+        "lesson_id": "101",                 // LessonID 값
+        "play_history": [                   // Lesson 별 진행 히스토리
+            {
+                "lesson_id": "101"          // 시작 하지 않은 LessonID 값
+            },
+            {
+                "lesson_id": "102"
+            },
+            {
+                "lesson_id": "103"
+            },
+            {
+                "lesson_id": "104"
+            },
+            {
+                "lesson_id": "105"
+            },
+            {
+                "lesson_id": "106"
+            },
+            {
+                "lesson_id": "201"
+            },
+            {
+                "lesson_id": "202"
+            },
+                 ..... sequence 출력
+        ],
+        "res": 0
+    }
+_res_
+
+    0 : 성공
+    -1 : DB 결과값 받지 못함
+    -200100 : 앱 로그인 된 프로파일 ID값이 아님
+
+### 3\. Quiz Result [/nde/checkup/result] 공통 / POST <a id="/nde/checkup/result" href="#/nde/checkup/result">¶</a>
+
+_info_
+
+    level > lesson > unit 의 quiz 진행 후 총 문제 수, 맞힌 문제 수, 틀린 문제 수 와 quiz 시작시간 및 종료시간을 제공
+
+_parameter_
+
+    app_id : long                   // SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+    client_uid : string             // 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+    os : string                     // client os,   ex) andorid, ios
+    c_ver : string                  // client version,  ex) 1.0.0
+    country : string                // iso 국가코드, alpha2
+    account_id : long               // slp account id
+    access_token : string           // slp account access token
+    pf_id : int                     // account Profile ID 값
+    seq_id : int                    // 유저가 가지고 있는 상품 구매 이후 키 값
+
+_return value_
+
+    //성공
+    "quizCheckCount": [
+            {
+                "SEQID": 391,                                                     // SEQ ID
+                "ACCOUNT_ID": "100029208",                                        // ACCOUNT ID
+                "PROFILE_ID": "159089",                                           // PROFILE ID
+                "CHECKUP_LIST": [
+                    {
+                        "LEVEL_ID": 2,                                            // LEVEL ID
+                        "LEVELTOTALQS": 225,                                      // 퀴즈 진행 시 해당 레벨 내 총 문제 수
+                        "LEVELCORETANS": 135,                                     // 퀴즈 진행 시 해당 레벨 내 맞힌 총 문제 수
+                        "LESSON_LIST": [
+                            {
+                                "LESSON_ID": "203",                               // LESSON ID
+                                "UNIT_LIST": [
+                                    {
+                                        "UNIT_ID": "203C",                        // UNIT ID
+                                        "TOTALQUESTIONS": 25,                     // UNIT 내 퀴즈 진행 시 총 문제 수
+                                        "CORRECTANS": 15,                         // UNIT 내 퀴즈 진행 시 맞힌 문제 수
+                                        "WRONGANS": 10,                           // UNIT 내 퀴즈 진행 시 틀린 문제 수
+                                        "PERCENTANS": "60%",                      // 퀴즈 정답률
+                                        "BEGIN_DATETIME": "2017-12-08 10:33:12",  // 퀴즈 시작 시간
+                                        "END_DATETIME": "2017-12-08 10:33:12"     // 퀴즈 종료 시간
+                                    },
+                                        ... 반복
+                    {
+                        "LEVEL_ID": 3,
+                        "LEVELTOTALQS": 1200,
+                        "LEVELCORETANS": 720,
+                        "LESSON_LIST": [
+                            {
+                                "LESSON_ID": "302",
+                                "UNIT_LIST": [
+                                    {
+                                        "UNIT_ID": "302C",
+                                        "TOTALQUESTIONS": 0,
+                                        "CORRECTANS": 0,
+                                        "WRONGANS": 0,
+                                        "PERCENTANS": "0%",
+                                        "BEGIN_DATETIME": "1970-01-01 09:00:00",
+                                        "END_DATETIME": "0000-00-00 00:00:00"
+                                    },
+                                        ...반복
+
+_res_
+
+    0 : 성공
+    -1 : DB 결과값 받지 못함
+    -200100 : 앱 로그인 된 프로파일 ID값이 아님
+
+
+###4. Activity 조회 [/nde/report/learning/recordList] / POST <a id="/nde/report/learning/recordList" href="#/nde/report/learning/recordList">¶</a>
+
+*info*
+
+    기능 : NDE Listen & Repeat 단어/문장별 아이 목소리 녹음 파일 제공, 최근 15일, (원어민, 녹음파일)
+
+*parameter*
+
+	app_id : long					// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+	client_uid :  string			// 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+	os : string 					// client os,   ex) andorid, ios
+    country : string                // iso 국가코드, alpha2
+	c_ver : string                  // client version,  ex) 1.0.0
+    account_id : long				// slp account id
+    access_token : string			// slp account access token
+	pf_id : long 					// Platform Profile ID
+
+
+*return value*
+
+	// 성공
+	{
+		"record_list": [
+			{
+				"APP_ID": 1000000007,
+				"ACCOUNT_ID": 100029182,
+				"PROFILE_ID": 159037,
+				"FILE_COUNT": 10,									// 등록건수
+				"SEQ_LIST": [
+					{
+						"SEQ_ID": 474,								// SEQ_ID
+						"LEVEL_LIST": [
+							{
+								"LEVEL_ID": 1,
+								"FILE_LIST": [
+									{
+										"LESSON_ID": "103",										// lesson id
+										"UNIT_ID": "speak",									// category
+										"RECORD_TEXT": "this is sumi's new school",				// record text
+										"NATIVE_FILE_NAME": "native.mp3",						// 원어민 파일명
+										"RECORD_FILE_NAME": "image.bluearkedu.com/upfile/../a1000000007_.._733.png", 
+																								// 저장 파일경로 url
+										"REG_DATETIME": "2017-12-08 18:22:11"					// 등록시간
+									},
+									{
+										"LESSON_ID": "102",
+										"UNIT_ID": "speak",									// category
+										"RECORD_TEXT": "this is sumi's new school",
+										"NATIVE_FILE_NAME": "native.mp3",
+										"RECORD_FILE_NAME": "image.bluearkedu.com/upfile/../a1000000007_100029182_159037_1512724927_708.png",
+										"REG_DATETIME": "2017-12-08 18:22:07"
+									}
+								]
+							},
+							{
+								"LEVEL_ID": 2,
+								"FILE_LIST": [
+									{
+										"LESSON_ID": "201",
+										"UNIT_ID": "speak",									// category
+										"RECORD_TEXT": "this is sumi's new school",
+										"NATIVE_FILE_NAME": "native.mp3",
+										"RECORD_FILE_NAME": "image.bluearkedu.com/upfile/../a1000000007_100029182_159037_1512724945_287.png",
+										"REG_DATETIME": "2017-12-08 18:22:25"
+									}
+								]
+							}
+						]
+					},
+					{
+						"SEQ_ID": 421,
+						"LEVEL_LIST": [
+							{
+								"LEVEL_ID": 2,
+								"FILE_LIST": [
+									{
+										"LESSON_ID": "201",
+										"UNIT_ID": "speak",									// category
+										"RECORD_TEXT": "this is sumi's new school",
+										"NATIVE_FILE_NAME": "native.mp3",
+										"RECORD_FILE_NAME": "image.bluearkedu.com/upfile/../a1000000007_100029182_159037_1512562844_158.png",
+										"REG_DATETIME": "2017-12-06 21:20:45"
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		],	
+		"res": 0						// 성공 0, 실패 0 이 아닌 값,	
+	}
+
+
+	//실패
+	{
+		"res": 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	-200016 : 계정 정보를 찾을수 없음 failed, Not found Account ID
+	-200020 : 이 계정에서는 접근이 허용되지 않은 APP 입니다.
+	-200100 : 로그인 되지 않음
+
+* * *
+
+##VERSION_CHECK <a id="version_check" href="#version_check">¶</a>
+
+### 1\. APP VERSION 확인 [/nde/app/ver] / POST <a id="/nde/app/ver" href="#/nde/app/ver">¶</a>
+
+_info_
+
+    기능 : APP 버전정보를 가져온다.
+
+_parameter_
+
+    app_id : long           // SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+    client_uid : string     // 문자열로 구분된 client 의 고유 ID, 최대 64자 ( client Identifier )
+    os : string             // client os,   ex) andorid, ios
+    c_ver : string          // client version,  ex) 1.0.0
+    country : string        // iso 국가코드 알파벳 2자리, alpha2
+    .
+
+_return value_
+
+    // 성공
+    {
+        "res":int,              // 성공 0, 실패 0 이 아닌 값,
+        "ver" : string,         // 클라이언트 버전, 예) 1.0.0
+        "summit" : int,         // 서밋상태 플래그, 0:summit no, 1:summit yes
+        "force_update" : int,   // 클라이언트 강제 업데이트, 0:강제 업데이트 아님,  1:강제 업데이트 필요
+        "update_url":string,    // update url (market url)
+        "cs_email":string,      // cs 처리 이메일
+        "info":string,          // 암호화된 dea_service_kr.xml 원문
+        "local_date":string     // 해당지역의 로컬 시간 county 를 기준으로 보냄 ( 현재 한국만 가능함 )
+    }
+
+    //실패
+    {
+        "res":int, // 0 이 아닌 값,
+    }
+
+_res_
+
+    0 : 성공  　
+    -100000 : 존재하지 않는 APP ID, Not Found APP ID

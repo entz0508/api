@@ -1,0 +1,52 @@
+﻿<html>
+<head>
+    <script>
+        function openercall() {
+            try {
+                document.domain = "doralab.co.kr";
+                window.opener.parentReloadPage();
+                self.close();
+            } catch (e) {
+                alert("E:" + e);
+            }
+        }
+
+        function playpop(xParam) {
+            var ebs_auth_key = "EbsLang";
+            var domain = 'https://apidev.doralab.co.kr';
+            //var xParam = null;
+            var popUrl = "https://ebs.bluearkedu.com/nde_web/contents";
+            // xParam = "?step_attend_id=" + stepAttendID + "&token=" + xParam;
+            document.write('xParam : '+xParam);
+            
+            popUrl = popUrl + xParam;
+            var
+                w = screen.availWidth,
+                h = screen.availHeight,
+                l = 0,
+                t = 0,
+                popPage = '.popup';
+
+            window.open(popUrl, "window", "width=" + w + ",height=" + h + ",left=" + l + ",top=" + t + ",scrollbars=no,location=no,toolbar=no,menubar=no,status=no");
+            console.log('>>' + encodeURI(popUrl));
+            console.log('tokenValue : ' + xParam);
+        }
+
+        function printTime() {
+            var clock = document.getElementById("clock");            // 출력할 장소 선택
+            var now = new Date();                                                  // 현재시간
+            var nowTime = now.getFullYear() + "년" + (now.getMonth() + 1) + "월" + now.getDate() + "일 " + now.getHours() + "시" + now.getMinutes() + "분" + now.getSeconds() + "초";
+            document.write("<font size=2>"+nowTime+"</font>");           // 현재시간을 출력
+            //setTimeout("printTime()", 1000);         // setTimeout(“실행할함수”,시간) 시간은1초의 경우 1000
+
+        }
+        
+
+    </script>
+
+
+</head>
+<body bgcolor="gold" onload="printTime()">
+    <a href="javascript:;" onclick="openercall()">ABC</a>
+</body>
+</html>

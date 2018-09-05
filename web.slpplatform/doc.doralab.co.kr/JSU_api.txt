@@ -1,0 +1,1204 @@
+
+## __JSU API__
+
+*DOC LIST*
+* [SLP Platform API](/slp_platform_api?pass=ehfkfpqakstp!1)
+* [DORA API](/dora_api?pass=ehfkfpqakstp!1)
+* [SLP EN API](/slp_en_api?pass=ehfkfpqakstp!1)
+* [SLP NDE API](/slp_nde_api?pass=ehfkfpqakstp!1)
+* [ADB API](/api_ADB?pass=dpdlelql!)
+* [JSU API](/slp_jsu_api?pass=ehfkfpqakstp!1)
+* [ADA API](/fit_ada?pass=fitadavmfhwprxm!1)
+
+*<strong>서버 to 클라이어트 결과</strong>*
+
+	1. 응답 결과는 JSON 으로 전송한다
+	2. 성공 실패는 res 값으로 구분한다.
+       정상 : res == 0
+       그외 : res != 0
+	   예)  { "res":0 , ..... }
+	3. 회원의 인증
+		유져는 토큰을 디바이스에 저장해서 인증에 이용한다.
+		일정기간내에 저장된 토큰을 보내면 그대로 인증된다.(account는 device당 1개의 토큰을 갖는다.)
+		일정기간이 경과한 토큰에 대해서는 인정하지 않는다. 다시 로그인
+		매처리시 토큰을 같이 보내고. 이를 유져의 키값으로 인증한다.
+		다른 디바이스를 이용해서 로그인시 토큰을 신규 생성한다.
+	4. 회원가입시 공통 체크
+		signup_path	enum('adb','facebook','kakao')
+		client_uid	length:0~64, 기기고유코드
+		os			enum('android','ios','web')
+		signup_id	signup_path가 'adb'일때 이메일 형식 체크, 그외는 체크 없음
+		password	signup_path가 'adb'일때 not null, length:4~12, sns 의 경우 필요없음.
+		signup_name	signup_path가 'adb'일때 not null, length:2~16,
+					sns 회원가입의 경우 null 일수 있음. /^[~!@\#$%<>^&*\()\-=+\’]/ 특수문자 안됨
+		sns_email	sns가입시 받은 유져이메일, 체크안함, null 일수 있음.
+	5. 로그인인증시 공통 체크
+		ClientUID	length:0~64, 기기고유코드
+		os			enum('android','ios','web')
+		Token 		not null, length:40
+    6. ADB Project 의 account DB 와 계정을 공유함. 같은 DB를 사용함. - 회원가입 , 로그인 진행 시 ADB API와 동일 함.
+
+*<strong>개발 서버 주소</strong>*
+
+                DEV Server IP : https://apidev.doralab.co.kr (MySQL)
+                ADB DEV Server IP : 35.194.222.5 (Node)
+
+*<strong>API 목록</strong>*
+
+[ACCOUNT](#account) 
+    1. 회원가입 - 이메일/SNS  [/adb/account/join](#/adb/account/join) - POST,완료
+	2. 로그인 - 이메일/sns [/adb/account/login](#/adb/account/login) - POST,완료
+	3. 계정정보 가져오기 - 로그인회원 [/adb/account/getInfo](#/adb/account/getInfo) - POST,완료
+	4. 비밀번호 찾기 - 인증메일 발송 [/adb/account/pwEmail](#/adb/account/pwEmail) - POST,완료 - 메일발송 추후
+	5. 비밀번호 찾기 - 이메일토큰 인증 - [/adb/account/checkToken](#/adb/account/checkToken) - POST,완료
+	6. 비밀번호 찾기 - 비밀번호 변경 [/adb/account/pwChange](#/adb/account/pwChange) - POST,완료
+	7. 마이페이지 - 이름변경 [/adb/account/modName](#/adb/account/modName) - POST,완료
+	8. 마이페이지 - 사진등록,변경 [/adb/mypage/photo](#/adb/mypage/photo) - POST,완료
+	9. 마이페이지 - 비밀번호변경 [/adb/account/modPass](#/adb/account/modPass) - POST,완료
+	10. 마이페이지 - 계정탈퇴 [/adb/account/leave](#/adb/account/leave) - POST,완료	
+
+[myPage](#myPage)
+	1. 마이페이지 - 북마크리스트 [/jsu/mypage/bookmark](#/jsu/mypage/bookmark) - POST, 완료
+	2. 마이페이지 - 오디오북리스트 [/jsu/mypage/audioBookList](#/jsu/mypage/audioBookList) - POST, 완료
+	3. 마이페이지 - 메인 [/jsu/mypage/main](#/jsu/mypage/main) - POST, 작업중
+	
+
+[Edit](#Edit)
+	1. 북마크 등록/삭제 [/jsu/library/bookmark](#/jsu/library/bookmark) - POST, 완료
+	
+[Club](#Club)
+	1. 클럽 생성 [/jsu/club/make](#/jsu/club/make) - POST
+	2. 클럽 검색 [/jsu/club/searchAll](#/jsu/club/searchAll) - POST
+	3. 클럽 검색(클럽 이름 검색)[/jsu/club/searchName](#/jsu/club/searchName) - POST
+	<s>4. 클럽 가입 요청</s>
+	<s>5. 클럽 가입 초대</s>
+
+	
+
+[Library](#Library)
+	1. 북 검색 [/jsu/library/search](#/jsu/library/search) - POST, 완료
+	2. 북 검색(자세히)[/jsu/library/searchDetail](#/jsu/library/searchDetail) - POST, 완료
+	3. 북 검색(책 제목or저자)[/jsu/library/searchKeyword](#/jsu/library/searchKeyword) - POST, 작업중
+	4. 책 대여[/jsu/book/rent](#/jsu/book/rent) - POST, 완료
+	5. 책 반납[/jsu/book/return](#/jsu/book/return) - POST, 완료
+	6. 읽은 책 리스트[/jsu/club/readingBookList](#/jsu/club/readingBookList) - POST, 완료
+	7. 읽은 책 카운트 (클럽메인) [/jsu/club/readingBookMain](#/jsu/club/readingBookMain) - POST, 완료
+	<s>8. 읽고 있는 책 리스트</s>
+	<s>9. 읽고 있는 책 카운트 (클럽메인)</s>
+
+	
+[Calendar](#Calendar)
+	<s>1. 일정 등록</s>
+	<s>2. 일정 보기</s>
+	<s>3. 일정 참여하기</s>
+	<s>4. 일정 공유</s>
+	<s>5. 일정 삭제</s>
+	<s>6. 일정 수정</s>
+
+[etc](#Etc)
+	1. api서버 통신테스트 [/adb/etc/check](#/adb/etc/check) - POST,완료
+
+
+[ERROR CODE](#errorCode)
+* * * * *
+
+##ACCOUNT <a id="account" href="#account">¶</a>
+
+
+###1. 회원가입 - 이메일/SNS  [/adb/account/join] / POST <a id="/adb/account/join" href="#/adb/account/join">¶</a>
+
+*info*
+
+    기능 : ADB 회원가입 - 이메일, SNS 회원가입 공용 
+	추가 예정 : sns에서 이메일 전달시 메일입력 추가 예정, 가입시 이메일이 있는경우 인증메일 발송 추가 예정
+
+*parameter*
+
+	client_uid: string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	signup_id : string			// 이메일 또는 sns 유져인증키
+	password : string			// 이메일의 경우 비번, sns의 경우 이메일이 있으면 이메일정보
+	signup_name : string		// 이름(sns 가입의 경우 이름이 없을수 있음)
+	signup_path : string		// 가입경로,이메일가입은 "adb",  ENUM('adb','google','facebook','kakao')
+	sns_email :string			// sns에서 전달받은 이메일
+
+*return value*
+
+	// 성공
+	{
+		"res": int,						// 성공 0
+		"msg": null,					// null
+		"data": {
+			"access_token": string,		// 로그인 토큰
+			"account_name": string		// 이름
+		}
+	}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null
+    }
+
+*res*
+
+    0 : 성공　
+	-1000	파라미터 오류
+	-200001 이미 가입한 회원
+	-200002 회원 가입처리 오류
+	-200007 로그인 정보 등록 오류
+	-200009 토큰 생성오류
+
+
+
+###2. 로그인 - 이메일,SNS [/adb/account/login] / POST <a id="/adb/account/login" href="#/adb/account/login">¶</a>
+
+_info_
+
+    기능 : Email/SNS 로그인
+
+_parameter_
+
+    os : string             // ios, android, web
+    client_uid :  string	// 클라이언트의 고유값 (client Identifier)
+    signup_id : string      // 이메일 또는 SNS UserKey
+    password : string       // 이메일비번 또는 SNS UserKey(이메일가입의 경우 비번, SNS계정의 경우 UserKey 입력)
+    signup_path : string    // 가입경로, (adb,google,facebook,kakao )
+
+_return value_
+
+	// 성공
+	{
+		"res": int,						// 성공 0
+		"msg": null,					// null
+		"data": {
+			"access_token": string,		// 로그인 토큰
+			"account_name": string		// 이름
+		}
+	}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null
+    }
+
+_res_
+
+    0 : 성공
+    -200010 : 계정없음
+    -200011 : 비밀번호 틀림
+	-200012 : 차단된 계정
+
+
+###3. 계정정보 가져오기 - 로그인한 회원 [/adb/account/getInfo] / POST <a id="/adb/account/getInfo" href="#/adb/account/getInfo">¶</a>
+
+_info_
+
+    기능 : 토큰인증을 통한 회원정보 조회
+
+_parameter_
+
+    os : string             // ios, android, web
+    client_uid :  string	// 클라이언트의 고유값 (client Identifier)
+    access_token : string   // access token, 로그인을 통해 디바이스 내 보관하고 있는 token을 입력한다.
+
+
+_return value_
+
+	// 성공
+	{
+		"res": int,								// 성공 0
+		"msg": string,							// "정보조회 성공",
+		"data": {
+			"signupID": string,					// 가입시 등록한 이메일 또는 SNS Key
+			"email": string,					// 인증된 이메일주소 또는 ""
+			"accountName": string,				// 유져 이름
+			"accountImage": string,				// 회원이미지 경로, 없을경우 ""
+			"signUpPath": string,				// 가입경로
+			"regDatetime": string				// 가입날짜
+		}
+	}
+
+    //실패
+	{
+		"res": int,						// 0 이 아닌 값,	
+		"msg": string,					// 오류 메세지
+		"data": {}
+	}
+
+_res_
+
+    0 : 성공
+	-1000 : 파라미터 오류
+    -200010 : 계정없음
+
+
+###4. 비밀번호찾기 - 인증메일 발송 [/adb/account/pwEmail] / POST <a id="/adb/account/pwEmail" href="#/adb/account/pwEmail">¶</a>
+
+_info_
+
+    기능 : 비밀번호 찾기시 이메일 입력, 메일발송 처리
+	- 메일로 발송된 토큰 정보는 1회만 인증됨, 이메일 발송 후 1시간 경과시 인증안됨.
+	- 아직 메일발송은 안됨. 작업 예정
+
+_parameter_
+
+    os : string             // ios, android, web
+    client_uid :  string	// 클라이언트의 고유값 (client Identifier)
+    signup_id : string      // 이메일가입자의 이메일
+    signup_path : string    // 가입경로, (adb), "adb" 가 아닌경우 잘못된 호출 에러
+
+_return value_
+
+	// 성공
+	{
+		"res": int,						// 성공 0
+		"msg": null,					// "이메일이 발송되었습니다."
+		"data": {}						// 개발 테스트용 정보가 있습니다. 서비스시 삭제예정
+	}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null
+    }
+
+_res_
+
+    0 : 성공
+	-1000 : 잘못된 parameter, 잘못된 signup_path
+    -200010 : 계정없음
+	-200012 : 차단된 계정
+
+	
+###5. 비밀번호찾기 - 이메일토큰 인증 [/adb/account/checkToken] / POST <a id="/adb/account/checkToken" href="#/adb/account/checkToken">¶</a>
+
+_info_
+
+    기능 : 비밀번호 찾기시 인증메일 링크페이지 토큰값 인증
+	- 메일로 발송된 토큰 정보는 1회만 인증됨, 이메일 발송 후 1시간 경과시 인증안됨.
+	- 링크페이지 호출시 토큰값을 인증
+	- 웹페이지 호출 api
+
+_parameter_
+
+    signup_token : string   // 이메일가입자의 이메일
+
+_return value_
+
+	// 성공
+	{
+		"res": int,						// 성공 0
+		"msg": null,					// ""
+		"data": {}						// {}
+	}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null					// {}
+    }
+
+_res_
+
+    0 : 성공
+    -200110 : 잘못된 토큰정보
+
+
+
+###6. 비밀번호찾기 - 비밀번호 변경 [/adb/account/pwChange] / POST <a id="/adb/account/pwChange" href="#/adb/account/pwChange">¶</a>
+
+_info_
+
+    기능 : 비밀번호 찾기 - 비밀번호 업데이트
+	- 발송된 토큰정보, 새비밀번호 입력
+	- 웹페이지 호출 api
+
+_parameter_
+
+    signup_token : string   // 이메일가입자의 이메일
+	signup_pass : string	// 새 비밀번호
+
+_return value_
+
+	// 성공
+	{
+		"res": int,						// 성공 0
+		"msg": null,					// ""
+		"data": {}						// {}
+	}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null
+    }
+
+_res_
+
+    0 : 성공
+	-1000 : 잘못된 parameter, 잘못된 signup_path
+    -200110 : 잘못된 토큰정보(이미 인증된 토큰이거나, 1시간이 경과된 토큰 또는 없는 토큰)
+
+
+###7. 마이페이지 - 이름 변경 [/adb/account/modName] / POST <a id="/adb/account/modName" href="#/adb/account/modName">¶</a>
+
+_info_
+
+    기능 : 마이페이지에서 이름 변경
+
+_parameter_
+
+	client_uid: string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	access_token : string       // access token
+    set_username : string		// 변경할 이름
+
+_return value_
+
+	// 성공
+	{
+		"res": int,							// 성공일때 0
+		"msg": string,						// msg, "업데이트 성공",
+		"data": {
+			"MSG": 1
+		}
+	}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null
+    }
+
+_res_
+
+    0 : 성공
+	-1000 : 잘못된 parameter, 잘못된 signup_path
+    -200110 : 토큰정보 없음
+	-200010 : 계정없음
+
+
+###8. 마이페이지 - 사진등록,변경 [/adb/mypage/photo] / POST <a id="/adb/mypage/photo" href="#/adb/mypage/photo">¶</a>
+
+_info_
+
+    기능 : 마이페이지에서 내 사진 변경
+
+_parameter_
+
+	client_uid: string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	access_token : string       // access token
+    uploadfile : file			// 처음 등록하거나 변경할 파일
+
+_return value_
+
+	// 성공
+	{
+		"res": int,							// 성공일때 0
+		"msg": string,						// msg, "등록되었습니다",
+		"data": {
+			"myphoto_url": string			// 등록된 이미지의 웹URL ex."http://104.199.129.129:8002/files/04/0004/100000004/profile_100000004.jpg"
+		}
+	}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": {}
+    }
+
+_res_
+
+    0 : 성공
+	-1000 : 잘못된 parameter, 잘못된 signup_path
+    -200110 : 토큰정보 없음
+	-200010 : 계정없음
+
+###9. 마이페이지 - 비밀번호 변경 [/adb/account/modPass] / POST <a id="/adb/account/modPass" href="#/adb/account/modPass">¶</a>
+
+_info_
+
+    기능 : 마이페이지에서 비밀번호 업데이트
+
+_parameter_
+
+	client_uid: string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	access_token : string       // access token
+    set_userpass : string		// 변경할 비밀번호
+
+_return value_
+
+	// 성공
+	{
+		"res": int,							// 성공일때 0
+		"msg": string,						// msg, "업데이트 성공",
+		"data": {
+			"MSG": 1
+		}
+	}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null
+    }
+
+_res_
+
+    0 : 성공
+	-1000 : 잘못된 parameter, 잘못된 signup_path
+    -200110 : 토큰정보 없음
+	-200010 : 계정없음
+
+
+
+###10. 마이페이지 - 회원탈퇴 [/adb/account/leave] / POST <a id="/adb/account/leave" href="#/adb/account/leave">¶</a>
+
+_info_
+
+    기능 : 마이페이지에서 회원탈퇴
+
+_parameter_
+
+	client_uid: string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	access_token : string       // access token
+
+_return value_
+
+	// 성공
+	{
+		"res": int,							// 성공일때 0
+		"msg": string,						// msg, "처리성공"
+		"data": {}
+	}
+	
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null
+    }
+
+_res_
+
+    0 : 성공
+	-1000 : 잘못된 parameter, 잘못된 signup_path
+    -200110 : 토큰정보 없음
+	-200010 : 계정없음
+
+
+
+
+##MyPage <a id="myPage" href="#myPage">¶</a>
+
+
+###1. 마이페이지 - 북마크한 책 [/jsu/mypage/bookmark] / POST <a id="/jsu/mypage/bookmark" href="#/jsu/mypage/bookmark">¶</a>
+
+*info*
+
+    기능 : 마이페이지 북마크 목록을 불러오고, 추가목록도 제공한다.
+	설명 : 
+	- 처음 목록에서 추가로 목록을 요청해서 해당 결과를 기존 목록 아래에 append 처리한다.
+	- 다음 호출된 목록이 있는지 알려준다.
+	- sort 기능을 제공한다.
+
+
+*parameter*
+
+	client_uid : string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	access_token : string       // access token
+	
+
+*return value*
+
+	// 성공
+	{
+    "res": 0,
+    "data": {
+        "infoList": [
+            {
+                "bookid": 1,
+                "bookname": "FRED 1",
+                "writer": "ANNE LOWINSKY",
+                "bookmark": "true"
+            },
+            {
+                "bookid": 2,
+                "bookname": "FRED 2",
+                "writer": "ANNE LOWINSKY",
+                "bookmark": "true"
+            },
+        ]
+    }
+}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null
+    }
+
+*res*
+
+    0 : 성공　
+	-1000 : parameter error(client_uid,access_token 의 형식 또는 길이에 문제가 있을수 있음)
+	-200100 : no login user, client_uid, access_token 인증실패
+	
+
+
+###2. 마이페이지 - 오디오북리스트 [/jsu/mypage/audioBookList] / POST <a id="/jsu/mypage/audioBookList" href="#/jsu/mypage/audioBookList">¶</a>
+
+*info*
+
+    기능 : 내가 빌린 책의 오디오북 리스트를 출력한다
+	- sort 기능을 제공한다.
+
+
+*parameter*
+
+	client_uid : string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	access_token : string       // access token
+	
+
+*return value*
+
+	// 성공
+	{
+    "res": 0,
+    "data": {
+        "infoList": [
+            {
+                "clubid": 100000002,
+                "clubname": "미라클 라이프",
+                "bookid": 6,
+                "bookname": "새 사람",
+                "writer": "존 스토트",
+                "coverurl": "http://justshowup.co.kr/Kyobo_T3/Content/audio/audio_View.asp?barcode=5800079015920&product_cd=002&category_id=0701",
+                "rent_date": "2018-05-04 14:41:37",
+                "expire_date": "2018-06-03 14:41:37"
+            }
+        ]
+    }
+}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null
+    }
+
+*res*
+
+    0 : 성공　
+	-1000 : parameter error(client_uid,access_token 의 형식 또는 길이에 문제가 있을수 있음)
+	-200100 : no login user, client_uid, access_token 인증실패
+	
+	
+
+
+###3. 마이페이지 - 메인 [/jsu/mypage/main] / POST <a id="/jsu/mypage/main" href="#/jsu/mypage/main">¶</a>
+
+*info*
+
+    기능 : 유저이름, 프로파일 이미지, 북마크, 대여한 책, 일정, 클럽 가입 요청 카운트를 출력.
+	
+*parameter*
+
+	client_uid: string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	access_token : string       // access token
+
+*return value*
+
+	// 성공
+	{
+    "res": 0,
+    "msg": "조회 되었습니다.",
+    "data": {
+        "name": "tester",				//프로파일 이름
+        "imageURL": "www.google.com",	//프로파일 이미지 URL
+        "bookmark": 3,					//내가 북마크 한 책 카운트 
+        "audiobook": 1,					//내가 속해져 있는 클럽이 대여한 책 카운트
+        "schedule": 0,					//나의 일정 카운트
+        "club": 0						//클럽 가입요청 카운트
+	}
+	}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null
+    }
+
+*res*
+
+    0 : 성공　
+    ? : 정리중
+
+
+
+
+##Edit <a id="Edit" href="#Edit">¶</a>
+
+
+###1. 북마크 등록 및 삭제 [/jsu/library/bookmark] / POST <a id="/jsu/library/bookmark" href="#/jsu/library/bookmark">¶</a>
+
+*info*
+
+    기능 : 북마크 등록 및 제거 동작을 합니다.
+	
+*parameter*
+
+	client_uid: string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	access_token : string       // access token
+	book_id : int				// book_id
+
+*return value*
+
+	// 성공
+	{
+		"res": 0,							// 성공 0
+		"msg": "처리 성공",					// 메세지 : 처리성공 or 처리실패
+		"data": {
+			"bookmark": 0,					// bookmark 결과	1:등록, 0:삭제
+		}
+	}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null
+    }
+
+*res*
+
+    0 : 성공　
+    ? : 정리중
+
+
+
+##Club <a id="Club" href="#Club">¶</a>
+
+###1. 클럽 생성 [/jsu/club/make] / POST <a id="/jsu/club/make" href="#/jsu/club/make">¶</a>
+
+*info*
+
+    기능 : 클럽 생성
+	추가 예정 : 클럽 생성 시 클럽 사진 추가 기능
+	변경 예정
+
+*parameter*
+
+	client_uid: string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	access_token : string       // access token
+	cDec : string				// 클럽 설명
+	cName : string				// 클럽 이름
+	cRegion : string			// 클럽 지역
+
+*return value*
+
+	// 성공
+	{
+    "res": 0,						
+    "msg": "club make is success", 
+    "data": {}
+	}
+
+    //실패(클럽 명 중복)
+    {
+    "res": -1,						
+    "msg": "club name is dupleicate",
+    "data": {}
+	}
+
+*res*
+
+    0 : 성공　
+    !0 : 실패
+
+
+
+###2. 클럽 검색 [/jsu/club/searchAll] / POST <a id="/jsu/club/searchAll" href="#/jsu/club/searchAll">¶</a>
+
+*info*
+
+    기능 : 클럽 찾기 버튼 눌렀을 때 전체 클럽 리스트가 노출.
+	변경 예정 : 이미 가입 한 클럽의 리스트를 노출 시켜야 하는지 여부. 
+				API 기능 확인 후 변경 될 수 있음.
+	
+
+*parameter*
+
+	client_uid: string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	access_token : string       // access token
+	
+
+*return value*
+
+	// 성공
+	{
+    "res": 0,
+    "msg": "조회 되었습니다.",
+    "data": {
+        "clubList": [
+            {
+                "club_name": "강동 북클럽",
+                "club_country": "kr",
+                "club_city": "seoul",
+                "club_memberCnt": 1
+            },
+            {
+                "club_name": "두란노 북클럽",
+                "club_country": "kr",
+                "club_city": "seoul",
+                "club_memberCnt": 1
+            },
+            {
+                "club_name": "미라클 라이프",
+                "club_country": "kr",
+                "club_city": "seoul",
+                "club_memberCnt": 1
+            },
+            {
+                "club_name": "서빙고 온누리 교회",
+                "club_country": "kr",
+                "club_city": "seoul",
+                "club_memberCnt": 1
+            },          
+        ]
+    }
+}
+
+    // 실패
+    {
+    "res": -1,
+    "msg": "조회 실패",
+    "data": {}
+	}
+
+*res*
+
+    0 : 성공　
+    !0 : 실패
+
+###3. 클럽 검색(이름 검색) [/jsu/club/searchName] / POST <a id="/jsu/club/searchName" href="#/jsu/club/searchName">¶</a>
+
+*info*
+
+    기능 : 클럽 명으로 클럽 검색. 이름 으로 검색 되기에 결과는 무조건 1건.
+	추가 예정 : API 기능 확인 후 변경 될 수 있음.
+	
+
+*parameter*
+
+	client_uid: string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	access_token : string       // access token
+	c_name : string				// 클럽 이름
+
+*return value*
+
+	// 성공
+	{
+    "res": 0,
+    "msg": "조회 되었습니다.",
+    "data": {
+        "clubList": [
+            {
+                "club_name": "강동 북클럽",
+                "club_country": "kr",
+                "club_city": "seoul",
+                "club_memberCnt": 1
+            }
+        ]
+    }
+	}
+
+    //실패(클럽 이름 or 지역 으로 검색 된 결과 없음.)
+	{
+    "res": -1,
+    "msg": "조회 실패",
+    "data": {}
+	}
+
+*res*
+
+    0 : 성공　
+    !0 : 실패
+
+
+##Library <a id="Library" href="#Library">¶</a>
+
+
+###1. 북 검색 [/jsu/library/search] / POST <a id="/jsu/library/search" href="#/jsu/library/search">¶</a>
+
+*info*
+
+    기능 : 서재 내 책 검색 (list_type value 를 '전체' 로 했을 시 모든 책 노출)
+	변경 예정 : list_type value 값이 영어 로 변경 될 수 있음. 
+
+
+*parameter*
+
+	client_uid: string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	access_token : string       // access token
+	list_type : string			// 책 카테고리 
+	curpage : string			// ??
+	count_per_page : string		// ??
+
+*return value*
+
+	// 성공
+	{
+    "res": 0,
+    "msg": "조회 되었습니다.",
+    "data": {
+        "book_list": [
+            {
+                "bookid": 1,
+                "title": "FRED",
+                "writer": "ANNE LOWINSKY",
+                "publisher": "한국문학",
+                "coverurl": "https://about.canva.com/wp-content/uploads/sites/3/2015/01/children_bookcover.png",
+                "bookmark": "true"
+            },
+            {
+                "bookid": 2,
+                "title": "test",
+                "writer": "tester",
+                "publisher": "testpublisher",
+                "coverurl": "url:..",
+                "bookmark": "true"
+            },
+            {
+                "bookid": 3,
+                "title": "test1",
+                "writer": "tester22",
+                "publisher": "testpublisher",
+                "coverurl": "ja;skdljfklasjdfklajsdflkj",
+                "bookmark": "false"
+            }
+        ]
+    }
+	}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null
+    }
+
+*res*
+
+    0 : 성공　
+    ? : 정리중
+
+
+###2. 북 검색(자세히) [/jsu/library/searchDetail] / POST <a id="/jsu/library/searchDetail" href="#/jsu/library/searchDetail">¶</a>
+
+*info*
+
+    기능 : 입력 된 book_id 값과 매칭 되는 book 의 상세정보를 표기.
+	
+
+*parameter*
+
+	client_uid: string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	book_id : int				// book_id value
+	access_token : string       // access token
+
+*return value*
+
+	// 성공
+	{
+    "res": 0,
+    "msg": "조회되었습니다.",
+    "data": {
+        "book_list": [
+            {
+                "bookid": 2,
+				"title": "FRED 1",
+                "category": "결혼/가정",
+                "writer": "ANNE LOWINSKY",
+                "publisher": "한국문학",
+                "bookmark": "true",
+                "outlink": "www.google.com",
+                "description_introduce": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.",
+                "description_table": "Children love friendly monster stories.\\nNot only are they fun, but they\\'re also empowering for the kids because it puts a friendly face on what used to be scary creatures. Let this illustrated Kindle ebook cover inspire you to write your own monster fantasy storybook. This easily customizable cartoon cover can be personalized to fit your story. Tweak the colors and font styles, then add additional graphic elements like shapes, icons, frames, and illustrations from Canva\\'s over a million strong graphic library.\\nChoose the elements you want and experiment.\\nWith Canva, you can make your vision come to life.'",
+                "description_writer": "ANNE LOWINSKY love friendly monster stories.\\\\nNot only are they fun, but they\\\\'re also empowering for the kids because it puts a friendly face on what used to be scary creatures. Let this illustrated Kindle ebook cover inspire you to write your own monster fantasy storybook. This easily customizable cartoon cover can be personalized to fit your story. Tweak the colors and font styles, then add additional graphic elements like shapes, icons, frames, and illustrations from Canva\\\\'s over a million strong graphic library.\\\\nChoose the elements you want and experiment.\\\\nWith Canva, you can make your vision come to life.",
+                "coverurl": "https://about.canva.com/wp-content/uploads/sites/3/2015/01/children_bookcover.png",
+                "audiourl": "www.naver.com",
+                "tablelist": [
+                    {
+                        "id": 1,
+                        "title": "감사의 글",
+                        "time": 26
+                    },
+                    {
+                        "id": 2,
+                        "title": "들어가는 글",
+                        "time": 45
+                    },
+                    {
+                        "id": 3,
+                        "title": "제 1부 예수님 나는 길이요",
+                        "time": 55
+                    },
+                    {
+                        "id": 4,
+                        "title": "제 2부 모세 모암 평지에 서다",
+                        "time": 43
+                    },
+                    {
+                        "id": 5,
+                        "title": "제 3부 ",
+                        "time": 20
+                    },
+                    {
+                        "id": 6,
+                        "title": "맺는 말",
+                        "time": 8
+                    }
+                ],
+                "clubcount": 5,
+                "clublist": [
+                    {
+                        "clubid": 100000000,
+                        "clubname": "두란노 북클럽"
+                    },
+                    {
+                        "clubid": 100000001,
+                        "clubname": "서빙고 온누리 교회"
+                    },
+                    {
+                        "clubid": 100000002,
+                        "clubname": "미라클 라이프"
+                    },
+                    {
+                        "clubid": 100000003,
+                        "clubname": "book club"
+                    },
+                    {
+                        "clubid": 100000004,
+                        "clubname": "강동 북클럽"
+                    }
+                ]
+            }
+        ]
+    }
+}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null
+    }
+
+*res*
+
+    0 : 성공　
+    ? : 정리중
+
+
+###3. 북 검색(책 저자,제목 검색) [/jsu/library/searchKeyword] / POST <a id="/jsu/library/searchKeyword" href="#/jsu/library/searchKeyword">¶</a>
+
+*info*
+
+    기능 : 입력 된 keyword(책 제목or저자)에 매칭 되는 책 검색
+	추가 예정 : 책 검색 후 선택(search_detail) 전 bookmark 표시 여부 
+	
+
+*parameter*
+
+	client_uid: string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	keyword : string			// 책 제목 or 저자
+	access_token : string       // access token
+
+*return value*
+
+	// 성공
+	{
+    "res": 0,
+    "msg": "조회되었습니다.",
+    "data": {
+        "book_list": [
+            {
+                "bookid": 6,
+                "title": "새 사람",
+                "writer": "존 스토트",
+                "coverurl": "http://justshowup.co.kr/Kyobo_T3/Content/audio/audio_View.asp?barcode=5800079015920&product_cd=002&category_id=0701"
+            }
+        ]
+    }
+	}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null
+    }
+
+*res*
+
+    0 : 성공　
+    ? : 정리중
+
+
+###4. 책 대여[/jsu/book/rent] / POST <a id="/jsu/book/rent" href="#/jsu/book/rent">¶</a>
+
+*info*
+
+    기능 : 입력 된 keyword(책 제목or저자)에 매칭 되는 책 검색
+	
+	
+
+*parameter*
+
+	client_uid: string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	access_token : string       // access token
+	book_id : int				// book_id value
+	club_id : int				// club_id value
+
+*return value*
+
+	// 성공
+	{
+    "res": 0,
+    "msg": "대여 되었습니다.",
+    "data": {}
+	}
+
+	//성공(속한 클럽에서 이미 대여한 책이 존재 할 경우)
+	{
+    "res": 0,
+    "msg": "대여중인 도서가 존재 합니다.",
+    "data": {}
+	}
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null
+    }
+
+*res*
+
+    0 : 성공　
+    ? : 정리중
+
+
+###4. 책 반납[/jsu/book/return] / POST <a id="/jsu/book/return" href="#/jsu/book/return">¶</a>
+
+*info*
+
+    기능 : 입력 된 keyword(책 제목or저자)에 매칭 되는 책 검색
+	
+	
+
+*parameter*
+
+	client_uid: string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	access_token : string       // access token
+	book_id : int				// book_id value
+	club_id : int				// club_id value
+
+*return value*
+
+	// 성공
+	{
+    "res": 0,
+    "msg": "반납 완료",
+    "data": {}
+	}
+
+
+	{//성공(이미 반납 처리가 된 경우)
+    "res": 0,
+    "msg": "대여 기록이 없습니다.",
+    "data": {}
+	}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null
+    }
+
+*res*
+
+    0 : 성공　
+    ? : 정리중
+
+
+
+
+
+##Etc <a id="etc" href="#etc">¶</a>
+
+
+###1. 통신테스트 [/adb/etc/check] / POST <a id="/adb/etc/check" href="#/adb/etc/check">¶</a>
+
+*info*
+
+    기능 : api 서버의 통신상태를 확인한다.
+	설명 : os, clientUID 값만 수신하고, 접속된 ip정보를 리턴한다.
+
+*parameter*
+
+	client_uid: string			// 디바이스 UID
+	os : string					// OS : enum(ios/android/web)
+	
+
+*return value*
+
+	// 성공
+	{
+		"res": int,				// 성공시 0
+		"msg": string,			// msg
+		"data": {
+			"clientIP": "118.220.142.116"		// 호출 ip
+		}
+	}
+
+    //실패
+    {
+        "res": int,						// 0 이 아닌 값,	
+		"msg": string.					// 오류 메세지
+		"data": null
+    }
+
+*res*
+
+    0 : 성공　
+    ? : 정리중

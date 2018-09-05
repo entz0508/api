@@ -1,0 +1,86 @@
+﻿<? include $_SERVER['DOCUMENT_ROOT']."/include/TITLE_HEAD.php";?>
+<?
+if(isset($_GET['page'])) {
+    $page = $_GET['page'];
+} else {
+    $page = 1;
+}
+?>
+<!--main content start-->
+<section id="main-content">
+    <section class="wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header"><i class="fa fa-table"></i> Account List</h3>
+                <ol class="breadcrumb">
+                    <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
+                    <li><i class="fa fa-table"></i>Account</li>
+                    <li><i class="fa fa-th-list"></i>List</li>
+                </ol>
+            </div>
+        </div>
+        <!-- page start-->
+        <div class="row">
+            <div class="col-lg-12" id="reportDiv" style="width:100%;">
+                        loading..
+            </div>
+        </div>
+        <!-- page end-->
+    </section>
+</section>
+<!--main content end-->
+
+    <!--[if lt IE 9]> <script src="/js/jquery-1.8.3.min.js"></script> <![endif]-->
+    <!--[if gte IE 9]><!-->
+    <script src="/js/jquery-1.8.3.min.js"></script>
+    <!--<![endif]-->
+    <script>
+        function GetReport(page) {
+            var url = '';
+            var param = '';
+                    url = 'userList_sp.php';
+            $.ajax({
+                url: url + '?page=' + page + param,
+                cache: false,
+                type: 'GET'
+            }).done(function (html) {
+                document.getElementById("reportDiv").innerHTML = html;
+                //gPage = page;
+            });
+    }
+        function GetUserReport(userID, page) {
+            var url = '';
+            var param = '&userID='+userID;
+                    url = 'userInfo.php';
+            $.ajax({
+                            url: url + '?page=' + page + param,
+                            cache: false,
+                            type: 'GET'
+            }).done(function (html) {
+                            document.getElementById("reportDiv").innerHTML = html + "<div  id='reportList' >" + document.getElementById("reportList").innerHTML + "</div>";
+                            //gPage = page;
+                            back_top();
+            });
+        }    
+              GetReport(<?=$page?>);
+        $(window.document).ready(function () {
+            
+        });
+        
+        function back_top() 
+        { 
+                x = document.body.scrollLeft; 
+                y = document.body.scrollTop; 
+                step = 2;
+                while ((x != 0) || (y != 0)) { 
+                        scroll (x, y); 
+                        step += (step * step / 300); 
+                        x -= step; 
+                        y -= step; 
+                        if (x < 0) x = 0; 
+                        if (y < 0) y = 0; 
+                } 
+                scroll (0, 0); 
+        } 
+    </script>
+<? include $_SERVER['DOCUMENT_ROOT']."/include/BOTTOM.php";?>

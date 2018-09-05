@@ -1,0 +1,166 @@
+
+##ERROR CODE <a id="error" href="#error">¶</a>
+###[에러코드정의] <a id="errorCode" href="#errorCode">¶</a>
+    // 일반
+    'S000' : 'ERROR_CODE_NO_ERROR(), 정상적으로 처리되었습니다.',
+    'S998' : 'ERROR_CODE_FAILED_DB(), 내부 데이터 베이스 오류입니다. 잠시 후에 다시 시도 해 주세요.',
+    'S999' : '데이터가 존재하지 않습니다.'
+    ,
+    // 회원
+    'U000' : 'ERROR_CODE_NO_ERROR(), 잘못된 인증정보를 가지고 접근하였습니다(인증실패). -999',
+    'U001' : 'ERROR_CODE_NOT_MATCH_LOGIN_INFO(), 비밀번호가 올바르지 않거나, 탈퇴된 계정입니다.',      //'올바르지 않은 e-mail 주소입니다.',
+    'U002' : 'ERROR_CODE_DUPLICATE_EMAIL(), 이미 가입된 e-mail 주소입니다.',						// '중복가입 신청',
+    'U003' : '이미 사용하고 있는 nick name 입니다.',
+    'U004' : '닉네임은 한글 영문 숫자만 가능합니다.',
+    'U005' : '닉네임은 2자 이상 10자 이내로 입력하셔야 합니다.',
+    'U006' : '패스워드가 올바르지 않습니다.(비밀번호 형식오류)',
+    'U007' : '패스워드는 6자 이상으로 입력해주세요.(비밀번호 형식오류)',
+    'U008' : '입력하신 패스워드가 일치 하지 않습니다.',
+    'U009' : '회원정보를 찾을 수 없습니다. 다시 로그인해주세요.',
+    'U010' : '로그인 시간이 만료되었습니다. 다시 로그인해 주세요.',
+    'U011' : '탈퇴한 회원입니다.',
+    'U012' : '등록되지 않은 이메일 주소 입니다.',
+    'U013' : 'access token정보와 eml정보가 일치하지 않습니다.',
+    'U014' : '비빌번호가 일치 않습니다.(가입시)',
+    'U015' : '',
+    'U016' : '선택하신 자녀 프로필이 존재 하지 않습니다.',
+    'U017' : '기본 프로파일은 삭제할 수 없습니다.',
+    'U018' : '이미 인증된 email 입니다.',
+    'U019' : '인증정보가 없거나, 인증기한이 초과하였습니다.',
+    'U020' : '이미 인증된 정보입니다.',
+    'U021' : '인증코드가 다릅니다.',
+    'U022' : '새로운 패스워드가 올바르지 않습니다.',
+    'U023' : '새로운 패스워드는 6자 이상으로 입력해주세요.',
+    'U024' : '출생에 따른 레벨 선택정보가 없거나 틀립니다.',
+    'U025' : 'accessToken 기간 초과',
+    'U026' : 'accessToken 정보를 찾을수 없음',
+    'U030' : 'ERROR_CODE_MODIFY_PROFILE_INFO(), 다른 디바이스에서 프로파일 정보 수정. -998' 
+    'U031' : 'ERROR_CODE_NOT_USE_LEVEL(), 사용 할수 없는 학습 레벨. -47, -48, ' 
+    'U032' : 'ERROR_CODE_AFTER_DATE(),리포트 지정한 날짜는 현재보다 이후 입니다., ' 
+    'U033' : 'ERROR_CODE_TIME_SHUTDOWN(), DLA 오후 9시 이후 사용 불가 ' 
+    'U033' : 'ERROR_CODE_VERIFY_PAYMENT_, 결재 인증 실패' 
+
+    // 인증
+    'F001' : '잘못된 입력입니다.',
+    'F002' : 'os 정보가 없습니다.',
+    'F003' : 'age_gb(category) 정보가 없습니다.',
+    'F004' : 'ERROR_CODE_PARAM_LANG(), lang(language) 정보가 없습니다.',
+    'F005' : 'ERROR_CODE_NOT_FOUND_APP_VER()    application_ver 정보가 없습니다.',
+    'F006' : 'app 정보가 없습니다.',
+    'F007' : 'ERROR_CODE_NOT_FOUND_APP_RES()    application_res 정보가 없습니다.',
+
+
+    //
+    'E001' : '고객님께서는 이미 영어학습레벨을 선택하셨습니다.',
+    'E002' : '이미 구매하신 에피소드입니다.',
+	'E010' : '에피소드 목록을 불러오지 못했습니다.',
+	
+    //
+    'D001' : '다운로드 가능한 상품이 아닙니다. 정상 처리되지 않았습니다.',
+    'D002' : '다운로드 받은 상품은 서비스가능상태가 아니거나 없는 에피소드 입니다.',
+    'D003' : '해당 유저는 상품 이용 권한이 없습니다.',
+    'D004' : '고객님이 다운로드 받으신 에피소드는 고객님이 선택한 레벨의 영어학습 에피소드가 아닙니다.',
+    'D005' : '고객님은 아직 영어학습레벨을 선택하지 않으셨습니다.',
+    //
+    'P000' : '결제정보가 없습니다.',
+    'P001' : '결제 유저정보없음.',
+    'P002' : '결제 os 정보 없음.',
+    'P003' : '결제 언어정보 없음.',
+    'P004' : '결제 카테고리정보 없음.',
+    'P005' : '결제 에피소드스케줄 정보 없음.',
+    'P006' : '결제 유저정보가 일치하지 않음.',
+    'P007' : '결제 암호화 키 배열은 7개 이어야 합니다.',
+    'P008' : '서비스중이 아닌 에피소드 스케줄입니다.',
+    'P009' : '이미구매하신 에피소드 입니다.',
+    //
+    'N002' : '알수 없는 오류.',
+
+    'L001' : '알수 없는 오류.',
+    'L002' : 'ep play log 알수 없는 오류.',
+    'L003' : 'ep play log 알수 없는 오류.',
+    'L004' : 'ep play log 알수 없는 오류.',
+    'L005' : 'ep play log 알수 없는 오류.',
+    'L006' : 'ep play log 알수 없는 오류.',
+	
+    
+	'Q001' : 'ERROR_CODE_PARAM_ACCOUNT_ID()           파라메터 account_id 오류.',
+	'Q002' : 'ERROR_CODE_PARAM_ACCOUNT_TOKEN()        파라메터 account_access_token 오류.',
+	'Q003' : 'ERROR_CODE_PARAM_CHILD_PROFILE_ID()     파라메터 child_profile_ID 오류.',
+	'Q004' : 'ERROR_CODE_PARAM_CHILD_PROFILE_TOKEN()  파라메터 child_profile_access_token 오류.',
+	'Q005' : 'ERROR_CODE_PARAM_UNITY_GUID()           파라메터 unity_guid 오류 ',
+	'Q006' : 'ERROR_CODE_PARAM_OS()                   파라메터 os 오류.',
+	'Q007' : 'ERROR_CODE_PARAM_LEVEL()                파라메터 level 오류.',
+	'Q008' : 'ERROR_CODE_PARAM_SIGNUP_PATH()          파라메터 sinup_path 오류.',
+	'Q009' : 'ERROR_CODE_PARAM_PASSWORD()             파라메터 password 오류.',
+	'Q010' : 'ERROR_CODE_PARAM_IMG_TYPE()             파라메터 img_type 오류.',
+	'Q011' : 'ERROR_CODE_PARAM_UPLOAD_FILE()          파라메터 uploadfile 오류',
+	'Q012' : 'ERROR_CODE_PARAM_UPLOAD_FILE_PATH()     파라메터 uploadfile path 오류',
+	'Q013' : 'ERROR_CODE_FAILED_STORE_FILE()          파일 저장 실패',
+	'Q014' : 'ERROR_CODE_FAILED_DELETE_TMP_FILE()     임시파일 삭제 실패',
+	'Q015' : 'ERROR_CODE_UNKNOWN_FILE_TYPE()          이미지 파일 확장자 오류',
+	'Q016' : 'ERROR_CODE_PARAM_MONTH()                파라메터 month 오류',
+	'Q017' : 'ERROR_CODE_PARAM_WEEK()                 파라메터 week 오류',
+	'Q018' : 'ERROR_CODE_PARAM_MEMO()                 파라메터 memo 오류',
+	'Q019' : 'ERROR_CODE_PARAM_EMAIL()                파라메터 email 오류'
+	'Q020' : 'ERROR_CODE_FAILED_FILE_TRANSFER()       파일 전송 실패'
+	'Q021' : 'ERROR_CODE_FAILED_FILE_READ()           파일 읽기 실패'
+    'Q022' : 'ERROR_CODE_NOT_MATCH_LEVEL_CLIENT_SERVE() client, server level 일치하지 않음'
+    'Q023' : 'ERROR_CODE_PARAM_ZONE_ID()              파라메터 zone_id 오류'
+    'Q024' : 'ERROR_CODE_PARAM_CHAPTER_ID()           파라메터 chapter_id 오류'
+    'Q025' : 'ERROR_CODE_PARAM_MUSIC_ID()             파라메터 music_id 오류'
+    'Q026' : 'ERROR_CODE_PARAM_APP_HASH()             파라메터 APP HASH 오류'
+    'Q027' : 'ERROR_CODE_PARAM_EPISODE_HASH()         파라메터 Episode HASH 오류'
+    'Q028' : 'ERROR_CODE_PARAM_EPISODE_ID()           파라메터 Episode ID 오류'
+    'Q029' : 'ERROR_CODE_PARAM_CHAPTER()              파라메터 chapter 오류'
+    'Q030' : 'ERROR_CODE_PARAM_SHOP_ID()              파라메터 shop id 오류'
+    'Q031' : 'ERROR_CODE_NOT_FOUND_SHOP_INFO()        -49 상점 데이타 존재하지 않음'
+    'Q032' : 'ERROR_CODE_PARAM_PAYLOAD()              파라메터 payload 오류 '
+    'Q033' : 'ERROR_CODE_NOT_FOUND_BUY_HISTORY(),                   -50 구매 내역을 찾을 수 없습니다.'
+    'Q034' : 'ERROR_CODE_ALREADY_CONSUME.                           -51 이미 Consume 되었음 -51 '
+    'Q035' : 'ERROR_CODE_NOT_FOUND_PASS_OR_NOT_PASS_BUY_SILNGLE(),  -61 이미 이용권이 있거나, 이용권 없이 단품 에피소드 구매'
+    'Q036' : 'ERROR_CODE_NOT_COMPLETE_BUY_HISTORY()                 -70 구매 내역중 완료되지 않은 목록이 있음'
+    'Q037' : 'ERROR_CODE_ALREADY_BUY_SINGLE(),                      -68 이미 구매한 단품 에피소드'
+    'Q038' : 'ERROR_CODE_FAILED_DELETE_PROFILE_WITH_VILID_PASS()    -71 만료되지 않은 이용권이 있어서 삭제 불가'
+    'Q039' : 'ERROR_CODE_PARAM_SUCCESS()                            파라메터 success 오류'
+    'Q040' : 'ERROR_CODE_PARAM_VERITY_CODE()                        파라메터 verity_code 회원가입 이메일 인증 코드 오류'
+    'Q041' : 'ERROR_CODE_PARAM_PRODUCT_ID()                         파라메터 product id 오류'
+    'Q042' : 'ERROR_CODE_NOT_MATCH_PROFILE_LEVEL(),     -996 자녀 프로파일 레벨 불일치 '
+    'Q043' : 'ERROR_CODE_NOT_FOUND_EPISODE(),           -995 not found ep'
+    'Q044' : 'ERROR_CODE_NOT_FOUND_PASS(),              -994 not found pass'
+    'Q045' : 'ERROR_CODE_NOT_FOUND_CONFIRM_EPISODE(),   -993  not found confirm episode'
+    'Q047' : 'ERROR_CODE_PARAM_NAME(),                  파라메터 name 오류'
+    'Q048' : 'ERROR_CODE_PROVIDER(),                    PROVIDER 오류'
+    'Q049' : 'ERROR_CODE_PARAM_PAMENT_RESULT(),         파라메터 payment result 오류'
+    'Q050' : 'ERROR_CODE_PARAM_APP(),                   파라메터 app 오류'
+    'Q051' : 'ERROR_CODE_PARAM_YEAR(), 파라메터 year 오류'    
+    'Q052' : 'ERROR_CODE_PARAM_DAY(), 파라메터 day 오류'    
+    'Q053' : 'ERROR_CODE_NOT_COUND_CHILD_INFO() child 정보를 확인할수 없습니다.'  
+    'Q054' : 'ERROR_CODE_SHOP_EP_QUANTITY_LACK() 구매시 에피소드 수량 부족'  
+    'Q055' : 'ERROR_CODE_PARAM_SOTRE_ACCOUNT_UID() 
+    'Q056' : 'ERROR_CODE_PARAM_STORE()
+    'Q057' : 'ERROR_CODE_PARAM_PAGE()
+    'Q058' : 'ERROR_CODE_NOT_FOUND_OPENED_EPISODE()
+    'Q059' : 'ERROR_CODE_NOT_EXPIRE_EPISODE()
+    'Q060' : 'ERROR_CODE_PARAM_SIGNATURE()
+    'Q061' : 'ERROR_CODE_PARAM_IMEI()
+    'Q062' : 'ERROR_CODE_PARAM_ORDER_ID()
+    'Q063' : 'ERROR_CODE_PARAM_AUTH_RECEIPT()
+    'Q064' : 'ERROR_CODE_PARAM_INDEX()
+    'Q065' : 'ERROR_CODE_PARAM_BUILD()
+
+    
+    'Q070' : 'ERROR_CODE_PARAM_COUPON_EXPIRE(), 유효기간이 만료된 쿠폰'
+    'Q071' : 'ERROR_CODE_COUPON_ALREADY_USED(), 이미 등록된 쿠폰'
+    'Q072' : 'ERROR_CODE_COUPON_INVALID_SERIAL(), 올바르지 않은 쿠폰번호'
+    'Q073' : 'ERROR_CODE_COUPON_SERIAL_LENGTH(), 쿠폰번호 자릿수 오류'
+    'Q074' : 'ERROR_CODE_COUPON_DUPLICATE(), 이미 이용중이 상품(중복 패키지)'
+	'Q075' : 'Single EpisodeID 와 PackageID 둘다 유효함, ERROR_CODE_PARAM_TRUE_EPISODE_ID_OR_PACKAGE_ID()'	
+	'Q075' : '무료 에피소드는 구매 불가능함'	
+	'Q076' : 'ERROR_CODE_NO_BUY_FREE_EP'
+	
+	'Q080' : 'ERROR_CODE_NOT_REG_DEVICE(), 등록된 디바이스가 아님'
+	'Q081' : 'ERROR_CODE_PARAM_DEVICE_NAME'
+	'Q082' : 'ERROR_CODE_PARAM_CONVERT'
+	'Q082' : 'ERROR_CODE_NOT_FOUND_GUEST_ACCOUNT'
+
+* * *

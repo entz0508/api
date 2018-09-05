@@ -1,0 +1,87 @@
+﻿<html>
+<head>
+
+</head>
+<body>
+    <form name="adbForm" id="adbForm" method="post" enctype="multipart/form-data" action="banner.php" class="form-horizontal form-label-left">
+        <input type="hidden" name="bannerType" id="bannerType" value="1" />
+        <input type="hidden" name="bannerID" id="bannerID" value="" />
+        <input type="hidden" id="bannerFile" name="bannerFile" value="" />
+        <div class="item form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="occupation">
+                TITLE <span class="required">*</span>
+            </label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <input id="title" type="text" name="title" required="required" placeholder="간략한 제목을 30자 내로 입력하세요." data-validate-length-range="1,50" value="간략한 제목을 30자" />
+            </div>
+        </div>
+
+        <div class="item form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">
+                Link URL <span class="required">*</span>
+            </label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <input type="url" id="linkurl" name="linkurl" required="required" placeholder="링크URL을 입력하세요.(ex : http://www.naver.com)" class="form-control col-md-7 col-xs-12" value="http://www.naver.com" />
+            </div>
+        </div>
+        <div class="item form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">
+                게시기간 <span class="required">*</span>
+            </label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <div>
+                    게시 기간을 선택하세요.
+                    <fieldset>
+                        <div class="control-group">
+                            <div class="controls">
+                                <div class="input-prepend input-group">
+                                    <span class="add-on input-group-addon"><i class="glyphicon glyphicon-calendar fa fa-calendar"></i></span>
+                                    <input type="text" class="form-control pull-right" id="reservationtime" name="reservationtime" value="08/28/2018 12:00 AM - 08/28/2018 11:59 PM" style="width:350;" />
+                                </div>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="item form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">
+                노출 순서 <span class="required">*</span>
+            </label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <select class="form-control" style="width:120px;" id="sortid" name="sortid">
+                    <option>1</option>";
+                </select>
+            </div>
+        </div>
+
+        <div class="item form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">
+                노출 설정 <span class="required">*</span>
+            </label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <input type="checkbox" class="js-switch" id="displayid" name="displayid" checked />
+            </div>
+        </div>
+
+        <div class="item form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">
+                배너 이미지 선택 <span class="required">*</span>
+            </label>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <input type="file" class="js-switch" id="bannerimage" name="bannerimage" required="required" />
+            </div>
+        </div>
+
+        <div class="ln_solid"></div>
+        <div class="form-group">
+            <div class="col-md-6 col-md-offset-3">
+                <input type="submit" value="등록" />
+            </div>
+        </div>
+    </form>
+</body>
+</html>

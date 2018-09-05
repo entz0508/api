@@ -1,0 +1,222 @@
+﻿<? include $_SERVER['DOCUMENT_ROOT']."/include/head.php";?>
+
+<!-- fullCalendar -->
+<link rel="stylesheet" href="/bower_components/fullcalendar/dist/fullcalendar.min.css">
+<link rel="stylesheet" href="/bower_components/fullcalendar/dist/fullcalendar.print.min.css" media="print">
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Todays
+        <small>Control panel</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Calendar</li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="box box-solid">
+                <div class="box-header with-border">
+                    <h4 class="box-title">INFO</h4>
+                </div>
+                <div class="box-body">
+                    <a href="/todays1522396102_001.csv" target="_blank">todays 등록 sample 다운로드</a>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /. box -->
+            <div class="box box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title">월간일정등록(csv파일)</h3>
+                </div>
+                <div class="box-body">
+                    <form name="adbForm" id="adbForm" enctype="multipart/form-data" method="post" action="todaysSch.php" novalidate>
+                        <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
+                            <input type="file" id="todaysFile" name="todaysFile" class="btn btn-primary btn-flat" style="width:100%;" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- /.col -->
+        <div class="col-md-9">
+            <div class="box box-primary">
+                <div class="box-body no-padding">
+                    <!-- THE CALENDAR -->
+                    <div id="calendar"></div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /. box -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+<!-- /.content -->
+
+
+
+<!-- fullCalendar -->
+<script src="/bower_components/moment/moment.js"></script>
+<script src="/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+<!-- Page specific script -->
+<script>
+    $(function () {
+        $('#todaysFile').on('change', fileEvents);
+
+        function fileEvents() {
+            // adbForm
+            if ($("#todaysFile").val() != "") {
+                var ext = $('#todaysFile').val().split('.').pop().toLowerCase();
+                if ($.inArray(ext, ['csv']) == -1) {
+                    alert('csv 파일만 업로드 할수 있습니다.');
+                    $('#todaysFile').val(null);
+                    return;
+                } else {
+
+                    event.preventDefault();
+                    var form = $('#adbForm')[0];
+                    var data = new FormData(form);
+                    $("#btnSubmit").prop("disabled", true);
+
+                    $.ajax({
+                        type: "POST",
+                        enctype: 'multipart/form-data',
+                        url: "todaysProc.php",
+                        data: data,
+                        processData: false,
+                        contentType: false,
+                        cache: false,
+                        timeout: 600000,
+                        success: function (data) {
+                            //console.log("SUCCESS : ", JSON.stringify(data));
+                            if (data.Result == 0) {
+                                //alert('등록되었습니다.');
+                                $('#calendar').fullCalendar('removeEvents');
+                                $('#calendar').fullCalendar('refetchEvents');
+                                console.log('refetchEvents');
+                            } else {
+                                //alert('처리중 문제가 발생했습니다. err1 : ' + data.Result);
+                                $('#calendar').fullCalendar('removeEvents');
+                                $('#calendar').fullCalendar('refetchEvents');
+                                console.log('Result:' + data.Result);
+                            }
+                            $("#btnSubmit").prop("disabled", false);
+                            alert('처리완료');
+                        },
+                        error: function (e) {
+                            console.log('처리중 문제가 발생했습니다. err2 : ' + e.responseText);
+                            //alert('처리중 문제가 발생했습니다. err2 : ' + e.responseText);
+                            $("#btnSubmit").prop("disabled", false);
+                            $('#calendar').fullCalendar('removeEvents');
+                            $('#calendar').fullCalendar('refetchEvents');
+                            alert('처리완료');
+                        }
+                    });
+                    
+                }
+            }
+        }
+
+        /* initialize the external events
+         -----------------------------------------------------------------*/
+        function init_events(ele) {
+            ele.each(function () {
+                // create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
+                // it doesn't need to have a start or end
+                var eventObject = {
+                    title: $.trim($(this).text()) // use the element's text as the event title
+                }
+                // store the Event Object in the DOM element so we can get to it later
+                $(this).data('eventObject', eventObject)
+                // make the event draggable using jQuery UI
+                //$(this).draggable({
+                //    zIndex: 1070,
+                //    revert: true, // will cause the event to go back to its
+                //    revertDuration: 0  //  original position after the drag
+                //})
+            })
+        }
+
+        init_events($('#external-events div.external-event'))
+        
+        /* initialize the calendar
+         -----------------------------------------------------------------*/
+        //Date for the calendar events (dummy data)
+        var date = new Date()
+        var d = date.getDate(),
+            m = date.getMonth(),
+            y = date.getFullYear()
+
+        $('#calendar').fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month'          // month,agendaWeek,agendaDay
+            },
+            buttonText: {
+                today: 'today',
+                month: 'month',
+                week: 'week',
+                day: 'day'
+            },
+            dayClick: function (date, jsEvent, view) {
+                convertDate(date);    //return false;
+            },
+            events: function (start, end, timezone, callback) {
+                $.ajax({
+                    type: "GET",
+                    url: "/pages/channel/todays.php",
+                    async: false,
+                    success: function (json) {
+                        var list = $.parseJSON(JSON.stringify(json));
+                        callback(list);
+                    }
+                });
+                
+            },
+            editable: false,
+            droppable: false                                                // this allows things to be dropped onto the calendar !!!
+        })
+
+        $('.fc-prev-button').click(function (e) {
+            var date = jQuery("#calendar").fullCalendar("getDate");
+            convertDate(date);
+        })
+
+        $('.fc-next-button').click(function (e) {
+            var date = jQuery("#calendar").fullCalendar("getDate");
+            convertDate(date);
+        })
+
+        $('.fc-today-button').click(function (e) {
+            var date = jQuery("#calendar").fullCalendar("getDate");
+            convertDate(date);
+        })
+
+        // 받은 날짜값을 date 형태로 형변환 해주어야 한다.
+        function convertDate(date) {
+            var date = new Date(date);
+            console.log(date.yyyymmdd());
+        }
+
+        // 받은 날짜값을 YYYY-MM-DD 형태로 출력하기위한 함수.
+        Date.prototype.yyyymmdd = function () {
+            var yyyy = this.getFullYear().toString();
+            var mm = (this.getMonth() + 1).toString();
+            var dd = this.getDate().toString();
+            return yyyy + "-" + (mm[1] ? mm : "0" + mm[0]) + "-" + (dd[1] ? dd : "0" + dd[0]);
+        }
+        
+        /* ADDING EVENTS */
+        var currColor = '#3c8dbc' //Red by default
+    })
+</script>
+
+<? include $_SERVER['DOCUMENT_ROOT']."/include/bottom.php";?>

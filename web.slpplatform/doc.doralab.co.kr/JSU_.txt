@@ -1,0 +1,55 @@
+
+asdf
+
+[ACCOUNT](#account) 
+    1. 회원가입 - 이메일/SNS  [/adb/account/join](#/adb/account/join) - POST,완료
+	2. 로그인 - 이메일/sns [/adb/account/login](#/adb/account/login) - POST,완료
+	3. 계정정보 가져오기 - 로그인회원 [/adb/account/getInfo](#/adb/account/getInfo) - POST,완료
+	4. 비밀번호 찾기 - 인증메일 발송 [/adb/account/pwEmail](#/adb/account/pwEmail) - POST,완료 - 메일발송 추후
+	5. 비밀번호 찾기 - 이메일토큰 인증 - [/adb/account/checkToken](#/adb/account/checkToken) - POST,완료
+	6. 비밀번호 찾기 - 비밀번호 변경 [/adb/account/pwChange](#/adb/account/pwChange) - POST,완료
+	7. 마이페이지 - 이름변경 [/adb/account/modName](#/adb/account/modName) - POST,완료
+	8. 마이페이지 - 사진등록,변경 [/adb/mypage/photo](#/adb/mypage/photo) - POST,완료
+	9. 마이페이지 - 비밀번호변경 [/adb/account/modPass](#/adb/account/modPass) - POST,완료
+	10. 마이페이지 - 계정탈퇴 [/adb/account/leave](#/adb/account/leave) - POST,완료	
+
+[myPage](#myPage)
+	1. 마이페이지 - 북마크리스트 [/jsu/mypage/bookmark](#/jsu/mypage/bookmark) - POST, 완료
+	2. 마이페이지 - 오디오북리스트 [/jsu/mypage/audioBookList](#/jsu/mypage/audioBookList) - POST, 완료
+	3. 마이페이지 - 메인 [/jsu/mypage/main](#/jsu/mypage/main) - POST, 작업중
+	
+
+[Edit](#Edit)
+	1. 북마크 등록/삭제 [/jsu/library/bookmark](#/jsu/library/bookmark) - POST, 완료
+	
+[Club](#Club)
+	1. 클럽 생성 [/jsu/club/make](#/jsu/club/make) - POST
+	2. 클럽 검색 [/jsu/club/searchAll](#/jsu/club/searchAll) - POST
+	3. 클럽 검색(클럽 이름 검색)[/jsu/club/searchName](#/jsu/club/searchName) - POST
+	<s>4. 클럽 가입 요청</s>
+	<s>5. 클럽 가입 초대</s>
+
+	
+
+[Library](#Library)
+	1. 북 검색 [/jsu/library/search](#/jsu/library/search) - POST, 완료
+	2. 북 검색(자세히)[/jsu/library/searchDetail](#/jsu/library/searchDetail) - POST, 완료
+	3. 북 검색(책 제목or저자)[/jsu/library/searchKeyword](#/jsu/library/searchKeyword) - POST, 작업중
+	4. 책 대여[/jsu/book/rent](#/jsu/book/rent) - POST, 완료
+	5. 책 반납[/jsu/book/return](#/jsu/book/return) - POST, 완료
+	6. 읽은 책 리스트[/jsu/club/readingBookList](#/jsu/club/readingBookList) - POST, 완료
+	7. 읽은 책 카운트 (클럽메인) [/jsu/club/readingBookMain](#/jsu/club/readingBookMain) - POST, 완료
+	<s>8. 읽고 있는 책 리스트</s>
+	<s>9. 읽고 있는 책 카운트 (클럽메인)</s>
+
+	
+[Calendar](#Calendar)
+	<s>1. 일정 등록</s>
+	<s>2. 일정 보기</s>
+	<s>3. 일정 참여하기</s>
+	<s>4. 일정 공유</s>
+	<s>5. 일정 삭제</s>
+	<s>6. 일정 수정</s>
+
+[etc](#Etc)
+	1. api서버 통신테스트 [/adb/etc/check](#/adb/etc/check) - POST,완료

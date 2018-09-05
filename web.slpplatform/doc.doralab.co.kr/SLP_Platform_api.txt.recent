@@ -1,0 +1,865 @@
+## __SLP Platform API__
+
+*<strong>클라이언트 to 서버 패킷중 다음 파라메터는 모든 API 에서 전달되어야 한다.</strong>*
+
+    app_id : long			// SLP 개발자 페이지에서 등록된 APP 의 고유 ID
+    client_uid : string	// 문자열로 구분된 client 의 고유 ID, ( client Identifier )
+
+*<strong>서버 to 클라이어트 결과</strong>*
+
+	1. 응답 결과는 JSON 으로 전송한다
+	2. 성공 실패는 res 값으로 구분한다.
+       정상 : res == 0
+       그외 : res != 0
+	   예)  { "res":0 , ..... }
+
+*<strong>개발 서버 주소</strong>*
+	
+	DEV - IP : 104.199.129.129
+		  APP ID : 1000000000
+
+<br/>
+*<strong>API 목록</strong>*
+
+[APP](#app)
+	1. APP ID 확인  [/slp.auth.app](#/slp.auth.app) - POST
+	2. 서비스중인 APP 목록  [/slp.app.list](#/slp.app.list) - POST
+
+
+[ACCOUNT](#account)
+	1. SLP 계정 생성  [/slp.user.account.create](#/slp.user.account.create) - POST
+	2. SLP 계정 로그인  [/slp.user.account.login](#/slp.user.account.login) - POST
+	3. SLP 유저 계정 가입경로 확인 [/slp.user.account.chk.signup.path](#/slp.user.account.chk.signup.path) - POST
+	4. APP 접근 허용 [/slp.user.account.allow.app](#/slp.user.account.allow.app) - POST
+	5. SLP 유저 계정 프로파일 추가 [/slp.user.account.profile.add](#/slp.user.account.profile.add) - POST
+	6. SLP 유저 계정 프로파일 삭제 [/slp.user.account.profile.delete](#/slp.user.account.profile.delete) - POST
+	7. SLP 유저 계정 비밀번호 재설정 메일 [/slp.user.account.forgot.password](#/slp.user.account.forgot.password) - POST
+	8. SLP 유저 계정 비밀번호 재설정 [/slp.user.account.forgot.password.change](#/slp.user.account.forgot.password.change) - POST
+	9. SLP 계정 정보 가저오기  [/slp.user.account.get.info](#/slp.user.account.get.info) - POST	
+	10. SLP 프로파일 정보 수정 [/slp.user.account.profile.edit](#/slp.user.account.profile.edit) - POST
+	11. SLP 프로파일 이미지 업로드 [/slp.user.account.profile.img.upload](#/slp.user.account.profile.img.upload) - POST
+	12. SLP 프로파일 상태 [/slp.user.account.profile.status](#/slp.user.account.profile.status) - POST
+	13. SLP 계정 탈퇴 [/slp.user.account.secession](#/slp.user.account.secession) - POST
+	14. SLP 프로파일 LIMIT TIME 수정 [/slp.user.account.profile.edit.limittime](#/slp.user.account.profile.edit.limittime) - POST
+	15. SLP 로그인중인 유저 계정 비밀번호 수정 [/slp.user.login.account.password.change](#/slp.user.login.account.password.change) - POST
+	
+
+[RES (응답 res 목록)](#res)
+* * * * * * * * *
+
+
+##APP <a id="app" href="#app">¶</a>
+
+###1. SLP APP ID 확인 [/slp.auth.app] / POST <a id="/slp.auth.app" href="#/slp.auth.app">¶</a>
+
+*info*
+
+    기능 : API 사용을 위해 APP_ID 가 유효한지 확인 한다.
+    
+
+*parameter*
+
+	app_id : long			// 등록된 APP 의 고유 번호
+	client_uid :  string	// 클라이언트의 고유값 (client Identifier)
+	os : string 			// os, ios, android
+
+*return value*
+
+	// 성공
+	{
+		"res":0,			// 성공 0, 실패 0 이 아닌 값,		
+		"app_id" : long,	// 등록된 APP 의 고유 번호
+		"app_name" : string,	// APP 이름
+		"icon_url" : string, 	// APP Icon 이미지 URL
+		
+	}
+
+	//실패
+	{
+		"res": 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	　
+	-100000 : 존재하지 않는 APP ID, Not Found APP ID
+
+
+* * *
+
+
+###2. 서비스중인 APP 목록 [/slp.app.list] / POST <a id="/slp.app.list" href="#/slp.app.list">¶</a>
+
+*info*
+
+    기능 : 서비스중인 APP 목록
+    
+
+*parameter*
+	
+	app_id : long			// 등록된 APP 의 고유 번호
+	os : string 			// os, ios, android
+	client_uid :  string	// 클라이언트의 고유값 (client Identifier)
+
+*return value*
+
+	// 성공
+	{
+		"res":0,			// 성공 0, 실패 0 이 아닌 값,		
+		"apps":[	// app 목록
+					{
+						"app_id"		: long,		// 등록된 APP 의 고유 번호
+						"package_name"	: string,	// 패키지명
+						"app_name"		: string,	// APP 이름
+						"icon_url"		: string, 	// APP Icon 이미지 URL
+						"scheme"		: string,	// IOS용 scheme
+						"ios_store_url"	: string	// IOS용 store url
+					}, ...
+				]
+		
+	}
+
+	//실패
+	{
+		"res": 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	　
+	-100000 : 존재하지 않는 APP ID, Not Found APP ID
+
+
+* * *
+
+
+##ACCOUNT <a id="account" href="#account">¶</a>
+
+###1. SLP 유저 계정 생성 [/slp.user.account.create] / POST <a id="/slp.user.account.create" href="#/slp.user.account.create">¶</a>
+
+*info*
+
+    기능 : SLP 유저 계정 생성
+    
+
+*parameter*
+
+	app_id : long			// 등록된 APP 의 고유 번호
+	os : string 			// os, ios, android
+	
+	.
+    email : string			// 이메일 최대 128자
+    password : string		 // pssword # 6~32 자
+    country : string		 // 국가코드 # 알파벳 2자리
+    signup_path : string	 // 가입경로 # slp,google,facebook )
+	　
+	// 아래 필드는 외부 앱에서 계정 전환 필요시 사용
+	transform		: int	 		// 외부 앱의 Guest 계정을 SLP 계정으로 # 연동안함:0, 연동함:1
+	ext_app_user_id : long   		// 외부앱에 계정 고유번호
+	ext_app_access_token : string   // 외부앱의 계정 access token
+
+*return value*
+
+	// 성공
+	{
+		"res":0,			// 성공 0, 실패 0 이 아닌 값,
+		"account_id":long 	// 생성된 계정의 고유번호
+	}
+
+	//실패
+	{
+		"res": 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	　
+	-200001 : 중복 이메일
+	-200002 : 계정 추가 실패
+	-200003 : 마일리지 추가 실패, failed, Add Mileage
+	-200004 : 마일리지 추가 실패, failed, Add Mileage
+	-200005 : 프로파일 추가 실패, failed, Add Profile
+	-200006 : 프로파일(히든) 추가 실패 failed, Add Profile Hidden
+	-200007 : 가입경로 정보 추가 실패, failed, Insert SignupInfo
+	-200008 : 접근 허용된 APP 추가 실패, failed, Insert Account Allow Access APP
+	-200009 : App Access Token 업데이트실패, failed, Update App Access Token
+
+* * *
+
+###2. SLP 유저 계정 로그인 [/slp.user.account.login] / POST <a id="/slp.user.account.login" href="#/slp.user.account.login">¶</a>
+
+*info*
+
+    기능 : SLP 유저 계정 로그인
+    
+
+*parameter*
+
+	app_id : long			// 등록된 APP 의 고유 번호
+	os : string 			// os, ios, android
+	client_uid :  string  // 클라이언트의 고유값 (client Identifier)
+	.
+    email : string			// 이메일 최대 128자
+    password : string		 // pssword, 6~32
+    signup_path : string	 // 가입경로, ( slp,google,facebook )
+　
+	// 아래 필드는 외부 앱에서 계정 전환 필요시 사용
+	transform		: int	 		// 외부 앱의 Guest 계정을 SLP 계정으로 # 연동안함:0, 연동함:1
+	ext_app_user_id : long   		// 외부앱에 계정 고유번호
+	ext_app_access_token : string   // 외부앱의 계정 access token
+	
+*return value*
+
+	// 성공
+	{
+		"res":0,							// 성공 0, 실패 0 이 아닌 값,
+		"account_id" : long,				// SLP 계정 고유전호
+		"access_token" : string,			// APP Access Token
+		"is_allow_app" : int,				// 접급 허용된 APP 구분 # 접근허용:1, 접근 비허용:0
+	
+	}
+
+	//실패
+	{
+		"res": 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	　
+	-200010 : 이메일과 비밀번호가 일치하지 않음, Not Match E-Mail or Password
+	-200011 : 이메일의 가입경로가 다름
+	
+
+* * *
+
+###3. SLP 유저 계정 가입경로 확인 [/slp.user.account.chk.signup.path] / POST <a id="/slp.user.account.chk.signup.path" href="#/slp.user.account.chk.signup.path">¶</a>
+
+*info*
+
+    기능 : SLP 유저 계정 가입 경로 확인
+    
+
+*parameter*
+
+	app_id : long			// 등록된 APP 의 고유 번호
+	os : string 			// os, ios, android
+	client_uid :  string  // 클라이언트의 고유값 (client Identifier)
+	.
+    email : string			// 이메일 최대 128자
+
+*return value*
+
+	// 성공
+	{
+		"res":0,				// 성공 0, 실패 0 이 아닌 값,
+		"signup_path" : string,	// 가입경로, 찾을 수 없으면 "", # "", slp, google, facebook		
+	}
+
+	//실패
+	{
+		"res": 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공	
+	-200100 : 계정 로그인 되지 않음
+
+* * *
+
+###4. SLP 유저 계정 APP 접근 허용 [/slp.user.account.allow.app] / POST <a id="/slp.user.account.allow.app" href="#/slp.user.account.allow.app">¶</a>
+
+*info*
+
+    기능 : SLP 유저 계정 APP 접근 허용
+    
+
+*parameter*
+
+	app_id : long			// 등록된 APP 의 고유 번호
+	os : string 			// os, ios, android
+	client_uid :  string	// 클라이언트의 고유값 (client UID)
+	.
+    account_id : long		// SLP 계정 고유번호
+	access_token : string	// APP Access Token
+
+*return value*
+
+	// 성공
+	{
+		"res":0,				// 성공 0, 실패 0 이 아닌 값,
+		"pf_id" : long			// 기본 프로파일 ID
+		"access_token" : string // access token
+	}
+
+	//실패
+	{
+		"res": 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공	
+
+
+* * *
+
+
+###5. SLP 유저 계정 프로파일 추가 [/slp.user.account.profile.add] / POST <a id="/slp.user.account.profile.add" href="#/slp.user.account.profile.add">¶</a>
+
+*info*
+
+    기능 : SLP 유저 계정 프로파일 추가 
+    
+
+*parameter*
+
+	app_id : long			// 등록된 APP 의 고유 번호
+	os : string 			// os, ios, android
+	client_uid :  string  	// 클라이언트의 고유값 (client Identifier)
+	.
+    account_id : long,		// SLP 계정 고유전호
+	access_token : string	// APP Access Token
+    pf_name : string		// 생성할 프로파일 이름 # 최대 16글자
+    pf_birthday : string	// 생성할 프로파일 생일 # 형식: 2015-01-01
+    pf_gender :	string		// 생성할 프로파일 성별 # 남:m, 여:f
+
+*return value*
+
+	// 성공
+	{
+		"res":0,					// 성공 0, 실패 0 이 아닌 값,
+		"pf_id" : long, 			// 프로파일 고유번호
+		"name" : string,			// 프로파일 이름
+		"birthday" : string,  		// 프로파일 생일 # 예) 2015-01-01 
+		"gender" : string,			// 프로파일 성별 # 남자:m, 여자:f 
+		"img_url" : string,			// 프로파일 이미지 경로
+		"img_th_url" : string,		// 프로파일 섬네일 이미지 경로
+		"hidden" : int 				// 하든 프로파일 # 일반 프로파일:0, 히든 프로파일:1
+	}
+
+	//실패
+	{
+		"res": 0 이 아닌 값,
+		"data": {}
+	}
+
+*res*
+
+	0 : 성공
+	
+	-200005 : 프로파일 추가 실패, failed, Add Profile	
+	-200013 : failed, Not found Profile ID
+	-200015 : 프로파일 최대 수 도달, failed, Profile Count Max
+	-200016 : 계정 정보를 찾을수 없음 failed, Not found Account ID
+	-200019 : 현재 프로파일 갯수가 1개 이하	
+	-200020 : 이 계정에서는 접근이 허용되지 않은 APP 입니다.
+	-200100 : 로그인 되지 않음
+
+* * *
+
+
+###6. SLP 유저 계정 프로파일 삭제 [/slp.user.account.profile.delete] / POST <a id="/slp.user.account.profile.add" href="#/slp.user.account.profile.delete">¶</a>
+
+*info*
+
+    기능 : SLP 유저 계정 프로파일 삭제 
+    
+
+*parameter*
+
+	app_id : long			// 등록된 APP 의 고유 번호
+	os : string 			// os, ios, android
+	client_uid :  string  // 클라이언트의 고유값 (client UID)
+	.
+    account_id : long,		// SLP 계정 고유전호
+	access_token : string	// APP Access Token
+    pf_id : string			// 삭제할 Profile ID
+    
+
+*return value*
+
+	// 성공
+	{
+		"res":0,					// 성공 0, 실패 0 이 아닌 값,
+		"pf_id" : long, 			// 삭제한 프로파일 고유번호
+	}
+
+	//실패
+	{
+		"res": 0 이 아닌 값,
+		"data": {}
+	}
+
+*res*
+
+	0 : 성공
+	
+	-200013 : Prifile ID 찾을 수 없음, Not found Profile ID
+	-200016 : 계정 정보를 찾을수 없음 failed, Not found Account ID
+	-200019 : 현재 프로파일 갯수가 1개 이하, Profile Count Min
+	-200020 : 이 계정에서는 접근이 허용되지 않은 APP 입니다.
+	-200100 : 로그인 되지 않음
+
+* * *
+
+###7. SLP 유저 계정 비밀번호 재설정 메일 발송 [/slp.user.account.forgot.password] / POST <a id="/slp.user.account.forgot.password" href="#/slp.user.account.forgot.password">¶</a>
+
+*info*
+
+    기능 : SLP 유저 계정 비밀번호 재설정 메일 발송
+			가입경로 slp 만 초기화 가능
+    
+
+*parameter*
+
+	app_id : long			// 등록된 APP 의 고유 번호
+	os : string 			// os, ios, android
+	client_uid :  string  // 클라이언트의 고유값 (client UID)
+	.
+    email : string,		// SLP 계정 이메일
+
+*return value*
+
+	// 성공
+	{
+		"res":0,					// 성공 0, 실패 0 이 아닌 값,
+		"email" : string, 			// 초기화한 이메일
+	}
+
+	//실패ㅜ
+	{
+		"res": 0 이 아닌 값,
+		"data": {}
+	}
+
+*res*
+
+	0 : 성공
+	　
+	-200017 : 찾을수 없는 이메일, NOT FOUND EMAIL
+	-200018 : 비밀번호 초기화는 SLP 만 가능
+
+* * *
+
+###8. SLP 유저 계정 비밀번호 재설정 [/slp.user.account.forgot.password.change] / POST <a id="/slp.user.account.forgot.password.change" href="#/slp.user.account.forgot.password.change">¶</a>
+
+*info*
+
+    기능 : SLP 유저 계정 비밀번호 초기화
+	
+    
+
+*parameter*
+
+	app_id : long			// 등록된 APP 의 고유 번호
+	os : string 			// os, ios, android
+	client_uid :  string  // 클라이언트의 고유값 (client UID)
+	.
+    email : string,		// SLP 계정 이메일
+	ch_token : string   // 초기화 토큰
+	password : string	// 새로운 비밀번호
+
+*return value*
+
+	// 성공
+	{
+		"res":0,					// 성공 0, 실패 0 이 아닌 값,
+		"email" : string, 			// 초기화한 이메일
+	}
+
+	//실패
+	{
+		"res": 0 이 아닌 값,
+		"data": {}
+	}
+
+*res*
+
+	0 : 성공
+	　
+	-200017 : 찾을수 없는 이메일, NOT FOUND EMAIL
+	-200018 : 비밀번호 초기화는 SLP 만 가능
+	-200023 : 비밀번초 초기화, 토큰 유효시간 초과
+
+* * *
+
+###9. SLP 계정 정보 가저오기 [/slp.user.account.get.info] / POST <a id="/slp.user.account.get.info" href="#/slp.user.account.get.info">¶</a>
+
+*info*
+
+    기능 : SLP 계정 정보 가저오기
+    
+
+*parameter*
+
+	app_id : long			// 등록된 APP 의 고유 번호
+	os : string 			// os, ios, android
+	client_uid :  string  // 클라이언트의 고유값 (client UID)
+	.
+    account_id : long			// 계정 고유 번호
+    access_token : string		// access token
+
+*return value*
+
+	// 성공
+	{
+		"res":0,							// 성공 0, 실패 0 이 아닌 값,
+		"email":string						// SLP 계정 이메일 주소
+		"account_id" : long,				// SLP 계정 고유전호
+		"access_token" : string,			// Access Token
+		"is_allow_app" : int,				// 접급 허용된 APP 구분 # 접근허용:1, 접근 비허용:0
+		"country" : string,					// 계정 국가 코드
+		"cur_pf_id" : int,					// 현재 선택된 SLP 프로파일 고유번호
+		"star" : int,						// star point
+		"login_type" : string				// 가입경로, slp, google, facebook
+		"pf_list" : [{
+				"pf_id" : long, 			// 프로파일 고유번호
+				"name" : string,			// 프로파일 이름
+				"birthday" : string,  		// 프로파일 생일 # 예) 2015-01-01 
+				"gender" : string,			// 프로파일 성별 # 남자:m, 여자:f 
+				"img_url" : string,			// 프로파일 이미지 경로
+				"img_th_url" : string,		// 프로파일 섬네일 이미지 경로
+				"hidden" : int 				// 하든 프로파일 # 일반 프로파일:0, 히든 프로파일:1 
+				"limit_time" : int			// 하루 사용 제한시간, 분단위
+			}
+		]
+	
+	}
+
+	//실패
+	{
+		"res": 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	-200016 : 계정 정보를 찾을수 없음 failed, Not found Account ID
+	-200020 : 이 계정에서는 접근이 허용되지 않은 APP 입니다.
+	-200100 : 로그인 되지 않음
+
+* * *
+
+
+###10. SLP 프로파일 정보 수정 [/slp.user.account.profile.edit] / POST <a id="/slp.user.account.profile.edit" href="#/slp.user.account.profile.edit">¶</a>
+
+*info*
+
+    기능 : SLP 프로파일 정보 수정
+    
+
+*parameter*
+
+	app_id : long			// 등록된 APP 의 고유 번호
+	os : string 			// os, ios, android
+	client_uid :  string  // 클라이언트의 고유값 (client UID)
+	.
+    account_id : long			// 계정 고유 번호
+    access_token : string		// access token
+	pf_id : long 				// Profile ID
+	name : string,				// 프로파일 이름
+	birthday : string,  		// 프로파일 생일 # 예) 2015-01-01 
+	gender : string,			// 프로파일 성별 # 남자:m, 여자:f 
+		
+
+*return value*
+
+	// 성공
+	{
+		"res":0,					// 성공 0, 실패 0 이 아닌 값,		
+		"pf_id" : long, 			// 프로파일 고유번호
+		"name" : string,			// 프로파일 이름
+		"birthday" : string,  		// 프로파일 생일 # 예) 2015-01-01 
+		"gender" : string,			// 프로파일 성별 # 남자:m, 여자:f 
+		"img_url" : string,			// 프로파일 이미지 경로
+		"img_th_url" : string,		// 프로파일 섬네일 이미지 경로	
+		"limit_time" : int			// 하루 사용 제한시간, 분단위
+	}
+
+	//실패
+	{
+		"res": 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	-200016 : 계정 정보를 찾을수 없음 failed, Not found Account ID
+	-200020 : 이 계정에서는 접근이 허용되지 않은 APP 입니다.
+	-200100 : 로그인 되지 않음
+
+* * *
+
+	
+
+
+###11. SLP 프로파일 이미지 업로드 [/slp.user.account.profile.img.upload] / POST <a id="/slp.user.account.profile.img.upload" href="#/slp.user.account.profile.img.upload">¶</a>
+
+*info*
+
+    기능 : SLP 프로파일 이미지 업로드
+    
+
+*parameter*
+
+	app_id : long			// 등록된 APP 의 고유 번호
+	os : string 			// os, ios, android
+	client_uid :  string	// 클라이언트의 고유값 (client UID)
+	.
+    account_id : long			// 계정 고유 번호
+    access_token : string		// access token
+	pf_id : long 				// Profile ID
+	uploadfile : string,		// 이미지파일
+
+*return value*
+
+	// 성공
+	{
+		"res":0,					// 성공 0, 실패 0 이 아닌 값,		
+		"pf_id" : long, 			// Profile ID
+		"img_url" : string,			// 프로파일 이미지 경로
+		"img_th_url" : string,		// 프로파일 섬네일 이미지 경로	
+	}
+
+	//실패
+	{
+		"res": 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	-200016 : 계정 정보를 찾을수 없음 failed, Not found Account ID
+	-200020 : 이 계정에서는 접근이 허용되지 않은 APP 입니다.
+	-200100 : 로그인 되지 않음
+
+* * *
+
+
+	
+###12. SLP 프로파일 상태 [/slp.user.account.profile.status] / POST <a id="/slp.user.account.profile.status" href="#/slp.user.account.profile.status">¶</a>
+
+*info*
+
+    기능 : SLP 프로파일 상태 정보, ( onliee, offline 등)
+    
+
+*parameter*
+
+	app_id : long			// 등록된 APP 의 고유 번호
+	os : string 			// os, ios, android
+	client_uid :  string  // 클라이언트의 고유값 (client UID)
+	.
+    account_id : long			// 계정 고유 번호
+    access_token : string		// access token
+	pf_id : long 				// Profile ID
+		
+
+*return value*
+
+	// 성공
+	{
+		"res":0,					// 성공 0, 실패 0 이 아닌 값,		
+		"online"  : int, // 0:오프라인(미접속), 1:온라인(접속중)
+		"on_time" : int, // 접속한 시간 (분단위)
+		"app_id" : int	 // 접속 APP ID
+	}
+
+	//실패
+	{
+		"res": 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	-200016 : 계정 정보를 찾을수 없음 failed, Not found Account ID
+	-200020 : 이 계정에서는 접근이 허용되지 않은 APP 입니다.
+	-200100 : 로그인 되지 않음
+
+* * *
+
+
+
+###13. SLP 계정 탈퇴 [/slp.user.account.secession] / POST <a id="/slp.user.account.secession" href="#/slp.user.account.secession">¶</a>
+
+*info*
+
+    기능 : SLP 계정 탈퇴
+    
+
+*parameter*
+
+	app_id : long			// 등록된 APP 의 고유 번호
+	os : string 			// os, ios, android
+	client_uid :  string  // 클라이언트의 고유값 (client UID)
+	.
+    account_id : long			// 계정 고유 번호
+    access_token : string		// access token
+	reason : string 			// 탈퇴사유
+		
+
+*return value*
+
+	// 성공
+	{
+		"res":0,	// 성공 0, 실패 0 이 아닌 값
+	}
+
+	//실패
+	{
+		"res": 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	-200016 : 계정 정보를 찾을수 없음 failed, Not found Account ID
+	-200020 : 이 계정에서는 접근이 허용되지 않은 APP 입니다.
+	-200100 : 로그인 되지 않음
+
+* * *
+
+
+###14. SLP 프로파일 LIMIT TIME 수정 [/slp.user.account.profile.edit.limittime] / POST <a id="/slp.user.account.profile.edit.limittime" href="#/slp.user.account.profile.edit.limittime">¶</a>
+
+*info*
+
+    기능 : SLP 프로파일 LIMIT TIME 수정
+    
+
+*parameter*
+
+	app_id : long			// 등록된 APP 의 고유 번호
+	os : string 			// os, ios, android
+	client_uid :  string  // 클라이언트의 고유값 (client UID)
+	.
+    account_id : long			// 계정 고유 번호
+    access_token : string		// access token
+	pf_id : long 				// Profile ID	
+	limit_time	: int			// 하루 사용 제한시간
+		
+
+*return value*
+
+	// 성공
+	{
+		"res":0,					// 성공 0, 실패 0 이 아닌 값,		
+		"pf_id" : long, 			// 프로파일 고유번호
+		"limit_time" : int			// 하루 사용 제한시간, 분단위
+	}
+
+	//실패
+	{
+		"res": 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	-200016 : 계정 정보를 찾을수 없음 failed, Not found Account ID
+	-200020 : 이 계정에서는 접근이 허용되지 않은 APP 입니다.
+	-200100 : 로그인 되지 않음
+
+* * *
+
+
+###15. SLP 로그인중인 유저 계정 비밀번호 수정 [/slp.user.login.account.password.change] / POST <a id="/slp.user.login.account.password.change" href="#/slp.user.login.account.password.change">¶</a>
+
+*info*
+
+    기능 : SLP 로그인중인 유저 계정 비밀번호 수정
+    
+
+*parameter*
+
+	app_id : long			// 등록된 APP 의 고유 번호
+	os : string 			// os, ios, android
+	client_uid :  string  // 클라이언트의 고유값 (client UID)
+	.
+    account_id : long			// 계정 고유 번호
+    access_token : string		// access token
+	cur_password : string 		// 현재 비밀번호
+	password : string 			// 새로운 비밀번호
+	
+		
+
+*return value*
+
+	// 성공
+	{
+		"res":0,					// 성공 0, 실패 0 이 아닌 값,		
+	}
+
+	//실패
+	{
+		"res": 0 이 아닌 값,
+	}
+
+*res*
+
+	0 : 성공
+	-200016 : 계정 정보를 찾을수 없음 failed, Not found Account ID
+	-200020 : 이 계정에서는 접근이 허용되지 않은 APP 입니다.
+	-200100 : 로그인 되지 않음
+
+* * *
+
+
+
+##RES (응답 res 목록) <a id="res" href="#res">¶</a>
+
+	0 : 성공
+	　
+	-1 : DB 오류
+	-2 : 알 수 없는 오류 
+	　
+	-1000 : 잘못된 파라메터 값
+	　
+	-100000 : 존재하지 않는 APP ID, Not Found APP ID
+	　
+	-200000 : 계정 생성 실패
+	-200001 : 중복 이메일
+	-200002 : 계정 추가 실패
+	-200003 : 마일리지 추가 실패, failed, Add Mileage
+	-200004 : 마일리지 추가 실패, failed, Add Mileage
+	-200005 : 프로파일 추가 실패, failed, Add Profile
+	-200006 : 프로파일(히든) 추가 실패 failed, Add Profile Hidden
+	-200007 : 가입경로 정보 추가 실패, failed, Insert SignupInfo
+	-200008 : 접근 허용된 APP 추가 실패, failed, Insert Account Allow Access APP
+	-200009 : App Access Token 업데이트실패, failed, Update App Access Token
+	-200010 : 이메일과 비밀번호가 일치하지 않음, Not Match E-Mail or Password
+	-200011 : 이메일의 가입경로가 다름
+	-200013 : Prifile ID 찾을 수 없음, Not found Profile ID
+	-200014 : failed, Update App Access Current Profile ID
+	-200015 : 프로파일 갯수 MAX, Profile Count Max
+	-200016 : 계정 정보를 찾을수 없음 , Not found Account ID
+	-200017 : 찾을수 없는 이메일, NOT FOUND EMAIL
+	-200018 : 비밀번호 초기화는 SLP 만 가능
+	-200019 : 현재 프로파일 갯수가 1개 이하, Profile Count Min
+	-200020 : 이 계정에서는 접근이 허용되지 않은 APP 입니다.
+	-200021 : 이미 연동된 APP 입니다.
+	-200022 : 계정 연동 정보 저장 실패, failed, insert EXT APP USER ACCOUNT TRANS
+	-200023 : 비밀번초 초기화, 토큰 유효시간 초과
+	-200024 : 현재 비밀번호가 일치하지 않음
+	-200100 : 로그인 되지 않음
+	-200200 : 프로파일 이미지 업데이트 실패
+	-200300 : 계정 삭제 오류
+	
+	
+	
+	SLP DLA
+	-400100 : 이 clientUID 는 이미 게스트 ID가 존재함
+	-400101 : SLP DLA 게스트 계정 생성 실패, Failed, INSERT INTO `user_slp_account_tb`
+	-400101 : SLP DLA 게스트 계정 생성 실패, Failed, INSERT INTO `guest_client_uid_tb`
+	
+	
+	
+	
+	
