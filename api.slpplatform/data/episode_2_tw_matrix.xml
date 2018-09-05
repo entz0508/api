@@ -1,0 +1,1103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<episode id="ep111" paid_type="1" product_id="ep111">
+		<title>5個數字兄弟姊妹</title>
+		<headline>數字1在尋找他的兄弟姊妹!來和Dora跟Boots一起跟5個數字兄弟姊妹們碰面吧!</headline>
+		<objective1 intelligence="0, 8">能夠知道數字的名稱並且利用數字來完成有趣的圖案</objective1>
+		<objective2 intelligence="1">能夠學會用數字1到5來表示數量的概念</objective2>
+		<objective3 intelligence="6, 1">能夠從歌裡學到相關的數字概念並學會算數及每個數字之間的關係</objective3>
+		<chapter1>圖畫之路</chapter1>
+		<chapter2>動物農場</chapter2>
+		<chapter3>音樂盒</chapter3>
+		<to_parents>當小朋友聽到 "2"，他們會想到數字2，並不會想到2代表的數量。為了幫小朋友連結這樣的關係，可以試著把數字2跟兩樣物品擺在一起</to_parents>
+		<matrix0>3</matrix0>
+		<matrix1>3</matrix1>
+		<matrix2>2</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>1</matrix5>
+		<matrix6>4</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>2</matrix8>
+	</episode>
+	<episode id="ep116" paid_type="2" product_id="ep116">
+		<title>超級間諜</title>
+		<headline>搗蛋鬼試圖想要阻撓Isa變色龍的生日派對。請阻止搗蛋鬼和他的新發明!</headline>
+		<objective1 intelligence="1">能夠理解6、7、8、9所代表出的數量總額</objective1>
+		<objective2 intelligence="2">能夠快速地察覺到物體隨機出現的地點</objective2>
+		<objective3 intelligence="8">能夠用各種水果來裝飾蛋糕</objective3>
+		<chapter1>堅果森林</chapter1>
+		<chapter2>Boots的家</chapter2>
+		<chapter3>Benny牛的穀倉</chapter3>
+		<to_parents>這個年紀的小朋友們還沒有學到物品所有權的概念，而他們可能會把別人的東西帶回家。當這件事發生時，試著溫和的告訴他們這樣是不對的，並陪他們把東西還給其他人。</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>2</matrix1>
+		<matrix2>3</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>0</matrix5>
+		<matrix6>0</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>4</matrix8>
+	</episode>
+	<episode id="ep060" paid_type="3" product_id="ep060">
+		<title>涼快一下!</title>
+		<headline>這是一個炎熱的夏日，而Boots快被熱到沒力了!你能幫Dora和Boots覺得涼快點嗎?</headline>
+		<objective1 intelligence="5, 8">能夠理解冰的特徵並了解使用方法，及試著裝飾刨冰</objective1>
+		<objective2 intelligence="1">能夠比較尺寸的大小，並且能夠用尺寸來比對物體的大小</objective2>
+		<objective3 intelligence="5">能夠檢視夏日的天氣、海灘環境以及夏天會出現的昆蟲</objective3>
+		<chapter1>浪花海灘</chapter1>
+		<chapter2>閃亮貝殼</chapter2>
+		<chapter3>沙灘</chapter3>
+		<to_parents>這個年紀的小朋友會是彼此最強的榜樣，因為他們會互相學習模仿。在夏季的時候，安全因素會是個很重要的問題。引導你的小朋友水裡玩水的時候要注意安全。</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>2</matrix1>
+		<matrix2>0</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>7</matrix5>
+		<matrix6>0</matrix6>
+		<matrix7>3</matrix7>
+		<matrix8>2</matrix8>
+	</episode>
+	<episode id="ep122" paid_type="0" product_id="ep122">
+		<title>Bugga Bugga</title>
+		<headline>Bugga Bugga的寶寶們走丟了!讓我們去找到這些小麻煩們吧!</headline>
+		<objective1 intelligence="5, 0">能夠了解昆蟲和其他小蟲類的差別，並學會他們的名稱</objective1>
+		<objective2 intelligence="2, 8">能夠檢視昆蟲的圖案，並隨意地用它來裝飾</objective2>
+		<objective3 intelligence="6">能夠聽出歌曲及各種樂器發出的聲音</objective3>
+		<chapter1>深奧森林</chapter1>
+		<chapter2>彩色花園</chapter2>
+		<chapter3>高山丘</chapter3>
+		<to_parents>帶你的小朋友到戶外，並找出小蟲和其他昆蟲。讓小朋友在探索並熟悉大自然的同時，激發出對大自然的好奇心</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>1</matrix1>
+		<matrix2>3</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>7</matrix5>
+		<matrix6>4</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>2</matrix8>
+	</episode>
+	<episode id="ep118" paid_type="0" product_id="ep118">
+		<title>暴風雨</title>
+		<headline>大烏雲帶著風和雨來了!快告訴朋友們在大烏雲來之前趕快回家!</headline>
+		<objective1 intelligence="5, 0">能夠了解並學會有關雲、雨、風和天空的字彙</objective1>
+		<objective2 intelligence="1">能夠把相同的動物做分類</objective2>
+		<objective3 intelligence="1, 7">能夠藉由重複畫線和找到迷宮的出口，來強化解決問題的能力</objective3>
+		<chapter1>紅紅樹叢</chapter1>
+		<chapter2>堅果森林</chapter2>
+		<chapter3>蔬菜山</chapter3>
+		<to_parents>這個年紀的小朋友們是在寫作前的發展階段，而他們通常都只會畫線條。引導你的小朋友透過迷宮找出提升運動神經發展的能力，也同時培養解決問題的能力。</to_parents>
+		<matrix0>0</matrix0>
+		<matrix1>5</matrix1>
+		<matrix2>2</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>5</matrix5>
+		<matrix6>3</matrix6>
+		<matrix7>2</matrix7>
+		<matrix8>0</matrix8>
+	</episode>
+	<episode id="ep125" paid_type="0" product_id="ep125">
+		<title>我愛運動!</title>
+		<headline>今天Dora和朋友們為運動日做好準備了，一起練習足球、棒球還有啦啦隊歡呼!</headline>
+		<objective1 intelligence="2">能夠學會左和右的空間概念</objective1>
+		<objective2 intelligence="7">能夠看著動作並跟著做</objective2>
+		<objective3 intelligence="2">能夠學會近和遠的空間概念</objective3>
+		<chapter1>小矮人橋</chapter1>
+		<chapter2>生日氣球</chapter2>
+		<chapter3>大紅公雞</chapter3>
+		<to_parents>和您的小朋友一起嘗試用簡單的規則來做運動，跟著規則，小朋友會有成就感，也能夠學會健康的比賽</to_parents>
+		<matrix0>0</matrix0>
+		<matrix1>1</matrix1>
+		<matrix2>4</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>0</matrix5>
+		<matrix6>1</matrix6>
+		<matrix7>8</matrix7>
+		<matrix8>0</matrix8>
+	</episode>
+	<episode id="ep126" paid_type="0" product_id="ep126">
+		<title>快樂的小矮人</title>
+		<headline>我們要怎麼做才能讓Grumpy小矮人開心呢?跟Dora和Boots一起找出方法吧</headline>
+		<objective1 intelligence="0, 1">能夠學會情緒的字彙並找出對應的表情</objective1>
+		<objective2 intelligence="8">能夠任意的裝飾面具的表情</objective2>
+		<objective3 intelligence="2, 6">能夠找出躲起來的彩虹，並唱首鼓勵的歌</objective3>
+		<chapter1>小矮人橋</chapter1>
+		<chapter2>玉米田</chapter2>
+		<chapter3>蔬菜山</chapter3>
+		<to_parents>知道自己的情緒，並懂得如何正確地表達出來，在小朋友的情緒發展裡是很重要的。鼓勵您的小朋友藉由明確的反應來表達情緒，並懂得說出 "喔! 我懂了"</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>1</matrix1>
+		<matrix2>1</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>0</matrix5>
+		<matrix6>4</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>4</matrix8>
+	</episode>
+	<episode id="ep127" paid_type="0" product_id="ep127">
+		<title>有人在嗎?</title>
+		<headline>Dora、Boots和Benny牛被困在荒島上了!我們的朋友們能夠幫助他們平安地回到家嗎?</headline>
+		<objective1 intelligence="5">能夠做到取得椰子並吃到椰子的活動</objective1>
+		<objective2 intelligence="1">能夠在不管顏色或圖案的情況下，認出並把相同形狀做分類</objective2>
+		<objective3 intelligence="7">能夠跟著引導並畫出線</objective3>
+		<chapter1>測驗之路</chapter1>
+		<chapter2>森林</chapter2>
+		<chapter3>彩色花園</chapter3>
+		<to_parents>利用色紙、雜誌和報紙，剪下不同的圓形、三角形和長方形來讓小朋友更熟悉各種形狀。小朋友會更清楚地藉由這樣的活動，知道各種形狀的概念，也會增強他們的創造力</to_parents>
+		<matrix0>1</matrix0>
+		<matrix1>2</matrix1>
+		<matrix2>0</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>3</matrix5>
+		<matrix6>0</matrix6>
+		<matrix7>4</matrix7>
+		<matrix8>4</matrix8>
+	</episode>
+	<episode id="ep113" paid_type="0" product_id="ep113">
+		<title>尋寶探險</title>
+		<headline>海盜鸚鵡正在尋找可以和他一起找寶物的朋友們!讓我們全部一起跳上船跟他一起來趟尋寶探險吧!</headline>
+		<objective1 intelligence="2">能夠學會上面跟下面的空間概念</objective1>
+		<objective2 intelligence="1">能夠從字裡聽出數字並選擇數字</objective2>
+		<objective3 intelligence="2">能夠利用部分的圖片配對，來完成原本畫好的圖片</objective3>
+		<chapter1>廢棄物島</chapter1>
+		<chapter2>海盜島</chapter2>
+		<chapter3>海洋洞穴</chapter3>
+		<to_parents>像是「上面」跟「下面」的字彙是很抽象的字，而且這些字對小朋友來說是困難的。引導你的小朋友利用熟悉的活動:比如，坐在椅子的上面，來學會空間的概念</to_parents>
+		<matrix0>0</matrix0>
+		<matrix1>3</matrix1>
+		<matrix2>5</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>3</matrix5>
+		<matrix6>0</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>0</matrix8>
+	</episode>
+	<episode id="ep119" paid_type="0" product_id="ep119">
+		<title>Dora的追星之旅</title>
+		<headline>Dora和Boots要去找探險星!他們會找到什麼樣的星星呢?</headline>
+		<objective1 intelligence="1">能夠用顏色來分類物體</objective1>
+		<objective2 intelligence="1">能夠透過在不同的情況下決定事情，來培養解決問題的能力</objective2>
+		<objective3 intelligence="5">能夠探索夜晚的環境與夜行動物，並且學會燈的使用</objective3>
+		<chapter1>最高的山</chapter1>
+		<chapter2>星星山</chapter2>
+		<chapter3>黑暗森林</chapter3>
+		<to_parents>讓你的小朋友有機會去接觸並發現他/她覺得有興趣的物體的特色。各種不同的探索會促使小朋友們的思維發展，像是理解並解釋有問題的狀況。</to_parents>
+		<matrix0>1</matrix0>
+		<matrix1>3</matrix1>
+		<matrix2>3</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>4</matrix5>
+		<matrix6>0</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>0</matrix8>
+	</episode>
+	<episode id="eps111" paid_type="0" product_id="eps111">
+		<title>不給糖就搗蛋!</title>
+		<headline>萬聖節快樂! Dora和Boots要去玩不給糖就搗蛋! 讓我們一起跟他們去說 "Boo!"</headline>
+		<objective1 intelligence="1">能夠數六、七、八、九</objective1>
+		<objective2 intelligence="8, 7">能夠用圓形、三角形和方形做出臉部</objective2>
+		<objective3 intelligence="0, 6">能夠替換歌詞並用同樣的律動及旋律唱出</objective3>
+		<chapter1>Boots的家</chapter1>
+		<chapter2>機器人的家</chapter2>
+		<chapter3>小矮人橋</chapter3>
+		<to_parents>用過去已知的元素來創造新產品的過程，是具有創造力也很有趣的，引導您的小朋友畫出已經知道的東西，像是星星和愛心，然後用這些形狀來畫出一張臉</to_parents>
+		<matrix0>1</matrix0>
+		<matrix1>2</matrix1>
+		<matrix2>2</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>1</matrix4>
+		<matrix5>0</matrix5>
+		<matrix6>4</matrix6>
+		<matrix7>5</matrix7>
+		<matrix8>3</matrix8>
+	</episode>
+	<episode id="ep121" paid_type="0" product_id="ep121">
+		<title>把東西還給我們的朋友吧</title>
+		<headline>Dora的朋友們把廚房器具留在Dora的家裡了!讓我們幫Dora把東西還給她的朋友們吧!</headline>
+		<objective1 intelligence="0">能夠了解各種廚房器具並認識他們的名稱</objective1>
+		<objective2 intelligence="1">能夠學會從1數到9，並且熟悉數字的概念</objective2>
+		<objective3 intelligence="8">能夠體驗使用各種配料來裝飾冰淇淋</objective3>
+		<chapter1>機器人的家</chapter1>
+		<chapter2>Isa變色龍的花園</chapter2>
+		<chapter3>Benny牛的穀倉</chapter3>
+		<to_parents>在每天日常生活中引導你的小朋友來做數物體的活動。像是邊玩邊數出那些熟悉物體，讓小朋友能夠學會對數字有概念。</to_parents>
+		<matrix0>3</matrix0>
+		<matrix1>2</matrix1>
+		<matrix2>2</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>1</matrix5>
+		<matrix6>0</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>2</matrix8>
+	</episode>
+	<episode id="ep117" paid_type="0" product_id="ep117">
+		<title>小狗，你要去哪裡?</title>
+		<headline>Dora有一隻新的小狗了!但是小狗一直想要跑走!小狗要去那裡呢?</headline>
+		<objective1 intelligence="7">能夠在洗澡時，一邊享受聽歌，一邊跟著跳舞</objective1>
+		<objective2 intelligence="0">能夠在洗澡的時候說出相關物體的名稱</objective2>
+		<objective3 intelligence="2, 1">能夠經由看到動物的正面的樣子，來猜動物的背面的樣子，並藉此找到他們</objective3>
+		<chapter1>大紅公雞</chapter1>
+		<chapter2>泡泡之河</chapter2>
+		<chapter3>浴室</chapter3>
+		<to_parents>在這個階段的小朋友們開始注重個人衛生了，像是刷牙、洗手和洗澡。透過愉快的經驗來培養好習慣，引導你的小朋友把保持個人衛生習慣當作遊戲來玩，較容易讓這些習慣持之以恆。</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>0</matrix1>
+		<matrix2>2</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>1</matrix4>
+		<matrix5>3</matrix5>
+		<matrix6>4</matrix6>
+		<matrix7>3</matrix7>
+		<matrix8>0</matrix8>
+	</episode>
+	<episode id="ep132" paid_type="0" product_id="ep132">
+		<title>圓形、三角形和方形的麻煩製造者</title>
+		<headline>圓形、三角形和長方形的貼紙在貼紙簿消失了!讓我們到書裡和Dora跟Boots一起找出他們吧!</headline>
+		<objective1 intelligence="2">能夠在各種不同的形體及顏色中選出相同的形狀</objective1>
+		<objective2 intelligence="1, 6">能夠用一種形狀組成另一個新形狀</objective2>
+		<objective3 intelligence="1, 8">能夠用很多種類的形狀來組成一個新的形狀</objective3>
+		<chapter1>形狀遊樂園</chapter1>
+		<chapter2>音樂盒</chapter2>
+		<chapter3>貼紙小鎮</chapter3>
+		<to_parents>把剪下來的色紙、雜誌和報紙剪成圓形、三角形和方形來玩形狀製作遊戲，您的小朋友不僅可以在用各種形狀塑形的過程中，熟悉形狀，還能夠發展他/她的創造力</to_parents>
+		<matrix0>0</matrix0>
+		<matrix1>4</matrix1>
+		<matrix2>2</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>0</matrix5>
+		<matrix6>2</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>2</matrix8>
+	</episode>
+	<episode id="ep104" paid_type="0" product_id="ep104">
+		<title>搗蛋鬼在幫我們!</title>
+		<headline>Dora和Boots的背包不見了!我們必須在搗蛋鬼偷走前，趕快找到背包!</headline>
+		<objective1 intelligence="1">能夠比較長度並學會「比較長」和「比較短」的概念</objective1>
+		<objective2 intelligence="2">能夠看著地圖並找出更短的路線</objective2>
+		<objective3 intelligence="5">能夠體驗如何摘取成熟的藍莓</objective3>
+		<chapter1>青蛙池塘</chapter1>
+		<chapter2>消防站</chapter2>
+		<chapter3>藍莓山丘</chapter3>
+		<to_parents>在每天日常生活中，嘗試各種活動。用不同的長度來比較兩支鉛筆或是兩件褲子去學習「長」跟「短」的概念</to_parents>
+		<matrix0>0</matrix0>
+		<matrix1>3</matrix1>
+		<matrix2>4</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>1</matrix4>
+		<matrix5>2</matrix5>
+		<matrix6>0</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>1</matrix8>
+	</episode>
+	<episode id="ep142" paid_type="0" product_id="ep142">
+		<title>大紅公雞的魔法表演秀</title>
+		<headline>今天是大紅公雞的魔法表演秀，讓我們幫大紅公雞找出他在魔法表演需要的東西吧!</headline>
+		<objective1 intelligence="1">能夠理解長對高的東西和小對短的東西的概念</objective1>
+		<objective2 intelligence="8, 2">能夠從兩張圖片看出不同的地方並正確的修改它們</objective2>
+		<objective3 intelligence="2, 1">能夠比較兩種物體的重量，並探索近跟遠的概念</objective3>
+		<chapter1>卡片屋</chapter1>
+		<chapter2>帽子店</chapter2>
+		<chapter3>兔子洞</chapter3>
+		<to_parents>要讓天秤得˙到平衡，綁一條線在長棍子的中間，並讓它兩端都掛上東西。在秤物體的重量前，跟小朋友討論哪一樣東西比較重，藉由秤重的活動來找出答案</to_parents>
+		<matrix0>0</matrix0>
+		<matrix1>3</matrix1>
+		<matrix2>3</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>0</matrix5>
+		<matrix6>0</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>2</matrix8>
+	</episode>
+	<episode id="ep134" paid_type="0" product_id="ep134">
+		<title>拿回搗蛋鬼的東西</title>
+		<headline>風把搗蛋鬼的東西吹走了! 讓我們和Dora去找回搗蛋鬼的東西吧!</headline>
+		<objective1 intelligence="1">能夠利用物體的特徵來分類不同的物體</objective1>
+		<objective2 intelligence="6">能夠聽出並跟著唱刷牙歌</objective2>
+		<objective3 intelligence="8">能夠利用組合各種特徵來創造出新的玩偶</objective3>
+		<chapter1>烏鴉樹</chapter1>
+		<chapter2>海灘洞穴</chapter2>
+		<chapter3>嘻哈兔的帳篷</chapter3>
+		<to_parents>當您的小朋友在畫畫或裝飾的過程中，鼓勵您的小朋友嘗試各種不同的選擇和組合，透過沒有正確答案的活動，小朋友可以發展並增加創造力，也可以同時發展藝術感受力</to_parents>
+		<matrix0>1</matrix0>
+		<matrix1>2</matrix1>
+		<matrix2>1</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>0</matrix5>
+		<matrix6>4</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>4</matrix8>
+	</episode>
+	<episode id="ep135" paid_type="0" product_id="ep135">
+		<title>幫助小太空生物!</title>
+		<headline>小太空生物從很遠的外太空來尋求協助! 讓我們去外太空探險，幫助他們吧!</headline>
+		<objective1 intelligence="1">能夠利用顏色來分類不同形狀的物體</objective1>
+		<objective2 intelligence="1">能夠學會數數並從一數到九</objective2>
+		<objective3 intelligence="8">能夠畫出花、樹並任意的裝飾植物</objective3>
+		<chapter1>紫色星球</chapter1>
+		<chapter2>星星糖星球</chapter2>
+		<chapter3>咖啡色星球</chapter3>
+		<to_parents>和您的小朋友一起觀察夜空，藉由觀察星星，小朋友能夠發展對浩瀚太空的興趣</to_parents>
+		<matrix0>0</matrix0>
+		<matrix1>2</matrix1>
+		<matrix2>2</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>3</matrix5>
+		<matrix6>0</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>4</matrix8>
+	</episode>
+	<episode id="eps101" paid_type="0" product_id="eps101">
+		<title>聖誕快樂!</title>
+		<headline>聖誕節來了!Dora和Boots要把禮物送出去並舉行派對!</headline>
+		<objective1 intelligence="1">能夠利用物體的外觀去猜測物體的內容物</objective1>
+		<objective2 intelligence="0">能夠認出並用聽名稱的方式，就能夠選擇那個物體</objective2>
+		<objective3 intelligence="6">能夠唱出並演奏各種樂器</objective3>
+		<chapter1>聖誕樹</chapter1>
+		<chapter2>山</chapter2>
+		<chapter3>派對</chapter3>
+		<to_parents>同時聽音樂跟演奏樂器能夠提升小朋友多重感官發展，像是視覺、聽覺和觸覺。鼓勵你的小朋友跳聖誕節頌歌和演奏簡單的打擊樂器。</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>2</matrix1>
+		<matrix2>1</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>0</matrix5>
+		<matrix6>6</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>0</matrix8>
+	</episode>
+	<episode id="eps102" paid_type="0" product_id="eps102">
+		<title>新年快樂!</title>
+		<headline>在新年裡有什麼樣的探險在等著我們呢?新年的第一個探險!讓我們跟著Dora和Boots一起去探險吧!</headline>
+		<objective1 intelligence="0">能夠在說出新年的問候語「新年快樂!」</objective1>
+		<objective2 intelligence="5">能夠發現風的特性</objective2>
+		<objective3 intelligence="8">能夠畫出各種樣式的線並畫出不同顏色</objective3>
+		<chapter1>奶奶的家</chapter1>
+		<chapter2>颳風的山丘</chapter2>
+		<chapter3>沙灘</chapter3>
+		<to_parents>小朋友們的運動神經發展與認知、社交及情緒發展有密切關係。為了提升小朋友手指的運動神經發展，鼓勵你的小朋友用手指來畫線條及著色的活動。</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>1</matrix1>
+		<matrix2>1</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>2</matrix5>
+		<matrix6>1</matrix6>
+		<matrix7>4</matrix7>
+		<matrix8>5</matrix8>
+	</episode>
+	<episode id="eps104" paid_type="0" product_id="eps104">
+		<title>Yay! 冰雪慶典!</title>
+		<headline>Dora和Boots來到南極的企鵝村。下著雪而且很冰冷的慶典，正在這裡舉行喔!</headline>
+		<objective1 intelligence="5">能夠了解冰和雪的特徵</objective1>
+		<objective2 intelligence="1">能夠比較並學會物體的高度和數量</objective2>
+		<objective3 intelligence="7">能夠利用手指往左或者往右移動的方式，來培養良好的運動神經技巧。</objective3>
+		<chapter1>雪人</chapter1>
+		<chapter2>冰山</chapter2>
+		<chapter3>冰雪城堡</chapter3>
+		<to_parents>在下雪的那天，跟你的小朋友一起做個雪人並玩打雪仗的遊戲。藉由愉快的經驗，你的小朋友能學會知道雪是冰的、白色的並且容易結成塊的。</to_parents>
+		<matrix0>0</matrix0>
+		<matrix1>4</matrix1>
+		<matrix2>0</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>0</matrix4>
+		<matrix5>5</matrix5>
+		<matrix6>0</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>1</matrix8>
+	</episode>
+	<episode id="ep101" paid_type="0" product_id="ep101">
+		<title>捉迷藏</title>
+		<headline>Dora和Boots的朋友們聚在一起了!我們一起來玩捉迷藏吧?</headline>
+		<objective1 intelligence="0">能夠了解動物的特徵並學會動物的名稱</objective1>
+		<objective2 intelligence="1">能夠藉由看出動物的輪廓而猜到是哪種動物</objective2>
+		<objective3 intelligence="5">能夠了解洞穴並觀察光線的的特徵</objective3>
+		<chapter1>洞穴</chapter1>
+		<chapter2>沙</chapter2>
+		<chapter3>森林</chapter3>
+		<to_parents>給小朋友看一些動物的圖片或是影片。透過這些動作，可同時了解各種動物聲音的特徵，您的小朋友能夠獲得有關動物的多樣知識。</to_parents>
+		<matrix0>3</matrix0>
+		<matrix1>2</matrix1>
+		<matrix2>1</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>4</matrix5>
+		<matrix6>1</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>0</matrix8>
+	</episode>
+	<episode id="ep102" paid_type="0" product_id="ep102">
+		<title>騎乘交通工具和跑步</title>
+		<headline>Dora和Boots正要去跟車伕朋友們碰面!讓我們一起跟車伕朋友們碰面吧!</headline>
+		<objective1 intelligence="0">能夠學習不同的交通工具的名字，並且找出他們的特徵</objective1>
+		<objective2 intelligence="1">能夠看著一個形狀並找出跟它相同形狀的物體</objective2>
+		<objective3 intelligence="2">能夠察覺並分辨顏色</objective3>
+		<chapter1>修理店</chapter1>
+		<chapter2>高山丘</chapter2>
+		<chapter3>Choo Choo火車站</chapter3>
+		<to_parents>在每天的日常生活中，讓你的小朋友有機會發現各種可以騎乘的交通工具，並跟他們討論。透過模仿那些交通工具的聲音，並描述他們的外觀，你的小朋友可以發展語言以及認知的能力。</to_parents>
+		<matrix0>4</matrix0>
+		<matrix1>1</matrix1>
+		<matrix2>3</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>0</matrix5>
+		<matrix6>1</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>0</matrix8>
+	</episode>
+	<episode id="ep137" paid_type="0" product_id="ep137">
+		<title>邦加鼓寶寶的第一個音樂秀</title>
+		<headline>邦加鼓寶寶想要在音樂會上演奏很棒的音樂! 讓我們來幫他學習如何才能演奏出很棒的音樂吧</headline>
+		<objective1 intelligence="0, 6">能夠學會各種樂器的名稱，並聽出它們的聲音</objective1>
+		<objective2 intelligence="6">能夠體驗演奏小手鼓</objective2>
+		<objective3 intelligence="2">能夠觀察顏色、圖案和動作來找出不同</objective3>
+		<chapter1>小矮人橋</chapter1>
+		<chapter2>椰子樹</chapter2>
+		<chapter3>堅果森林</chapter3>
+		<to_parents>讓您的小朋友用塑膠盤或是點心的罐子來做打擊樂器，試著一起演奏做好的打擊樂器。藉著任意地敲打樂器，您的小朋友可以發展出對聲音及節奏的興趣</to_parents>
+		<matrix0>1</matrix0>
+		<matrix1>0</matrix1>
+		<matrix2>3</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>0</matrix5>
+		<matrix6>6</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>0</matrix8>
+	</episode>
+	<episode id="ep138" paid_type="0" product_id="ep138">
+		<title>在跳蚤市場裡的分享和交換</title>
+		<headline>跳蚤市場開始了! 請找出需要Boots舊鞋的人吧!</headline>
+		<objective1 intelligence="1">能夠學會利用比較兩個物體的長度來選擇長或短的物體</objective1>
+		<objective2 intelligence="8">能夠幫搖椅塗上顏色並貼上貼紙</objective2>
+		<objective3 intelligence="0">能夠學會小朋友自己擁有的東西的名稱</objective3>
+		<chapter1>Benny牛</chapter1>
+		<chapter2>Tico松鼠</chapter2>
+		<chapter3>朋友們</chapter3>
+		<to_parents>這個年紀的小朋友開始發展持有物品的概念，當他們把東西稱為"我的"的時候，教導您的小朋友所喜歡的物品名稱。引導您的小朋友懂得學會感激並珍惜所擁有的東西</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>2</matrix1>
+		<matrix2>2</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>0</matrix5>
+		<matrix6>0</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>4</matrix8>
+	</episode>
+	<episode id="ep139" paid_type="0" product_id="ep139">
+		<title>那是什麼聲音?</title>
+		<headline>Dora和Boots 聽到奇怪的聲音，讓我們一起去探險，找出那是什麼聲音吧</headline>
+		<objective1 intelligence="6, 0">能夠藉由聽出物體發出的聲音，來猜出是什麼物體</objective1>
+		<objective2 intelligence="1">能夠比較物體的長度並分辨出長和短的物體</objective2>
+		<objective3 intelligence="1, 8">能夠用相同的顏色去配對做出風車，並裝飾山丘</objective3>
+		<chapter1>安靜森林</chapter1>
+		<chapter2>木琴門</chapter2>
+		<chapter3>風車山丘</chapter3>
+		<to_parents>讓您的小朋友閉上眼睛，並猜猜聽到的聲音是由什麼東西發出的，這個動作可以增進您小朋友對聲音的敏銳度</to_parents>
+		<matrix0>1</matrix0>
+		<matrix1>3</matrix1>
+		<matrix2>0</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>0</matrix5>
+		<matrix6>5</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>2</matrix8>
+	</episode>
+	<episode id="eps103" paid_type="0" product_id="eps103">
+		<title>情人節快樂!</title>
+		<headline>Dora準備了情人節卡片!讓我們跟Dora和Boots一起去發卡片吧!</headline>
+		<objective1 intelligence="6">能夠聽著有趣的歌並跟著一起唱</objective1>
+		<objective2 intelligence="1">能夠藉由玩迷宮的遊戲來培養解決問題的能力</objective2>
+		<objective3 intelligence="8">能夠在做卡片的同時運用創意發揮藝術才能</objective3>
+		<chapter1>巧克力樹</chapter1>
+		<chapter2>愛心花園</chapter2>
+		<chapter3>Dora的家</chapter3>
+		<to_parents>小朋友們不擅長表達他們的情感因為他們的語言還沒有發展的那麼成熟。讓您的小朋友利用給糖果和卡片的機會，來表達他們的感情。</to_parents>
+		<matrix0>1</matrix0>
+		<matrix1>3</matrix1>
+		<matrix2>2</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>1</matrix5>
+		<matrix6>4</matrix6>
+		<matrix7>3</matrix7>
+		<matrix8>4</matrix8>
+	</episode>
+	<episode id="ep140" paid_type="0" product_id="ep140">
+		<title>大野狼!大野狼!</title>
+		<headline>可怕的大野狼出現了! 快點! 我們快去警告朋友們，請他們趕快躲起來吧!</headline>
+		<objective1 intelligence="0, 5">能夠聽出動物的叫聲並模仿它們</objective1>
+		<objective2 intelligence="7, 5">能夠觀察動物的行為並模仿他們</objective2>
+		<objective3 intelligence="8">能夠隨意的幫圖片裡的動物塗上顏色</objective3>
+		<chapter1>穀倉</chapter1>
+		<chapter2>好深的森林</chapter2>
+		<chapter3>羊舍</chapter3>
+		<to_parents>和您的小朋友一起觀察動物，並鼓勵小朋友模仿動物的叫聲和動作。這樣的活動可以提高您小朋友觀察物體的能力，以及肢體表達的能力</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>1</matrix1>
+		<matrix2>0</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>2</matrix5>
+		<matrix6>2</matrix6>
+		<matrix7>2</matrix7>
+		<matrix8>4</matrix8>
+	</episode>
+	<episode id="ep141" paid_type="0" product_id="ep141">
+		<title>快樂的寫生簿</title>
+		<headline>寫生簿很羨慕圖畫書!讓我們一起去探險，來幫寫生簿畫些圖吧!</headline>
+		<objective1 intelligence="8">能夠利用葉子、手印和彩色沙來做出創意的圖畫</objective1>
+		<objective2 intelligence="0">能夠學會包包、寫生簿、膠水和蠟筆的特徵和使用方式</objective2>
+		<objective3 intelligence="1">能夠比較不同數量並學會"多"和"少"的概念</objective3>
+		<chapter1>圖畫之路</chapter1>
+		<chapter2>大紅公雞</chapter2>
+		<chapter3>浪花海灘</chapter3>
+		<to_parents>在一大張紙上，讓您的小朋友用顏料蓋上手印和腳印，在開心地體驗各種顏色的同時，小朋友的視覺及觸覺會藉由此動作被刺激。而這項活動能發展小朋友的創造力</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>3</matrix1>
+		<matrix2>1</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>1</matrix5>
+		<matrix6>0</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>6</matrix8>
+	</episode>
+	<episode id="ep105" paid_type="0" product_id="ep105">
+		<title>水果慶典</title>
+		<headline>水果慶典來了! 令人興奮的事情到處都有! 讓我們和Dora跟Boots來一趟又甜又酸的探險吧!</headline>
+		<objective1 intelligence="0, 5">能夠學會各種水果名稱並了解水果的特徵</objective1>
+		<objective2 intelligence="1">能夠藉由只看物體的一部分而猜到是哪種東西</objective2>
+		<objective3 intelligence="8">能夠用點點和圓形畫出水果，並探索各種顏色的水果</objective3>
+		<chapter1>樹的殘根</chapter1>
+		<chapter2>水果農場</chapter2>
+		<chapter3>雙子樹</chapter3>
+		<to_parents>藉由讓您的小朋友去聞、選擇、切和吃水果的動作來增加小朋友的經驗。可透過探索物體各種不同觀點來提升您小朋友的認知能力</to_parents>
+		<matrix0>3</matrix0>
+		<matrix1>2</matrix1>
+		<matrix2>1</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>1</matrix4>
+		<matrix5>1</matrix5>
+		<matrix6>2</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>5</matrix8>
+	</episode>
+	<episode id="ep106" paid_type="0" product_id="ep106">
+		<title>Dora是形狀探險者</title>
+		<headline>搗蛋鬼把Dora的形狀盒子給偷走了!您能和我們找出圓形、正方形和三角形的盒子嗎?</headline>
+		<objective1 intelligence="0, 1">能夠認出圓形、三角形和正方形，並熟悉這些形狀的名稱</objective1>
+		<objective2 intelligence="0, 1">能夠知道圓形、三角形和正方形這幾種形狀</objective2>
+		<objective3 intelligence="8">能夠體驗從圓形、三角形和正方形所做成的新物體</objective3>
+		<chapter1>堅果森林</chapter1>
+		<chapter2>Benny牛的穀倉</chapter2>
+		<chapter3>樹的殘根</chapter3>
+		<to_parents>鼓勵您的小朋友在日常生活中找出圓形、三角形和正方形。當分類像是鈕扣和餅乾這些不同形狀的物體時，您的小朋友能夠學會形狀的概念</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>4</matrix1>
+		<matrix2>2</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>1</matrix4>
+		<matrix5>0</matrix5>
+		<matrix6>0</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>4</matrix8>
+	</episode>
+	<episode id="ep108" paid_type="0" product_id="ep108">
+		<title>跟著蔬菜卡車!</title>
+		<headline>蔬菜卡車來了!蔬菜卡車要去哪裡呢?讓我們跟著卡車吧!</headline>
+		<objective1 intelligence="0, 5">能夠了解各種蔬菜的特徵及學會他們的名稱</objective1>
+		<objective2 intelligence="1">能夠從1數到7</objective2>
+		<objective3 intelligence="7">能夠利用手指畫出螺旋形狀的線，來發展良好的運動神經技巧</objective3>
+		<chapter1>蔬菜島</chapter1>
+		<chapter2>玉米田</chapter2>
+		<chapter3>奶奶的家</chapter3>
+		<to_parents>小朋友們在這個年紀，字彙擴充量可以用爆炸性的增加來形容。當你在逛街買菜或是烹飪的時候，跟你的小朋友講出各種蔬菜的名稱，並引導他們去檢視蔬菜的特徵</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>1</matrix1>
+		<matrix2>3</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>4</matrix5>
+		<matrix6>3</matrix6>
+		<matrix7>3</matrix7>
+		<matrix8>0</matrix8>
+	</episode>
+	<episode id="eps105" paid_type="0" product_id="eps105">
+		<title>Dora的尋蛋探險</title>
+		<headline>今天我們要去找個裡面裝有禮物的特別蛋，讓我們一起跟Dora和Boots找出彩蛋吧!</headline>
+		<objective1 intelligence="0, 1">能夠學會從1數到5並了解數字的概念</objective1>
+		<objective2 intelligence="8">能夠藉由發揮創意而畫出各種線條來裝飾蛋</objective2>
+		<objective3 intelligence="1">能夠比較尺寸大小並察覺較大的物體</objective3>
+		<chapter1>青蛙池塘</chapter1>
+		<chapter2>機器人的家</chapter2>
+		<chapter3>巨大的蛋</chapter3>
+		<to_parents>小朋友在這個年紀也許會知道數字和算數的概念，但是他們來說正確數出來會有一定的難度。當小朋友在算數時，詳細說明算數的步驟"1、2!有兩個餅乾!" 然後重複那些數字</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>4</matrix1>
+		<matrix2>1</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>1</matrix4>
+		<matrix5>1</matrix5>
+		<matrix6>0</matrix6>
+		<matrix7>3</matrix7>
+		<matrix8>2</matrix8>
+	</episode>
+	<episode id="eps106" paid_type="0" product_id="eps106">
+		<title>樹的故事</title>
+		<headline>樹木們總是很大方地給我們東西，今天Dora和Boots會為樹木們做很特別的事情!</headline>
+		<objective1 intelligence="5">能夠了解樹的生長以及結成果實的過程</objective1>
+		<objective2 intelligence="8">能夠利用開滿各種顏色花的樹來裝飾山丘</objective2>
+		<objective3 intelligence="0">能夠學會從1到5各個數字分別代表的數字概念</objective3>
+		<chapter1>黃色山丘</chapter1>
+		<chapter2>巧克力樹</chapter2>
+		<chapter3>雙子花樹</chapter3>
+		<to_parents>跟小朋友一起到戶外去，並讓小朋友有機會去看還有觸摸花朵、樹和果實。這樣可以刺激您小朋友的好奇心及興趣，並同時增進小朋友自己探索和學習的能力</to_parents>
+		<matrix0>1</matrix0>
+		<matrix1>3</matrix1>
+		<matrix2>0</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>7</matrix5>
+		<matrix6>2</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>2</matrix8>
+	</episode>
+	<episode id="ep133" paid_type="0" product_id="ep133">
+		<title>小朋友的動物救援</title>
+		<headline>Go! 小朋友的動物救援小隊! 讓我們和Dora一起去拯救有危險的動物吧!</headline>
+		<objective1 intelligence="1">能夠比較兩個物體的高度並選出"高"或"矮"的物體</objective1>
+		<objective2 intelligence="0">能夠熟悉方向"左" 和"右"</objective2>
+		<objective3 intelligence="5">能夠探索各種動物的特徵，並學會愛動物</objective3>
+		<chapter1>茂密森林</chapter1>
+		<chapter2>危險的坑洞</chapter2>
+		<chapter3>浪花海灘</chapter3>
+		<to_parents>給小朋友很多機會和動物做互動，有助於小朋友的情緒發展。讓您的小朋友了解動物也是生物，我們要愛動物、尊重動物並和動物共生</to_parents>
+		<matrix0>0</matrix0>
+		<matrix1>3</matrix1>
+		<matrix2>2</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>7</matrix5>
+		<matrix6>4</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>0</matrix8>
+	</episode>
+	<episode id="ep103" paid_type="0" product_id="ep103">
+		<title>我愛玩具!</title>
+		<headline>Dora和Boots真的好喜歡玩具喔 我們跟著玩具一起去探險吧?</headline>
+		<objective1 intelligence="1">能夠按照名稱來分類玩具</objective1>
+		<objective2 intelligence="6, 0">能夠跟著唱押韻的遊戲歌</objective2>
+		<objective3 intelligence="0">能夠畫出各種線條並完成一張物體的圖片</objective3>
+		<chapter1>Benny牛的穀倉</chapter1>
+		<chapter2>音樂盒</chapter2>
+		<chapter3>樹的殘根</chapter3>
+		<to_parents>您的小朋友必須清楚的知道物體的特徵，才能夠去分類那些物體。花一點時間跟小朋友討論那些熟悉的，較常碰到物體的名稱、形狀和用法</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>3</matrix1>
+		<matrix2>1</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>1</matrix4>
+		<matrix5>0</matrix5>
+		<matrix6>4</matrix6>
+		<matrix7>3</matrix7>
+		<matrix8>2</matrix8>
+	</episode>
+	<episode id="ep114" paid_type="0" product_id="ep114">
+		<title>尋找彩虹寶寶</title>
+		<headline>彩虹寶寶要去探索這個世界了!來和Dora與Boots一起跟著彩虹寶寶去探險吧!</headline>
+		<objective1 intelligence="6, 0">能夠透過彩虹的主題和聽彩虹的歌，學會顏色的名稱</objective1>
+		<objective2 intelligence="0, 5">能夠認出並選擇水果的天然顏色</objective2>
+		<objective3 intelligence="8">能夠用他/她喜歡的顏色來作畫</objective3>
+		<chapter1>音樂盒</chapter1>
+		<chapter2>堅果森林</chapter2>
+		<chapter3>小矮人橋</chapter3>
+		<to_parents>在這個年紀的小朋友有豐富的想像力，並且相信所有物體都是有生命的。為了發展他們的想像力，藉著認同他們的想法，來鼓勵您的小朋友和您討論相關話題</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>0</matrix1>
+		<matrix2>1</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>1</matrix4>
+		<matrix5>1</matrix5>
+		<matrix6>4</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>4</matrix8>
+	</episode>
+	<episode id="eps107" paid_type="0" product_id="eps107">
+		<title>小朋友們的慶典</title>
+		<headline>是小朋友們的慶典耶!你要跟著Dora和Boots一起享受這個慶典嗎?</headline>
+		<objective1 intelligence="1">能夠聽出並數1到4</objective1>
+		<objective2 intelligence="2">能夠認出顏色並找到跟它相同的顏色</objective2>
+		<objective3 intelligence="7">能夠跟著唱及跟著跳</objective3>
+		<chapter1>旋轉木馬</chapter1>
+		<chapter2>棉花糖機</chapter2>
+		<chapter3>舞台</chapter3>
+		<to_parents>小朋友們的運動神經發展與認知、社交及情緒性發展有密切關係。為了快速拓展的運動神經發展，試著鼓勵你的小朋友用身體的各種部位來跳舞。</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>2</matrix1>
+		<matrix2>2</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>1</matrix4>
+		<matrix5>0</matrix5>
+		<matrix6>4</matrix6>
+		<matrix7>3</matrix7>
+		<matrix8>0</matrix8>
+	</episode>
+	<episode id="eps108" paid_type="0" product_id="eps108">
+		<title>我愛你，媽咪和爹地!</title>
+		<headline>Dora今天想要把禮物給送給她的爸爸和媽媽!幫Dora找到給她爸媽的禮物吧!</headline>
+		<objective1 intelligence="1, 2">能夠選出並分類紅色花朵</objective1>
+		<objective2 intelligence="7, 8">能夠用手指畫出各種直線和曲線並裝飾餅乾</objective2>
+		<objective3 intelligence="6, 7">能夠對爸媽唱出感性的歌並且跳簡單的舞蹈</objective3>
+		<chapter1>Isa變色龍的花園</chapter1>
+		<chapter2>Benny牛的穀倉</chapter2>
+		<chapter3>音樂盒</chapter3>
+		<to_parents>愛和情感是在感情這個環節中最基本也是最重要的。讓您的小朋友有機會藉由唱歌和親吻，來對您表現出他/她的情感</to_parents>
+		<matrix0>1</matrix0>
+		<matrix1>1</matrix1>
+		<matrix2>2</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>2</matrix5>
+		<matrix6>4</matrix6>
+		<matrix7>3</matrix7>
+		<matrix8>2</matrix8>
+	</episode>
+	<episode id="ep109" paid_type="0" product_id="ep109">
+		<title>Dora大姊姊</title>
+		<headline>Dora現在有了雙胞胎弟妹了!讓我們把這個好消息告訴大家吧!</headline>
+		<objective1 intelligence="0">能夠想出遊樂場裡的各種器材，並學會這些器材的名稱</objective1>
+		<objective2 intelligence="0, 4">能夠學會描述他/她的家族成員名稱</objective2>
+		<objective3 intelligence="7, 8">能夠用手指畫出各種直線和曲線並裝飾毯子</objective3>
+		<chapter1>兒童遊樂場</chapter1>
+		<chapter2>奶奶的家</chapter2>
+		<chapter3>毯子的店</chapter3>
+		<to_parents>讓您的小朋友有機會照顧更小的小朋友或是弟弟妹妹，然後讚美和鼓勵您的小朋友。這樣可以讓您的小朋友不會以自我為中心，並且可以改善小朋友的社交能力</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>1</matrix1>
+		<matrix2>0</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>4</matrix4>
+		<matrix5>0</matrix5>
+		<matrix6>2</matrix6>
+		<matrix7>5</matrix7>
+		<matrix8>2</matrix8>
+	</episode>
+	<episode id="ep110" paid_type="0" product_id="ep110">
+		<title>雙胞胎日派對</title>
+		<headline>雙胞胎日派對要在遊樂園舉辦!讓我們把邀請卡送去給我們的雙胞胎朋友們吧!</headline>
+		<objective1 intelligence="2">能夠察覺並找出兩個物體之間的不同處</objective1>
+		<objective2 intelligence="1">能夠數出並且建立起一對一相對應的基礎</objective2>
+		<objective3 intelligence="8">能夠藉由在衣服上畫出圖案來發展才能</objective3>
+		<chapter1>堅果森林</chapter1>
+		<chapter2>機器人的家</chapter2>
+		<chapter3>海盜海灘</chapter3>
+		<to_parents>一對一的對應關係是一種對數字理解的基本概念。試著鼓勵你的小朋友應用在對應的物體上。比如說，引導你的小朋友在每個盤子上放一支叉子。</to_parents>
+		<matrix0>0</matrix0>
+		<matrix1>3</matrix1>
+		<matrix2>4</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>1</matrix5>
+		<matrix6>0</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>2</matrix8>
+	</episode>
+	<episode id="ep143" paid_type="0" product_id="ep143">
+		<title>5個數字兄弟姊妹</title>
+		<headline>數字1在尋找他的兄弟姊妹!來和Dora跟Boots一起跟5個數字兄弟姊妹們碰面吧!</headline>
+		<objective1 intelligence="0, 8">能夠知道數字的名稱並且利用數字來完成有趣的圖案</objective1>
+		<objective2 intelligence="1">能夠學會用數字1到5來表示數量的概念</objective2>
+		<objective3 intelligence="6, 1">能夠從歌裡學到相關的數字概念並學會算數及每個數字之間的關係</objective3>
+		<chapter1>圖畫之路</chapter1>
+		<chapter2>動物農場</chapter2>
+		<chapter3>音樂盒</chapter3>
+		<to_parents>當小朋友聽到 "2"，他們會想到數字2，並不會想到2代表的數量。為了幫小朋友連結這樣的關係，可以試著把數字2跟兩樣物品擺在一起</to_parents>
+		<matrix0>3</matrix0>
+		<matrix1>3</matrix1>
+		<matrix2>2</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>1</matrix5>
+		<matrix6>4</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>2</matrix8>
+	</episode>
+	<episode id="ep112" paid_type="0" product_id="ep112">
+		<title>我們特別的球</title>
+		<headline>Dora和Boots有一些特別喜歡的球!而且搗蛋鬼把它們偷走了!請把球找回來!</headline>
+		<objective1 intelligence="1">能夠藉由看各種動物的背面來猜出是哪種動物</objective1>
+		<objective2 intelligence="0">能夠學會身體的每個部份的名稱</objective2>
+		<objective3 intelligence="6, 7">能夠用有趣的擬聲法唱出歌曲並運用身體的各種部位來跳舞</objective3>
+		<chapter1>茂密的森林</chapter1>
+		<chapter2>小矮人橋</chapter2>
+		<chapter3>鼻孔洞穴</chapter3>
+		<to_parents>當您和小朋友在對話的同時，利用各種字來做擬聲法和模仿的角色扮演。小朋友可以培養豐富的想像力，並學會如何在和別人對話的同時變得有趣</to_parents>
+		<matrix0>4</matrix0>
+		<matrix1>0</matrix1>
+		<matrix2>4</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>0</matrix4>
+		<matrix5>1</matrix5>
+		<matrix6>4</matrix6>
+		<matrix7>3</matrix7>
+		<matrix8>0</matrix8>
+	</episode>
+	<episode id="ep107" paid_type="0" product_id="ep107">
+		<title>生日快樂!</title>
+		<headline>今天有好多的生日派對呀!是誰的生日呢?讓我們去看看吧!</headline>
+		<objective1 intelligence="0">能夠體驗物體的名稱，以及各種形狀和顏色的特徵</objective1>
+		<objective2 intelligence="8">能夠用像是花、緞帶和氣球等物體，來做空間的裝飾</objective2>
+		<objective3 intelligence="2">能夠記得並且認出在特定氣球上的圖案和顏色</objective3>
+		<chapter1>機器人的家</chapter1>
+		<chapter2>Dora的家</chapter2>
+		<chapter3>生日氣球</chapter3>
+		<to_parents>讓你的小朋友有機會參與每天的活動，像是你在烹飪及裝飾家裡的時候!在過程中，你的小朋友能夠理解各種物體並有機會和家長溝通。</to_parents>
+		<matrix0>1</matrix0>
+		<matrix1>0</matrix1>
+		<matrix2>3</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>0</matrix5>
+		<matrix6>0</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>5</matrix8>
+	</episode>
+	<episode id="ep120" paid_type="0" product_id="ep120">
+		<title>美人魚王國之魔法歌</title>
+		<headline>美人魚瑪麗安娜正在尋找魔法歌!魔法歌!潛到深海裡去找到那首歌吧!</headline>
+		<objective1 intelligence="6">能夠體驗為一首歌填寫歌詞並享受歌曲本身的意境</objective1>
+		<objective2 intelligence="0">能夠學會了解海洋生物的外觀及他們的名稱</objective2>
+		<objective3 intelligence="5">能夠探索海洋生物的特性，以及海底的生態環境</objective3>
+		<chapter1>海盜島</chapter1>
+		<chapter2>海洋洞穴</chapter2>
+		<chapter3>浪花海灘</chapter3>
+		<to_parents>在這個階段的小朋友們對音樂很敏感，他們也會喜歡聽著歌曲並跟著歌曲一起唱。跟你的小朋友隨著拍子和小節一起唱歌，小朋友便能對他/她的歌聲更有自信。</to_parents>
+		<matrix0>3</matrix0>
+		<matrix1>2</matrix1>
+		<matrix2>0</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>5</matrix5>
+		<matrix6>6</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>0</matrix8>
+	</episode>
+	<episode id="ep115" paid_type="0" product_id="ep115">
+		<title>聰明頭腦的探險比賽</title>
+		<headline>今天是聰明頭腦的探險比賽!Dora和Boots能夠贏得聰明頭腦的探險比賽嗎?</headline>
+		<objective1 intelligence="1">能夠學會數字的概念</objective1>
+		<objective2 intelligence="2">能夠找出每一片拼圖，並且拼成完整的圖片</objective2>
+		<objective3 intelligence="6">能夠聽出歌曲的旋律，並且用旋律把這首歌串起來</objective3>
+		<chapter1>測驗之路</chapter1>
+		<chapter2>小矮人橋</chapter2>
+		<chapter3>木琴門</chapter3>
+		<to_parents>小朋友們的求知慾是無窮的，而小朋友們也非常喜歡簡單的謎題。準備小的獎品並給你的小朋友適合她/他程度的謎題。對你的小朋友來說這會是個很好的學習機會。</to_parents>
+		<matrix0>1</matrix0>
+		<matrix1>2</matrix1>
+		<matrix2>4</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>0</matrix5>
+		<matrix6>4</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>0</matrix8>
+	</episode>
+	<episode id="eps109" paid_type="0" product_id="eps109">
+		<title>涼快一下!</title>
+		<headline>這是一個炎熱的夏日，而Boots快被熱到沒力了!你能幫Dora和Boots覺得涼快點嗎?</headline>
+		<objective1 intelligence="5, 8">能夠理解冰的特徵並了解使用方法，及試著裝飾刨冰</objective1>
+		<objective2 intelligence="1">能夠比較尺寸的大小，並且能夠用尺寸來比對物體的大小</objective2>
+		<objective3 intelligence="5">能夠檢視夏日的天氣、海灘環境以及夏天會出現的昆蟲</objective3>
+		<chapter1>浪花海灘</chapter1>
+		<chapter2>閃亮貝殼</chapter2>
+		<chapter3>沙灘</chapter3>
+		<to_parents>這個年紀的小朋友會是彼此最強的榜樣，因為他們會互相學習模仿。在夏季的時候，安全因素會是個很重要的問題。引導你的小朋友水裡玩水的時候要注意安全。</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>2</matrix1>
+		<matrix2>0</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>7</matrix5>
+		<matrix6>0</matrix6>
+		<matrix7>3</matrix7>
+		<matrix8>2</matrix8>
+	</episode>
+	<episode id="ep144" paid_type="0" product_id="ep144">
+		<title>超級間諜</title>
+		<headline>搗蛋鬼試圖想要阻撓Isa變色龍的生日派對。請阻止搗蛋鬼和他的新發明!</headline>
+		<objective1 intelligence="1">能夠理解6、7、8、9所代表出的數量總額</objective1>
+		<objective2 intelligence="2">能夠快速地察覺到物體隨機出現的地點</objective2>
+		<objective3 intelligence="8">能夠用各種水果來裝飾蛋糕</objective3>
+		<chapter1>堅果森林</chapter1>
+		<chapter2>Boots的家</chapter2>
+		<chapter3>Benny牛的穀倉</chapter3>
+		<to_parents>這個年紀的小朋友們還沒有學到物品所有權的概念，而他們可能會把別人的東西帶回家。當這件事發生時，試著溫和的告訴他們這樣是不對的，並陪他們把東西還給其他人。</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>2</matrix1>
+		<matrix2>3</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>0</matrix5>
+		<matrix6>0</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>4</matrix8>
+	</episode>
+	<episode id="ep131" paid_type="0" product_id="ep131">
+		<title>嘻哈兔的音樂會</title>
+		<headline>Dora, Boots和嘻哈兔要舉辦音樂會! 我們去看一場很棒的音樂會吧!</headline>
+		<objective1 intelligence="6, 0">能夠學會各種樂器的名稱，還有它們所發出的聲音</objective1>
+		<objective2 intelligence="8">能夠裝飾用各種元素來裝飾卡片</objective2>
+		<objective3 intelligence="1">能夠在不同顏色的物體中，利用物體的形狀來分類</objective3>
+		<chapter1>音樂盒</chapter1>
+		<chapter2>郵局</chapter2>
+		<chapter3>大舞台</chapter3>
+		<to_parents>鼓勵您的小朋友去觸摸各種樂器，並使用樂器來發出聲音。這些對小朋友的聽覺所產生之多樣的和新鮮的刺激，有助於提高小朋友對聲音的鑑賞力</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>2</matrix1>
+		<matrix2>2</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>0</matrix5>
+		<matrix6>4</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>2</matrix8>
+	</episode>
+	<episode id="ep129" paid_type="0" product_id="ep129">
+		<title>好吃、好吃、好好吃的點心!</title>
+		<headline>Dora和Boots要出發去找特別的點心! 跟Dora一起找出來吧!</headline>
+		<objective1 intelligence="0&#xA;">能夠學會點心的名稱，例如:香蕉，草莓，番茄，麵包和巧克力</objective1>
+		<objective2 intelligence="2">能夠察覺並找出消失跟出現的東西</objective2>
+		<objective3 intelligence="2">能夠藉由看著某物體的輪廓，找出一致的物體</objective3>
+		<chapter1>堅果森林</chapter1>
+		<chapter2>巧克力樹</chapter2>
+		<chapter3>棉花糖機</chapter3>
+		<to_parents>一開始要區分左和右可能令人有點困惑，可以藉由站在您小朋友的旁邊，面對同一個方向，並指出左邊和右邊來建立字與方向的連結</to_parents>
+		<matrix0>3</matrix0>
+		<matrix1>1</matrix1>
+		<matrix2>3</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>1</matrix4>
+		<matrix5>0</matrix5>
+		<matrix6>2</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>1</matrix8>
+	</episode>
+	<episode id="ep123" paid_type="0" product_id="ep123">
+		<title>到海灘去!</title>
+		<headline>Dora和Boots要去海灘!在海灘會有什麼樣的探險正在等著Dora跟Boots呢?</headline>
+		<objective1 intelligence="0, 5">能夠說出在海灘上看到的動物的名稱</objective1>
+		<objective2 intelligence="7, 5">能夠用手指把沙子清掉，並且找到蛤蠣</objective2>
+		<objective3 intelligence="8">能夠選擇各種形狀來蓋一個沙堡，並且隨意的裝飾它</objective3>
+		<chapter1>沙灘</chapter1>
+		<chapter2>閃亮貝殼</chapter2>
+		<chapter3>沙堡</chapter3>
+		<to_parents>讓你的小朋友有機會自己做決定。這會幫助小朋友成為一個獨立的人。鼓勵你的小朋友嘗試做各種不同的決定，你將會看出小朋友對不同東西所產生不同的興趣</to_parents>
+		<matrix0>1</matrix0>
+		<matrix1>1</matrix1>
+		<matrix2>3</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>4</matrix5>
+		<matrix6>0</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>5</matrix8>
+	</episode>
+	<episode id="ep124" paid_type="0" product_id="ep124">
+		<title>Boots是時尚達人</title>
+		<headline>Boots想要穿上漂亮的新衣服並照相。他要去哪裡找到漂亮的衣服呢?</headline>
+		<objective1 intelligence="2">能夠學會上面、下面、裡面及外面的空間概念</objective1>
+		<objective2 intelligence="8">能夠體驗如何用各種材料來裝飾服裝</objective2>
+		<objective3 intelligence="1">能夠在找出在不同的場合下，適合穿著的服裝</objective3>
+		<chapter1>Benny牛的穀倉</chapter1>
+		<chapter2>奶奶的家</chapter2>
+		<chapter3>堅果森林</chapter3>
+		<to_parents>跟你的小朋友一起整理玩具並讓他們有空間的概念。試著玩一個快速收玩具的遊戲。當媽媽在架子上方整理書本的時候，小朋友可以整理架子下方的玩偶。你的小朋友能夠學會空間的概念</to_parents>
+		<matrix0>3</matrix0>
+		<matrix1>1</matrix1>
+		<matrix2>3</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>0</matrix5>
+		<matrix6>2</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>2</matrix8>
+	</episode>
+	<episode id="ep128" paid_type="0" product_id="ep128">
+		<title>像個淑女!</title>
+		<headline>Dora今天想當個淑女! 你能幫Dora打扮成漂亮的淑女嗎?</headline>
+		<objective1 intelligence="1">能夠在各種大小的彈珠中，分類相同顏色的彈珠</objective1>
+		<objective2 intelligence="0">能夠學會配件的名稱，例如耳環、項鍊和手鍊</objective2>
+		<objective3 intelligence="8">能夠用想要的顏色和形狀，任意的做出配件</objective3>
+		<chapter1>遊樂場</chapter1>
+		<chapter2>Dora的家</chapter2>
+		<chapter3>高山丘</chapter3>
+		<to_parents>顏色是一種抽象的概念，所以用顏色來分類物體對小朋友來說可能是困難的。利用一起說出名稱和相似顏色的物體，來引導您的小朋友集中注意力在物體的顏色上。比如你可以說 "紅色的氣球" 或是 "紅色的蘋果"</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>3</matrix1>
+		<matrix2>1</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>0</matrix5>
+		<matrix6>0</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>5</matrix8>
+	</episode>
+	<episode id="ep130" paid_type="0" product_id="ep130">
+		<title>羅巴多來了!</title>
+		<headline>所有東西都壞了!羅巴多可以修好所有東西! 跟著羅巴多來幫朋友們吧!</headline>
+		<objective1 intelligence="1">能夠唸數字一到五</objective1>
+		<objective2 intelligence="2">能夠學會上和下的空間觀念</objective2>
+		<objective3 intelligence="2">能夠藉由看著某物體的輪廓，找出對的物體</objective3>
+		<chapter1>機器人的家</chapter1>
+		<chapter2>Dora的家</chapter2>
+		<chapter3>堅果森林</chapter3>
+		<to_parents>家庭用品對小朋友來說是既熟悉又有吸引力的東西，一起和小朋友觀察家庭用品並討論他們使用的情況</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>2</matrix1>
+		<matrix2>4</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>3</matrix5>
+		<matrix6>0</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>0</matrix8>
+	</episode>
+	<episode id="ep136" paid_type="0" product_id="ep136">
+		<title>世界上最好的</title>
+		<headline>Dora和Boots要去最棒的探險了! 讓我們一起去看看是什麼探險吧!</headline>
+		<objective1 intelligence="0">能夠學會昆蟲、廚房用具、衣服及工具的名稱</objective1>
+		<objective2 intelligence="5">能夠知道植物需要成長的元素，並探索雲和雨的角色</objective2>
+		<objective3 intelligence="0">能夠學會配件的名稱，例如農場動物和樂器</objective3>
+		<chapter1>刺刺森林</chapter1>
+		<chapter2>蔬菜島</chapter2>
+		<chapter3>猜謎表演</chapter3>
+		<to_parents>鼓勵您的小朋友嘗試新的活動，並稱讚小朋友有勇氣嘗試新的事物。這可以擴展小朋友各方面的興趣，並給小朋友更多機會去找出喜歡及擅長的事情</to_parents>
+		<matrix0>4</matrix0>
+		<matrix1>0</matrix1>
+		<matrix2>0</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>0</matrix4>
+		<matrix5>5</matrix5>
+		<matrix6>1</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>1</matrix8>
+	</episode>
+</data>

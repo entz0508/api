@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+
+</head>
+<body>
+    <div id="ss3"></div>
+
+    <script>
+        $(function () {
+            if ($(location).attr('hostname') === 'api.doralab.co.kr' || $(location).attr('hostname') === '104.199.172.135') {
+                $("#ss3").text("This is REAL api server for Dora The Explorer!");
+            } else {
+                $("#ss3").text("This is Dev api server for Dora The Explorer!");
+            }
+        });
+
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111516510-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-111516510-1');
+    </script>
+
+</body>
+</html>

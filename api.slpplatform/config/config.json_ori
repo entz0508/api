@@ -1,0 +1,64 @@
+{
+    "CONFIG":
+    {
+        "package_name":"com.blueark.slp.platform"
+    },
+    "SERVER_INFO" :
+    {
+        "SERVER_ID":1,
+        "NAME":"SLP Platform DEV",
+        "PORT":15001,
+        "PHOTO" : {
+            "LOCAL_TEMP_PATH":"/data/temp_photo/",
+            "IMG_SERVER":{  "HOST":"14.63.169.217",
+                "PORT":22,
+                "USERNAME":"slpphoto",
+                "PRIVATE_KEY":"./ssh/rsa-key-slp-dla-photo-upload-dev.openssh",
+		"PHOTO_PATH_BEGIN":"/data/www/images/slp/profile",
+                "PHOTO_PATH_END":"photos/"}
+        }
+    },
+    "LOG_INFO" :
+    {
+      "LOGGER_LEVEL" : "DEBUG",
+      "FILE_PATH" : "/data/logs/node/slp_paltform/slp_platform.log",
+      "CATEGORY" : "SLP_PLATFORM"
+    },
+
+    "MYSQL_SLP_PLATFORM" : {
+      "HOST": "localhost",
+      "PORT": 16612,
+      "USER": "splplatformdev",
+      "PASSWORD": "qmffndkzm!!!!",
+      "DATABASE": "slp_platform_db"
+    },
+
+    "MYSQL_SLP_ACCOUNT" : {
+      "HOST": "localhost",
+      "PORT": 16612,
+      "USER": "splaccountdev",
+      "PASSWORD": "qmffndkzm!!!!",
+      "DATABASE": "slp_account_db"
+    },
+
+    "MYSQL_SLP_KW_ACTION_LOG" : {
+        "HOST": "localhost",
+        "PORT": 16612,
+        "USER": "splkwapidev",
+        "PASSWORD": "qmffndkzm!!!!",
+        "DATABASE": "slp_kw_action_log_db",
+        "CONNECTION_LIMIT":5
+    },
+    "MYSQL_SLP_COMMON" : {
+        "HOST": "localhost",
+        "PORT": 16612,
+        "USER": "slpcommondev",
+        "PASSWORD": "qmffndkzm!!!!",
+        "DATABASE": "slp_common_db",
+        "CONNECTION_LIMIT":5
+    },
+
+    "END" : {
+    }
+
+}

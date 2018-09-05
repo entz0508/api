@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <!--
+        [ type ]
+        0 : 정기 구독
+        1 : 기간 이용권
+        2 : 언어팩 해제
+    -->
+    <products>
+        <product id="pass_1mon_all" type="0">
+            <title>전체 1개월 이용권  자동결제</title>
+            <period>31</period>
+            <level>1,2,3,4</level>
+            <event_date>
+                <start>null</start>
+                <end>null</end>
+            </event_date>
+        </product>
+
+		<product id="pass_1mon_1" type="1">
+            <title>Level 1 1개월 이용권</title>
+            <period>31</period>
+            <level>1</level>
+            <event_date>
+                <start>null</start>
+                <end>null</end>
+            </event_date>
+        </product>
+
+		<product id="pass_1mon_2" type="1">
+            <title>Level 2 1개월 이용권</title>
+            <period>31</period>
+            <level>2</level>
+            <event_date>
+                <start>null</start>
+                <end>null</end>
+            </event_date>
+        </product>
+
+		<product id="lanpack_en" type="2">
+            <title>영어 언어 팩</title>
+            <period>31</period>
+            <level>1,3,3,4</level>
+            <event_date>
+                <start>null</start>
+                <end>null</end>
+            </event_date>
+        </product>
+
+		<product id="lanpack_kr" type="2">
+            <title>한글 언어 팩</title>
+            <period>31</period>
+            <level>1,3,3,4</level>
+            <event_date>
+                <start>null</start>
+                <end>null</end>
+            </event_date>
+        </product>
+
+		<product id="lanpack_kr" type="2">
+            <title>한자 언어 팩</title>
+            <period>31</period>
+            <level>1,3,3,4</level>
+            <event_date>
+                <start>null</start>
+                <end>null</end>
+            </event_date>
+        </product>
+    </products>
+
+    <shop_data>
+        <shop os="ios">
+            <product service_enable="true" type="0">
+                <product_id>subpass_1mon_all</product_id>
+                <shop_grade>전체 이용권</shop_grade>
+                <shop_minititle>이용권\n1개월</shop_minititle>
+                <shop_fulltitle>[자동 결제] 전체 이용권- 1개월</shop_fulltitle>
+                <shop_sale>30%</shop_sale>
+                <shop_price_krw>15000원</shop_price_krw>
+                <shop_saleprice_krw>15000원</shop_saleprice_krw>
+                <shop_price_usd>USD 14.99</shop_price_usd>
+                <shop_saleprice_usd>USD 9.99</shop_saleprice_usd>
+            </product>
+
+            <product service_enable="true" type="0">
+                <product_id>pass_1mon_1</product_id>
+                <shop_grade>Level 1</shop_grade>
+                <shop_minititle>이용권\n1개월</shop_minititle>
+                <shop_fulltitle>Level 1 이용권- 1개월</shop_fulltitle>
+                <shop_sale>30%</shop_sale>
+                <shop_price_krw>15000원</shop_price_krw>
+                <shop_saleprice_krw>15000원</shop_saleprice_krw>
+                <shop_price_usd>USD 14.99</shop_price_usd>
+                <shop_saleprice_usd>USD 9.99</shop_saleprice_usd>
+            </product>
+
+            <product service_enable="true" type="0">
+                <product_id>pass_1mon_2</product_id>
+                <shop_grade>Level 2</shop_grade>
+                <shop_minititle>이용권\n1개월</shop_minititle>
+                <shop_fulltitle>Level 2 이용권- 1개월</shop_fulltitle>
+                <shop_sale>30%</shop_sale>
+                <shop_price_krw>15000원</shop_price_krw>
+                <shop_saleprice_krw>15000원</shop_saleprice_krw>
+                <shop_price_usd>USD 14.99</shop_price_usd>
+                <shop_saleprice_usd>USD 9.99</shop_saleprice_usd>
+            </product>
+
+            <product service_enable="false" type="0">
+                <product_id>pass_1mon_3</product_id>
+                <shop_grade>Level 3</shop_grade>
+                <shop_minititle>이용권\n1개월</shop_minititle>
+                <shop_fulltitle>Level3 이용권- 1개월</shop_fulltitle>
+                <shop_sale>30%</shop_sale>
+                <shop_price_krw>15000원</shop_price_krw>
+                <shop_saleprice_krw>15000원</shop_saleprice_krw>
+                <shop_price_usd>USD 14.99</shop_price_usd>
+                <shop_saleprice_usd>USD 9.99</shop_saleprice_usd>
+            </product>
+
+            <product service_enable="false" type="0">
+                <product_id>pass_1mon_4</product_id>
+                <shop_grade>Level 4</shop_grade>
+                <shop_minititle>이용권\n1개월</shop_minititle>
+                <shop_fulltitle>Level 4 이용권- 1개월</shop_fulltitle>
+                <shop_sale>30%</shop_sale>
+                <shop_price_krw>15000원</shop_price_krw>
+                <shop_saleprice_krw>15000원</shop_saleprice_krw>
+                <shop_price_usd>USD 14.99</shop_price_usd>
+                <shop_saleprice_usd>USD 9.99</shop_saleprice_usd>
+            </product>
+
+            <product service_enable="true" type="1">
+                <product_id>lanpack_en</product_id>
+                <shop_grade>English(US)</shop_grade>
+                <shop_lang>영어</shop_lang>
+                <shop_minititle>음성/자막\n패키지</shop_minititle>
+                <shop_fulltitle>[언어팩] 영어 음성/자막 패키지</shop_fulltitle>
+                <shop_sale>null</shop_sale>
+                <shop_price_krw>5000원</shop_price_krw>
+                <shop_saleprice_krw>5000원</shop_saleprice_krw>
+                <shop_price_usd>USD 9.99</shop_price_usd>
+                <shop_saleprice_usd>USD 4.99</shop_saleprice_usd>
+            </product>
+        </shop>
+
+        <shop os="android">
+            <product service_enable="true" type="0">
+                <product_id>pass_1mon_all</product_id>
+                <shop_grade>전체 이용권</shop_grade>
+                <shop_minititle>전체 이용권\n1개월 </shop_minititle>
+                <shop_fulltitle>[자동 결제] 전체 이용권- 1개월</shop_fulltitle>
+                <shop_sale>0.3</shop_sale>
+                <shop_price_krw>15000원</shop_price_krw>
+                <shop_saleprice_krw>15000원</shop_saleprice_krw>
+                <shop_price_usd>USD 14.99</shop_price_usd>
+                <shop_saleprice_usd>USD 9.99</shop_saleprice_usd>
+            </product>
+
+            <product service_enable="true" type="0">
+                <product_id>pass_1mon_1</product_id>
+                <shop_grade>Level 1</shop_grade>
+                <shop_minititle>이용권\n1개월</shop_minititle>
+                <shop_fulltitle>Level 1 이용권- 1개월</shop_fulltitle>
+                <shop_sale>30%</shop_sale>
+                <shop_price_krw>15000원</shop_price_krw>
+                <shop_saleprice_krw>15000원</shop_saleprice_krw>
+                <shop_price_usd>USD 14.99</shop_price_usd>
+                <shop_saleprice_usd>USD 9.99</shop_saleprice_usd>
+            </product>
+
+            <product service_enable="true" type="0">
+                <product_id>pass_1mon_2</product_id>
+                <shop_grade>Level 2</shop_grade>
+                <shop_minititle>이용권\n1개월</shop_minititle>
+                <shop_fulltitle>Level 2 이용권- 1개월</shop_fulltitle>
+                <shop_sale>30%</shop_sale>
+                <shop_price_krw>15000원</shop_price_krw>
+                <shop_saleprice_krw>15000원</shop_saleprice_krw>
+                <shop_price_usd>USD 14.99</shop_price_usd>
+                <shop_saleprice_usd>USD 9.99</shop_saleprice_usd>
+            </product>
+
+            <product service_enable="false" type="0">
+                <product_id>pass_1mon_3</product_id>
+                <shop_grade>Level 3</shop_grade>
+                <shop_minititle>이용권\n1개월</shop_minititle>
+                <shop_fulltitle>Level3 이용권- 1개월</shop_fulltitle>
+                <shop_sale>30%</shop_sale>
+                <shop_price_krw>15000원</shop_price_krw>
+                <shop_saleprice_krw>15000원</shop_saleprice_krw>
+                <shop_price_usd>USD 14.99</shop_price_usd>
+                <shop_saleprice_usd>USD 9.99</shop_saleprice_usd>
+            </product>
+
+            <product service_enable="false" type="0">
+                <product_id>pass_1mon_4</product_id>
+                <shop_grade>Level 4</shop_grade>
+                <shop_minititle>이용권\n1개월</shop_minititle>
+                <shop_fulltitle>Level 4 이용권- 1개월</shop_fulltitle>
+                <shop_sale>30%</shop_sale>
+                <shop_price_krw>15000원</shop_price_krw>
+                <shop_saleprice_krw>15000원</shop_saleprice_krw>
+                <shop_price_usd>USD 14.99</shop_price_usd>
+                <shop_saleprice_usd>USD 9.99</shop_saleprice_usd>
+            </product>
+
+            <product service_enable="true" type="1">
+                <product_id>lanpack_en</product_id>
+                <shop_grade>English(US)</shop_grade>
+                <shop_lang>영어</shop_lang>
+                <shop_minititle>음성/자막\n패키지</shop_minititle>
+                <shop_fulltitle>[언어팩] 영어 음성/자막 패키지</shop_fulltitle>
+                <shop_sale>null</shop_sale>
+                <shop_price_krw>5000원</shop_price_krw>
+                <shop_saleprice_krw>5000원</shop_saleprice_krw>
+                <shop_price_usd>USD 9.99</shop_price_usd>
+                <shop_saleprice_usd>USD 4.99</shop_saleprice_usd>
+            </product>
+        </shop>
+    </shop_data>
+
+</root>

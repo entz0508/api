@@ -1,0 +1,83 @@
+{
+  "CONFIG": {
+    "PACKAGE_NAME": "com.blueark.slp.dla"
+  },
+  "LOG_INFO": {
+    "LOGGER_LEVEL": "DEBUG",
+    "FILE_PATH": "/data/logs/node/slp_dla/slp_dla.log",
+    "CATEGORY": "SLP_DLA"
+  },
+  "CDN_INFO": {
+    "URI": "http://ftp.bluearkedu.com/",
+    "DEV_CDN": "http://ftp.bluearkedu.com/",
+    "REAL_CDN": "http://cdn.bluearkedu.com/"
+  },
+  "SERVER_INFO": {
+    "SERVER_ID": 1,
+    "NAME": "SLP DLA KOR VER",
+    "PORT": 16001,
+    "APP_ID": [
+      1000000003,
+      1000000004,
+      1000000005
+    ],
+    "LEVEL": 1,
+    "GOOGLEPLAY_PUBLIC_KEY": "",
+    "SHOP_APPLE_VERIFY_RECEIPT_URL_LIVE": "buy.itunes.apple.com",
+    "SHOP_APPLE_VERIFY_RECEIPT_URL_SANDBOX": "sandbox.itunes.apple.com",
+    "PHOTO": {
+      "LOCAL_TEMP_PATH": "/data/temp_photo/",
+      "IMG_SERVER": {
+        "HOST": "14.63.169.217",
+        "PORT": 22,
+        "USERNAME": "slpphoto",
+        "PRIVATE_KEY": "./ssh/rsa-key-slp-dla-photo-upload-dev.openssh",
+        "PHOTO_PATH_BEGIN": "/data/www/images/sdla/lv",
+        "PHOTO_PATH_END": "photos/"
+      }
+    }
+  },
+  "SLP_PLATFORM": {
+    "URL": "127.0.0.1",
+    "PORT": 80,
+    "PATH_IS_AUTH_SLP_ACCOUNT_WITH_PROFILE": "slp/user/account/isloggedin/withprofile",
+    "PATH_IS_AUTH_SLP_ACCOUNT_WITHOUT_PROFILE": "slp/user/account/isloggedin/withoutprofile"
+  },
+  "MYSQL_SLP_DLA": {
+    "HOST": "localhost",
+    "PORT": 16612,
+    "USER": "spldladev",
+    "PASSWORD": "qmffndkzm!!!!",
+    "DATABASE": "slp_dla_db",
+    "CONNECTION_LIMIT": 5
+  },
+  "MYSQL_SLP_DLA_INFO": {
+    "HOST": "localhost",
+    "PORT": 16612,
+    "USER": "spldladev",
+    "PASSWORD": "qmffndkzm!!!!",
+    "DATABASE": "slp_dla_info_db",
+    "CONNECTION_LIMIT": 5
+  },
+  "MYSQL_SLP_KW_ACTION_LOG": {
+    "HOST": "localhost",
+    "PORT": 16612,
+    "USER": "splkwapidev",
+    "PASSWORD": "qmffndkzm!!!!",
+    "DATABASE": "slp_kw_action_log_db",
+    "CONNECTION_LIMIT": 5
+  },
+  "MYSQL_SLP_COMMON": {
+    "HOST": "localhost",
+    "PORT": 16612,
+    "USER": "slpcommondev",
+    "PASSWORD": "qmffndkzm!!!!",
+    "DATABASE": "slp_common_db",
+    "CONNECTION_LIMIT": 5
+  },
+  "MONGODB_CACHE": {
+    "CONNECT_STRING": "mongodb://slpencache:jditn!!$#@127.0.0.1:34024/slp_en_cache"
+  },
+  "end": {
+  }
+}

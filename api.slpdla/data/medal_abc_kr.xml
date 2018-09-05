@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<medal>
+		<medal_id>9001</medal_id>
+		<quiz_total_num>3</quiz_total_num>
+		<medal_category>1</medal_category>
+		<quiz_ids>9110101, 9110102, 9110103</quiz_ids>
+		<medal_desc>"One, two, three" 알아요. </medal_desc>
+	</medal>
+	<medal>
+		<medal_id>9002</medal_id>
+		<quiz_total_num>4</quiz_total_num>
+		<medal_category>0</medal_category>
+		<quiz_ids>9110104, 9110105, 9110106, 9110107</quiz_ids>
+		<medal_desc>대문자 A, B, C, D를 알아요.</medal_desc>
+	</medal>
+	<medal>
+		<medal_id>9003</medal_id>
+		<quiz_total_num>2</quiz_total_num>
+		<medal_category>1</medal_category>
+		<quiz_ids>9110201, 9110202 </quiz_ids>
+		<medal_desc>"Run, jump" 단어를 알아요.</medal_desc>
+	</medal>
+	<medal>
+		<medal_id>9004</medal_id>
+		<quiz_total_num>3</quiz_total_num>
+		<medal_category>0</medal_category>
+		<quiz_ids>9110203, 9110204, 9110205</quiz_ids>
+		<medal_desc>대문자 E, F, G를 알아요.</medal_desc>
+	</medal>
+	<medal>
+		<medal_id>9005</medal_id>
+		<quiz_total_num>2</quiz_total_num>
+		<medal_category>1</medal_category>
+		<quiz_ids>9110301, 9110302</quiz_ids>
+		<medal_desc>"Big, Small" 단어를 알아요.</medal_desc>
+	</medal>
+	<medal>
+		<medal_id>9006</medal_id>
+		<quiz_total_num>2</quiz_total_num>
+		<medal_category>2</medal_category>
+		<quiz_ids>9110303, 9110304 </quiz_ids>
+		<medal_desc>"It's Big!" 문장을 듣고 이해할 수 있어요.\n"It's Small!" 문장을 듣고 이해할 수 있어요.</medal_desc>
+	</medal>
+	<medal>
+		<medal_id>9007</medal_id>
+		<quiz_total_num>4</quiz_total_num>
+		<medal_category>0</medal_category>
+		<quiz_ids>9110305, 9110306, 9110307, 9110308</quiz_ids>
+		<medal_desc>대문자 H, I, J, K를 알아요.</medal_desc>
+	</medal>
+	<medal>
+		<medal_id>9008</medal_id>
+		<quiz_total_num>3</quiz_total_num>
+		<medal_category>1</medal_category>
+		<quiz_ids>9110401, 9110402, 9110403 </quiz_ids>
+		<medal_desc>"Car, Teddy Bear, Ball" 단어를 알아요.</medal_desc>
+	</medal>
+	<medal>
+		<medal_id>9009</medal_id>
+		<quiz_total_num>5</quiz_total_num>
+		<medal_category>0</medal_category>
+		<quiz_ids>9110404, 9110405, 9110406, 9110407, 9110408</quiz_ids>
+		<medal_desc>대문자 L, M, N, O, P를 알아요.</medal_desc>
+	</medal>
+	<medal>
+		<medal_id>9010</medal_id>
+		<quiz_total_num>3</quiz_total_num>
+		<medal_category>2</medal_category>
+		<quiz_ids>9110501, 9110502, 9110503 </quiz_ids>
+		<medal_desc>"I want an apple juice!" 문장을 듣고 이해할 수 있어요.\n"I want a kiwi juice!" 문장을 듣고 이해할 수 있어요.\n"I want an orange juice!" 문장을 듣고 이해할 수 있어요.</medal_desc>
+	</medal>
+	<medal>
+		<medal_id>9011</medal_id>
+		<quiz_total_num>6</quiz_total_num>
+		<medal_category>0</medal_category>
+		<quiz_ids>9110504, 9110505, 9110506, 9110507, 9110508, 9110509</quiz_ids>
+		<medal_desc>대문자 Q, R, S, T, U, V를 알아요.</medal_desc>
+	</medal>
+	<medal>
+		<medal_id>9012</medal_id>
+		<quiz_total_num>3</quiz_total_num>
+		<medal_category>2</medal_category>
+		<quiz_ids>9110601, 9110602, 9110603</quiz_ids>
+		<medal_desc>"Color it Red!" 문장을 듣고 이해할 수 있어요.\n"Color it Yellow!" 문장을 듣고 이해할 수 있어요.\n"Color it Blue!" 문장을 듣고 이해할 수 있어요.</medal_desc>
+	</medal>
+	<medal>
+		<medal_id>9013</medal_id>
+		<quiz_total_num>4</quiz_total_num>
+		<medal_category>0</medal_category>
+		<quiz_ids>9110604, 9110605, 9110606, 9110607</quiz_ids>
+		<medal_desc>대문자 W, X, Y, Z를 알아요.</medal_desc>
+	</medal>
+	<medal>
+		<medal_id>9014</medal_id>
+		<quiz_total_num>2</quiz_total_num>
+		<medal_category>1</medal_category>
+		<quiz_ids>9110701, 9110702</quiz_ids>
+		<medal_desc>"One, two, three" 숫자를 알아요. </medal_desc>
+	</medal>
+	<medal>
+		<medal_id>9015</medal_id>
+		<quiz_total_num>3</quiz_total_num>
+		<medal_category>1</medal_category>
+		<quiz_ids>9110703, 9110704, 9110705</quiz_ids>
+		<medal_desc>"Four, Five, Six" 숫자를 알아요. </medal_desc>
+	</medal>
+	<medal>
+		<medal_id>9016</medal_id>
+		<quiz_total_num>4</quiz_total_num>
+		<medal_category>0</medal_category>
+		<quiz_ids>9110706, 9110707, 9110708, 9110709</quiz_ids>
+		<medal_desc>소문자 a, b, c, d를 알아요.</medal_desc>
+	</medal>
+	<medal>
+		<medal_id>9017</medal_id>
+		<quiz_total_num>2</quiz_total_num>
+		<medal_category>1</medal_category>
+		<quiz_ids>9110801, 9110802</quiz_ids>
+		<medal_desc>"Up, Down" 단어를 알아요.</medal_desc>
+	</medal>
+	<medal>
+		<medal_id>9018</medal_id>
+		<quiz_total_num>2</quiz_total_num>
+		<medal_category>2</medal_category>
+		<quiz_ids>9110803, 9110804</quiz_ids>
+		<medal_desc>"Let's go up!" 문장을 듣고 이해할 수 있어요.\n"Let's go down!" 문장을 듣고 이해할 수 있어요.</medal_desc>
+	</medal>
+	<medal>
+		<medal_id>9019</medal_id>
+		<quiz_total_num>3</quiz_total_num>
+		<medal_category>0</medal_category>
+		<quiz_ids>9110805, 9110806, 9110807</quiz_ids>
+		<medal_desc>소문자 e, f, g를 알아요.</medal_desc>
+	</medal>
+	<medal>
+		<medal_id>9020</medal_id>
+		<quiz_total_num>3</quiz_total_num>
+		<medal_category>2</medal_category>
+		<quiz_ids>9110901, 9110902, 9110903</quiz_ids>
+		<medal_desc>"I like Spaghetti!" 문장을 듣고 이해할 수 있어요.\n"I like Salad!" 문장을 듣고 이해할 수 있어요.\n"I like Pie!" 문장을 듣고 이해할 수 있어요.</medal_desc>
+	</medal>
+	<medal>
+		<medal_id>9021</medal_id>
+		<quiz_total_num>4</quiz_total_num>
+		<medal_category>0</medal_category>
+		<quiz_ids>9110904, 9110905, 9110906, 9110907</quiz_ids>
+		<medal_desc>소문자 h, I, j, k를 알아요.</medal_desc>
+	</medal>
+	<medal>
+		<medal_id>9022</medal_id>
+		<quiz_total_num>3</quiz_total_num>
+		<medal_category>1</medal_category>
+		<quiz_ids>9111001, 9111002, 9111003</quiz_ids>
+		<medal_desc>Puppy, Kitty, Parrot 단어를 알아요.</medal_desc>
+	</medal>
+	<medal>
+		<medal_id>9023</medal_id>
+		<quiz_total_num>5</quiz_total_num>
+		<medal_category>0</medal_category>
+		<quiz_ids>9111004, 9111005, 9111006, 9111007, 9111008</quiz_ids>
+		<medal_desc>소문자 l, m, n, o, p를 알아요.</medal_desc>
+	</medal>
+	<medal>
+		<medal_id>9024</medal_id>
+		<quiz_total_num>3</quiz_total_num>
+		<medal_category>1</medal_category>
+		<quiz_ids>9111101, 9111102, 9111103</quiz_ids>
+		<medal_desc>Eyes, Nose, Mouth 단어를 알아요.</medal_desc>
+	</medal>
+	<medal>
+		<medal_id>9025</medal_id>
+		<quiz_total_num>6</quiz_total_num>
+		<medal_category>0</medal_category>
+		<quiz_ids>9111104, 9111105, 9111106, 9111107, 9111108, 9111109</quiz_ids>
+		<medal_desc>소문자 q, r, s, t, u, v를 알아요.</medal_desc>
+	</medal>
+	<medal>
+		<medal_id>9026</medal_id>
+		<quiz_total_num>2</quiz_total_num>
+		<medal_category>1</medal_category>
+		<quiz_ids>9111201, 9111202</quiz_ids>
+		<medal_desc>"Open, Close" 단어를 알아요.</medal_desc>
+	</medal>
+	<medal>
+		<medal_id>9027</medal_id>
+		<quiz_total_num>4</quiz_total_num>
+		<medal_category>0</medal_category>
+		<quiz_ids>9111203, 9111204, 9111205, 9111206</quiz_ids>
+		<medal_desc>소문자 w, x, y, z를 알아요.</medal_desc>
+	</medal>
+</root>

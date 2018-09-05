@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<episode id="ep002" paid_type="1" product_id="ep002">
+		<title>下雨天</title>
+		<headline>體驗雨天並學會雨天需要的配備!</headline>
+		<objective1 intelligence="0">能夠學會什麼是雨傘、雨衣和雨鞋</objective1>
+		<objective2 intelligence="8">能夠在更換傘的顏色的同時，了解各種不同的顏色</objective2>
+		<objective3 intelligence="5">能夠體驗下雨天</objective3>
+		<chapter1>Dora家</chapter1>
+		<chapter2>雨林</chapter2>
+		<chapter3>雨林</chapter3>
+		<to_parents>在下雨天和小朋友到戶外，幫小朋友利用五感(看、聽、嚐、聞、摸)來了解雨的聲音，雨滴在手上的感覺，還有雨的味道</to_parents>
+		<matrix0>1</matrix0>
+		<matrix1>0</matrix1>
+		<matrix2>1</matrix2>
+		<matrix3>0</matrix3>
+		<matrix4>1</matrix4>
+		<matrix5>10</matrix5>
+		<matrix6>0</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>4</matrix8>
+	</episode>
+	<episode id="ep003" paid_type="2" product_id="ep003">
+		<title>謝謝你!謝謝你!</title>
+		<headline>學會各種水果的名稱並學會說 "謝謝你!"</headline>
+		<objective1 intelligence="5,0 ">能夠學會草莓、葡萄、西瓜和檸檬的名稱，以及它們的特徵和外觀</objective1>
+		<objective2 intelligence="6,0">能夠跟著唱並說"謝謝你!"</objective2>
+		<objective3 intelligence="5,0">能夠學會了解草莓、葡萄、西瓜和檸檬的特徵，並且懂得說"謝謝你"</objective3>
+		<chapter1>Dora家</chapter1>
+		<chapter2>Dora的客廳</chapter2>
+		<chapter3>Benny牛的廚房</chapter3>
+		<to_parents>首先，讓小朋友有足夠的時間去觸摸和了解水果，然後把水果放在不透光的盒子裡，玩一個猜猜盒子裡是什麼水果的遊戲。透過遊戲，小朋友能夠有趣的學習水果名稱及顏色</to_parents>
+		<matrix0>4</matrix0>
+		<matrix1>0</matrix1>
+		<matrix2>2</matrix2>
+		<matrix3>0</matrix3>
+		<matrix4>1</matrix4>
+		<matrix5>7</matrix5>
+		<matrix6>3</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>0</matrix8>
+	</episode>
+	<episode id="ep503" paid_type="3" product_id="ep503">
+		<title>ep503</title>
+	</episode>
+	<episode id="ep004" paid_type="0" product_id="ep004">
+		<title>我們一起吃!</title>
+		<headline>學會點心的名稱並和朋友們一起分享!</headline>
+		<objective1 intelligence="0">能夠學會什麼是糖果、巧克力和點心</objective1>
+		<objective2 intelligence="6,4">能夠跟著唱並和朋友一起分享吃的東西</objective2>
+		<objective3 intelligence="2,0">能夠點擊掉下的點心並學會它們的名稱</objective3>
+		<chapter1>Dora的房間</chapter1>
+		<chapter2>雨林</chapter2>
+		<chapter3>雨林</chapter3>
+		<to_parents>這個階段的小朋友對於分享東西給其他人的概念，是不熟悉的，鼓勵並稱讚小朋友和日常生活裡的朋友或兄弟姊妹分享點心</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>0</matrix1>
+		<matrix2>4</matrix2>
+		<matrix3>0</matrix3>
+		<matrix4>5</matrix4>
+		<matrix5>0</matrix5>
+		<matrix6>2</matrix6>
+		<matrix7>2</matrix7>
+		<matrix8>0</matrix8>
+	</episode>
+	<episode id="ep005" paid_type="0" product_id="ep005">
+		<title>你叫什麼名字?</title>
+		<headline>詢問朋友的名字也學會說自己的名字!</headline>
+		<objective1 intelligence="3">能夠學會知道每個人都有自己的名字</objective1>
+		<objective2 intelligence="6,3">能夠邊唱歌邊詢問對方的名字，並且介紹自己的名字</objective2>
+		<objective3 intelligence="8,3">能夠看著圖片裡的臉並說出他們的名字</objective3>
+		<chapter1>雨林</chapter1>
+		<chapter2>火車站</chapter2>
+		<chapter3>Dora家</chapter3>
+		<to_parents>引導小朋友看著鏡子或照片(圖片)，並玩你是誰的問答遊戲，如果幫小朋友在遊戲互動中察覺特別或好笑的反應，小朋友可以藉此培養正向的自我觀感</to_parents>
+		<matrix0>1</matrix0>
+		<matrix1>0</matrix1>
+		<matrix2>0</matrix2>
+		<matrix3>6</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>0</matrix5>
+		<matrix6>2</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>3</matrix8>
+	</episode>
+	<episode id="ep006" paid_type="0" product_id="ep006">
+		<title>我們來穿衣服!</title>
+		<headline>學會各種衣服的類型並懂得自己穿衣服!</headline>
+		<objective1 intelligence="0">能夠學會什麼是衣服、褲子、襪子和鞋子</objective1>
+		<objective2 intelligence="6,3">能夠邊唱歌邊詢問對方的名字，並且介紹自己的名字</objective2>
+		<objective3 intelligence="0,3">能夠學會什麼是衣服、褲子、襪子和鞋子，並學會自己穿</objective3>
+		<chapter1>Benny牛的穀倉</chapter1>
+		<chapter2>Boots家</chapter2>
+		<chapter3>Dora家</chapter3>
+		<to_parents>玩一個用報紙做衣服、褲子、襪子和鞋子，並把它們掛上曬衣繩的遊戲，引導小朋友說出像"爸爸，請把衣服掛上去!"和 "媽媽，請把褲子掛上去!"的句子。當小朋友說出衣服的名稱時，小朋友可以輕易地學會並認出各種衣服的名稱</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>0</matrix1>
+		<matrix2>2</matrix2>
+		<matrix3>5</matrix3>
+		<matrix4>1</matrix4>
+		<matrix5>0</matrix5>
+		<matrix6>2</matrix6>
+		<matrix7>2</matrix7>
+		<matrix8>0</matrix8>
+	</episode>
+	<episode id="ep007" paid_type="0" product_id="ep007">
+		<title>吃得健康!</title>
+		<headline>學會蔬菜的名稱並懂得成為不挑食的健康達人!</headline>
+		<objective1 intelligence="0">能夠學會什麼是番茄、胡蘿蔔和小黃瓜</objective1>
+		<objective2 intelligence="6,3">能夠跟著唱並知道如何吃得健康</objective2>
+		<objective3 intelligence="0,3">能夠學會什麼是番茄、胡蘿蔔和小黃瓜，並且吃得健康</objective3>
+		<chapter1>舞台</chapter1>
+		<chapter2>Benny牛的廚房</chapter2>
+		<chapter3>Dora家</chapter3>
+		<to_parents>和小朋友玩廚房的遊戲。用玩具刀和玩具砧板來玩切菜的遊戲，在遊戲過程中，引導小朋友說出蔬菜的名稱，這可以幫助小朋友學會並認出各種蔬菜</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>0</matrix1>
+		<matrix2>2</matrix2>
+		<matrix3>5</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>1</matrix5>
+		<matrix6>2</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>0</matrix8>
+	</episode>
+	<episode id="ep008" paid_type="0" product_id="ep008">
+		<title>我們來畫點和線!</title>
+		<headline>學會畫出點點和線條!</headline>
+		<objective1 intelligence="0">能夠學會點點、線條、方形和圓形</objective1>
+		<objective2 intelligence="6,8">能夠邊學點點連成線條，還有線條組成飛機的同時，邊聽古典音樂</objective2>
+		<objective3 intelligence="8,7">能夠利用畫點點和線條來培養良好的運動神經</objective3>
+		<chapter1>Dora的客廳</chapter1>
+		<chapter2>藝廊</chapter2>
+		<chapter3>Dora的房間</chapter3>
+		<to_parents>在寫生簿上玩畫點點跟連接點點變成線條的遊戲，在畫有趣的圖案時，小朋友可以學會如何從點點連接變成線</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>4</matrix1>
+		<matrix2>0</matrix2>
+		<matrix3>0</matrix3>
+		<matrix4>0</matrix4>
+		<matrix5>0</matrix5>
+		<matrix6>3</matrix6>
+		<matrix7>4</matrix7>
+		<matrix8>10</matrix8>
+	</episode>
+	<episode id="ep009" paid_type="0" product_id="ep009">
+		<title>嗨!我的朋友!</title>
+		<headline>學會動物朋友的名稱，並學會在碰面及離開時要說的問候語</headline>
+		<objective1 intelligence="5,0">能夠學會什麼是鹿、兔子和獅子</objective1>
+		<objective2 intelligence="6,0">能夠懂得在碰面時說"嗨"，以及離開時說"拜" 來問候對方</objective2>
+		<objective3 intelligence="0,5">能夠唱並說出鹿、兔子和獅子的名稱</objective3>
+		<chapter1>圖畫書</chapter1>
+		<chapter2>Dora家</chapter2>
+		<chapter3>雨林</chapter3>
+		<to_parents>和小朋友去戶外的時候，引導小朋友玩跟碰到的人說"哈囉"的遊戲，這能讓小朋友把問後當作遊戲，進而培養成良好的問候習慣</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>0</matrix1>
+		<matrix2>2</matrix2>
+		<matrix3>0</matrix3>
+		<matrix4>8</matrix4>
+		<matrix5>1</matrix5>
+		<matrix6>2</matrix6>
+		<matrix7>4</matrix7>
+		<matrix8>1</matrix8>
+	</episode>
+	<episode id="ep010" paid_type="0" product_id="ep010">
+		<title>一、二、三!</title>
+		<headline>學會海洋動物的名稱並且能從數字一數到三!</headline>
+		<objective1 intelligence="0,5">能夠學會烏龜、烏賊和鯨魚的名稱和特徵</objective1>
+		<objective2 intelligence="6,1">能夠跟著唱並數到三</objective2>
+		<objective3 intelligence="0,1">能夠學會什麼是烏龜、烏賊和鯨魚，並學會數到三</objective3>
+		<chapter1>海灘</chapter1>
+		<chapter2>海灘</chapter2>
+		<chapter3>海底世界</chapter3>
+		<to_parents>畫海洋生物:像是烏龜、烏賊和鯨魚，並用磁鐵貼住圖片，另外再用線綁上磁鐵當做釣魚桿，然後玩釣魚遊戲，說出像是 "你釣到一條烏賊了!" 還有"你釣到一條鯨魚了!" 小朋友在有趣的過程中可以學到海洋生物的名稱</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>13</matrix1>
+		<matrix2>2</matrix2>
+		<matrix3>0</matrix3>
+		<matrix4>0</matrix4>
+		<matrix5>2</matrix5>
+		<matrix6>2</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>0</matrix8>
+	</episode>
+	<episode id="ep011" paid_type="0" product_id="ep011">
+		<title>我親愛的家人!</title>
+		<headline>學會知道自己有哪些家人並嘗試說 "我愛你!"</headline>
+		<objective1 intelligence="0">能夠學會像是爸爸(爹地)、媽媽(媽咪)、弟弟和妹妹這些家人的稱呼</objective1>
+		<objective2 intelligence="6,0">能夠跳舞並唱著歌，告訴家人 "我愛你"</objective2>
+		<objective3 intelligence="8,4">能夠用家人的照片做出卡片，並說出 "我愛你"</objective3>
+		<chapter1>雨林</chapter1>
+		<chapter2>Dora家</chapter2>
+		<chapter3>Dora的客廳</chapter3>
+		<to_parents>用家族照來做卡片，並和小朋友玩交換卡片的遊戲，對小朋友來說會是很好表達感覺的機會</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>0</matrix1>
+		<matrix2>2</matrix2>
+		<matrix3>2</matrix3>
+		<matrix4>9</matrix4>
+		<matrix5>0</matrix5>
+		<matrix6>2</matrix6>
+		<matrix7>2</matrix7>
+		<matrix8>3</matrix8>
+	</episode>
+	<episode id="ep012" paid_type="0" product_id="ep012">
+		<title>我們來演奏!</title>
+		<headline>學會什麼是響板、沙鈴、三角鐵和鈴鼓，並聽出樂器的聲音!</headline>
+		<objective1 intelligence="0">能夠學會什麼是響板、沙鈴、三角鐵和鈴鼓</objective1>
+		<objective2 intelligence="6,0">能夠唱、並了解樂器的聲音，並學會聲音的擬聲詞</objective2>
+		<objective3 intelligence="6">能夠體驗演奏樂器</objective3>
+		<chapter1>Dora家</chapter1>
+		<chapter2>舞台</chapter2>
+		<chapter3>鐵路</chapter3>
+		<to_parents>和小朋友一起用身邊各式各樣的東西來製作樂器，小朋友可以把沙子放進空的塑膠罐或是塑膠碗裡，透過這樣的遊戲，小朋友可以培養對聲音的感受及節奏感</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>0</matrix1>
+		<matrix2>3</matrix2>
+		<matrix3>0</matrix3>
+		<matrix4>1</matrix4>
+		<matrix5>0</matrix5>
+		<matrix6>6</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>0</matrix8>
+	</episode>
+	<episode id="ep013" paid_type="0" product_id="ep013">
+		<title>在下雪了!</title>
+		<headline>學會當天氣變冷的時候需要的東西，並體驗下雪的天氣!</headline>
+		<objective1 intelligence="0">能夠學會什麼是帽子、圍巾和手套，以及它們的使用方式</objective1>
+		<objective2 intelligence="5">能夠體驗下雪天並嘗試做雪人</objective2>
+		<objective3 intelligence="0,5">能夠了解下雪的天氣並學會帽子、圍巾、和手套的名稱以及使用方式</objective3>
+		<chapter1>遊樂場</chapter1>
+		<chapter2>木屋</chapter2>
+		<chapter3>雪的森林</chapter3>
+		<to_parents>在下雪天和小朋友到戶外，並給一個令小朋友愉快的堆雪人和丟雪球的經驗，小朋友會記得親自體驗的愉快感覺，也可以激起小朋友對大自然的好奇心</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>0</matrix1>
+		<matrix2>2</matrix2>
+		<matrix3>0</matrix3>
+		<matrix4>2</matrix4>
+		<matrix5>10</matrix5>
+		<matrix6>2</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>0</matrix8>
+	</episode>
+	<episode id="ep014" paid_type="0" product_id="ep014">
+		<title>刷~刷!來刷牙!</title>
+		<headline>學會什麼是牙刷、牙膏和杯子，並嘗試刷牙!</headline>
+		<objective1 intelligence="0">能夠學會什麼是牙刷、杯子ˋ和牙膏</objective1>
+		<objective2 intelligence="6,3">能夠跟著唱並自己刷牙</objective2>
+		<objective3 intelligence="0,3">能夠學會牙刷、杯子和牙膏，並自己刷牙</objective3>
+		<chapter1>Dora的浴室</chapter1>
+		<chapter2>藍莓山丘</chapter2>
+		<chapter3>叢林</chapter3>
+		<to_parents>讓小朋友選擇玩偶並角色扮演，跟小朋友玩刷牙的遊戲，對小朋友說 "泰迪熊牙齒痛，你能幫它刷牙嗎?" 小朋友就會理解刷牙的需求，以及建立良好的刷牙習慣</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>0</matrix1>
+		<matrix2>2</matrix2>
+		<matrix3>5</matrix3>
+		<matrix4>1</matrix4>
+		<matrix5>0</matrix5>
+		<matrix6>2</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>0</matrix8>
+	</episode>
+	<episode id="ep015" paid_type="0" product_id="ep015">
+		<title>小和大!</title>
+		<headline>學會什麼是大象、河馬和熊，並學會大和小!</headline>
+		<objective1 intelligence="0">能夠學會什麼是大象、河馬和熊</objective1>
+		<objective2 intelligence="6,1">能夠唱並學會大和小</objective2>
+		<objective3 intelligence="0,1">能夠學會知道大象、河馬和熊，並學會大和小</objective3>
+		<chapter1>雨林</chapter1>
+		<chapter2>雨林</chapter2>
+		<chapter3>雨林</chapter3>
+		<to_parents>用小朋友玩的玩具來跟小朋友玩找大和小的遊戲，當小朋友用熟悉的玩具來玩的時候，小朋友會更容易也更愉快的學到"大"和"小"</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>15</matrix1>
+		<matrix2>2</matrix2>
+		<matrix3>0</matrix3>
+		<matrix4>0</matrix4>
+		<matrix5>1</matrix5>
+		<matrix6>2</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>0</matrix8>
+	</episode>
+	<episode id="ep016" paid_type="0" product_id="ep016">
+		<title>我們可以幫忙!</title>
+		<headline>學會什麼是螞蟻、蜜蜂和蝴蝶，一起來幫昆蟲朋友吧</headline>
+		<objective1 intelligence="5,0">能夠研究螞蟻、蜜蜂和蝴蝶，並學會它們的名稱</objective1>
+		<objective2 intelligence="4,0">能夠體驗幫助朋友，並學會在各種場合做適當的表達</objective2>
+		<objective3 intelligence="8">能夠幫助螞蟻，蜜蜂和蝴蝶並畫出它們</objective3>
+		<chapter1>雨林</chapter1>
+		<chapter2>螞蟻窩</chapter2>
+		<chapter3>雨林</chapter3>
+		<to_parents>和小朋友在房子的周圍尋找小昆蟲，當小朋友在住家附近找到小昆蟲時，可發展小朋友對自然的好奇心</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>0</matrix1>
+		<matrix2>1</matrix2>
+		<matrix3>0</matrix3>
+		<matrix4>5</matrix4>
+		<matrix5>7</matrix5>
+		<matrix6>0</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>6</matrix8>
+	</episode>
+	<episode id="ep017" paid_type="0" product_id="ep017">
+		<title>把玩具放好!</title>
+		<headline>學會什麼是恐龍、機器人、積木和玩偶，並把它們整齊地放回原來的地方</headline>
+		<objective1 intelligence="0">能夠學會什麼是球、玩偶、機器人和積木</objective1>
+		<objective2 intelligence="0,3">能夠跟著唱並自己放好東西</objective2>
+		<objective3 intelligence="0,3">能夠學會什麼是球、玩偶、機器人和積木，並且自己分類收好</objective3>
+		<chapter1>Dora家</chapter1>
+		<chapter2>Boots家</chapter2>
+		<chapter3>Benny牛的穀倉</chapter3>
+		<to_parents>玩一個把所有玩具放回箱子的遊戲，邊玩時邊說" 媽咪要去整理更多玩具囉!" 這樣可激起小朋友想競爭的感覺，並訓練小朋友更主動整理東西</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>0</matrix1>
+		<matrix2>2</matrix2>
+		<matrix3>5</matrix3>
+		<matrix4>1</matrix4>
+		<matrix5>0</matrix5>
+		<matrix6>2</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>0</matrix8>
+	</episode>
+	<episode id="ep018" paid_type="0" product_id="ep018">
+		<title>漂亮的顏色!</title>
+		<headline>學會什麼是紅色、黃色和藍色並嘗試塗上顏色</headline>
+		<objective1 intelligence="0">能夠學會紅色、黃色和藍色</objective1>
+		<objective2 intelligence="0,8">能夠幫椅子塗上顏色並懂得上色</objective2>
+		<objective3 intelligence="0,8">能夠丟彩色球並了解顏色</objective3>
+		<chapter1>火車站</chapter1>
+		<chapter2>遊樂場</chapter2>
+		<chapter3>慶典</chapter3>
+		<to_parents>玩一個把顏料塗在手上，並蓋在紙上的遊戲，利用說出手印的顏色來讓小朋友在有趣的學習過程中記住顏色</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>0</matrix1>
+		<matrix2>4</matrix2>
+		<matrix3>0</matrix3>
+		<matrix4>1</matrix4>
+		<matrix5>0</matrix5>
+		<matrix6>0</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>10</matrix8>
+	</episode>
+	<episode id="ep019" paid_type="0" product_id="ep019">
+		<title>我們要"坐"什麼?</title>
+		<headline>學會什麼是車子、船和飛機! 試著用自己的身體來模仿它們吧!</headline>
+		<objective1 intelligence="0">能夠學會什麼是車子，船和飛機</objective1>
+		<objective2 intelligence="6,0">能夠唱出有關交通工具的歌，並了解各種擬聲詞</objective2>
+		<objective3 intelligence="7">能夠跟著跳舞並且模仿交通工具</objective3>
+		<chapter1>奶奶家</chapter1>
+		<chapter2>Dora的房間</chapter2>
+		<chapter3>舞台</chapter3>
+		<to_parents>和小朋友走在街上，並且觀察各種交通工具，讓小朋友用身體來表示，當小朋友藉由用身體來表示交通工具的時候，可發展大量的運動神經技巧及表達能力</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>0</matrix1>
+		<matrix2>2</matrix2>
+		<matrix3>0</matrix3>
+		<matrix4>1</matrix4>
+		<matrix5>0</matrix5>
+		<matrix6>3</matrix6>
+		<matrix7>6</matrix7>
+		<matrix8>0</matrix8>
+	</episode>
+	<episode id="ep020" paid_type="0" product_id="ep020">
+		<title>晚安!</title>
+		<headline>學會什麼是睡衣、毯子、和床，晚上我睡得好熟喔</headline>
+		<objective1 intelligence="0">能夠學會什麼是床、毯子和睡衣</objective1>
+		<objective2 intelligence="6,3">能夠在晚上聽著搖籃曲入睡</objective2>
+		<objective3 intelligence="0,3">能夠學會什麼是床，毯子和睡衣，並在晚上安然入睡</objective3>
+		<chapter1>Dora家</chapter1>
+		<chapter2>Boots家</chapter2>
+		<chapter3>Benny牛的穀倉</chapter3>
+		<to_parents>晚上在房間玩穿睡衣跟東西說"晚安"的遊戲，小朋友可以學會在晚上一定要睡覺並且休息</to_parents>
+		<matrix0>2</matrix0>
+		<matrix1>0</matrix1>
+		<matrix2>2</matrix2>
+		<matrix3>5</matrix3>
+		<matrix4>0</matrix4>
+		<matrix5>0</matrix5>
+		<matrix6>2</matrix6>
+		<matrix7>1</matrix7>
+		<matrix8>0</matrix8>
+	</episode>
+	<episode id="ep021" paid_type="0" product_id="ep021">
+		<title>ep021</title>
+	</episode>
+	<episode id="ep022" paid_type="0" product_id="ep022">
+		<title>ep022</title>
+	</episode>
+	<episode id="ep023" paid_type="0" product_id="ep023">
+		<title>ep023</title>
+	</episode>
+	<episode id="ep024" paid_type="0" product_id="ep024">
+		<title>ep024</title>
+	</episode>
+	<episode id="ep025" paid_type="0" product_id="ep025">
+		<title>ep025</title>
+	</episode>
+	<episode id="ep026" paid_type="0" product_id="ep026">
+		<title>ep026</title>
+	</episode>
+	<episode id="ep027" paid_type="0" product_id="ep027">
+		<title>ep027</title>
+	</episode>
+	<episode id="ep028" paid_type="0" product_id="ep028">
+		<title>ep028</title>
+	</episode>
+	<episode id="ep029" paid_type="0" product_id="ep029">
+		<title>ep029</title>
+	</episode>
+	<episode id="ep030" paid_type="0" product_id="ep030">
+		<title>ep030</title>
+	</episode>
+	<episode id="ep031" paid_type="0" product_id="ep031">
+		<title>ep031</title>
+	</episode>
+	<episode id="ep032" paid_type="0" product_id="ep032">
+		<title>ep032</title>
+	</episode>
+	<episode id="ep033" paid_type="0" product_id="ep033">
+		<title>ep033</title>
+	</episode>
+	<episode id="ep034" paid_type="0" product_id="ep034">
+		<title>ep034</title>
+	</episode>
+	<episode id="ep035" paid_type="0" product_id="ep035">
+		<title>ep035</title>
+	</episode>
+	<episode id="ep036" paid_type="0" product_id="ep036">
+		<title>ep036</title>
+	</episode>
+	<episode id="ep037" paid_type="0" product_id="ep037">
+		<title>ep037</title>
+	</episode>
+	<episode id="ep038" paid_type="0" product_id="ep038">
+		<title>ep038</title>
+	</episode>
+	<episode id="ep039" paid_type="0" product_id="ep039">
+		<title>ep039</title>
+	</episode>
+	<episode id="ep040" paid_type="0" product_id="ep040">
+		<title>ep040</title>
+	</episode>
+	<episode id="ep041" paid_type="0" product_id="ep041">
+		<title>ep041</title>
+	</episode>
+	<episode id="ep042" paid_type="0" product_id="ep042">
+		<title>ep042</title>
+	</episode>
+	<episode id="ep043" paid_type="0" product_id="ep043">
+		<title>ep043</title>
+	</episode>
+	<episode id="ep044" paid_type="0" product_id="ep044">
+		<title>ep044</title>
+	</episode>
+	<episode id="ep045" paid_type="0" product_id="ep045">
+		<title>ep045</title>
+	</episode>
+	<episode id="ep046" paid_type="0" product_id="ep046">
+		<title>ep046</title>
+	</episode>
+	<episode id="ep047" paid_type="0" product_id="ep047">
+		<title>ep047</title>
+	</episode>
+	<episode id="ep048" paid_type="0" product_id="ep048">
+		<title>ep048</title>
+	</episode>
+	<episode id="ep049" paid_type="0" product_id="ep049">
+		<title>ep049</title>
+	</episode>
+	<episode id="ep050" paid_type="0" product_id="ep050">
+		<title>ep050</title>
+	</episode>
+	<episode id="ep051" paid_type="0" product_id="ep051">
+		<title>ep051</title>
+	</episode>
+	<episode id="ep052" paid_type="0" product_id="ep052">
+		<title>ep052</title>
+	</episode>
+	<episode id="ep053" paid_type="0" product_id="ep053">
+		<title>ep053</title>
+	</episode>
+	<episode id="ep054" paid_type="0" product_id="ep054">
+		<title>ep054</title>
+	</episode>
+	<episode id="ep055" paid_type="0" product_id="ep055">
+		<title>ep055</title>
+	</episode>
+</data>

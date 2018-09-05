@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<step>
+		<id>e101</id>
+		<type>1</type>
+		<name>Numbers</name>
+		<level>1</level>
+		<step>1</step>
+		<episode_ids>e101_w1,e101_w2,e101_w3,e101_w4</episode_ids>
+		<description01>수에 관련된 단어와 문장을 학습해요.\n신나는 노래를 부르면서 배운 단어와 문장을 반복 경험해요.\n알파벳 대문자 모양을 인지해요.</description01>
+		<description02>Step 1은 수 세기를 익히는 학습과 알파벳 대문자 A, B, C, D 모양을 인지하는 학습이 진행되었습니다. Step 1 평가 결과는 다음과 같습니다.</description02>
+		<medal_phonics>9002</medal_phonics>
+		<medal_voca>9001</medal_voca>
+		<medal_sentence>　</medal_sentence>
+		<phonics_0per>파닉스 평가에서는 알파벳을 듣고, 대문자 A, B, C, D를 찾을 수 없었습니다. 아이와 함께 파닉스 에피소드를 반복 학습하면서 아이가 어려워하는 글자 모양과 이름을 함께 짚어가며 알려 주세요.</phonics_0per>
+		<phonics_99per>파닉스 평가에서는 알파벳을 듣고, 대문자 A, B, C, D를 찾을 수 있는 능력이 조금 부족했습니다. 정확한 대문자 A, B, C, D 모양을 인지할 수 있도록 부모님께서 아이와 함께 파닉스 에피소드를 반복 학습해 주세요. </phonics_99per>
+		<phonics_100per>파닉스 평가에서는 알파벳을 듣고, 대문자 A, B, C, D를 정확하게 찾을 수 있었습니다. 아이가 배운 파닉스 학습을 잊지 않게 하려면, 파닉스 에피소드를 통해 대문자 A, B, C, D 찾기를 반복 학습해 주세요. </phonics_100per>
+		<voca_0per>아이는 평가를 통해 "One, two, three"를 듣고 알맞은 숫자를 찾을 수 없었으며, 수 세기에 대한 이해가 많이 부족했습니다. 아이와 함께 단어 에피소드를 반복 학습하면서 수 세기 개념을 습득할 수 있도록 도와주세요. </voca_0per>
+		<voca_99per>아이는 단어 평가를 통해 "One, two, three"를 듣고 매칭되는 숫자를 떠올리는 능력이 조금 부족했습니다. 수 세기에 대한 이해력을 더 길러주기 위해 아이와 함께 단어 에피소드를 반복 학습해 주세요.</voca_99per>
+		<voca_100per>아이는 단어 평가를 통해 "One, two, three"를 듣고 알맞은 숫자를 찾을 수 있었으며, 수 세기에 대한 이해력이 매우 높습니다. 아이와 함께 단어 에피소드를 반복 학습하면서 아이가 잘할 때마다 많이 칭찬해 주세요. </voca_100per>
+		<sentence_0per>　</sentence_0per>
+		<sentence_99per>　</sentence_99per>
+		<sentence_100per>　</sentence_100per>
+		<phonics>대문자\nA, B, C, D   </phonics>
+	</step>
+	<step>
+		<id>e102</id>
+		<type>1</type>
+		<name>Actions Run/Jump</name>
+		<level>1</level>
+		<step>2</step>
+		<episode_ids>e102_w1,e102_w2,e102_w3,e102_w4</episode_ids>
+		<description01>동작에 관련된 단어와 문장을 학습해요.\n신나는 노래를 부르면서 배운 단어와 문장을 반복 경험해요.\n알파벳 대문자 모양을 인지해요.</description01>
+		<description02>Step 2는 동작에 관련된 단어와 알파벳 대문자 E, F, G 모양을 인지하는 학습이 진행되었습니다. Step 2 평가 결과는 다음과 같습니다.</description02>
+		<medal_phonics>9004</medal_phonics>
+		<medal_voca>9003</medal_voca>
+		<medal_sentence>　</medal_sentence>
+		<phonics_0per>파닉스 평가에서는 알파벳을 듣고, 대문자 E, F, G 를 찾을 수 없었습니다. 파닉스 에피소드를 반복 학습하면서 아이가 모르는 글자 이름과 모양을 알려주고 함께 찾아 주세요.  </phonics_0per>
+		<phonics_99per>파닉스 평가에서는 알파벳을 듣고, 대문자 E, F, G 모양 인지를 하는 데 부족함이 있었습니다. 알파벳 모양 인지를 정확하게 할 수 있도록 부모님께서는 아이와 함께 알파벳을 듣고, 대문자 E, F, G 찾기를 반복 학습해 주세요.</phonics_99per>
+		<phonics_100per>파닉스 평가에서는 알파벳을 듣고, 대문자 E, F, G모양 인지를 정확하게 할 수 있었습니다. 아이와 함께 파닉스 에피소드를 반복 학습하면서 아이가 알파벳을 듣고 알맞은 대문자를 찾을 때마다 많이 칭찬해 주세요.  </phonics_100per>
+		<voca_0per>아이는 단어 평가에서 "Run, jump" 단어를 듣고, 알맞은 동작을 떠올리는 것을 어려워 했습니다. "Run, Jump" 단어를 듣고 알맞은 동작을 찾을 수 있도록 단어 에피소드의 반복 학습이 필요합니다. </voca_0per>
+		<voca_99per>아이는 단어 평가에서 "Run, jump" 단어를 듣고, 알맞은 동작을 떠올리는 것이 능숙하지 않았습니다. 아이가 단어를 듣고 알맞은 동작을 찾을 수 있도록 아이와 함께 단어 에피소드를 반복해 주세요.</voca_99per>
+		<voca_100per>아이는 단어 평가에서 "Run, jump" 단어를 듣고, 알맞은 동작을 찾을 수 있었습니다. 아이가 "Run, jump" 단어를 오래 기억할 수 있도록 아이와 함께 단어 에피소드를 반복 학습해 주세요.</voca_100per>
+		<sentence_0per>　</sentence_0per>
+		<sentence_99per>　</sentence_99per>
+		<sentence_100per>　</sentence_100per>
+		<phonics>대문자\nE, F, G</phonics>
+	</step>
+	<step>
+		<id>e103</id>
+		<type>1</type>
+		<name>Opposites Big/Small</name>
+		<level>1</level>
+		<step>3</step>
+		<episode_ids>e103_w1,e103_w2,e103_w3,e103_w4</episode_ids>
+		<description01>크기에 관련된 단어와 문장을 학습해요. \n신나는 노래를 부르면서 배운 단어와 문장을 반복 경험해요. \n알파벳 대문자 모양을 인지해요. </description01>
+		<description02>Step 3은 크기에 관련된 단어 및 문장과 알파벳 대문자 H, I, J, K 모양 인지 하는 학습이 진행되었습니다. Step 3 평가 결과는 아래와 같습니다.</description02>
+		<medal_phonics>9007</medal_phonics>
+		<medal_voca>9005</medal_voca>
+		<medal_sentence>9006</medal_sentence>
+		<phonics_0per>파닉스 평가에서는 알파벳을 듣고, 대문자 H, I, J, K 모양 인지를 할 수 없었습니다. 아이가 정확하게 모양 인지를 할 수 있도록 파닉스 에피소드를 통해 글자 모양과 이름을 함께 짚어가며 아이에게 알려 주세요.  </phonics_0per>
+		<phonics_99per>파닉스 평가에서는 알파벳을 듣고, 대문자 H, I, J, K 모양 인지를 하는 데 능숙하지 않았습니다. 알파벳 H, I, J, K 모양 인지를 잘할 수 있도록 파닉스 에피소드를 반복해 주면서 글자를 읽어주고 모양을 찾게 해 주세요. </phonics_99per>
+		<phonics_100per>파닉스 평가에서는 알파벳을 듣고, 대문자 H, I, J, K 모양 인지를 정확하게 할 수 있었습니다. 아이와 함께 글자 찾기를 해 보고 H, I, J, K 모양 인지를 잘할 때마다 아이를 많이 칭찬해 주세요.</phonics_100per>
+		<voca_0per>아이는 단어 평가에서 "Big, small" 단어를 듣고 크기를 비교할 수 없었으며, 그 뜻을 이해하지 못했습니다. "Big, small" 뜻을 잘 이해할 수 있도록 부모님께서 아이와 함께 단어 에피소드를 반복 학습하면서 아이가 이해하지 못한 부분을 알려 주세요.</voca_0per>
+		<voca_99per>아이는 단어 평가에서 "Big, small" 단어를 듣고, 그 뜻을 이해하는 데 조금 부족했습니다. "Big, small" 뜻을 잘 이해할 수 있도록 부모님께서 아이와 단어 에피소드를 반복 학습하면서 크기에 맞는 단어를 소리 내 알려 주세요. </voca_99per>
+		<voca_100per>아이는 단어 평가에서 "Big, small" 단어를 듣고 크기를 비교할 수 있으며, 그 뜻을 명확하게 알고 있었습니다. 아이와 함께 단어 에피소드를 반복 학습하면서 크기에 관해 물어보시고, 아이가 잘 알고 있을 때마다 칭찬을 통해 아이의 자신감을 길러주세요.</voca_100per>
+		<sentence_0per>문장 평가에서는 "It's big/small" 문장을 듣고 해당되는 크기의 물건을 고를 수 없었습니다. 아이가 "It's big/small." 문장과 익숙해질 수 있도록 노래 에피소드와 문장 에피소드를 많이 반복 학습해 주세요. </sentence_0per>
+		<sentence_99per>문장 평가에서는 "It's big/small." 문장을 듣고, 해당되는 크기의 물건을 고르는 것이 조금 부족했습니다. 아이에게 "It's big/small." 문장을 많이 노출해 주세요. </sentence_99per>
+		<sentence_100per>문장 평가에서는 "It's big/small." 문장을 듣고, 해당되는 크기의 물건을 고를 수 있었습니다. 아이가 오래 기억할 수 있도록 아이와 함께 문장 에피소드를 반복 학습해 주세요.</sentence_100per>
+		<phonics>대문자\nH, I, J, K </phonics>
+	</step>
+	<step>
+		<id>e104</id>
+		<type>1</type>
+		<name>Toys</name>
+		<level>1</level>
+		<step>4</step>
+		<episode_ids>e104_w1,e104_w2,e104_w3,e104_w4</episode_ids>
+		<description01>장난감에 관련된 단어와 문장을 학습해요.\n신나는 노래를 부르면서 배운 단어와 문장을 반복 경험해요. \n알파벳 대문자 모양을 인지해요. </description01>
+		<description02>Step 4는 장난감에 관련된 단어와 알파벳 대문자 L, M, N, O, P 모양을 인지하는 학습이 진행되었습니다. Step 4 평가 결과는 다음과 같습니다.</description02>
+		<medal_phonics>9009</medal_phonics>
+		<medal_voca>9008</medal_voca>
+		<medal_sentence>　</medal_sentence>
+		<phonics_0per>파닉스 평가에서는 알파벳을 듣고. 대문자 L, M, N, O, P 모양 인지를 할 수 없었습니다. 아이가 대문자 L, M, N, O, P 모양 인지에 익숙할 수 있도록 파닉스 에피소드의 반복 학습이 필요합니다.</phonics_0per>
+		<phonics_99per>파닉스 평가에서는 알파벳을 듣고, 대문자 L, M, N, O, P 모양 인지를 하는 데 부족한 부분이 있었습니다. 아이가 대문자 L, M, N, O, P 모양 인지를 잘할 수 있도록 부모님께서 도와주세요. </phonics_99per>
+		<phonics_100per>파닉스 평가에서는 알파벳을 듣고, 대문자 L, M, N, O, P 모양 인지를 명확하게 할 수 있었습니다. 아이가 배운 파닉스 학습을 잊지 않게 하려면, 아이에게 대문자 L, M, N, O, P 글자 찾기를 많이 시켜 주세요. </phonics_100per>
+		<voca_0per>아이는 단어 평가에서 "Car, Teddy Bear, Ball" 단어를 듣고 해당하는 장난감을 찾을 수 없었습니다. 단어 에피소드의 반복 학습은 아이의 단어 이해에 큰 도움이 됩니다. </voca_0per>
+		<voca_99per>아이는 단어 평가에서 "Car, Teddy Bear, Ball" 단어를 듣고 알맞은 장난감을 찾는 데 조금 어려워했습니다. 생활 속에서 아이에게 "Car, Teddy Bear, Ball" 단어를 많이 노출해 주시고, 단어 에피소드도 반복 학습해 주세요. </voca_99per>
+		<voca_100per>아이는 단어 평가에서 "Car, Teddy Bear, Ball" 단어를 듣고, 알맞은 장난감을 찾을 수 있었습니다. 아이가 배운 단어를 오래 기억할 수 있도록 위의 장난감을 찾아보도록 시켜 보시고 아이가 잘할 때마다 많이 칭찬해 주세요.</voca_100per>
+		<sentence_0per>　</sentence_0per>
+		<sentence_99per>　</sentence_99per>
+		<sentence_100per>　</sentence_100per>
+		<phonics>대문자\nL, M, N, O, P </phonics>
+	</step>
+	<step>
+		<id>e105</id>
+		<type>1</type>
+		<name>Fruits</name>
+		<level>1</level>
+		<step>5</step>
+		<episode_ids>e105_w1,e105_w2,e105_w3,e105_w4</episode_ids>
+		<description01>과일에 관련된 단어와 문장을 학습해요. \n신나는 노래를 부르면서 배운 단어와 문장을 반복 경험해요.\n알파벳 대문자 모양을 인지해요. </description01>
+		<description02>Step 5는 과일에 관련된 문장과 알파벳 대문자 Q, R, S, T, U, V 모양을 인지하는 학습이 진행되었습니다. Step 5 평가 결과는 다음과 같습니다.</description02>
+		<medal_phonics>9011</medal_phonics>
+		<medal_voca>　</medal_voca>
+		<medal_sentence>9010</medal_sentence>
+		<phonics_0per>파닉스 평가에서는 알파벳을 듣고, 대문자 Q, R, S, T, U, V 모양 인지를 할 수 없었습니다. 부모님께선 아이가 글자를 듣고 알맞은 모양 인지를 할 수 있도록 파닉스 에피소드를 반복 학습해 주세요.</phonics_0per>
+		<phonics_99per>파닉스 평가에서는 알파벳을 듣고, 대문자 Q, R, S, T, U, V를 찾을 수 있는 능력이 조금 부족했습니다. 아이가 Q, R, S, T, U, V 모양 인지를 잘할 수 있도록 부모님께서 글자를 많이 노출해 주시고 읽어 주세요.</phonics_99per>
+		<phonics_100per>파닉스 평가에서는 알파벳을 듣고, 대문자 Q, R, S, T, U, V 모양 인지를 정확하게 할 수 있었습니다. 아이와 함께 글자 찾기를 해 보고 Q, R, S, T, U, V 모양 인지를 잘할 때마다 아이를 많이 칭찬해 주세요.</phonics_100per>
+		<voca_0per>　</voca_0per>
+		<voca_99per>　</voca_99per>
+		<voca_100per>　</voca_100per>
+		<sentence_0per>아이는 문장 평가에서 "I want an apple/an orange/a kiwi juice!" 문장을 듣고, 그 의미를 파악 하는 데 많이 어려워했습니다. 문장의 의미를 잘 이해할 수 있도록 부모님께서 위의 문장을 많이 노출해 주시고, 노래 또는 문장 에피소드를 많이 반복 학습해 주세요.</sentence_0per>
+		<sentence_99per>아이는 문장 평가에서 "I want an apple/an orange/a kiwi juice!" 문장을 듣고, 그 의미를 파악하는 것이 서툴렀습니다. 아이가 위의 문장에 익숙해질 수 있도록 문장을 자주 말해주고 알맞은 주스를 찾아볼 수 있도록 부모님께서 도와주세요.</sentence_99per>
+		<sentence_100per>아이는 문장 평가에서 "I want an apple/an orange/ a kiwi juice!" 문장을 듣고, 그 의미를 파악하며, 알맞은 과일 주스를 고를 수 있었습니다. 아이와 함께 생활 속에서 과일을 접할 때마다 문장을 반복 학습해 주세요.</sentence_100per>
+		<phonics>대문자\nQ, R, S, T, U, V</phonics>
+	</step>
+	<step>
+		<id>e106</id>
+		<type>1</type>
+		<name>Colors</name>
+		<level>1</level>
+		<step>6</step>
+		<episode_ids>e106_w1,e106_w2,e106_w3,e106_w4</episode_ids>
+		<description01>색깔에 관련된 단어와 문장을 학습해요. \n신나는 노래를 부르면서 배운 단어와 문장을 반복 경험해요. \n알파벳 대문자 모양을 인지해요. </description01>
+		<description02>Step 6은 색깔에 관련된 문장과 알파벳 대문자 W, X, Y, Z 모양을 인지하는 학습이 진행되었습니다. Step 6 평가 결과는 다음과 같습니다.</description02>
+		<medal_phonics>9013</medal_phonics>
+		<medal_voca>　</medal_voca>
+		<medal_sentence>9012</medal_sentence>
+		<phonics_0per>아이는 문장 평가에서 "Color it red/yellow/blue!" 문장을 듣고, 그 의미를 파악 하는 데 많이 어려워했습니다. 아이가 문장에 익숙해질 수 있도록 부모님께서 색칠놀이를 하며 문장을 많이 노출해 주세요. 문장 에피소드를 반복 학습하면 아이에게 많은 도움이 될 수 있습니다.</phonics_0per>
+		<phonics_99per>아이는 문장 평가에서 "Color it red/yellow/blue!" 문장을 듣고, 그 의미를 파악하는 것이 조금 서툽니다. 문장에 익숙하지 않은 아이를 위해 노래 에피소드를 반복 학습해 주세요. </phonics_99per>
+		<phonics_100per>아이는 문장 평가에서 "Color it red/yellow/blue!" 문장을 듣고, 그 의미를 파악하여 알맞은 색깔을 고를 수 있었습니다. 아이가 배운 문장을 잊지 않게 하려면 문장 에피소드를 반복 학습해 주시고, 위의 문장을 많이 노출해 주세요.</phonics_100per>
+		<voca_0per>　</voca_0per>
+		<voca_99per>　</voca_99per>
+		<voca_100per>　</voca_100per>
+		<sentence_0per>아이는 문장 평가에서 "Color it red/yellow/blue!" 문장을 듣고, 그 의미를 파악 하는 데 많이 어려워했습니다. 아이가 문장에 익숙해질 수 있도록 부모님께서 색칠놀이를 하며 문장을 많이 노출해 주세요. 문장 에피소드를 반복 학습하면 아이에게 많은 도움이 될 수 있습니다.</sentence_0per>
+		<sentence_99per>아이는 문장 평가에서 "Color it red/yellow/blue!" 문장을 듣고, 그 의미를 파악하는 것이 조금 서툽니다. 문장에 익숙하지 않은 아이를 위해 노래 에피소드를 반복 학습해 주세요. </sentence_99per>
+		<sentence_100per>아이는 문장 평가에서 "Color it red/yellow/blue!" 문장을 듣고, 그 의미를 파악하여 알맞은 색깔을 고를 수 있었습니다. 아이가 배운 문장을 잊지 않게 하려면 문장 에피소드를 반복 학습해 주시고, 위의 문장을 많이 노출해 주세요.</sentence_100per>
+		<phonics>대문자\nW, X, Y, Z  </phonics>
+	</step>
+	<step>
+		<id>e107</id>
+		<type>1</type>
+		<name>Numbers</name>
+		<level>2</level>
+		<step>1</step>
+		<episode_ids>e107_w1,e107_w2,e107_w3,e107_w4</episode_ids>
+		<description01>수에 관련된 단어와 문장을 학습해요. \n신나는 노래를 부르면서 배운 단어와 문장을 반복 경험해요. \n알파벳 소문자 모양을 인지해요. </description01>
+		<description02>Step 1은 수 세기를 익히는 학습과 알파벳 소문자 a, b, c, d 모양을 인지하는 학습이 진행되었고, 앞서 Step 1에서 학습했던 내용도 함께 반복 학습이 진행되었습니다. Step 7 평가 결과는 아래와 같습니다.</description02>
+		<medal_phonics>9016</medal_phonics>
+		<medal_voca>9014, 9015</medal_voca>
+		<medal_sentence>　</medal_sentence>
+		<phonics_0per>파닉스 평가에서는 알파벳을 듣고 소문자 a, b, c, d를 찾을 수 없었습니다. 아이가 소문자 a, b, c, d를 익힐 수 있도록 글자를 짚어가며 큰 소리로 말해주세요. </phonics_0per>
+		<phonics_99per>파닉스 평가에서는 알파벳을 듣고, 소문자 a, b, c, d를 찾을 수 있는 능력이 다소 부족했습니다. 아이가 소문자 a, b, c, d와 친숙해질 수 있도록 주변 환경에서 글자 찾기를 해 보세요.</phonics_99per>
+		<phonics_100per>파닉스 평가에서는 알파벳을 듣고, 소문자 a, b, c, d를 정확하게 찾을 수 있었습니다. 아이가 소문자 a, b, c, d를 잊지 않고 기억할 수 있게 글자를 말해주고 따라 말할 수 있게 해주세요.</phonics_100per>
+		<voca_0per>아이는 평가를 통해 "four, five, six"를 듣고 알맞은 숫자를 찾을 수 없었으며, 수 세기에 대한 이해가 많이 부족했습니다. 아이가 수 세기 개념을 습득할 수 있도록 단어 에피소드의 반복 학습이 매우 필요합니다. 아이와 함께 수를 세며 단어 에피소드를 반복 학습해 주세요. </voca_0per>
+		<voca_99per>이번 단어 평가에서는 "four, five, six"를 듣고 매칭되는 숫자를 떠올리는 것이 능숙하지 않았습니다. 수 세기에 대한 이해력을 더 길러주기 위해 아이와 함께 단어 에피소드를 반복 학습하며 수를 세 보세요.</voca_99per>
+		<voca_100per>이번 단어 평가에서는 "four, five, six"를 듣고 알맞은 숫자를 찾을 수 있었으며, 수 세기에 대한 이해력이 매우 높습니다. 아이와 함께 단어 에피소드를 반복 학습하면서 아이가 잘할 때마다 칭찬을 통해 아이의 자신감을 길러주세요.</voca_100per>
+		<sentence_0per>　</sentence_0per>
+		<sentence_99per>　</sentence_99per>
+		<sentence_100per>　</sentence_100per>
+		<phonics>소문자\na, b, c, d  </phonics>
+	</step>
+	<step>
+		<id>e108</id>
+		<type>1</type>
+		<name>Opposites Up/Down</name>
+		<level>2</level>
+		<step>2</step>
+		<episode_ids>e108_w1,e108_w2,e108_w3,e108_w4</episode_ids>
+		<description01>위치에 관련된 단어와 문장을 학습해요. \n신나는 노래를 부르면서 배운 단어와 문장을 반복 경험해요. \n알파벳 소문자 모양을 인지해요. </description01>
+		<description02>Step 2는 위, 아래에 관련된 단어 및 문장과 알파벳 소문자 e, f, g 모양을 인지하는 학습이 진행되었습니다. Step 8 평가 결과는 아래와 같습니다.</description02>
+		<medal_phonics>9019</medal_phonics>
+		<medal_voca>9017</medal_voca>
+		<medal_sentence>9018</medal_sentence>
+		<phonics_0per>파닉스 평가에서는 알파벳을 듣고, 소문자 e, f, g를 찾을 수 없었습니다. 아이가 e, f, g 글자에 친숙해지려면 많은 반복 학습이 필요합니다. 부모님께서는 아이와 함께 글자 찾기 놀이와 파닉스 에피소드를 지속해서 반복 학습해 주세요.</phonics_0per>
+		<phonics_99per>파닉스 평가에서는 알파벳을 듣고, 소문자 e, f, g를 찾을 수 있는 능력이 조금 부족했습니다. e, f, g 글자를 정확하게 찾을 수 있도록 부모님께서는 아이에게 글자 노출을 많이 시켜주시고, 함께 글자를 찾아 주세요.</phonics_99per>
+		<phonics_100per>파닉스 평가에서는 알파벳을 듣고, 소문자 e, f, g를 정확하게 찾을 수 있었습니다. 아이가 글자를 오래 기억할 수 있도록 부모님께서는 아이에게 알파벳을 들려주고 글자를 찾아보게 시켜보세요. </phonics_100per>
+		<voca_0per>아이는 단어 평가에서 "Up, down"의 의미를 아직 잘 모르는 것 같습니다. 아이가 "Up, down" 단어를 듣고, 의미를 이해할 수 있도록 단어 에피소드의 반복 학습을 해 주세요. 에피소드를 반복 학습하면서 아이와 함께 "Up, down" 놀이를 해 주세요.</voca_0per>
+		<voca_99per>아이는 단어 평가에서 "Up, down"의 의미를 이해하는데 조금 부족했습니다. 아이가 "Up, down"의 의미를 잘 이해할 수 있도록 부모님께서 단어 에피소드를 반복 학습해 주세요.</voca_99per>
+		<voca_100per>아이는 단어 평가에서 "Up, down"의 의미를 잘 알고 있었습니다. 아이와 함께 "Up, down" 놀이를 해보고 잘할 때마다 아이를 칭찬해 주세요. 잦은 칭찬으로 아이의 자신감을 북돋워 줄 수 있습니다. </voca_100per>
+		<sentence_0per>문장 평가에서는 "Let's go up/down!" 문장을 듣고 그 뜻을 이해할 수 없었습니다. "Let's go up/down!" 문장과 익숙해질 수 있도록 노래 에피소드와 문장 에피소드를 많이 반복 학습해 주세요. </sentence_0per>
+		<sentence_99per>문장 평가에서는 "Let's go up/down!" 문장을 듣고 그 뜻을 이해하는 능력이 조금 부족했습니다. 아이가 문장을 정확하게 이해할 수 있도록 부모님의 도움이 필요합니다. 아이와 함께 문장 에피소드를 반복 학습해 주세요.</sentence_99per>
+		<sentence_100per>문장 평가에서는 "Let's go up/down!" 문장을 듣고 그 뜻을 정확하게 이해하고 있었습니다. 아이가 문장을 잘 활용할 수 있게, 알맞은 상황에서 문장을 반복적으로 노출해 주세요.</sentence_100per>
+		<phonics>소문자\ne, f, g</phonics>
+	</step>
+	<step>
+		<id>e109</id>
+		<type>1</type>
+		<name>Food</name>
+		<level>2</level>
+		<step>3</step>
+		<episode_ids>e109_w1,e109_w2,e109_w3,e109_w4</episode_ids>
+		<description01>음식에 관련된 단어와 문장을 학습해요.\n신나는 노래를 부르면서 배운 단어와 문장을 반복 경험해요.\n알파벳 소문자 모양을 인지해요. </description01>
+		<description02>Step 3은 음식에 관련된 문장과 알파벳 소문자 h, I, j, k 모양을 인지하는 학습이 진행되었습니다. Step 9 평과 결과는 다음과 같습니다.</description02>
+		<medal_phonics>9021</medal_phonics>
+		<medal_voca>　</medal_voca>
+		<medal_sentence>9020</medal_sentence>
+		<phonics_0per>파닉스 평가에서는 알파벳을 듣고, 소문자 h, i, j, k를 고를 수 없었습니다. 파닉스 에피소드를 반복 학습하면서 아이가 모르는 글자 이름과 모양을 알려주고 함께 찾아 주세요. 잦은 반복 학습은 아이가 글자를 익힐 수 있도록 도와줍니다.  </phonics_0per>
+		<phonics_99per>파닉스 평가에서는 알파벳을 듣고 소문자, h, i, j, k 모양 인지를 하는 데 조금 부족함이 있었습니다. 부모님께서는 아이에게 알파벳 소문자 h, i, j, k를 들려주시고, 해당하는 글자를 찾아보게 도와주세요. </phonics_99per>
+		<phonics_100per>파닉스 평가에서는 알파벳을 듣고, 알맞은 소문자, h, i, j, k 를 고를 수 있었습니다. 아이가 알파벳을 듣고 알맞은 대문자를 찾을 때마다 많이 칭찬해 주세요. 잦은 칭찬은 아이의 자신감을 북돋워줍니다.</phonics_100per>
+		<voca_0per>　</voca_0per>
+		<voca_99per>　</voca_99per>
+		<voca_100per>　</voca_100per>
+		<sentence_0per>아이는 문장 평가에서 "I like spaghetti/salad/pie!" 문장을 듣고, 그 의미를 파악하기 많이 힘들어했습니다. 문장의 의미를 잘 이해할 수 있도록 부모님께서 생활 속에서 위의 문장을 많이 노출해 주시고, 문장 에피소드를 반복 학습해보세요.</sentence_0per>
+		<sentence_99per>아이는 문장 평가에서 "I like spaghetti/salad/pie!" 문장을 듣고, 그 의미를 파악하는 것이 서툴렀습니다. 아이가 위의 문장에 친숙해지고 익힐 수 있도록 노래 에피소드를 통해 문장을 자주 노출해주세요.</sentence_99per>
+		<sentence_100per>아이는 문장 평가에서 "I like spaghetti/salad/pie!" 문장을 듣고 그 뜻을 정확하게 알고 있었습니다. 아이와 함께 생활 속에서 위의 음식을 접할 때마다 문장을 잊지 않게 반복 학습해 주세요.</sentence_100per>
+		<phonics>소문자\nh, i, j, k</phonics>
+	</step>
+	<step>
+		<id>e110</id>
+		<type>1</type>
+		<name>Pets</name>
+		<level>2</level>
+		<step>4</step>
+		<episode_ids>e110_w1,e110_w2,e110_w3,e110_w4</episode_ids>
+		<description01>애완동물에 관련된 단어와 문장을 학습해요.\n신나는 노래를 부르면서 배운 단어와 문장을 반복 경험해요. \n알파벳 소문자 모양을 인지해요. </description01>
+		<description02>Step 4는 애완동물에 관련된 단어와 알파벳 소문자 l, m, n, o, p 모양을 인지하는 학습이 진행되었습니다. Step 10 평가 결과는 다음과 같습니다.</description02>
+		<medal_phonics>9023</medal_phonics>
+		<medal_voca>9022</medal_voca>
+		<medal_sentence>　</medal_sentence>
+		<phonics_0per>파닉스 평가에서는 알파벳을 듣고, 소문자 l, m, n, o, p를 찾을 수 없었습니다. 파닉스 에피소드를 반복 학습하면서 아이가 모르는 글자 이름과 모양을 알려주고 부모님께서 함께 찾아 주세요.  </phonics_0per>
+		<phonics_99per>파닉스 평가에서는 알파벳을 듣고, 소문자 l, m, n, o, p 모양 인지를 하는 데 조금 부족함이 있었습니다. 아이가 글자를 정확하게 인지할 수 있도록 소문자 l, m, n, o, p 글자를 말하게끔 시켜보시고, 아이가 어려워하는 부분은 부모님께서 짚어가며 알려주세요.</phonics_99per>
+		<phonics_100per>파닉스 평가에서는 알파벳을 듣고, 알맞은 소문자 l, m, n, o, p를 정확하게 찾을 수 있었습니다. 아이가 글자를 잊지 않게, 실생활에서 위의 글자가 보일 때마다 그 글자를 말하게끔 시켜보세요. </phonics_100per>
+		<voca_0per>아이는 단어 평가에서 "Puppy, kitty, parrot" 단어를 듣고 알맞은 애완동물을 찾을 수 없었습니다. 아이가 위의 단어와 친숙해질 수 있도록, 애완동물을 볼 때마다 부모님께서 알맞은 단어를 알려주세요. </voca_0per>
+		<voca_99per>아이는 단어 평가에서 "Puppy, kitty, parrot" 단어를 듣고 해당되는 애완동물을 찾는 데 조금 어려워했습니다. 아이가 "Puppy, kitty, parrot"을 정확하게 이해할 수 있도록 단어 에피소드를 반복 학습해 주세요.</voca_99per>
+		<voca_100per>아이는 단어 평가에서, "Puppy, kitty, parrot" 단어를 듣고 알맞은 애완동물을 찾을 수 있었습니다. 생활 속에서 위의 애완동물을 볼 때마다 알맞은 단어를 말할 수 있게 시켜 보세요.</voca_100per>
+		<sentence_0per>　</sentence_0per>
+		<sentence_99per>　</sentence_99per>
+		<sentence_100per>　</sentence_100per>
+		<phonics>소문자\nl, m, n, o, p   </phonics>
+	</step>
+	<step>
+		<id>e111</id>
+		<type>1</type>
+		<name>Face</name>
+		<level>2</level>
+		<step>5</step>
+		<episode_ids>e111_w1,e111_w2,e111_w3,e111_w4</episode_ids>
+		<description01>얼굴에 있는 신체 부위에 관련된 단어와 문장을 학습해요. \n신나는 노래를 부르면서 배운 단어와 문장을 반복 경험해요. \n알파벳 소문자 모양을 인지해요.</description01>
+		<description02>Step 5는 얼굴에 관련된 단어와 알파벳 소문자 q, r, s, t, u, v 모양을 인지하는 학습이 진행되었습니다. Step 11 평가 결과는 아래와 같습니다.</description02>
+		<medal_phonics>9025</medal_phonics>
+		<medal_voca>9024</medal_voca>
+		<medal_sentence>　</medal_sentence>
+		<phonics_0per>파닉스 평가에서는 알파벳을 듣고, 소문자 q, r, s, t, u, v를 찾을 수 없었습니다. 아이와 함께 소문자 q, r, s, t, u, v 글자 찾기 놀이를 해보고, 아이가 어려워하는 소문자 모양과 이름을 함께 짚어가며 알려주세요. </phonics_0per>
+		<phonics_99per>파닉스 평가에서는 알파벳을 듣고, 소문자 q, r, s, t, u, v를 찾을 수 있는 능력이 조금 부족했습니다. 아이가 정확한 소문자 q, r, s, t, u, v 모양을 인지할 수 있도록 부모님께서 파닉스 에피소드를 반복 학습해 주세요.</phonics_99per>
+		<phonics_100per>파닉스 평가에서는 알파벳을 듣고, 소문자 q, r, s, t, u, v를 찾을 수 있었습니다. 아이가 배운 파닉스 학습을 잊지 않게 하려면, 파닉스 에피소드를 통해 소문자 q, r, s, t, u, v 찾기를 반복 학습해 주세요. </phonics_100per>
+		<voca_0per>아이는 단어 평가에서 단어를 듣고, "Eyes, nose, mouth" 단어를 듣고 해당하는 얼굴 부위를 찾는 데 많이 어려워했습니다. 아이가 위의 영어 단어를 자연스레 익힐 수 있도록 부모님께서 아이와 함께 단어 에피소드를 반복 학습해 주세요. </voca_0per>
+		<voca_99per>아이는 단어 평가에서 "Eyes, nose, mouth" 단어를 듣고 해당하는 얼굴 부위를 찾는 데 조금 서툴렀습니다. 아이가 위의 단어를 정확하게 알 수 있도록 부모님께서 눈, 코, 입을 가리키며 해당하는 얼굴 부위의 단어를 알려주고 따라 말할 수 있도록 도와주세요.</voca_99per>
+		<voca_100per>아이는 단어 평가에서 "Eyes, nose, mouth" 단어를 듣고 해당하는 얼굴 부위를 찾을 수 있었습니다. 눈, 코, 입을 가리키며 아이에게 해당 부위의 단어를 물어보세요.</voca_100per>
+		<sentence_0per>　</sentence_0per>
+		<sentence_99per>　</sentence_99per>
+		<sentence_100per>　</sentence_100per>
+		<phonics>소문자\nq, r, s, t, u, v</phonics>
+	</step>
+	<step>
+		<id>e112</id>
+		<type>1</type>
+		<name>Opposites Open/Close</name>
+		<level>2</level>
+		<step>6</step>
+		<episode_ids>e112_w1,e112_w2,e112_w3,e112_w4</episode_ids>
+		<description01>Open, close와 그에 관련된 단어와 문장을 학습해요. \n신나는 노래를 부르면서 배운 단어와 문장을 반복 경험해요. \n알파벳 소문자 모양을 인지해요. </description01>
+		<description02>Step 6은 여는 것과 닫는 것에 관련된 단어와 알파벳 소문자 w, x, y, z 모양을 인지하는 학습이 진행되었습니다. Step 12 평가 결과는 다음과 같습니다.</description02>
+		<medal_phonics>9027</medal_phonics>
+		<medal_voca>9026</medal_voca>
+		<medal_sentence>　</medal_sentence>
+		<phonics_0per>파닉스 평가에서는 알파벳을 듣고, 소문자 w, x, y, z를 찾을 수 없었습니다. 파닉스 에피소드를 반복 학습하면서 아이가 모르는 글자 이름과 모양을 알려주고 함께 찾아 주세요.  </phonics_0per>
+		<phonics_99per>파닉스 평가에서는 알파벳을 듣고, 소문자 w, x, y, z 모양 인지를 하는 데 조금 부족함이 있었습니다. 알파벳 모양을 정확하게 인지할 수 있도록 부모님께서는 아이와 함께 알파벳을 듣고, 소문자 w, x, y, z 찾기를 반복 학습해 주세요.</phonics_99per>
+		<phonics_100per>파닉스 평가에서는 알파벳을 듣고, 소문자 w, x, y, z 모양 인지를 정확하게 할 수 있었습니다. 아이와 함께 파닉스 에피소드를 반복 학습하면서 아이가 알파벳을 듣고 알맞은 소문자를 찾을 때마다 많이 칭찬해 주세요.  </phonics_100per>
+		<voca_0per>아이는 단어 평가에서 "Open, close"의 의미를 모릅니다. 아이가 "Open, close" 단어를 듣고, 의미를 이해할 수 있도록 단어 에피소드의 반복 학습이 매우 필요합니다. 단어 에피소드를 반복 학습 하면서 실생활에서 위의 단어를 많이 사용할 수 있도록 아이에게 기회를 주세요.</voca_0per>
+		<voca_99per>아이는 단어 평가에서 "Open, close"의 의미를 이해하는데 조금 부족했습니다. 아이가 "Open, close"의 의미를 잘 이해할 수 있도록 부모님께서 단어 에피소드를 반복 학습해 주세요.</voca_99per>
+		<voca_100per>아이는 단어 평가에서 "Open, close"의 의미를 잘 알고 있었습니다. 아이가 실생활에서 "Open, close" 단어를 많이 사용할 수 있도록 기회를 주시고 아이가 잘할 때마다 칭찬을 통해 아이의 자신감을 길러주세요.</voca_100per>
+		<sentence_0per>　</sentence_0per>
+		<sentence_99per>　</sentence_99per>
+		<sentence_100per>　</sentence_100per>
+		<phonics>소문자\nw, x, y, z</phonics>
+	</step>
+	<step>
+		<id>e113</id>
+		<type>0</type>
+		<name>Review</name>
+		<level>2</level>
+		<step>7</step>
+		<episode_ids>epr101,epr102,epr103,epr104</episode_ids>
+		<description01>'레벨 1'과 '레벨 2' 12개 Step을 반복 학습해요.</description01>
+		<description02>　</description02>
+		<medal_phonics>　</medal_phonics>
+		<medal_voca>　</medal_voca>
+		<medal_sentence>　</medal_sentence>
+		<phonics_0per>　</phonics_0per>
+		<phonics_99per>　</phonics_99per>
+		<phonics_100per>　</phonics_100per>
+		<voca_0per>　</voca_0per>
+		<voca_99per>　</voca_99per>
+		<voca_100per>　</voca_100per>
+		<sentence_0per>　</sentence_0per>
+		<sentence_99per>　</sentence_99per>
+		<sentence_100per>　</sentence_100per>
+		<phonics>　</phonics>
+	</step>
+</root>

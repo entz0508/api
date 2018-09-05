@@ -1,0 +1,38 @@
+{
+    "config":
+    {
+        "package_name":"com.blueark.slp.platform"
+    },
+    "server_info" :
+    {
+        "server_id":1,
+        "name":"SLP Platform DEV",
+        "port":15001
+    },
+    "log_info" :
+    {
+      "logger_level" : "DEBUG",
+      "file_path" : "/data/logs/node/slp_paltform/slp_platform.log",
+      "category" : "SLP_PLATFORM"
+    },
+
+    "mysql_slp_platform" : {
+      "host": "localhost",
+      "port": 16612,
+      "user": "splplatformdev",
+      "password": "qmffndkzm!!!!",
+      "database": "slp_platform_db"
+    },
+
+    "mysql_slp_account" : {
+      "host": "localhost",
+      "port": 16612,
+      "user": "splaccountdev",
+      "password": "qmffndkzm!!!!",
+      "database": "slp_account_db"
+    },
+
+    "end" : {
+    }
+
+}
